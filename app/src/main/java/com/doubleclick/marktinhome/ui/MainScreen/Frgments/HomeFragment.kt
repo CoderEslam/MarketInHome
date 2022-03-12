@@ -70,6 +70,15 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
         recentSearchViewModel = ViewModelProvider(this)[RecentSearchViewModel::class.java]
 
         homeModels = ArrayList()
+
+        productViewModel.parent.observe(viewLifecycleOwner, Observer {
+            if (it.size != 0) {
+                homeModels.add(0, HomeModel(it, HomeModel.TopCategory, this))
+            }
+        });
+        advertisementViewModel.allAdv.observe(viewLifecycleOwner, Observer {
+            homeModels.add(1, HomeModel(it, HomeModel.Advertisement))
+        });
         productViewModel.getProduct().observe(
             viewLifecycleOwner,
             Observer { products: ArrayList<Product?>? ->
@@ -87,16 +96,7 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
             homeModels.add(HomeModel(it, HomeModel.TopDeal, this, HomeModel.TopDeal))
         })
 
-        productViewModel.parent.observe(viewLifecycleOwner, Observer {
-            if (it.size != 0) {
 
-                homeModels.add(0, HomeModel(it, HomeModel.TopCategory, this))
-            }
-        });
-
-        advertisementViewModel.allAdv.observe(viewLifecycleOwner, Observer {
-            homeModels.add(1, HomeModel(it, HomeModel.Advertisement))
-        });
 
         trademarkViewModel.allMark.observe(viewLifecycleOwner, Observer {
             homeModels.add(HomeModel(it, HomeModel.Trademarks, this))
