@@ -85,8 +85,8 @@ class UploadFragment : BaseFragment() {
         Upload.setOnClickListener {
             upload(
                 productName.text.toString(),
-                productPrice.text.toString(),
-                productLastPrice.text.toString(),
+                productPrice.text.toString().toDouble(),
+                productLastPrice.text.toString().toDouble(),
                 description.text.toString(),
                 keywords.text.toString(),
                 marke,

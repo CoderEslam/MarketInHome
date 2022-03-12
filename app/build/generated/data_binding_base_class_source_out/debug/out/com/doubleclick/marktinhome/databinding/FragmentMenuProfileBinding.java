@@ -82,6 +82,9 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
   public final ImageView imageView56;
 
   @NonNull
+  public final ImageView imageView566;
+
+  @NonNull
   public final ConstraintLayout logout;
 
   @NonNull
@@ -89,6 +92,9 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
 
   @NonNull
   public final TextView phone;
+
+  @NonNull
+  public final ConstraintLayout recentOrder;
 
   @NonNull
   public final TextView textView3;
@@ -106,8 +112,10 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
       @NonNull ImageView imageView30, @NonNull ImageView imageView32,
       @NonNull ImageView imageView55, @NonNull ImageView imageView555,
       @NonNull ImageView imageView556, @NonNull ImageView imageView56,
-      @NonNull ConstraintLayout logout, @NonNull CircleImageView person, @NonNull TextView phone,
-      @NonNull TextView textView3, @NonNull TextView username) {
+      @NonNull ImageView imageView566, @NonNull ConstraintLayout logout,
+      @NonNull CircleImageView person, @NonNull TextView phone,
+      @NonNull ConstraintLayout recentOrder, @NonNull TextView textView3,
+      @NonNull TextView username) {
     this.rootView = rootView;
     this.AddAdv = AddAdv;
     this.AddProduct = AddProduct;
@@ -129,9 +137,11 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
     this.imageView555 = imageView555;
     this.imageView556 = imageView556;
     this.imageView56 = imageView56;
+    this.imageView566 = imageView566;
     this.logout = logout;
     this.person = person;
     this.phone = phone;
+    this.recentOrder = recentOrder;
     this.textView3 = textView3;
     this.username = username;
   }
@@ -283,6 +293,12 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView566;
+      ImageView imageView566 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView566 == null) {
+        break missingId;
+      }
+
       id = R.id.logout;
       ConstraintLayout logout = ViewBindings.findChildViewById(rootView, id);
       if (logout == null) {
@@ -301,6 +317,12 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.recentOrder;
+      ConstraintLayout recentOrder = ViewBindings.findChildViewById(rootView, id);
+      if (recentOrder == null) {
+        break missingId;
+      }
+
       id = R.id.textView3;
       TextView textView3 = ViewBindings.findChildViewById(rootView, id);
       if (textView3 == null) {
@@ -316,8 +338,8 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
       return new FragmentMenuProfileBinding((ConstraintLayout) rootView, AddAdv, AddProduct,
           AddTradmark, address, constraintLayout3, constraintLayout4, constraintLayout5,
           constraintLayout6, editAddress, editPhone, editname, email, fab, imageView3, imageView30,
-          imageView32, imageView55, imageView555, imageView556, imageView56, logout, person, phone,
-          textView3, username);
+          imageView32, imageView55, imageView555, imageView556, imageView56, imageView566, logout,
+          person, phone, recentOrder, textView3, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

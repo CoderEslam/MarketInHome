@@ -50,16 +50,15 @@ public class menu_CartFragment extends BaseFragment {
                 cartAdapter = new CartAdapter(carts);
                 cartRecycler.setAdapter(cartAdapter);
                 for (int i = 0; i < carts.size(); i++) {
-                    Total = Total + Double.parseDouble(carts.get(i).getPrice()) * Double.parseDouble(carts.get(i).getQuantity());
-                    totalPrice.setText("" + Total);
+                    Total = Total + carts.get(i).getPrice() * carts.get(i).getQuantity();
+                    totalPrice.setText(String.format("%s", Total));
                 }
             }
 
         });
         Continue.setOnClickListener(v -> {
             Intent intent = new Intent();
-            Navigation.findNavController(v).navigate(R.id.action_menu_Cart_to_addressFragment,new Bundle());
-//            sendNotifiaction(getContext(),"FkyB9ppQAlQcPQZ3F8tN24kLzbg1","Eslam");
+            Navigation.findNavController(v).navigate(R.id.action_menu_Cart_to_addressFragment, new Bundle());
         });
 
         return view;

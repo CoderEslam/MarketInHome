@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -42,7 +43,7 @@ public class menu_profileFragment extends BaseFragment {
     private ImageView editAddress, editPhone, editname;
     private AlertDialog.Builder builder;
     private ImageView fab;
-    private ConstraintLayout AddProduct,AddAdv,AddTradmark;
+    private ConstraintLayout AddProduct, AddAdv, AddTradmark, recentOrder;
     private ConstraintLayout logout;
 
     public menu_profileFragment() {
@@ -80,6 +81,7 @@ public class menu_profileFragment extends BaseFragment {
         logout = view.findViewById(R.id.logout);
         AddAdv = view.findViewById(R.id.AddAdv);
         AddTradmark = view.findViewById(R.id.AddTradmark);
+        recentOrder = view.findViewById(R.id.recentOrder);
 
         userViewModel.getUser().observe(getViewLifecycleOwner(), user -> {
             if (user != null) {
@@ -115,6 +117,9 @@ public class menu_profileFragment extends BaseFragment {
         logout.setOnClickListener(v -> {
             mAuth.signOut();
             startActivity(new Intent(getContext(), MainActivity.class));
+        });
+        recentOrder.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToRecentOrderFragment());
         });
 
         return view;

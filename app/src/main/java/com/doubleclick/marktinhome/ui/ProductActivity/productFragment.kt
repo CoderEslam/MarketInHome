@@ -152,19 +152,20 @@ class productFragment : BaseFragment() {
         })
 
         fab.setOnClickListener { v: View? ->
-            if(q!=0){
+            if (q != 0) {
                 var pushId = myId + ":" + product.product!!.productId
                 var map: HashMap<String, Any> = HashMap();
                 map.put("ProductId", product.product!!.productId);
                 map.put("BuyerId", myId);
                 map.put("SellerId", product.product!!.adminId);
-                map.put("TotalPrice", (q.toDouble() * product.product!!.price.toDouble()).toString());
-                map.put("Quantity", q.toString());
-                map.put("price", product.product!!.price);
+                map.put("TotalPrice", (q.toDouble() * product.product!!.price.toDouble()).toLong());
+                map.put("Quantity", q.toLong());
+                map.put("price", product.product!!.price.toLong());
                 map.put("image", product.product!!.image);
+                map.put("productName", product.product!!.productName);
                 reference.child(CART).child(pushId).setValue(map);
-            }else{
-                ShowToast(context,"you can't order less than one!");
+            } else {
+                ShowToast(context, "you can't order less than one!");
             }
 
 
@@ -196,7 +197,7 @@ class productFragment : BaseFragment() {
             if (quantity.text.toString().equals("0")) {
                 q = 1;
                 quantity.text = q.toString()
-                ShowToast(context,"you can't order less than one!");
+                ShowToast(context, "you can't order less than one!");
                 return@setOnClickListener
             } else {
                 q--

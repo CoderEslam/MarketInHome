@@ -1,6 +1,7 @@
 package com.doubleclick.marktinhome.Adapters;
 
 import static com.doubleclick.marktinhome.Model.Constantes.CART;
+import static com.doubleclick.marktinhome.Model.Constantes.RECENTORDER;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.doubleclick.OnOrder;
 import com.doubleclick.marktinhome.Model.Cart;
 import com.doubleclick.marktinhome.R;
 import com.google.firebase.database.DatabaseError;
@@ -28,9 +30,15 @@ import java.util.ArrayList;
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
     private ArrayList<Cart> carts = new ArrayList<>();
+    private OnOrder onOrder;
 
     public OrderAdapter(ArrayList<Cart> carts) {
         this.carts = carts;
+    }
+
+    public OrderAdapter(ArrayList<Cart> carts, OnOrder onOrder) {
+        this.carts = carts;
+        this.onOrder = onOrder;
     }
 
     @NonNull
@@ -43,24 +51,20 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
 
         holder.nameOrder.setText(carts.get(holder.getAdapterPosition()).getProductName());
-        holder.PriceOrder.setText(carts.get(holder.getAdapterPosition()).getPrice());
-        holder.quantityOrder.setText(carts.get(holder.getAdapterPosition()).getQuantity());
-        holder.totalPrice.setText(carts.get(holder.getAdapterPosition()).getTotalPrice());
+        holder.PriceOrder.setText(String.format("%s", carts.get(holder.getAdapterPosition()).getPrice()));
+        holder.quantityOrder.setText(String.format("%s", carts.get(holder.getAdapterPosition()).getQuantity()));
+        holder.totalPrice.setText(String.format("%s", carts.get(holder.getAdapterPosition()).getTotalPrice()));
         Glide.with(holder.itemView.getContext()).load(carts.get(holder.getAdapterPosition()).getImage()).into(holder.orderImage);
         holder.ok.setOnClickListener(v -> {
-
-//            FirebaseDatabase.getInstance().getReference().child(CART).child(carts.get(holder.getAdapterPosition()).getId())
-
+            onOrder.OnOKItemOrder(carts.get(holder.getAdapterPosition()));
+            holder.itemView.setVisibility(View.GONE);
+            notifyItemRemoved(holder.getAdapterPosition());
         });
 
         holder.cancel.setOnClickListener(v -> {
-            FirebaseDatabase.getInstance().getReference().child(CART).child(carts.get(holder.getAdapterPosition()).getId()).removeValue(new DatabaseReference.CompletionListener() {
-                @Override
-                public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-
-                    Toast.makeText(holder.itemView.getContext(), "Deleted", Toast.LENGTH_LONG).show();
-                }
-            });
+            onOrder.OnCancelItemOrder(carts.get(holder.getAdapterPosition()));
+            holder.itemView.setVisibility(View.GONE);
+            notifyItemRemoved(holder.getAdapterPosition());
         });
 
     }

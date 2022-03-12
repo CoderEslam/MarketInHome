@@ -9,27 +9,27 @@ import android.os.Parcelable;
 public class Cart implements Parcelable {
 
     private String ProductId;
-    private String price;
-    private String Quantity;
+    private long price;
+    private long Quantity;
     private String lastPrice;
     private String productName;
     private String image;
     private String id;
     private String BuyerId;
     private String SellerId;
-    private String TotalPrice;
+    private long TotalPrice;
 
     protected Cart(Parcel in) {
         ProductId = in.readString();
-        price = in.readString();
-        Quantity = in.readString();
+        price = in.readLong();
+        Quantity = in.readLong();
         lastPrice = in.readString();
         productName = in.readString();
         image = in.readString();
         id = in.readString();
         BuyerId = in.readString();
         SellerId = in.readString();
-        TotalPrice = in.readString();
+        TotalPrice = in.readLong();
     }
 
     public static final Creator<Cart> CREATOR = new Creator<Cart>() {
@@ -73,21 +73,6 @@ public class Cart implements Parcelable {
         ProductId = productId;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getQuantity() {
-        return Quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        Quantity = quantity;
-    }
 
     public String getLastPrice() {
         return lastPrice;
@@ -122,13 +107,6 @@ public class Cart implements Parcelable {
     }
 
 
-    public String getTotalPrice() {
-        return TotalPrice;
-    }
-
-    public void setTotalPrice(String totalPrice) {
-        TotalPrice = totalPrice;
-    }
 
     @Override
     public int describeContents() {
@@ -138,15 +116,15 @@ public class Cart implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(ProductId);
-        dest.writeString(price);
-        dest.writeString(Quantity);
+        dest.writeLong(price);
+        dest.writeLong(Quantity);
         dest.writeString(lastPrice);
         dest.writeString(productName);
         dest.writeString(image);
         dest.writeString(id);
         dest.writeString(BuyerId);
         dest.writeString(SellerId);
-        dest.writeString(TotalPrice);
+        dest.writeLong(TotalPrice);
     }
 
     @Override
@@ -163,5 +141,29 @@ public class Cart implements Parcelable {
                 ", SellerId='" + SellerId + '\'' +
                 ", TotalPrice='" + TotalPrice + '\'' +
                 '}';
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+    }
+
+    public long getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(long quantity) {
+        Quantity = quantity;
+    }
+
+    public long getTotalPrice() {
+        return TotalPrice;
+    }
+
+    public void setTotalPrice(long totalPrice) {
+        TotalPrice = totalPrice;
     }
 }

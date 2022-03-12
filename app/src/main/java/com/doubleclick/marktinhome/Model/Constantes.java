@@ -15,5 +15,7 @@ public class Constantes {
     public static final String TRADEMARK= "Trademark";
     public static final String ADVERTISEMENT = "Advertisement";
     public static final String RECENTSEARCH = "recentSearch";
+    public static final String RECENTORDER = "RecentOrder";
+    public static final String REQUESTS = "Requests";
 
 }

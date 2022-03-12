@@ -17,22 +17,16 @@ import java.util.ArrayList;
 public class CartViewModel extends ViewModel implements CartInter {
 
     MutableLiveData<ArrayList<Cart>> mutableLiveData = new MutableLiveData<>();
-    MutableLiveData<ArrayList<Cart>> mutableLiveDataOrderSeller = new MutableLiveData<>();
 
     CartRepository cartRepository = new CartRepository(this);
 
     public CartViewModel() {
         cartRepository.getCart();
-        cartRepository.getOrderSeller();
     }
 
 
     public LiveData<ArrayList<Cart>> CartLiveData() {
         return mutableLiveData;
-    }
-
-    public LiveData<ArrayList<Cart>> OrdersSellerLiveData() {
-        return mutableLiveDataOrderSeller;
     }
 
 
@@ -41,8 +35,4 @@ public class CartViewModel extends ViewModel implements CartInter {
         mutableLiveData.setValue(cart);
     }
 
-    @Override
-    public void getOrderSeller(@Nullable ArrayList<Cart> cart) {
-        mutableLiveDataOrderSeller.setValue(cart);
-    }
 }

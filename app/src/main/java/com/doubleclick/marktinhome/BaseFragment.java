@@ -18,8 +18,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.doubleclick.Api.APIService;
+import com.doubleclick.ViewModel.CartViewModel;
 import com.doubleclick.marktinhome.Model.Data;
 import com.doubleclick.marktinhome.Model.MyResponse;
 import com.doubleclick.marktinhome.Model.Product;
@@ -64,6 +66,7 @@ public class BaseFragment extends Fragment {
     public String Location = "";
     private String PushIdParents;
     APIService apiService;
+
 
 
     public BaseFragment() {
@@ -198,7 +201,7 @@ public class BaseFragment extends Fragment {
         }
     }
 
-    public void upload(String name, String price, String LastPrice, String descroiprion, String keywords, String trademark, String ParentId, String ChildId, String ParentName, String ChildName) {
+    public void upload(String name, double price, double LastPrice, String descroiprion, String keywords, String trademark, String ParentId, String ChildId, String ParentName, String ChildName) {
         final ProgressDialog pd = new ProgressDialog(getContext());
         pd.setMessage("Uploading");
         pd.show();
@@ -222,7 +225,7 @@ public class BaseFragment extends Fragment {
                         String push = reference.push().getKey();
                         Date date = new Date();
                         HashMap<String, Object> map = new HashMap();
-                        int discount = (int) (-1 * ((Double.parseDouble(price) / Double.parseDouble(LastPrice)) * 100));
+                        double discount = (double) (-1 * ((price /LastPrice)* 100));
                         map.put("productId", push);
                         map.put("price", price);
                         map.put("description", descroiprion);

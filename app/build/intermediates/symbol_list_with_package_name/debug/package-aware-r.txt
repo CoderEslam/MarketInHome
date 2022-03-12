@@ -2841,8 +2841,10 @@ id action_homeFragment_to_trademarkFragment
 id action_image
 id action_menu_Cart_to_addressFragment
 id action_menu_Cart_to_menu_profile
+id action_menu_Cart_to_orderSelllerFragment
 id action_menu_divider
 id action_menu_presenter
+id action_menu_profile_to_recentOrderFragment
 id action_menu_store_to_menu_Cart
 id action_mode_bar
 id action_mode_bar_stub
@@ -3091,6 +3093,7 @@ id imageView55
 id imageView555
 id imageView556
 id imageView56
+id imageView566
 id imageView6
 id imageView7
 id imageView8
@@ -3207,6 +3210,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id myAdv
 id myImage
+id myRecentOrder
 id name
 id nameMark
 id nameOrder
@@ -3242,6 +3246,7 @@ id onInterceptTouchReturnSwipe
 id openDrawer
 id order
 id orderImage
+id orderSelllerFragment
 id outline
 id outward
 id overshoot
@@ -3283,6 +3288,8 @@ id quantityOrder
 id radio
 id rate_now_container
 id ratio
+id recentOrder
+id recentOrderFragment
 id recentSearch
 id rectangles
 id restart
@@ -3631,6 +3638,7 @@ layout fragment_menu_store
 layout fragment_order_selller
 layout fragment_parent
 layout fragment_product
+layout fragment_recent_order
 layout fragment_register
 layout fragment_splash1
 layout fragment_splash2
@@ -3648,6 +3656,7 @@ layout layaut_cart
 layout layout_categories
 layout layout_edit
 layout layout_product
+layout layout_recent_order
 layout layout_top_deals
 layout layout_upload
 layout list_group
@@ -3939,6 +3948,8 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
+string my_order
+string my_recent_order
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string new_user

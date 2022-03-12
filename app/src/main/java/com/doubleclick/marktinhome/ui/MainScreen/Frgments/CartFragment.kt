@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.doubleclick.OnCartLisnter
 import com.doubleclick.ViewModel.CartViewModel
 import com.doubleclick.marktinhome.Adapters.CartAdapter
 import com.doubleclick.marktinhome.Adapters.CartAdapter.CartViewHolder
@@ -31,7 +32,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [CartFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CartFragment : BaseFragment() {
+class CartFragment : BaseFragment(), OnCartLisnter {
 
 
     private lateinit var cartViewModel: CartViewModel
@@ -39,8 +40,8 @@ class CartFragment : BaseFragment() {
     private lateinit var cartAdapter: CartAdapter
     private lateinit var Continue: TextView
     private lateinit var totalPrice: TextView
-    var Carts: ArrayList<Cart>? = null;
     private var Total = 0.0
+    lateinit var MyOrder: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,11 +60,12 @@ class CartFragment : BaseFragment() {
         cartRecycler = view.findViewById(R.id.cartRecycler)
         Continue = view.findViewById(R.id.Continue)
         totalPrice = view.findViewById(R.id.totalPrice)
+        MyOrder = view.findViewById(R.id.MyOrder);
 
         cartViewModel.CartLiveData().observe(viewLifecycleOwner) { carts: ArrayList<Cart> ->
             if (carts.size != 0) {
-                Carts = carts
-                cartAdapter = CartAdapter(carts)
+                Total = 0.0
+                cartAdapter = CartAdapter(carts, this)
                 cartRecycler.adapter = cartAdapter
                 for (i in carts.indices) {
                     Total += carts[i].price.toDouble() * carts[i].quantity.toDouble()
@@ -72,56 +74,49 @@ class CartFragment : BaseFragment() {
             }
         }
         Continue.setOnClickListener { v ->
-            findNavController().navigate(
-                CartFragmentDirections.actionMenuCartToAddressFragment(Carts!!.toTypedArray())
-            )
+            try {
+                findNavController().navigate(CartFragmentDirections.actionMenuCartToAddressFragment())
+            } catch (e: Exception) {
+
+            }
+
         }
 
-        val options = FirebaseRecyclerOptions.Builder<Cart>()
-            .setQuery(reference.child(CART), Cart::class.java)
-            .setLifecycleOwner(this)
-            .build()
-
-        val adapter = object : FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
-                return CartViewHolder(
-                    LayoutInflater.from(parent.context).inflate(R.layout.layaut_cart, parent, false)
-                )
-            }
-
-            protected override fun onBindViewHolder(holder: CartViewHolder, position: Int, cart: Cart) {
 
 
-
-            }
-
-            override fun onDataChanged() {
-
-            }
+        MyOrder.setOnClickListener {
+            findNavController().navigate(CartFragmentDirections.actionMenuCartToOrderSelllerFragment())
         }
 
         return view
     }
 
-    class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val imageCart: CircleImageView
-        private val CartName: TextView
-        private val price: TextView
-        private val quantity: TextView
-        private val add: ImageView
-        private val mins: ImageView
-        private val delete: ImageView
 
-        init {
-            imageCart = itemView.findViewById(R.id.imageCart)
-            CartName = itemView.findViewById(R.id.CartName)
-            price = itemView.findViewById(R.id.price)
-            quantity = itemView.findViewById(R.id.quantity)
-            add = itemView.findViewById(R.id.add)
-            mins = itemView.findViewById(R.id.mins)
-            delete = itemView.findViewById(R.id.delete)
-        }
+    override fun onPause() {
+        super.onPause()
+        Total = 0.0
     }
 
+    override fun OnAddItemOrder(cart: Cart?) {
+        var quantity: Int = cart!!.quantity.toInt()
+        quantity++;
+        var map: HashMap<String, Any> = HashMap();
+        map.put("Quantity", quantity)
+        map.put("TotalPrice", (cart.price.toInt() * quantity).toLong())
+        reference.child(CART).child(cart!!.buyerId + ":" + cart.productId).updateChildren(map)
+    }
+
+    override fun OnMinsItemOrder(cart: Cart?) {
+        var quantity: Int = cart!!.quantity.toInt()
+        quantity--;
+        var map: HashMap<String, Any> = HashMap();
+        map.put("Quantity", quantity)
+        map.put("TotalPrice", (cart.price.toInt() * quantity).toLong())
+        reference.child(CART).child(cart!!.buyerId + ":" + cart.productId).updateChildren(map)
+    }
+
+    override fun OnDeleteItemOrder(cart: Cart?) {
+        reference.child(CART).child(cart!!.buyerId + ":" + cart.productId).removeValue()
+    }
 
 }

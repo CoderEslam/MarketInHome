@@ -53,5 +53,7 @@
     <string name="another_number_phone">another number phone</string>
     <string name="your_address_clearly">your address clearly</string>
     <string name="confirm">Confirm</string>
+    <string name="my_order">my Order</string>
+    <string name="my_recent_order">my recent Order</string>
 
 </resources>

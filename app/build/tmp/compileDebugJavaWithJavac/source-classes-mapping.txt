@@ -13,6 +13,9 @@ com/doubleclick/marktinhome/Views/customnavigationdrawer/widget/SNavigationDrawe
  com.doubleclick.marktinhome.Views.customnavigationdrawer.widget.SNavigationDrawer$OnHamMenuClickListener
  com.doubleclick.marktinhome.Views.customnavigationdrawer.widget.SNavigationDrawer$OnMenuItemClickListener
  com.doubleclick.marktinhome.Views.customnavigationdrawer.widget.SNavigationDrawer$State
+com/doubleclick/marktinhome/Adapters/RecentOrderAdapter.java
+ com.doubleclick.marktinhome.Adapters.RecentOrderAdapter
+ com.doubleclick.marktinhome.Adapters.RecentOrderAdapter$RecentOrderViewHolder
 com/doubleclick/marktinhome/ui/MainScreen/Frgments/Add/ChildFragmentArgs.java
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.Add.ChildFragmentArgs
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.Add.ChildFragmentArgs$1
@@ -58,8 +61,8 @@ com/doubleclick/marktinhome/ui/Splash/Splash2Fragment.java
  com.doubleclick.marktinhome.ui.Splash.Splash2Fragment
 com/doubleclick/marktinhome/ui/MainScreen/Frgments/CartFragmentDirections.java
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.CartFragmentDirections
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.CartFragmentDirections$1
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.CartFragmentDirections$ActionMenuCartToAddressFragment
+com/doubleclick/marktinhome/ui/MainScreen/Frgments/Profile/menu_profileFragmentDirections.java
+ com.doubleclick.marktinhome.ui.MainScreen.Frgments.Profile.menu_profileFragmentDirections
 com/doubleclick/marktinhome/databinding/LayautCartBinding.java
  com.doubleclick.marktinhome.databinding.LayautCartBinding
 com/doubleclick/marktinhome/DataBindingTriggerClass.java
@@ -78,6 +81,8 @@ com/doubleclick/marktinhome/Model/Seller.java
  com.doubleclick.marktinhome.Model.Seller
 com/doubleclick/marktinhome/databinding/LayoutEditBinding.java
  com.doubleclick.marktinhome.databinding.LayoutEditBinding
+com/doubleclick/marktinhome/databinding/FragmentRecentOrderBinding.java
+ com.doubleclick.marktinhome.databinding.FragmentRecentOrderBinding
 com/doubleclick/marktinhome/Views/customnavigationdrawer/utils/CustomViewFactory.java
  com.doubleclick.marktinhome.Views.customnavigationdrawer.utils.CustomViewFactory
 com/doubleclick/marktinhome/databinding/ActivityTrademarkBinding.java
@@ -96,6 +101,8 @@ com/doubleclick/marktinhome/Views/flowingdrawer_core/ElasticDrawer.java
  com.doubleclick.marktinhome.Views.flowingdrawer_core.ElasticDrawer$SavedState$1
 com/doubleclick/marktinhome/Notifications/OreoNotification.java
  com.doubleclick.marktinhome.Notifications.OreoNotification
+com/doubleclick/marktinhome/Model/Orders.java
+ com.doubleclick.marktinhome.Model.Orders
 com/doubleclick/marktinhome/databinding/FragmentSplash4Binding.java
  com.doubleclick.marktinhome.databinding.FragmentSplash4Binding
 com/doubleclick/marktinhome/databinding/EachItemBinding.java
@@ -149,8 +156,6 @@ com/doubleclick/marktinhome/ui/ProductActivity/productFragmentDirections.java
  com.doubleclick.marktinhome.ui.ProductActivity.productFragmentDirections
 com/doubleclick/marktinhome/databinding/FragmentRegisterBinding.java
  com.doubleclick.marktinhome.databinding.FragmentRegisterBinding
-com/doubleclick/marktinhome/Model/Requests.java
- com.doubleclick.marktinhome.Model.Requests
 com/doubleclick/marktinhome/databinding/ItemTrademarkBinding.java
  com.doubleclick.marktinhome.databinding.ItemTrademarkBinding
 com/doubleclick/marktinhome/Repository/AdvertisementRepository.java
@@ -220,6 +225,9 @@ com/doubleclick/marktinhome/ui/Login/LoginFragment.java
  com.doubleclick.marktinhome.ui.Login.LoginFragment$1
 com/doubleclick/marktinhome/Repository/CartRepository.java
  com.doubleclick.marktinhome.Repository.CartRepository
+ com.doubleclick.marktinhome.Repository.CartRepository$1
+com/doubleclick/ViewModel/OrderViewModel.java
+ com.doubleclick.ViewModel.OrderViewModel
 com/doubleclick/ViewHolder/BannerSliderViewholder.java
  com.doubleclick.ViewHolder.BannerSliderViewholder
  com.doubleclick.ViewHolder.BannerSliderViewholder$1
@@ -266,7 +274,6 @@ com/doubleclick/marktinhome/Views/customnavigationdrawer/data/MenuItem.java
  com.doubleclick.marktinhome.Views.customnavigationdrawer.data.MenuItem
 com/doubleclick/marktinhome/Adapters/OrderAdapter.java
  com.doubleclick.marktinhome.Adapters.OrderAdapter
- com.doubleclick.marktinhome.Adapters.OrderAdapter$1
  com.doubleclick.marktinhome.Adapters.OrderAdapter$OrderViewHolder
 com/doubleclick/marktinhome/Model/MyResponse.java
  com.doubleclick.marktinhome.Model.MyResponse
@@ -301,6 +308,9 @@ com/doubleclick/marktinhome/Repository/TradmarkRepository.java
  com.doubleclick.marktinhome.Repository.TradmarkRepository
  com.doubleclick.marktinhome.Repository.TradmarkRepository$1
  com.doubleclick.marktinhome.Repository.TradmarkRepository$2
+com/doubleclick/marktinhome/Repository/RecentOrderRepository.java
+ com.doubleclick.marktinhome.Repository.RecentOrderRepository
+ com.doubleclick.marktinhome.Repository.RecentOrderRepository$1
 com/doubleclick/marktinhome/databinding/ActivityAddressBinding.java
  com.doubleclick.marktinhome.databinding.ActivityAddressBinding
 com/doubleclick/marktinhome/ui/ProductActivity/productFragmentArgs.java
@@ -338,6 +348,8 @@ com/doubleclick/marktinhome/Model/Token.java
  com.doubleclick.marktinhome.Model.Token
 com/doubleclick/marktinhome/Model/Favorite.java
  com.doubleclick.marktinhome.Model.Favorite
+com/doubleclick/marktinhome/Model/RecentOrder.java
+ com.doubleclick.marktinhome.Model.RecentOrder
 com/doubleclick/marktinhome/Views/flowingdrawer_core/FlowingAnimationListener.java
  com.doubleclick.marktinhome.Views.flowingdrawer_core.FlowingAnimationListener
 com/doubleclick/marktinhome/Adapters/ProductAdapterSmall.java
@@ -376,6 +388,9 @@ com/doubleclick/marktinhome/Adapters/TopCategory.java
  com.doubleclick.marktinhome.Adapters.TopCategory$TopViewHilder
 com/doubleclick/marktinhome/databinding/ListItemBinding.java
  com.doubleclick.marktinhome.databinding.ListItemBinding
+com/doubleclick/marktinhome/Repository/OrdersRepository.java
+ com.doubleclick.marktinhome.Repository.OrdersRepository
+ com.doubleclick.marktinhome.Repository.OrdersRepository$1
 com/doubleclick/marktinhome/Repository/RateingRepository.java
  com.doubleclick.marktinhome.Repository.RateingRepository
  com.doubleclick.marktinhome.Repository.RateingRepository$1
@@ -393,6 +408,8 @@ com/doubleclick/marktinhome/ui/MainScreen/Frgments/FilterParentFragmentArgs.java
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentArgs
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentArgs$1
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentArgs$Builder
+com/doubleclick/marktinhome/databinding/LayoutRecentOrderBinding.java
+ com.doubleclick.marktinhome.databinding.LayoutRecentOrderBinding
 com/doubleclick/ViewHolder/TrademarkViewHolder.java
  com.doubleclick.ViewHolder.TrademarkViewHolder
 com/doubleclick/marktinhome/databinding/FragmentMainBinding.java
@@ -466,16 +483,14 @@ com/doubleclick/marktinhome/Notifications/Client.java
  com.doubleclick.marktinhome.Notifications.Client
 com/doubleclick/marktinhome/databinding/FragmentOrderSelllerBinding.java
  com.doubleclick.marktinhome.databinding.FragmentOrderSelllerBinding
+com/doubleclick/ViewModel/RecentOrderViewModel.java
+ com.doubleclick.ViewModel.RecentOrderViewModel
 com/doubleclick/marktinhome/Model/Cart.java
  com.doubleclick.marktinhome.Model.Cart
  com.doubleclick.marktinhome.Model.Cart$1
 com/doubleclick/marktinhome/Repository/UserRepository.java
  com.doubleclick.marktinhome.Repository.UserRepository
  com.doubleclick.marktinhome.Repository.UserRepository$1
-com/doubleclick/marktinhome/ui/MainScreen/Address/AddressFragmentArgs.java
- com.doubleclick.marktinhome.ui.MainScreen.Address.AddressFragmentArgs
- com.doubleclick.marktinhome.ui.MainScreen.Address.AddressFragmentArgs$1
- com.doubleclick.marktinhome.ui.MainScreen.Address.AddressFragmentArgs$Builder
 com/doubleclick/Servies/NotificationReceiver.java
  com.doubleclick.Servies.NotificationReceiver
 com/doubleclick/marktinhome/Adapters/ParentAdapter.java

@@ -68,12 +68,14 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="32dp"
                 app:layout_constraintBottom_toBottomOf="@+id/delete"
                 app:layout_constraintEnd_toStartOf="@+id/delete"
                 app:layout_constraintTop_toTopOf="@+id/delete">
 
                 <ImageView
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
                     android:id="@+id/add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -91,6 +93,8 @@
                     android:text="1" />
 
                 <ImageView
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
                     android:id="@+id/mins"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

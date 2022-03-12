@@ -9,6 +9,4 @@ import java.util.*
 interface CartInter {
     fun getCart(cart: ArrayList<Cart?>?)
 
-    fun getOrderSeller(cart: ArrayList<Cart?>?)
-
 }

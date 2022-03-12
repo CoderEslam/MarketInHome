@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import com.doubleclick.CartInter;
 import com.doubleclick.marktinhome.Model.Cart;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -28,53 +30,32 @@ public class CartRepository extends BaseRepository {
 
     // for User Orders
     public void getCart() {
-        reference.child(CART).get().addOnCompleteListener(task -> {
-            try {
-                if (isNetworkConnected()) {
-                    if (task.getResult().exists()) {
-                        if (task.isSuccessful()) {
-                            DataSnapshot snapshot = task.getResult();
+        reference.child(CART).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                carts.clear();
+                try {
+                    if (isNetworkConnected()) {
+                        if (snapshot.exists()) {
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Cart cart = dataSnapshot.getValue(Cart.class);
-                                if (cart.getBuyerId().equals(myId)) {
+                                if (Objects.requireNonNull(cart).getBuyerId().equals(myId)) {
                                     carts.add(cart);
                                     cartinter.getCart(carts);
                                 }
                             }
                         }
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
-                } else {
-                    ShowToast("No Internet Connection");
+                } catch (Exception e) {
+                    Log.e("ExceptionCart", e.getMessage());
                 }
-            } catch (Exception e) {
-                Log.e("ExceptionCart", e.getMessage());
             }
-        });
-    }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-    // for Orders Seller
-    public void getOrderSeller() {
-        reference.child(CART).get().addOnCompleteListener(task -> {
-            try {
-                if (isNetworkConnected()) {
-                    if (task.getResult().exists()) {
-                        if (task.isSuccessful()) {
-                            DataSnapshot snapshot = task.getResult();
-                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                Cart cart = dataSnapshot.getValue(Cart.class);
-                                if (Objects.requireNonNull(cart).getSellerId().equals(myId)) {
-                                    carts.add(cart);
-                                    cartinter.getOrderSeller(carts);
-                                }
-                            }
-                        }
-                    }
-                } else {
-                    ShowToast("No Internet Connection");
-                }
-            } catch (Exception e) {
-                Log.e("ExceptionCart", e.getMessage());
             }
         });
     }
