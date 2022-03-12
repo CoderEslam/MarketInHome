@@ -2517,6 +2517,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+drawable _arrow_right
 drawable _dot_
 drawable _dot_white
 drawable abc_ab_share_pack_mtrl_alpha
@@ -2621,7 +2622,6 @@ drawable c1
 drawable c2
 drawable c3
 drawable camera
-drawable cart_outline
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2641,6 +2641,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable delete
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2737,6 +2738,7 @@ drawable path1306
 drawable person
 drawable search
 drawable share
+drawable shopping_cart
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -2818,6 +2820,7 @@ id action0
 id actionDown
 id actionDownUp
 id actionUp
+id action_addressFragment_to_homeFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -2836,6 +2839,7 @@ id action_homeFragment_to_menu_Cart
 id action_homeFragment_to_productFragment2
 id action_homeFragment_to_trademarkFragment
 id action_image
+id action_menu_Cart_to_addressFragment
 id action_menu_Cart_to_menu_profile
 id action_menu_divider
 id action_menu_presenter
@@ -2859,6 +2863,7 @@ id add_navigation
 id add_person_action_text
 id add_person_fab
 id address
+id addressFragment
 id adjust_height
 id adjust_width
 id alertTitle
@@ -2870,6 +2875,7 @@ id androidx_window_activity_scope
 id animateToEnd
 id animateToStart
 id animationView
+id anotherPhone
 id antiClockwise
 id anticipate
 id appBarRL
@@ -2942,6 +2948,7 @@ id clockwise
 id closest
 id collapseActionView
 id compress
+id confirmFinalOrderBtn
 id confirm_button
 id constraint
 id constraintLayout
@@ -2973,6 +2980,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete
 id deltaRelative
 id dependency_ordering
 id description
@@ -3069,6 +3077,7 @@ id image
 id imageAdv
 id imageCart
 id imageParent
+id imagePerson
 id imageProduct
 id imageTrademark
 id imageView
@@ -3385,6 +3394,9 @@ id textInputLayout2
 id textInputLayout3
 id textInputLayout4
 id textInputLayout5
+id textInputLayout6
+id textInputLayout7
+id textInputLayout8
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -3604,6 +3616,8 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout each_item
 layout edit_on_product
+layout fragment_address
+layout fragment_cart
 layout fragment_child
 layout fragment_filter_parent
 layout fragment_forget
@@ -3630,12 +3644,12 @@ layout h_top_recyclerview
 layout h_treademark_recyclerview
 layout item_adv
 layout item_trademark
+layout layaut_cart
 layout layout_categories
 layout layout_edit
 layout layout_product
 layout layout_top_deals
 layout layout_upload
-layout laypot_cart
 layout list_group
 layout list_item
 layout m3_alert_dialog
@@ -3780,6 +3794,7 @@ string abc_toolbar_collapse_description
 string add
 string all_cartegories
 string androidx_startup
+string another_number_phone
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -3810,6 +3825,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string confirm
 string create_by_x_team
 string default_web_client_id
 string description
@@ -3956,6 +3972,9 @@ string welcome
 string welcome_back
 string what_you_wait
 string write
+string your_address_clearly
+string your_name
+string your_number_phone
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

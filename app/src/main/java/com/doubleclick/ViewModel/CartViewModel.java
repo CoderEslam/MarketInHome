@@ -31,7 +31,7 @@ public class CartViewModel extends ViewModel implements CartInter {
         return mutableLiveData;
     }
 
-    public LiveData<ArrayList<Cart>> OrdersLiveData() {
+    public LiveData<ArrayList<Cart>> OrdersSellerLiveData() {
         return mutableLiveDataOrderSeller;
     }
 

@@ -1,9 +1,12 @@
 package com.doubleclick.marktinhome.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created By Eslam Ghazy on 3/1/2022
  */
-public class Cart {
+public class Cart implements Parcelable {
 
     private String ProductId;
     private String price;
@@ -15,6 +18,34 @@ public class Cart {
     private String BuyerId;
     private String SellerId;
     private String TotalPrice;
+
+    protected Cart(Parcel in) {
+        ProductId = in.readString();
+        price = in.readString();
+        Quantity = in.readString();
+        lastPrice = in.readString();
+        productName = in.readString();
+        image = in.readString();
+        id = in.readString();
+        BuyerId = in.readString();
+        SellerId = in.readString();
+        TotalPrice = in.readString();
+    }
+
+    public static final Creator<Cart> CREATOR = new Creator<Cart>() {
+        @Override
+        public Cart createFromParcel(Parcel in) {
+            return new Cart(in);
+        }
+
+        @Override
+        public Cart[] newArray(int size) {
+            return new Cart[size];
+        }
+    };
+
+    public Cart() {
+    }
 
     public String getSellerId() {
         return SellerId;
@@ -97,5 +128,40 @@ public class Cart {
 
     public void setTotalPrice(String totalPrice) {
         TotalPrice = totalPrice;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(ProductId);
+        dest.writeString(price);
+        dest.writeString(Quantity);
+        dest.writeString(lastPrice);
+        dest.writeString(productName);
+        dest.writeString(image);
+        dest.writeString(id);
+        dest.writeString(BuyerId);
+        dest.writeString(SellerId);
+        dest.writeString(TotalPrice);
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "ProductId='" + ProductId + '\'' +
+                ", price='" + price + '\'' +
+                ", Quantity='" + Quantity + '\'' +
+                ", lastPrice='" + lastPrice + '\'' +
+                ", productName='" + productName + '\'' +
+                ", image='" + image + '\'' +
+                ", id='" + id + '\'' +
+                ", BuyerId='" + BuyerId + '\'' +
+                ", SellerId='" + SellerId + '\'' +
+                ", TotalPrice='" + TotalPrice + '\'' +
+                '}';
     }
 }

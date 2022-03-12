@@ -26,12 +26,13 @@ public class CartRepository extends BaseRepository {
         this.cartinter = cartinter;
     }
 
+    // for User Orders
     public void getCart() {
         reference.child(CART).get().addOnCompleteListener(task -> {
             try {
                 if (isNetworkConnected()) {
                     if (task.getResult().exists()) {
-                        if (task.isComplete()) {
+                        if (task.isSuccessful()) {
                             DataSnapshot snapshot = task.getResult();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Cart cart = dataSnapshot.getValue(Cart.class);
@@ -42,21 +43,23 @@ public class CartRepository extends BaseRepository {
                             }
                         }
                     }
+                } else {
+                    ShowToast("No Internet Connection");
                 }
             } catch (Exception e) {
-                ShowToast("No Internet Connection");
-                Log.e("Exception", e.getMessage());
+                Log.e("ExceptionCart", e.getMessage());
             }
         });
     }
 
 
+    // for Orders Seller
     public void getOrderSeller() {
         reference.child(CART).get().addOnCompleteListener(task -> {
             try {
                 if (isNetworkConnected()) {
                     if (task.getResult().exists()) {
-                        if (task.isComplete()) {
+                        if (task.isSuccessful()) {
                             DataSnapshot snapshot = task.getResult();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Cart cart = dataSnapshot.getValue(Cart.class);
@@ -67,11 +70,11 @@ public class CartRepository extends BaseRepository {
                             }
                         }
                     }
+                } else {
+                    ShowToast("No Internet Connection");
                 }
-
             } catch (Exception e) {
-                Log.e("Exception", e.getMessage());
-                ShowToast("No Internet Connection");
+                Log.e("ExceptionCart", e.getMessage());
             }
         });
     }

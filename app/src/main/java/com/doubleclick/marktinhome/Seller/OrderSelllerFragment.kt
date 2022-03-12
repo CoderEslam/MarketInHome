@@ -34,11 +34,10 @@ class OrderSelllerFragment : Fragment()  {
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
         MyOrder = view.findViewById(R.id.MyOrder);
 
-        cartViewModel.OrdersLiveData().observe(this, Observer {
+        cartViewModel.OrdersSellerLiveData().observe(viewLifecycleOwner, Observer {
             var orderAdapter:OrderAdapter = OrderAdapter(it)
             MyOrder.adapter = orderAdapter;
         })
-
 
         return view;
     }

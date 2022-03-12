@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.doubleclick.ViewModel.CartViewModel;
@@ -23,13 +24,11 @@ public class menu_CartFragment extends BaseFragment {
     private CartViewModel cartViewModel;
     private RecyclerView cartRecycler;
     private CartAdapter cartAdapter;
-    private TextView Continue,totalPrice;
+    private TextView Continue, totalPrice;
     private double Total = 0;
 //    public menu_CartFragment() {
 //        // Required empty public constructor
 //    }
-
-
 
 
     @Override
@@ -44,22 +43,23 @@ public class menu_CartFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_menu__cart, container, false);
         cartViewModel = new ViewModelProvider(this).get(CartViewModel.class);
         cartRecycler = view.findViewById(R.id.cartRecycler);
-        Continue= view.findViewById(R.id.Continue);
-        totalPrice= view.findViewById(R.id.totalPrice);
+        Continue = view.findViewById(R.id.Continue);
+        totalPrice = view.findViewById(R.id.totalPrice);
         cartViewModel.CartLiveData().observe(getViewLifecycleOwner(), carts -> {
-            if (carts.size()!=0){
+            if (carts.size() != 0) {
                 cartAdapter = new CartAdapter(carts);
                 cartRecycler.setAdapter(cartAdapter);
-                for (int i = 0;i<carts.size();i++){
-                    Total = Total +  Double.parseDouble(carts.get(i).getPrice())*Double.parseDouble(carts.get(i).getQuantity());
-                    totalPrice.setText(""+Total);
+                for (int i = 0; i < carts.size(); i++) {
+                    Total = Total + Double.parseDouble(carts.get(i).getPrice()) * Double.parseDouble(carts.get(i).getQuantity());
+                    totalPrice.setText("" + Total);
                 }
             }
 
         });
         Continue.setOnClickListener(v -> {
             Intent intent = new Intent();
-            sendNotifiaction(getContext(),"FkyB9ppQAlQcPQZ3F8tN24kLzbg1","Eslam");
+            Navigation.findNavController(v).navigate(R.id.action_menu_Cart_to_addressFragment,new Bundle());
+//            sendNotifiaction(getContext(),"FkyB9ppQAlQcPQZ3F8tN24kLzbg1","Eslam");
         });
 
         return view;

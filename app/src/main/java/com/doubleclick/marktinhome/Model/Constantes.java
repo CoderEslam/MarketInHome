@@ -7,6 +7,7 @@ public class Constantes {
 
     public static final String USER = "User";
     public static final String CART = "Cart";
+    public static final String ORDERS = "Orders";
     public static final String PRODUCT = "product";
     public static final String PARENTS = "parents";
     public static final String CHILDREN= "children";

@@ -2,6 +2,7 @@ package com.doubleclick.marktinhome.ui.MainScreen;
 
 import static com.doubleclick.marktinhome.Model.Constantes.RECENTSEARCH;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SearchView;
@@ -21,6 +22,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -28,7 +30,9 @@ import com.bumptech.glide.Glide;
 import com.doubleclick.ViewModel.ProductViewModel;
 import com.doubleclick.ViewModel.RecentSearchViewModel;
 import com.doubleclick.ViewModel.UserViewModel;
+import com.doubleclick.marktinhome.Adapters.CartAdapter;
 import com.doubleclick.marktinhome.Adapters.NavAdapter;
+import com.doubleclick.marktinhome.Model.Cart;
 import com.doubleclick.marktinhome.Model.ChildCategory;
 import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.Model.RecentSearch;
@@ -38,6 +42,8 @@ import com.doubleclick.marktinhome.Repository.Sending;
 import com.doubleclick.marktinhome.Views.SmoothButtom.SmoothBottomBar;
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity;
 import com.doubleclick.marktinhome.ui.MainScreen.Frgments.menu_listFragment;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

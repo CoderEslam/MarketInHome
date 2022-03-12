@@ -3,6 +3,7 @@ package com.doubleclick.marktinhome.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,7 +31,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new CartViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.laypot_cart, parent, false));
+        return new CartViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.layaut_cart, parent, false));
     }
 
     @Override
@@ -51,6 +52,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public class CartViewHolder extends RecyclerView.ViewHolder {
         private CircleImageView imageCart;
         private TextView CartName, price, quantity;
+        private ImageView add, mins, delete;
+
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,6 +61,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             CartName = itemView.findViewById(R.id.CartName);
             price = itemView.findViewById(R.id.price);
             quantity = itemView.findViewById(R.id.quantity);
+            add = itemView.findViewById(R.id.add);
+            mins = itemView.findViewById(R.id.mins);
+            delete = itemView.findViewById(R.id.delete);
         }
     }
 }

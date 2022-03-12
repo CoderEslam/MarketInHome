@@ -112,17 +112,19 @@ class ParentFragment : BaseFragment(), OnItem {
         val ok: TextView = view.findViewById(R.id.ok)
         ok.setOnClickListener {
             val map = HashMap<String, Any>()
-            if (!editnameProduct.text.toString().equals("") && !editorder.text.toString().equals("")
-            ) {
-                map.put("name", editnameProduct.text.toString());
+            if (!editorder.text.toString().equals("")) {
                 map.put("order", "-" + editorder.text.toString());
-                reference.child(PARENTS).child(parentCategory!!.pushId).updateChildren(map);
                 editorder.setText("")
+            }
+            if (!editnameProduct.text.toString().equals("")) {
+                map.put("name", editnameProduct.text.toString());
                 editnameProduct.setText("")
+            }
+            if (!editnameProduct.text.toString().equals("") || !editorder.text.toString().equals("")
+            ) {
+                reference.child(PARENTS).child(parentCategory!!.pushId).updateChildren(map);
                 view.visibility = View.GONE
                 ShowToast(context, "Done")
-            } else {
-                ShowToast(context, "All field are required")
             }
 
         }

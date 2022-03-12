@@ -48,5 +48,10 @@
     <string name="recent_search">#recent search</string>
     <string name="edit_on_product">Edit Name of Product</string>
     <string name="edit_on_order">edit on order</string>
+    <string name="your_name">your name</string>
+    <string name="your_number_phone">your number phone</string>
+    <string name="another_number_phone">another number phone</string>
+    <string name="your_address_clearly">your address clearly</string>
+    <string name="confirm">Confirm</string>
 
 </resources>

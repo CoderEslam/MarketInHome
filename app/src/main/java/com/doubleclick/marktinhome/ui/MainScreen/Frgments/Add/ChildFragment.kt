@@ -128,7 +128,7 @@ class ChildFragment : BaseFragment(), ChildAdapter.OnChild {
                 view.visibility = View.GONE
                 ShowToast(context, "Done")
             } else {
-                ShowToast(context, "All field are required")
+                ShowToast(context, "field are required")
             }
 
         }
