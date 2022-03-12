@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/menu_Cart"
+        android:name="com.doubleclick.marktinhome.ui.MainScreen.Frgments.menu_CartFragment"
+        tools:layout="@layout/fragment_menu__cart">
+
+        <action
+            android:id="@+id/action_menu_Cart_to_menu_profile"
+            app:destination="@id/menu_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_store"
+        android:name="com.doubleclick.marktinhome.ui.MainScreen.Frgments.menu_storeFragment"
+        tools:layout="@layout/fragment_menu_store">
+
+        <action
+            android:id="@+id/action_menu_store_to_menu_Cart"
+            app:destination="@id/menu_Cart" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="com.doubleclick.marktinhome.ui.MainScreen.Frgments.Profile.menu_profileFragment"
+        tools:layout="@layout/fragment_menu_profile">
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.doubleclick.marktinhome.ui.MainScreen.Frgments.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_menu_Cart"
+            app:destination="@id/menu_Cart" />
+        <action
+            android:id="@+id/action_homeFragment_to_productFragment2"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_filterParentFragment"
+            app:destination="@id/filterParentFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_trademarkFragment"
+            app:destination="@id/trademarkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.doubleclick.marktinhome.ui.ProductActivity.productFragment"
+        tools:layout="@layout/fragment_product">
+        <action
+            android:id="@+id/action_productFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="Product"
+            app:argType="com.doubleclick.marktinhome.Model.Product"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterParentFragment"
+        android:name="com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragment"
+        android:label="fragment_filter_parent"
+        tools:layout="@layout/fragment_filter_parent" >
+        <argument
+            android:name="ParentCategory"
+            app:argType="com.doubleclick.marktinhome.Model.ParentCategory"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_filterParentFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trademarkFragment"
+        android:name="com.doubleclick.marktinhome.ui.MainScreen.Frgments.TrademarkFragment"
+        tools:layout="@layout/fragment_trademark" >
+        <action
+            android:id="@+id/action_trademarkFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="trademark"
+            app:argType="com.doubleclick.marktinhome.Model.Trademark"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_trademarkFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+</navigation>
