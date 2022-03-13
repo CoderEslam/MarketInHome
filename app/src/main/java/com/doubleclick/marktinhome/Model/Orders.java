@@ -19,6 +19,7 @@ public class Orders {
     private String anotherPhone;
     private String address;
     private String name;
+    private long date;
 
     public Orders() {
     }
@@ -136,5 +137,13 @@ public class Orders {
 
     public void setTotalPrice(double totalPrice) {
         TotalPrice = totalPrice;
+    }
+
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
     }
 }

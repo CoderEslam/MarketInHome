@@ -11,10 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.doubleclick.ViewModel.CartViewModel
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Cart
-import com.doubleclick.marktinhome.Model.Constantes.REQUESTS
+import com.doubleclick.marktinhome.Model.Constantes.CART
+import com.doubleclick.marktinhome.Model.Constantes.ORDERS
 import com.doubleclick.marktinhome.R
 import com.google.android.material.textfield.TextInputEditText
 import de.hdodenhof.circleimageview.CircleImageView
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,24 +84,28 @@ class AddressFragment : BaseFragment() {
 
     private fun confirmOrder(name: String, phone: String, AnotherPhone: String, Address: String) {
         for (i in carts.indices) {
-            var pushId = reference.push().key.toString();
+            var time: Long = Date().time
+            var id = myId + ":" + carts[i].productId + ":" + time;
             var map: HashMap<String, Any> = HashMap();
-            map.put("ProductId", carts[i].productId)
-            map.put("price", carts[i].price)
-            map.put("Quantity", carts[i].quantity)
-            map.put("lastPrice", carts[i].lastPrice)
-            map.put("productName", carts[i].productName)
-            map.put("image", carts[i].image)
-            map.put("id", pushId)
-            map.put("BuyerId", carts[i].buyerId)
-            map.put("SellerId", carts[i].sellerId)
-            map.put("TotalPrice", carts[i].totalPrice)
-            map.put("phone", phone)
-            map.put("anotherPhone", AnotherPhone)
-            map.put("address", Address)
-            map.put("name", name)
+            map["ProductId"] = carts[i].productId
+            map["price"] = carts[i].price
+            map["Quantity"] = carts[i].quantity
+            map["lastPrice"] = carts[i].lastPrice
+            map["productName"] = carts[i].productName
+            map["image"] = carts[i].image
+            map["id"] = id
+            map["BuyerId"] = carts[i].buyerId
+            map["SellerId"] = carts[i].sellerId
+            map["TotalPrice"] = carts[i].totalPrice
+            map["phone"] = phone
+            map["anotherPhone"] = AnotherPhone
+            map["address"] = Address
+            map["name"] = name
+            map["date"] = time
             sendNotifiaction(getContext(), carts[i].sellerId, carts[i].productName);
-            reference.child(REQUESTS).child(pushId).updateChildren(map)
+            reference.child(ORDERS).child(id).updateChildren(map)
+            reference.child(CART).child(carts[i].id).removeValue()
+
         }
     }
 

@@ -77,8 +77,8 @@ public class ProductActivity extends AppCompatActivity {
         product = (Product) getIntent().getSerializableExtra("Product");
         productName.setText(product.getProductName());
         trarmark.setText(product.getTradeMark());
-        price.setText(product.getPrice());
-        lastPrice.setText(product.getLastPrice());
+        price.setText(String.format("%s", product.getPrice()));
+        lastPrice.setText(String.format("%s", product.getLastPrice()));
         description.setText(product.getDescription());
         Glide.with(this).load(product.getImage()).into(imageProduct);
         rateViewModel.getMyRate(myId, product.getProductId());
@@ -136,7 +136,7 @@ public class ProductActivity extends AppCompatActivity {
                 map.put("ProductId", product.getProductId());
                 map.put("BuyerId", myId);
                 map.put("SellerId", product.getAdminId());
-                map.put("TotalPrice", (q * Double.parseDouble(product.getPrice())) + "");
+                map.put("TotalPrice", (q * product.getPrice()));
                 map.put("Quantity", q + "");
                 map.put("price", product.getPrice());
                 map.put("image", product.getImage());

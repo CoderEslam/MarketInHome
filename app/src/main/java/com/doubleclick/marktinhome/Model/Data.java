@@ -7,7 +7,6 @@ public class Data {
     private String body;
     private String title;
     private String sent;
-    private String image;
 
     public Data(String user, int icon, String body, String title, String sent) {
         this.user = user;
@@ -18,14 +17,6 @@ public class Data {
     }
 
     public Data() {
-    }
-
-    public Data(String user, String body, String title, String sent, String image) {
-        this.user = user;
-        this.body = body;
-        this.title = title;
-        this.sent = sent;
-        this.image = image;
     }
 
     public String getUser() {
@@ -68,11 +59,4 @@ public class Data {
         this.sent = sent;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 }

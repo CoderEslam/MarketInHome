@@ -28,7 +28,6 @@ public class OrdersRepository extends BaseRepository {
     }
 
     public void getOrders() {
-
         reference.child(ORDERS).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {

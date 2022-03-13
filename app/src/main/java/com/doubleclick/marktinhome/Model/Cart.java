@@ -9,21 +9,21 @@ import android.os.Parcelable;
 public class Cart implements Parcelable {
 
     private String ProductId;
-    private long price;
-    private long Quantity;
-    private String lastPrice;
+    private double price;
+    private double Quantity;
+    private double lastPrice;
     private String productName;
     private String image;
     private String id;
     private String BuyerId;
     private String SellerId;
-    private long TotalPrice;
+    private double TotalPrice;
 
     protected Cart(Parcel in) {
         ProductId = in.readString();
         price = in.readLong();
         Quantity = in.readLong();
-        lastPrice = in.readString();
+        lastPrice = in.readDouble();
         productName = in.readString();
         image = in.readString();
         id = in.readString();
@@ -74,13 +74,6 @@ public class Cart implements Parcelable {
     }
 
 
-    public String getLastPrice() {
-        return lastPrice;
-    }
-
-    public void setLastPrice(String lastPrice) {
-        this.lastPrice = lastPrice;
-    }
 
     public String getProductName() {
         return productName;
@@ -116,15 +109,15 @@ public class Cart implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(ProductId);
-        dest.writeLong(price);
-        dest.writeLong(Quantity);
-        dest.writeString(lastPrice);
+        dest.writeDouble(price);
+        dest.writeDouble(Quantity);
+        dest.writeDouble(lastPrice);
         dest.writeString(productName);
         dest.writeString(image);
         dest.writeString(id);
         dest.writeString(BuyerId);
         dest.writeString(SellerId);
-        dest.writeLong(TotalPrice);
+        dest.writeDouble(TotalPrice);
     }
 
     @Override
@@ -143,27 +136,35 @@ public class Cart implements Parcelable {
                 '}';
     }
 
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public long getQuantity() {
+    public double getQuantity() {
         return Quantity;
     }
 
-    public void setQuantity(long quantity) {
+    public void setQuantity(double quantity) {
         Quantity = quantity;
     }
 
-    public long getTotalPrice() {
+    public double getLastPrice() {
+        return lastPrice;
+    }
+
+    public void setLastPrice(double lastPrice) {
+        this.lastPrice = lastPrice;
+    }
+
+    public double getTotalPrice() {
         return TotalPrice;
     }
 
-    public void setTotalPrice(long totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         TotalPrice = totalPrice;
     }
 }

@@ -9,8 +9,6 @@ import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.doubleclick.OnProduct;
-import com.doubleclick.marktinhome.Adapters.GridViewAdapter;
-import com.doubleclick.marktinhome.Adapters.ProductAdapter;
 import com.doubleclick.marktinhome.Adapters.ProductAdapterSmall;
 import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.R;

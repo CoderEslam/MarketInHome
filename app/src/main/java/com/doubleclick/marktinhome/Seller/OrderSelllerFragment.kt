@@ -14,16 +14,19 @@ import com.doubleclick.ViewModel.OrderViewModel
 import com.doubleclick.marktinhome.Adapters.OrderAdapter
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Cart
-import com.doubleclick.marktinhome.Model.Constantes.CART
-import com.doubleclick.marktinhome.Model.Constantes.RECENTORDER
+import com.doubleclick.marktinhome.Model.Constantes
+import com.doubleclick.marktinhome.Model.Constantes.*
+import com.doubleclick.marktinhome.Model.Orders
 import com.doubleclick.marktinhome.R
+import java.util.*
+import kotlin.collections.HashMap
 
 
 class OrderSelllerFragment : BaseFragment(), OnOrder {
 
     lateinit var MyOrder: RecyclerView;
     lateinit var cartViewModel: CartViewModel
-    lateinit var orderViewModel : OrderViewModel
+    lateinit var orderViewModel: OrderViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -41,42 +44,47 @@ class OrderSelllerFragment : BaseFragment(), OnOrder {
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
         orderViewModel = ViewModelProvider(this)[OrderViewModel::class.java]
         orderViewModel.myOrderLiveData.observe(viewLifecycleOwner, Observer {
-
+            var orderAdapter: OrderAdapter = OrderAdapter(it, this)
+            MyOrder.adapter = orderAdapter;
         })
         MyOrder = view.findViewById(R.id.MyOrder);
-//        cartViewModel.OrdersSellerLiveData().observe(viewLifecycleOwner, Observer {
-//            var orderAdapter: OrderAdapter = OrderAdapter(it, this)
-//            MyOrder.adapter = orderAdapter;
-//        })
 
         return view;
     }
 
-    override fun OnOKItemOrder(cart: Cart?) {
-        val pushId = myId + ":" + cart!!.productId
+
+    override fun OnOKItemOrder(orders: Orders?) {
+        var time = Date().time;
+        val pushId = myId + ":" + orders!!.productId + ":" + time
         val map: HashMap<String, Any> = HashMap();
-        map["ProductId"] = cart.productId;
-        map["BuyerId"] = myId;
-        map["SellerId"] = cart.sellerId;
-        map["TotalPrice"] = cart.totalPrice;
-        map["Quantity"] = cart.quantity;
-        map["price"] = cart.price;
-        map["image"] = cart.image;
-        map["productName"] = cart.productName;
+        map["ProductId"] = orders.productId;
+        map["BuyerId"] = orders.buyerId;
+        map["SellerId"] = myId;
+        map["TotalPrice"] = orders.totalPrice;
+        map["Quantity"] = orders.quantity;
+        map["price"] = orders.price;
+        map["image"] = orders.image;
+        map["productName"] = orders.productName;
+        map["id"] = pushId;
+        map["date"] = time;
         reference.child(RECENTORDER).child(pushId).updateChildren(map);
-        reference.child(CART).child(cart!!.buyerId+":"+cart.productId).removeValue().addOnCompleteListener {
-            if (it.isSuccessful){
-                ShowToast(context,"Deliverd")
+        reference.child(ORDERS).child(orders.id)
+            .removeValue()
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    ShowToast(context, "Deliverd")
+                }
             }
-        }
     }
 
-    override fun OnCancelItemOrder(cart: Cart?) {
-        reference.child(CART).child(cart!!.buyerId+":"+cart.productId).removeValue().addOnCompleteListener {
-            if (it.isSuccessful){
-                ShowToast(context,"Deleted")
+    override fun OnCancelItemOrder(orders: Orders?) {
+        reference.child(ORDERS).child(orders!!.id)
+            .removeValue()
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    ShowToast(context, "Deleted")
+                }
             }
-        }
     }
 
 }

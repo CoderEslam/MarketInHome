@@ -6,15 +6,15 @@ package com.doubleclick.marktinhome.Model;
 public class RecentOrder {
 
     private String ProductId;
-    private String price;
-    private String Quantity;
-    private String lastPrice;
+    private double price;
+    private long Quantity;
     private String productName;
     private String image;
     private String id;
     private String BuyerId;
     private String SellerId;
-    private String TotalPrice;
+    private double TotalPrice;
+    private long date;
 
     public RecentOrder() {
     }
@@ -27,29 +27,6 @@ public class RecentOrder {
         ProductId = productId;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getQuantity() {
-        return Quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        Quantity = quantity;
-    }
-
-    public String getLastPrice() {
-        return lastPrice;
-    }
-
-    public void setLastPrice(String lastPrice) {
-        this.lastPrice = lastPrice;
-    }
 
     public String getProductName() {
         return productName;
@@ -91,11 +68,36 @@ public class RecentOrder {
         SellerId = sellerId;
     }
 
-    public String getTotalPrice() {
+    public long getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(long quantity) {
+        Quantity = quantity;
+    }
+
+
+    public double getTotalPrice() {
         return TotalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         TotalPrice = totalPrice;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
     }
 }

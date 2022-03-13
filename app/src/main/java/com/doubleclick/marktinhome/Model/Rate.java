@@ -8,7 +8,7 @@ public class Rate {
 
     private String myId;
     private String productId;
-    private String push;
+    private String id;
     private String rate;
 
 
@@ -28,13 +28,6 @@ public class Rate {
         this.productId = productId;
     }
 
-    public String getPush() {
-        return push;
-    }
-
-    public void setPush(String push) {
-        this.push = push;
-    }
 
     public String getRate() {
         return rate;
@@ -49,8 +42,16 @@ public class Rate {
         return "Rate{" +
                 "myId='" + myId + '\'' +
                 ", productId='" + productId + '\'' +
-                ", push='" + push + '\'' +
+                ", id='" + id + '\'' +
                 ", rate='" + rate + '\'' +
                 '}';
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

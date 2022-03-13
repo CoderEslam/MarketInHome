@@ -38,10 +38,9 @@ public class RecentOrderAdapter extends RecyclerView.Adapter<RecentOrderAdapter.
 
         if (recentOrderArrayList.size() != 0) {
             holder.CartName.setText(recentOrderArrayList.get(position).getProductName());
-            holder.price.setText(recentOrderArrayList.get(position).getPrice());
-            holder.quantity.setText(recentOrderArrayList.get(position).getQuantity());
+            holder.price.setText(String.format("%s", recentOrderArrayList.get(position).getPrice()));
+            holder.quantity.setText(String.format("%s", recentOrderArrayList.get(position).getQuantity()));
             Glide.with(holder.itemView.getContext()).load(recentOrderArrayList.get(position).getImage()).into(holder.imageCart);
-
         }
 
     }

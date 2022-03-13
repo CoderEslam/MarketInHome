@@ -44,6 +44,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -228,7 +229,7 @@ public class BaseFragment extends Fragment {
                         double discount = (double) (-1 * ((price /LastPrice)* 100));
                         map.put("productId", push);
                         map.put("price", price);
-                        map.put("description", descroiprion);
+                        map.put("description", descroiprion+"");
                         map.put("date", date.getTime());
                         map.put("adminId", myId);
                         map.put("productName", name);
@@ -238,11 +239,11 @@ public class BaseFragment extends Fragment {
                         map.put("childCategoryId", ChildId);
                         map.put("parentCategoryName", ParentName);
                         map.put("childCategoryName", ChildName);
-                        map.put("keywords", keywords);
+                        map.put("keywords", keywords+"");
                         map.put("Image", mUri);
                         map.put("TotalRating", 0);
                         map.put("discount", discount);
-                        reference.child(PRODUCT).child(push).setValue(map);
+                        reference.child(PRODUCT).child(Objects.requireNonNull(push)).setValue(map);
                         pd.dismiss();
                     } else {
                         Toast.makeText(getContext(), "Failed!", Toast.LENGTH_SHORT).show();

@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created By Eslam Ghazy on 3/12/2022
@@ -37,7 +38,7 @@ public class RecentOrderRepository extends BaseRepository {
                             DataSnapshot dataSnapshot = task.getResult();
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 RecentOrder recentOrder = snapshot.getValue(RecentOrder.class);
-                                if (recentOrder.getSellerId().equals(myId)) {
+                                if (Objects.requireNonNull(recentOrder).getBuyerId().equals(myId)) {
                                     recentOrderArrayList.add(recentOrder);
                                 }
                             }

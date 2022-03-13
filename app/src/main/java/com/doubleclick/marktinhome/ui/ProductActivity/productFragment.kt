@@ -102,8 +102,8 @@ class productFragment : BaseFragment() {
         share = view.findViewById(R.id.share);
         productName.text = product.product!!.productName
         trarmark.text = product.product!!.tradeMark
-        price.text = product.product!!.price
-        lastPrice.text = product.product!!.lastPrice
+        price.text = product.product!!.price.toString()
+        lastPrice.text = product.product!!.lastPrice.toString()
         description.text = product.product!!.description
         Glide.with(this).load(product.product!!.image).into(imageProduct)
         rateViewModel.getMyRate(myId, product.product!!.productId)
@@ -153,17 +153,19 @@ class productFragment : BaseFragment() {
 
         fab.setOnClickListener { v: View? ->
             if (q != 0) {
-                var pushId = myId + ":" + product.product!!.productId
+                var id = myId + ":" + product.product!!.productId
                 var map: HashMap<String, Any> = HashMap();
-                map.put("ProductId", product.product!!.productId);
-                map.put("BuyerId", myId);
-                map.put("SellerId", product.product!!.adminId);
-                map.put("TotalPrice", (q.toDouble() * product.product!!.price.toDouble()).toLong());
-                map.put("Quantity", q.toLong());
-                map.put("price", product.product!!.price.toLong());
-                map.put("image", product.product!!.image);
-                map.put("productName", product.product!!.productName);
-                reference.child(CART).child(pushId).setValue(map);
+                map["ProductId"] = product.product!!.productId;
+                map["BuyerId"] = myId;
+                map["SellerId"] = product.product!!.adminId;
+                map["TotalPrice"] = (q.toDouble() * product.product!!.price.toDouble()).toLong();
+                map["Quantity"] = q.toLong();
+                map["price"] = product.product!!.price.toLong();
+                map["image"] = product.product!!.image;
+                map["productName"] = product.product!!.productName;
+                map["lastPrice"] = product.product!!.lastPrice
+                map["id"] = id;
+                reference.child(CART).child(id).setValue(map);
             } else {
                 ShowToast(context, "you can't order less than one!");
             }
@@ -172,17 +174,17 @@ class productFragment : BaseFragment() {
         }
 
         yourRate.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
-            var push = myId + ":" + product.product!!.productId
+            var id = myId + ":" + product.product!!.productId
             if (rating > 0f) {
                 var map: HashMap<String, Any> = HashMap();
-                map.put("push", push)
+                map.put("id", id)
                 map.put("rate", rating.toString())
                 map.put("productId", product.product!!.productId)
                 map.put("myId", myId)
-                reference.child(RATE).child(push).updateChildren(map);
+                reference.child(RATE).child(id).updateChildren(map);
             }
             if (rating == 0f) {
-                reference.child(RATE).child(push).removeValue();
+                reference.child(RATE).child(id).removeValue();
 
             }
         }

@@ -40,8 +40,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         holder.productName.setText(products.get(position).getProductName());
         holder.description.setText(products.get(position).getDescription());
-        holder.productPrice.setText(products.get(position).getPrice());
-        holder.productLastPrice.setText(products.get(position).getLastPrice());
+        holder.productPrice.setText(String.format("%s", products.get(position).getPrice()));
+        holder.productLastPrice.setText(String.format("%s", products.get(position).getLastPrice()));
         holder.trademark.setText(products.get(position).getTradeMark());
         Glide.with(holder.itemView.getContext()).load(products.get(position).getImage()).into(holder.imageProduct);
         holder.itemView.setOnClickListener(v -> {

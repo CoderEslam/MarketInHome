@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.doubleclick.OnOrder;
 import com.doubleclick.marktinhome.Model.Cart;
+import com.doubleclick.marktinhome.Model.Orders;
 import com.doubleclick.marktinhome.R;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,15 +30,12 @@ import java.util.ArrayList;
  */
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
-    private ArrayList<Cart> carts = new ArrayList<>();
+    private ArrayList<Orders> orders = new ArrayList<>();
     private OnOrder onOrder;
 
-    public OrderAdapter(ArrayList<Cart> carts) {
-        this.carts = carts;
-    }
 
-    public OrderAdapter(ArrayList<Cart> carts, OnOrder onOrder) {
-        this.carts = carts;
+    public OrderAdapter(ArrayList<Orders> orders, OnOrder onOrder) {
+        this.orders = orders;
         this.onOrder = onOrder;
     }
 
@@ -50,19 +48,19 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
 
-        holder.nameOrder.setText(carts.get(holder.getAdapterPosition()).getProductName());
-        holder.PriceOrder.setText(String.format("%s", carts.get(holder.getAdapterPosition()).getPrice()));
-        holder.quantityOrder.setText(String.format("%s", carts.get(holder.getAdapterPosition()).getQuantity()));
-        holder.totalPrice.setText(String.format("%s", carts.get(holder.getAdapterPosition()).getTotalPrice()));
-        Glide.with(holder.itemView.getContext()).load(carts.get(holder.getAdapterPosition()).getImage()).into(holder.orderImage);
+        holder.nameOrder.setText(orders.get(holder.getAdapterPosition()).getProductName());
+        holder.PriceOrder.setText(String.format("%s", orders.get(holder.getAdapterPosition()).getPrice()));
+        holder.quantityOrder.setText(String.format("%s", orders.get(holder.getAdapterPosition()).getQuantity()));
+        holder.totalPrice.setText(String.format("%s", orders.get(holder.getAdapterPosition()).getTotalPrice()));
+        Glide.with(holder.itemView.getContext()).load(orders.get(holder.getAdapterPosition()).getImage()).into(holder.orderImage);
         holder.ok.setOnClickListener(v -> {
-            onOrder.OnOKItemOrder(carts.get(holder.getAdapterPosition()));
+            onOrder.OnOKItemOrder(orders.get(holder.getAdapterPosition()));
             holder.itemView.setVisibility(View.GONE);
             notifyItemRemoved(holder.getAdapterPosition());
         });
 
         holder.cancel.setOnClickListener(v -> {
-            onOrder.OnCancelItemOrder(carts.get(holder.getAdapterPosition()));
+            onOrder.OnCancelItemOrder(orders.get(holder.getAdapterPosition()));
             holder.itemView.setVisibility(View.GONE);
             notifyItemRemoved(holder.getAdapterPosition());
         });
@@ -71,7 +69,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     @Override
     public int getItemCount() {
-        return carts.size();
+        return orders.size();
     }
 
     public class OrderViewHolder extends RecyclerView.ViewHolder {

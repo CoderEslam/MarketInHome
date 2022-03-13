@@ -9,7 +9,7 @@ import com.doubleclick.marktinhome.Model.Rate
  */
 interface OnOrder {
 
-    fun OnOKItemOrder(cart: Cart?)
-    fun OnCancelItemOrder(cart: Cart?)
+    fun OnOKItemOrder(orders: Orders?)
+    fun OnCancelItemOrder(orders: Orders?)
 
 }

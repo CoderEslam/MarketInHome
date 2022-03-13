@@ -74,9 +74,11 @@ public class ProductRepository extends BaseRepository {
                                 product.getProduct(products);
                             }
                         }
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptiongetProduct", e.getMessage());
                 }
 
             }
@@ -106,9 +108,11 @@ public class ProductRepository extends BaseRepository {
                             }
                             product.Parentproduct(parentCategories);
                         }
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptiongetParents", e.getMessage());
                 }
 
             }
@@ -136,9 +140,11 @@ public class ProductRepository extends BaseRepository {
                             product.Childproduct(childCategories);
                             Classification();
                         }
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptiongetChild", e.getMessage());
                 }
 
             }
@@ -166,9 +172,11 @@ public class ProductRepository extends BaseRepository {
                             }
                             product.Childrenproduct(childCategories);
                         }
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptiongetChildren", e.getMessage());
                 }
 
             }
@@ -218,18 +226,22 @@ public class ProductRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (task.getResult().exists() && isNetworkConnected()) {
-                        DataSnapshot snapshot = task.getResult();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Product product = dataSnapshot.getValue(Product.class);
-                            if (Objects.requireNonNull(product).getProductName().contains(query) || product.getChildCategoryName().contains(query) || product.getParentCategoryName().contains(query) || product.getKeywords().contains(query)) {
-                                QueryProducts.add(product);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Product product = dataSnapshot.getValue(Product.class);
+                                if (Objects.requireNonNull(product).getProductName().contains(query) || product.getChildCategoryName().contains(query) || product.getParentCategoryName().contains(query) || product.getKeywords().contains(query)) {
+                                    QueryProducts.add(product);
+                                }
                             }
+                            product.getQueryProducts(QueryProducts);
                         }
-                        product.getQueryProducts(QueryProducts);
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptiongetQuery", e.getMessage());
                 }
 
             }
@@ -242,16 +254,21 @@ public class ProductRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (isNetworkConnected() && task.getResult().exists()) {
-                        DataSnapshot snapshot = task.getResult();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Product product = dataSnapshot.getValue(Product.class);
-                            QueryProductsByParents.add(product);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Product product = dataSnapshot.getValue(Product.class);
+                                QueryProductsByParents.add(product);
+                            }
+                            product.getQueryByParents(QueryProductsByParents);
                         }
-                        product.getQueryByParents(QueryProductsByParents);
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
+
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptionFilterByParent", e.getMessage());
                 }
 
             }
@@ -263,18 +280,23 @@ public class ProductRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (isNetworkConnected() && task.getResult().exists()) {
-                        DataSnapshot snapshot = task.getResult();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Product product = dataSnapshot.getValue(Product.class);
-                            if (product.getChildCategoryId().equals(ChildId)) {
-                                QueryProductsByChild.add(product);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Product product = dataSnapshot.getValue(Product.class);
+                                if (product.getChildCategoryId().equals(ChildId)) {
+                                    QueryProductsByChild.add(product);
+                                }
                             }
+                            product.getQueryByChild(QueryProductsByChild);
                         }
-                        product.getQueryByChild(QueryProductsByChild);
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
+
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptionSearchByChild", e.getMessage());
                 }
 
             }
@@ -285,16 +307,25 @@ public class ProductRepository extends BaseRepository {
         reference.child(PRODUCT).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (isNetworkConnected() && task.getResult().exists()) {
-                    DataSnapshot snapshot = task.getResult();
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        Product product = dataSnapshot.getValue(Product.class);
-                        if (product.getTradeMark().equals(name)) {
-                            productWithTrademark.add(product);
+                try {
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Product product = dataSnapshot.getValue(Product.class);
+                                if (product.getTradeMark().equals(name)) {
+                                    productWithTrademark.add(product);
+                                }
+                            }
+                        } else {
+                            ShowToast("No Internet Connection");
                         }
+                        product.getProductWithTrademark(productWithTrademark);
                     }
-                    product.getProductWithTrademark(productWithTrademark);
+                } catch (Exception e) {
+                    Log.e("ExceptionProductTramark", e.getMessage());
                 }
+
             }
         });
     }
@@ -305,17 +336,21 @@ public class ProductRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (isNetworkConnected() && task.getResult().exists()) {
-                        DataSnapshot snapshot = task.getResult();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Product product = dataSnapshot.getValue(Product.class);
-                            productsTopDeals.add(product);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Product product = dataSnapshot.getValue(Product.class);
+                                productsTopDeals.add(product);
+                            }
+                            product.getProductTopDeals(productsTopDeals);
                         }
-                        product.getProductTopDeals(productsTopDeals);
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
+
                 } catch (Exception e) {
-                    Log.e("Exception", e.toString());
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptionTopDeals", e.toString());
                 }
             }
         });
@@ -328,14 +363,17 @@ public class ProductRepository extends BaseRepository {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 ArrayList<Product> productArrayList = new ArrayList<>();
                 try {
-                    if (isNetworkConnected() && task.getResult().exists()) {
-                        Product p = task.getResult().getValue(Product.class);
-                        productArrayList.add(p);
-                        product.getProductById(productArrayList);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            Product p = task.getResult().getValue(Product.class);
+                            productArrayList.add(p);
+                            product.getProductById(productArrayList);
+                        }
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    Log.e("Exception", e.toString());
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptiongetProductById", e.toString());
                 }
             }
         });
@@ -348,21 +386,25 @@ public class ProductRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (task.getResult().exists() && isNetworkConnected()) {
-                        DataSnapshot snapshot = task.getResult();
-                        recentSearchProduct.clear();
-                        for (String recentSearch : recentSearches) {
-                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                Product product = dataSnapshot.getValue(Product.class);
-                                if (product.getKeywords().contains(recentSearch)) {
-                                    recentSearchProduct.add(product);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            recentSearchProduct.clear();
+                            for (String recentSearch : recentSearches) {
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                    Product product = dataSnapshot.getValue(Product.class);
+                                    if (product.getKeywords().contains(recentSearch)) {
+                                        recentSearchProduct.add(product);
+                                    }
                                 }
                             }
+                            product.getLastSearchProduct(recentSearchProduct);
                         }
-                        product.getLastSearchProduct(recentSearchProduct);
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
+                    Log.e("ExceptionLastSearches", e.toString());
                 }
 
             }

@@ -10,83 +10,31 @@ import java.util.List;
 public class Product implements Serializable, Comparable {
 
     private String productId;
-    private String price;
+    private double price;
     private String description;
-    private Long date;
+    private long date;
     private String adminId;
     private String productName;
-    private String lastPrice;
+    private double lastPrice;
     private String tradeMark;
     private String parentCategoryName;
     private String childCategoryName;
     private String parentCategoryId;
     private String childCategoryId;
     private String Image;
-    private Long TotalRating;
+    private int TotalRating;
     private int discount;
     private String keywords;
 
-    public String getImage() {
-        return Image;
-    }
-
-    public void setImage(String image) {
-        Image = image;
+    public Product() {
     }
 
 
-    private HashMap<String, Object> images;
-
-    public Long getDate() {
-        return date;
+    @Override
+    public int compareTo(Object o) {
+        int rate = ((Product) o).getTotalRating();
+        return  (this.TotalRating - rate);
     }
-
-    public void setDate(Long date) {
-        this.date = date;
-    }
-
-
-    public String getParentCategoryName() {
-        return parentCategoryName;
-    }
-
-    public void setParentCategoryName(String parentCategoryName) {
-        this.parentCategoryName = parentCategoryName;
-    }
-
-    public String getChildCategoryName() {
-        return childCategoryName;
-    }
-
-    public void setChildCategoryName(String childCategoryName) {
-        this.childCategoryName = childCategoryName;
-    }
-
-
-    public String getParentCategoryId() {
-        return parentCategoryId;
-    }
-
-    public void setParentCategoryId(String parentCategoryId) {
-        this.parentCategoryId = parentCategoryId;
-    }
-
-    public String getChildCategoryId() {
-        return childCategoryId;
-    }
-
-    public void setChildCategoryId(String childCategoryId) {
-        this.childCategoryId = childCategoryId;
-    }
-
-    public HashMap<String, Object> getImages() {
-        return images;
-    }
-
-    public void setImages(HashMap<String, Object> images) {
-        this.images = images;
-    }
-
 
     public String getProductId() {
         return productId;
@@ -96,11 +44,11 @@ public class Product implements Serializable, Comparable {
         this.productId = productId;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -110,6 +58,14 @@ public class Product implements Serializable, Comparable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
     }
 
     public String getAdminId() {
@@ -128,11 +84,11 @@ public class Product implements Serializable, Comparable {
         this.productName = productName;
     }
 
-    public String getLastPrice() {
+    public double getLastPrice() {
         return lastPrice;
     }
 
-    public void setLastPrice(String lastPrice) {
+    public void setLastPrice(double lastPrice) {
         this.lastPrice = lastPrice;
     }
 
@@ -144,39 +100,52 @@ public class Product implements Serializable, Comparable {
         this.tradeMark = tradeMark;
     }
 
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId='" + productId + '\'' +
-                ", price='" + price + '\'' +
-                ", description='" + description + '\'' +
-                ", date=" + date +
-                ", adminId='" + adminId + '\'' +
-                ", productName='" + productName + '\'' +
-                ", lastPrice='" + lastPrice + '\'' +
-                ", tradeMark='" + tradeMark + '\'' +
-                ", parentCategoryName='" + parentCategoryName + '\'' +
-                ", childCategoryName='" + childCategoryName + '\'' +
-                ", parentCategoryId='" + parentCategoryId + '\'' +
-                ", childCategoryId='" + childCategoryId + '\'' +
-                ", images=" + images +
-                '}';
+    public String getParentCategoryName() {
+        return parentCategoryName;
     }
 
+    public void setParentCategoryName(String parentCategoryName) {
+        this.parentCategoryName = parentCategoryName;
+    }
 
-    public Long getTotalRating() {
+    public String getChildCategoryName() {
+        return childCategoryName;
+    }
+
+    public void setChildCategoryName(String childCategoryName) {
+        this.childCategoryName = childCategoryName;
+    }
+
+    public String getParentCategoryId() {
+        return parentCategoryId;
+    }
+
+    public void setParentCategoryId(String parentCategoryId) {
+        this.parentCategoryId = parentCategoryId;
+    }
+
+    public String getChildCategoryId() {
+        return childCategoryId;
+    }
+
+    public void setChildCategoryId(String childCategoryId) {
+        this.childCategoryId = childCategoryId;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
+
+    public int getTotalRating() {
         return TotalRating;
     }
 
-    public void setTotalRating(Long totalRating) {
+    public void setTotalRating(int totalRating) {
         TotalRating = totalRating;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        long rate = ((Product) o).getTotalRating();
-        return (int) (this.TotalRating - rate);
     }
 
     public int getDiscount() {
