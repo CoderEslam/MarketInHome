@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.doubleclick.marktinhome.R;
@@ -32,7 +32,7 @@ public final class FragmentUploadBinding implements ViewBinding {
   public final EditText keywords;
 
   @NonNull
-  public final ImageView productImage;
+  public final RecyclerView productImages;
 
   @NonNull
   public final EditText productLastPrice;
@@ -44,20 +44,25 @@ public final class FragmentUploadBinding implements ViewBinding {
   public final EditText productPrice;
 
   @NonNull
+  public final Button selectImages;
+
+  @NonNull
   public final AppCompatSpinner trademark;
 
   private FragmentUploadBinding(@NonNull ConstraintLayout rootView, @NonNull Button Upload,
-      @NonNull EditText description, @NonNull EditText keywords, @NonNull ImageView productImage,
-      @NonNull EditText productLastPrice, @NonNull EditText productName,
-      @NonNull EditText productPrice, @NonNull AppCompatSpinner trademark) {
+      @NonNull EditText description, @NonNull EditText keywords,
+      @NonNull RecyclerView productImages, @NonNull EditText productLastPrice,
+      @NonNull EditText productName, @NonNull EditText productPrice, @NonNull Button selectImages,
+      @NonNull AppCompatSpinner trademark) {
     this.rootView = rootView;
     this.Upload = Upload;
     this.description = description;
     this.keywords = keywords;
-    this.productImage = productImage;
+    this.productImages = productImages;
     this.productLastPrice = productLastPrice;
     this.productName = productName;
     this.productPrice = productPrice;
+    this.selectImages = selectImages;
     this.trademark = trademark;
   }
 
@@ -106,9 +111,9 @@ public final class FragmentUploadBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.productImage;
-      ImageView productImage = ViewBindings.findChildViewById(rootView, id);
-      if (productImage == null) {
+      id = R.id.productImages;
+      RecyclerView productImages = ViewBindings.findChildViewById(rootView, id);
+      if (productImages == null) {
         break missingId;
       }
 
@@ -130,6 +135,12 @@ public final class FragmentUploadBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.selectImages;
+      Button selectImages = ViewBindings.findChildViewById(rootView, id);
+      if (selectImages == null) {
+        break missingId;
+      }
+
       id = R.id.trademark;
       AppCompatSpinner trademark = ViewBindings.findChildViewById(rootView, id);
       if (trademark == null) {
@@ -137,7 +148,7 @@ public final class FragmentUploadBinding implements ViewBinding {
       }
 
       return new FragmentUploadBinding((ConstraintLayout) rootView, Upload, description, keywords,
-          productImage, productLastPrice, productName, productPrice, trademark);
+          productImages, productLastPrice, productName, productPrice, selectImages, trademark);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

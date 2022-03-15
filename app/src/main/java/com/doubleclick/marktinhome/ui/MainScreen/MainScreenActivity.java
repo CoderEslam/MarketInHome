@@ -18,6 +18,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -44,6 +45,7 @@ import com.doubleclick.marktinhome.ui.Filter.FilterActivity;
 import com.doubleclick.marktinhome.ui.MainScreen.Frgments.menu_listFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.common.util.NumberUtils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -76,6 +78,7 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
     private String[] lastSearch = new String[3000];
     private String myId;
     private RecentSearchViewModel recentSearchViewModel;
+    private String ProductId;
 
 
     @Override
@@ -85,6 +88,7 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         reference = FirebaseDatabase.getInstance().getReference();
         recentSearchViewModel = new ViewModelProvider(this).get(RecentSearchViewModel.class);
         myId = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
+        ProductId = getIntent().getStringExtra("ProductId");
         main_fragment = findViewById(R.id.main_fragment);
         navController = Navigation.findNavController(this, main_fragment.getId());
         menu_recycler_view = findViewById(R.id.menu_recycler_view);
@@ -129,7 +133,7 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
                     search.setTag(getResources().getString(R.string.search_here));
                     search.setQueryHint(getResources().getString(R.string.search_here));
                 } else {
-                    Sending.Check(query,MainScreenActivity.this,MainScreenActivity.this);
+                    Sending.Check(query, MainScreenActivity.this, MainScreenActivity.this);
                     Intent intent = new Intent(MainScreenActivity.this, FilterActivity.class);
                     intent.putExtra("search", query);
                     startActivity(intent);
@@ -145,8 +149,20 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
 
 
         //  https://developer.android.com/training/sharing/receive#java
-        HandleShare();
+//        HandleShare();
+        Share(ProductId);
+    }
 
+    private void Share(String ProductId) {
+        try {
+            if (!ProductId.equals("")) {
+                Intent intent = new Intent(MainScreenActivity.this, FilterActivity.class);
+                intent.putExtra("idProduct", ProductId);
+                startActivity(intent);
+            }
+        } catch (NullPointerException e) {
+
+        }
 
     }
 
@@ -160,7 +176,7 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
 
     private void handleSendText(Intent intent) {
         String text = intent.getStringExtra(Intent.EXTRA_TEXT);
-        String[] url = text.split("com.doubleclick.marktinhome/");
+        String[] url = text.split("https://www.market.doublethink.com/");
         String idProduct = url[1];
         Intent FilterActivityintent = new Intent(MainScreenActivity.this, FilterActivity.class);
         FilterActivityintent.putExtra("idProduct", idProduct);

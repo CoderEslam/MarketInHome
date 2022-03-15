@@ -37,7 +37,6 @@ public class ProductViewModel extends ViewModel implements Products {
     private MutableLiveData<ArrayList<Product>> mutableLiveDataFilterByChild = new MutableLiveData<>();
     private MutableLiveData<ArrayList<Product>> mutableLiveDataTopDeals = new MutableLiveData<>();
     private MutableLiveData<ArrayList<Product>> mutableLiveDataidProcuct = new MutableLiveData<>();
-    private MutableLiveData<ArrayList<Product>> mutableLiveDataLastSearch = new MutableLiveData<>();
     private MutableLiveData<ArrayList<ClassificationPC>> classificationPC = new MutableLiveData<>();
     private ProductRepository productRepository = new ProductRepository(this);
 
@@ -62,11 +61,7 @@ public class ProductViewModel extends ViewModel implements Products {
         }
     }
 
-    public void getLastSearches(List<String> recentSearches) {
-        if (isNetworkConnected()) {
-            productRepository.getLastSearches(recentSearches);
-        }
-    }
+
 
     public void getSearchByChild(String ChildId) {
         if (isNetworkConnected()) {
@@ -136,9 +131,6 @@ public class ProductViewModel extends ViewModel implements Products {
         return ProductWithTrademark;
     }
 
-    public LiveData<ArrayList<Product>> getLastSearchProductLiveData() {
-        return mutableLiveDataLastSearch;
-    }
 
 
     @Override
@@ -204,8 +196,5 @@ public class ProductViewModel extends ViewModel implements Products {
         mutableLiveDataidProcuct.setValue(productById);
     }
 
-    @Override
-    public void getLastSearchProduct(@Nullable ArrayList<Product> LastSearchproduct) {
-        mutableLiveDataLastSearch.setValue(LastSearchproduct);
-    }
+
 }

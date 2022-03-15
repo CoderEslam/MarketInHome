@@ -211,10 +211,7 @@ class productFragment : BaseFragment() {
         share.setOnClickListener {
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(
-                    Intent.EXTRA_TEXT,
-                    "https://com.doubleclick.marktinhome/" + product.product!!.productId
-                )
+                putExtra(Intent.EXTRA_TEXT, "https://www.market.doublethink.com/" + product.product!!.productId)
                 type = "text/plain"
             }
             val shareIntent = Intent.createChooser(sendIntent, null)

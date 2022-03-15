@@ -8,10 +8,12 @@ import static com.doubleclick.marktinhome.Model.Constantes.PRODUCT;
 import static com.doubleclick.marktinhome.Model.Constantes.USER;
 
 import android.app.ProgressDialog;
+import android.content.ClipData;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
@@ -59,15 +61,14 @@ public class BaseFragment extends Fragment {
     public FirebaseUser currentUser;
     public DatabaseReference reference;
     public String myId;
-    public StorageReference storageReference;
-    public static final int IMAGE_REQUEST = 1;
+    private StorageReference storageReference;
+    private static final int IMAGE_REQUEST = 1;
     public static Uri imageUri;
-    public StorageTask uploadTask;
-    public String Name;
-    public String Location = "";
+    private StorageTask uploadTask;
+    private String Name;
+    private String Location = "";
     private String PushIdParents;
-    APIService apiService;
-
+    private APIService apiService;
 
 
     public BaseFragment() {
@@ -133,6 +134,7 @@ public class BaseFragment extends Fragment {
                 } catch (NullPointerException e) {
                 }
             }
+
         }
     }
 
@@ -226,10 +228,10 @@ public class BaseFragment extends Fragment {
                         String push = reference.push().getKey();
                         Date date = new Date();
                         HashMap<String, Object> map = new HashMap();
-                        double discount = (double) (-1 * ((price /LastPrice)* 100));
+                        double discount = (100.0 - (-1.0 * ((price / LastPrice) * 100.0)));
                         map.put("productId", push);
                         map.put("price", price);
-                        map.put("description", descroiprion+"");
+                        map.put("description", descroiprion + "");
                         map.put("date", date.getTime());
                         map.put("adminId", myId);
                         map.put("productName", name);
@@ -239,7 +241,7 @@ public class BaseFragment extends Fragment {
                         map.put("childCategoryId", ChildId);
                         map.put("parentCategoryName", ParentName);
                         map.put("childCategoryName", ChildName);
-                        map.put("keywords", keywords+"");
+                        map.put("keywords", keywords + "");
                         map.put("Image", mUri);
                         map.put("TotalRating", 0);
                         map.put("discount", discount);

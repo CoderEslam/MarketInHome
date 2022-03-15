@@ -2599,6 +2599,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add
 drawable add_circle
 drawable arrow_down
 drawable arrow_up
@@ -2859,11 +2860,7 @@ id actions
 id activity_chooser_view_content
 id add
 id addParent
-id add_alarm_action_text
-id add_alarm_fab
 id add_navigation
-id add_person_action_text
-id add_person_fab
 id address
 id addressFragment
 id adjust_height
@@ -3272,7 +3269,7 @@ id position
 id postLayout
 id price
 id productFragment
-id productImage
+id productImages
 id productLastPrice
 id productName
 id productPrice
@@ -3327,6 +3324,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectImages
 id select_dialog_listview
 id selected
 id selection_type
@@ -3650,6 +3648,7 @@ layout fragment_upload
 layout g_v_layout
 layout h_top_recyclerview
 layout h_treademark_recyclerview
+layout images
 layout item_adv
 layout item_trademark
 layout layaut_cart

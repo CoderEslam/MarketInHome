@@ -25,6 +25,16 @@ public class Product implements Serializable, Comparable {
     private int TotalRating;
     private int discount;
     private String keywords;
+    private String Images;
+
+    public String getImages() {
+        return Images;
+    }
+
+    public void setImages(String images) {
+        Images = images;
+    }
+
 
     public Product() {
     }
@@ -33,7 +43,7 @@ public class Product implements Serializable, Comparable {
     @Override
     public int compareTo(Object o) {
         int rate = ((Product) o).getTotalRating();
-        return  (this.TotalRating - rate);
+        return (this.TotalRating - rate);
     }
 
     public String getProductId() {
@@ -162,5 +172,27 @@ public class Product implements Serializable, Comparable {
 
     public void setKeywords(String keywords) {
         this.keywords = keywords;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId='" + productId + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", date=" + date +
+                ", adminId='" + adminId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", lastPrice=" + lastPrice +
+                ", tradeMark='" + tradeMark + '\'' +
+                ", parentCategoryName='" + parentCategoryName + '\'' +
+                ", childCategoryName='" + childCategoryName + '\'' +
+                ", parentCategoryId='" + parentCategoryId + '\'' +
+                ", childCategoryId='" + childCategoryId + '\'' +
+                ", Image='" + Image + '\'' +
+                ", TotalRating=" + TotalRating +
+                ", discount=" + discount +
+                ", keywords='" + keywords + '\'' +
+                '}';
     }
 }

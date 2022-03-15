@@ -381,7 +381,7 @@ public class ProductRepository extends BaseRepository {
     }
 
 
-    public void getLastSearches(List<String> recentSearches) {
+    /*public void getLastSearches(List<String> recentSearches) {
         reference.child(PRODUCT).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -409,6 +409,6 @@ public class ProductRepository extends BaseRepository {
 
             }
         });
-    }
+    }*/
 
 }

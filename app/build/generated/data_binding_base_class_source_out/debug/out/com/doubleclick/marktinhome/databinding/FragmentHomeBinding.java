@@ -4,7 +4,6 @@ package com.doubleclick.marktinhome.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -13,8 +12,6 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.airbnb.lottie.LottieAnimationView;
 import com.doubleclick.marktinhome.R;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -27,36 +24,13 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final RecyclerView MainRecyceler;
 
   @NonNull
-  public final TextView addAlarmActionText;
-
-  @NonNull
-  public final FloatingActionButton addAlarmFab;
-
-  @NonNull
-  public final TextView addPersonActionText;
-
-  @NonNull
-  public final FloatingActionButton addPersonFab;
-
-  @NonNull
   public final LottieAnimationView animationView;
 
-  @NonNull
-  public final ExtendedFloatingActionButton fab;
-
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RecyclerView MainRecyceler, @NonNull TextView addAlarmActionText,
-      @NonNull FloatingActionButton addAlarmFab, @NonNull TextView addPersonActionText,
-      @NonNull FloatingActionButton addPersonFab, @NonNull LottieAnimationView animationView,
-      @NonNull ExtendedFloatingActionButton fab) {
+      @NonNull RecyclerView MainRecyceler, @NonNull LottieAnimationView animationView) {
     this.rootView = rootView;
     this.MainRecyceler = MainRecyceler;
-    this.addAlarmActionText = addAlarmActionText;
-    this.addAlarmFab = addAlarmFab;
-    this.addPersonActionText = addPersonActionText;
-    this.addPersonFab = addPersonFab;
     this.animationView = animationView;
-    this.fab = fab;
   }
 
   @Override
@@ -92,44 +66,13 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.add_alarm_action_text;
-      TextView addAlarmActionText = ViewBindings.findChildViewById(rootView, id);
-      if (addAlarmActionText == null) {
-        break missingId;
-      }
-
-      id = R.id.add_alarm_fab;
-      FloatingActionButton addAlarmFab = ViewBindings.findChildViewById(rootView, id);
-      if (addAlarmFab == null) {
-        break missingId;
-      }
-
-      id = R.id.add_person_action_text;
-      TextView addPersonActionText = ViewBindings.findChildViewById(rootView, id);
-      if (addPersonActionText == null) {
-        break missingId;
-      }
-
-      id = R.id.add_person_fab;
-      FloatingActionButton addPersonFab = ViewBindings.findChildViewById(rootView, id);
-      if (addPersonFab == null) {
-        break missingId;
-      }
-
       id = R.id.animationView;
       LottieAnimationView animationView = ViewBindings.findChildViewById(rootView, id);
       if (animationView == null) {
         break missingId;
       }
 
-      id = R.id.fab;
-      ExtendedFloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
-      if (fab == null) {
-        break missingId;
-      }
-
-      return new FragmentHomeBinding((ConstraintLayout) rootView, MainRecyceler, addAlarmActionText,
-          addAlarmFab, addPersonActionText, addPersonFab, animationView, fab);
+      return new FragmentHomeBinding((ConstraintLayout) rootView, MainRecyceler, animationView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

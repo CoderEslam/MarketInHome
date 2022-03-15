@@ -7,23 +7,34 @@
     tools:context=".ui.MainScreen.Frgments.Add.UploadFragment">
 
 
-    <ImageView
-        android:id="@+id/productImage"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productImages"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/image"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/images" />
+
+    <Button
+        android:id="@+id/selectImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="select image"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/productImages" />
 
     <EditText
         android:id="@+id/productName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/product_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productImage" />
+        app:layout_constraintTop_toBottomOf="@+id/selectImages" />
 
 
     <EditText

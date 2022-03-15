@@ -14,11 +14,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:numColumns="2"
+            android:clipToPadding="false"
+            app:spanCount="2"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            android:stretchMode="columnWidth"
             android:id="@+id/ProductRecycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             tools:listitem="@layout/layout_product" />
 
     </androidx.core.widget.NestedScrollView>

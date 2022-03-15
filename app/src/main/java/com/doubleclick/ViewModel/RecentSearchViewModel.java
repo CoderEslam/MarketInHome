@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.doubleclick.RecentSearchInterface;
+import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.Model.RecentSearch;
 import com.doubleclick.marktinhome.Repository.RecentSearchRepository;
 
@@ -18,7 +19,7 @@ import java.util.List;
  */
 public class RecentSearchViewModel extends ViewModel implements RecentSearchInterface {
 
-    MutableLiveData<List<String>> recentSearchMutableLiveDataOneTime = new MutableLiveData<>();
+    MutableLiveData<ArrayList<Product>> recentSearchMutableLiveDataOneTime = new MutableLiveData<>();
     MutableLiveData<RecentSearch> recentSearch = new MutableLiveData<>();
     RecentSearchRepository recentSearchRepository = new RecentSearchRepository(this);
 
@@ -27,7 +28,7 @@ public class RecentSearchViewModel extends ViewModel implements RecentSearchInte
         recentSearchRepository.getRecentSearch();
     }
 
-    public LiveData<List<String>> getLastSearchListLiveDataOneTime() {
+    public LiveData<ArrayList<Product>> getLastSearchListLiveDataOneTime() {
         return recentSearchMutableLiveDataOneTime;
     }
 
@@ -42,9 +43,9 @@ public class RecentSearchViewModel extends ViewModel implements RecentSearchInte
     }
 
 
-    @Override
-    public void getLastListSearchOneTime(@Nullable List<String> recentSearchOneTime) {
-        recentSearchMutableLiveDataOneTime.setValue(recentSearchOneTime);
 
+    @Override
+    public void getLastListSearchAboutProductOneTime(@Nullable ArrayList<Product> recentSearchaboutProduct) {
+        recentSearchMutableLiveDataOneTime.setValue(recentSearchaboutProduct);
     }
 }

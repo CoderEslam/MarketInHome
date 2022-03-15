@@ -22,7 +22,7 @@ interface Products {
     fun getProductWithTrademark(productWithTrademark: ArrayList<Product?>?)
     fun getProductTopDeals(topDeals: ArrayList<Product?>?)
     fun getProductById(productById: ArrayList<Product?>?)
-    fun getLastSearchProduct(LastSearchproduct: ArrayList<Product?>?)
+//    fun getLastSearchProduct(LastSearchproduct: ArrayList<Product?>?)
     fun getClassificationPC(Product: ArrayList<ClassificationPC?>?)
 
 
