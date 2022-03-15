@@ -13,10 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import com.bumptech.glide.Glide;
 import com.doubleclick.OnProduct;
-import com.doubleclick.ViewHolder.ProductSliderBannerViewHolder;
-import com.doubleclick.ViewHolder.ProductViewHolder;
 import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.R;
 
@@ -52,10 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.productPrice.setText(String.format("%s", products.get(position).getPrice()));
         holder.productLastPrice.setText(String.format("%s", products.get(position).getLastPrice()));
         holder.trademark.setText(products.get(position).getTradeMark());
-        List<String> list = Arrays.asList(products.get(position).getImages().replace("]","").replace("[","").split(","));
-        for (String i :list){
-            Log.e("Listsssssssssss", i);
-        }
+        String list =  products.get(position).getImages();
         holder.setBannerSliderViewPager(list);
         holder.itemView.setOnClickListener(v -> {
             onProduct.onItemProduct(products.get(position));
@@ -90,7 +84,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             trademark = itemView.findViewById(R.id.trademark);
         }
 
-        public void setBannerSliderViewPager(List<String> list) {
+        public void setBannerSliderViewPager(String list) {
             currentPage = 2;
             //////////////////////////////////////////////////////////////////
             ProductSliderAdapter sliderAdapter = new ProductSliderAdapter(list);
@@ -98,41 +92,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             banner_slier_view_pager.setClipToPadding(false);
             banner_slier_view_pager.setPageMargin(20);
             banner_slier_view_pager.setCurrentItem(currentPage);
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////
-            //     onPageChangeListener
-            banner_slier_view_pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { //is not important
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-                    currentPage = position;
-                }
-
-                @Override
-                public void onPageScrollStateChanged(int state) {
-                    if (state == ViewPager.SCROLL_STATE_IDLE) {
-//                        PageLooper(sliderModelList);  // is not important
-                    }
-                }
-            });
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-            StartbannerSlideShow(list);
+            List<String> l = Arrays.asList(list.trim().replace("[","").replace("]","").replace(" ","").split(","));
+            StartbannerSlideShow(l);
             //if banner Touch this mathod is excut
             banner_slier_view_pager.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     StopBannerSlideShow();
-                    //
                     if (event.getAction() == MotionEvent.ACTION_UP) {
-                        StartbannerSlideShow(list);
+                        StartbannerSlideShow(l);
                     }
                     return false;
                 }
             });
         }
-
 
         // this resbonsable to loop slider
         private void StartbannerSlideShow(final List<String> list) {
@@ -143,7 +116,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                     if (currentPage >= list.size()) {
                         currentPage = 0;
                     }
-
                     banner_slier_view_pager.setCurrentItem(currentPage++);
                 }
             };
@@ -159,8 +131,5 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         private void StopBannerSlideShow() {
             timer.cancel();
         }
-
     }
-
-
 }

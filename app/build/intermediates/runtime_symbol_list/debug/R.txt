@@ -2755,7 +2755,6 @@ int id AddProduct 0x7f0a0002
 int id AddTradmark 0x7f0a0003
 int id BOTTOM_END 0x7f0a0004
 int id BOTTOM_START 0x7f0a0005
-int id BannerContiner 0x7f0a0006
 int id CTRL 0x7f0a0007
 int id CartName 0x7f0a0008
 int id ChildRecycler 0x7f0a0009

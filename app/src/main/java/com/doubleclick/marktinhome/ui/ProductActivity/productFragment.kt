@@ -2,9 +2,9 @@ package com.doubleclick.marktinhome.ui.ProductActivity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Base64
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -14,23 +14,21 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.bumptech.glide.Glide
+import androidx.viewpager.widget.ViewPager
 import com.doubleclick.ViewModel.RateViewModel
+import com.doubleclick.marktinhome.Adapters.ProductSliderAdapter
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Constantes.*
-import com.doubleclick.marktinhome.Model.Product
 import com.doubleclick.marktinhome.R
-import com.doubleclick.marktinhome.ui.MainScreen.Frgments.Add.ChildFragmentArgs
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.*
-import kotlin.collections.HashMap
 
 
 class productFragment : BaseFragment() {
 
 
     private lateinit var fab: FloatingActionButton
-    private lateinit var imageProduct: ImageView
+    private lateinit var banner_slier_view_pager: ViewPager
     private lateinit var productName: TextView
     private lateinit var trarmark: TextView
     private lateinit var price: TextView
@@ -78,7 +76,7 @@ class productFragment : BaseFragment() {
         var view = inflater.inflate(R.layout.fragment_product, container, false)
         rateViewModel = ViewModelProvider(this)[RateViewModel::class.java]
         fab = view.findViewById(R.id.fab)
-        imageProduct = view.findViewById(R.id.imageProduct)
+        banner_slier_view_pager = view.findViewById(R.id.banner_slier_view_pager)
         productName = view.findViewById(R.id.productName)
         trarmark = view.findViewById(R.id.trarmark)
         price = view.findViewById(R.id.price)
@@ -105,7 +103,7 @@ class productFragment : BaseFragment() {
         price.text = product.product!!.price.toString()
         lastPrice.text = product.product!!.lastPrice.toString()
         description.text = product.product!!.description
-        Glide.with(this).load(product.product!!.image).into(imageProduct)
+        setBannerSliderViewPager(product!!.product!!.images)
         rateViewModel.getMyRate(myId, product.product!!.productId)
         rateViewModel.myRateing.observe(viewLifecycleOwner, Observer {
             if (it != null) {
@@ -211,13 +209,23 @@ class productFragment : BaseFragment() {
         share.setOnClickListener {
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, "https://www.market.doublethink.com/" + product.product!!.productId)
+                putExtra(
+                    Intent.EXTRA_TEXT,
+                    "https://www.market.doublethink.com/" + product.product!!.productId
+                )
                 type = "text/plain"
             }
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }
         return view;
+    }
+
+    fun setBannerSliderViewPager(list: String?) {
+        val sliderAdapter = ProductSliderAdapter(list)
+        banner_slier_view_pager.adapter = sliderAdapter
+        banner_slier_view_pager.clipToPadding = false
+        banner_slier_view_pager.pageMargin = 20
     }
 
 }

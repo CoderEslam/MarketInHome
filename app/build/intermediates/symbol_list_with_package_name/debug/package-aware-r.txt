@@ -2756,7 +2756,6 @@ id AddProduct
 id AddTradmark
 id BOTTOM_END
 id BOTTOM_START
-id BannerContiner
 id CTRL
 id CartName
 id ChildRecycler

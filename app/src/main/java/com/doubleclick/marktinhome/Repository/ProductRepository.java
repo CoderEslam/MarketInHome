@@ -231,7 +231,7 @@ public class ProductRepository extends BaseRepository {
                             DataSnapshot snapshot = task.getResult();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Product product = dataSnapshot.getValue(Product.class);
-                                if (Objects.requireNonNull(product).getProductName().contains(query) || product.getChildCategoryName().contains(query) || product.getParentCategoryName().contains(query) || product.getKeywords().contains(query)) {
+                                if (Objects.requireNonNull(product).getProductName().contains(query) || product.getTradeMark().contains(query) || product.getChildCategoryName().contains(query) || product.getParentCategoryName().contains(query) || product.getKeywords().contains(query)) {
                                     QueryProducts.add(product);
                                 }
                             }

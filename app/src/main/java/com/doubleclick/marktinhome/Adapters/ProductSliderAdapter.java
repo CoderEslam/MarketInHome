@@ -15,8 +15,10 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.bumptech.glide.Glide;
 import com.doubleclick.marktinhome.Model.Advertisement;
 import com.doubleclick.marktinhome.R;
+import com.doubleclick.marktinhome.Views.PhotoView.PhotoView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -26,8 +28,8 @@ public class ProductSliderAdapter extends PagerAdapter {
 
     private List<String> list = new ArrayList<>();
 
-    public ProductSliderAdapter(List<String> list) {
-        this.list = list;
+    public ProductSliderAdapter(String list) {
+        this.list = Arrays.asList(list.trim().replace("[","").replace("]","").replace(" ","").split(","));
     }
 
     @Override
@@ -45,15 +47,12 @@ public class ProductSliderAdapter extends PagerAdapter {
         container.removeView((View) object);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         View view = LayoutInflater.from(container.getContext()).inflate(R.layout.slider_image_layout, container, false);
-        ConstraintLayout bannerContiner = view.findViewById(R.id.BannerContiner);
-        ImageView banner = view.findViewById(R.id.banner_sliderImageView);
-        Log.e("Imagedddd", list.get(position));
-        Glide.with(container.getContext()).load(list.get(position).toString()).into(banner);
+        PhotoView banner = view.findViewById(R.id.banner_sliderImageView);
+        Glide.with(container.getContext()).load(list.get(position).trim().toString()).into(banner);
         container.addView(view, 0);
         return view;
     }

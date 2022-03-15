@@ -16,6 +16,7 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager.widget.ViewPager;
 import com.doubleclick.marktinhome.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
@@ -28,6 +29,9 @@ public final class FragmentProductBinding implements ViewBinding {
 
   @NonNull
   public final TextView TotalRating;
+
+  @NonNull
+  public final ViewPager bannerSlierViewPager;
 
   @NonNull
   public final CardView cardView;
@@ -58,9 +62,6 @@ public final class FragmentProductBinding implements ViewBinding {
 
   @NonNull
   public final FloatingActionButton fab;
-
-  @NonNull
-  public final ImageView imageProduct;
 
   @NonNull
   public final ImageView imageView3;
@@ -186,14 +187,14 @@ public final class FragmentProductBinding implements ViewBinding {
   public final RatingBar yourRate;
 
   private FragmentProductBinding(@NonNull ConstraintLayout rootView, @NonNull TextView TotalRating,
-      @NonNull CardView cardView, @NonNull CardView cardView11,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull ConstraintLayout constraintLayout3, @NonNull ConstraintLayout constraintLayout4,
-      @NonNull ConstraintLayout constraintLayout7, @NonNull ConstraintLayout constraintLayout8,
-      @NonNull TextView description, @NonNull FloatingActionButton fab,
-      @NonNull ImageView imageProduct, @NonNull ImageView imageView3, @NonNull ImageView imageView4,
-      @NonNull ImageView imageView5, @NonNull ImageView imageView6, @NonNull ImageView imageView7,
-      @NonNull ImageView imageView8, @NonNull TextView lastPrice,
+      @NonNull ViewPager bannerSlierViewPager, @NonNull CardView cardView,
+      @NonNull CardView cardView11, @NonNull ConstraintLayout constraintLayout,
+      @NonNull ConstraintLayout constraintLayout2, @NonNull ConstraintLayout constraintLayout3,
+      @NonNull ConstraintLayout constraintLayout4, @NonNull ConstraintLayout constraintLayout7,
+      @NonNull ConstraintLayout constraintLayout8, @NonNull TextView description,
+      @NonNull FloatingActionButton fab, @NonNull ImageView imageView3,
+      @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
+      @NonNull ImageView imageView7, @NonNull ImageView imageView8, @NonNull TextView lastPrice,
       @NonNull LinearLayout linearLayout5, @NonNull ConstraintLayout linearLayout7,
       @NonNull ImageView mins, @NonNull ImageView plus, @NonNull TextView price,
       @NonNull TextView productName, @NonNull ProgressBar progressBar1,
@@ -209,6 +210,7 @@ public final class FragmentProductBinding implements ViewBinding {
       @NonNull TextView tvRate5, @NonNull TextView tvYourRatins, @NonNull RatingBar yourRate) {
     this.rootView = rootView;
     this.TotalRating = TotalRating;
+    this.bannerSlierViewPager = bannerSlierViewPager;
     this.cardView = cardView;
     this.cardView11 = cardView11;
     this.constraintLayout = constraintLayout;
@@ -219,7 +221,6 @@ public final class FragmentProductBinding implements ViewBinding {
     this.constraintLayout8 = constraintLayout8;
     this.description = description;
     this.fab = fab;
-    this.imageProduct = imageProduct;
     this.imageView3 = imageView3;
     this.imageView4 = imageView4;
     this.imageView5 = imageView5;
@@ -296,6 +297,12 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.banner_slier_view_pager;
+      ViewPager bannerSlierViewPager = ViewBindings.findChildViewById(rootView, id);
+      if (bannerSlierViewPager == null) {
+        break missingId;
+      }
+
       id = R.id.cardView;
       CardView cardView = ViewBindings.findChildViewById(rootView, id);
       if (cardView == null) {
@@ -353,12 +360,6 @@ public final class FragmentProductBinding implements ViewBinding {
       id = R.id.fab;
       FloatingActionButton fab = ViewBindings.findChildViewById(rootView, id);
       if (fab == null) {
-        break missingId;
-      }
-
-      id = R.id.imageProduct;
-      ImageView imageProduct = ViewBindings.findChildViewById(rootView, id);
-      if (imageProduct == null) {
         break missingId;
       }
 
@@ -608,15 +609,15 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentProductBinding((ConstraintLayout) rootView, TotalRating, cardView,
-          cardView11, constraintLayout, constraintLayout2, constraintLayout3, constraintLayout4,
-          constraintLayout7, constraintLayout8, description, fab, imageProduct, imageView3,
-          imageView4, imageView5, imageView6, imageView7, imageView8, lastPrice, linearLayout5,
-          linearLayout7, mins, plus, price, productName, progressBar1, progressBar2, progressBar3,
-          progressBar4, progressBar5, quantity, rateNowContainer, scrollView2, share, textView12,
-          textView13, textView14, textView15, textView16, textView4, textView5, textView6,
-          textView60, textView7, textView70, trarmark, tvRate1, tvRate2, tvRate3, tvRate4, tvRate5,
-          tvYourRatins, yourRate);
+      return new FragmentProductBinding((ConstraintLayout) rootView, TotalRating,
+          bannerSlierViewPager, cardView, cardView11, constraintLayout, constraintLayout2,
+          constraintLayout3, constraintLayout4, constraintLayout7, constraintLayout8, description,
+          fab, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, lastPrice,
+          linearLayout5, linearLayout7, mins, plus, price, productName, progressBar1, progressBar2,
+          progressBar3, progressBar4, progressBar5, quantity, rateNowContainer, scrollView2, share,
+          textView12, textView13, textView14, textView15, textView16, textView4, textView5,
+          textView6, textView60, textView7, textView70, trarmark, tvRate1, tvRate2, tvRate3,
+          tvRate4, tvRate5, tvYourRatins, yourRate);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

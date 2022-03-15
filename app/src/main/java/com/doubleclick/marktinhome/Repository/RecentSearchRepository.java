@@ -76,7 +76,7 @@ public class RecentSearchRepository extends BaseRepository {
                                 for (DataSnapshot dataSnapshot :snapshot.getChildren()){
                                     Product product = dataSnapshot.getValue(Product.class);
                                     assert product != null;
-                                    if (product.getProductName().equals(i) || product.getKeywords().contains(i) || product.getDescription().contains(i) || product.getChildCategoryName().equals(i) || product.getParentCategoryName().equals(i)) {
+                                    if (product.getProductName().equals(i)||product.getTradeMark().contains(i) || product.getKeywords().contains(i) || product.getDescription().contains(i) || product.getChildCategoryName().equals(i) || product.getParentCategoryName().equals(i)) {
                                         productArrayList.add(product);
                                         recentSearchInterface.getLastListSearchAboutProductOneTime(productArrayList);
                                     }
