@@ -1,5 +1,6 @@
 package com.doubleclick.marktinhome.Adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -34,7 +37,7 @@ public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmal
     @NonNull
     @Override
     public ProductAdapterSmall.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ProductViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.g_v_layout, parent, false));
+        return new ProductViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_small_product, parent, false));
     }
 
     @Override
@@ -44,7 +47,10 @@ public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmal
         holder.productPrice.setText(String.format("%s", products.get(position).getPrice()));
         holder.productLastPrice.setText(String.format("%s", products.get(position).getLastPrice()));
         holder.trademark.setText(products.get(position).getTradeMark());
-//        Glide.with(holder.itemView.getContext()).load(products.get(position).getImage()).into(holder.imageProduct);
+        Log.e("getOnlyImage", products.get(position).getOnlyImage().trim());
+        Glide.with(holder.itemView.getContext()).load(products.get(position).getOnlyImage().trim()).into(holder.imageProduct);
+
+
         holder.itemView.setOnClickListener(v -> {
             onProduct.onItemProduct(products.get(position));
         });

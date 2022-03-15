@@ -46,6 +46,7 @@ import com.doubleclick.marktinhome.ui.MainScreen.Frgments.menu_listFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.common.util.NumberUtils;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -156,6 +157,8 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
     private void Share(String ProductId) {
         try {
             if (!ProductId.equals("")) {
+                Bundle bundle = new Bundle();
+                bundle.putString("idProduct",ProductId);
                 Intent intent = new Intent(MainScreenActivity.this, FilterActivity.class);
                 intent.putExtra("idProduct", ProductId);
                 startActivity(intent);

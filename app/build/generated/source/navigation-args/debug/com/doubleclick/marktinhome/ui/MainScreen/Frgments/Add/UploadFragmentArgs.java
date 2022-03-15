@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.SavedStateHandle;
 import androidx.navigation.NavArgs;
 import com.doubleclick.marktinhome.Model.ChildCategory;
 import com.doubleclick.marktinhome.Model.ParentCategory;
@@ -56,6 +57,28 @@ public class UploadFragmentArgs implements NavArgs {
     return __result;
   }
 
+  @NonNull
+  @SuppressWarnings("unchecked")
+  public static UploadFragmentArgs fromSavedStateHandle(
+      @NonNull SavedStateHandle savedStateHandle) {
+    UploadFragmentArgs __result = new UploadFragmentArgs();
+    if (savedStateHandle.contains("child")) {
+      ChildCategory child;
+      child = savedStateHandle.get("child");
+      __result.arguments.put("child", child);
+    } else {
+      throw new IllegalArgumentException("Required argument \"child\" is missing and does not have an android:defaultValue");
+    }
+    if (savedStateHandle.contains("Parent")) {
+      ParentCategory Parent;
+      Parent = savedStateHandle.get("Parent");
+      __result.arguments.put("Parent", Parent);
+    } else {
+      throw new IllegalArgumentException("Required argument \"Parent\" is missing and does not have an android:defaultValue");
+    }
+    return __result;
+  }
+
   @SuppressWarnings("unchecked")
   @Nullable
   public ChildCategory getChild() {
@@ -88,6 +111,33 @@ public class UploadFragmentArgs implements NavArgs {
         __result.putParcelable("Parent", Parcelable.class.cast(Parent));
       } else if (Serializable.class.isAssignableFrom(ParentCategory.class)) {
         __result.putSerializable("Parent", Serializable.class.cast(Parent));
+      } else {
+        throw new UnsupportedOperationException(ParentCategory.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
+      }
+    }
+    return __result;
+  }
+
+  @SuppressWarnings("unchecked")
+  @NonNull
+  public SavedStateHandle toSavedStateHandle() {
+    SavedStateHandle __result = new SavedStateHandle();
+    if (arguments.containsKey("child")) {
+      ChildCategory child = (ChildCategory) arguments.get("child");
+      if (Parcelable.class.isAssignableFrom(ChildCategory.class) || child == null) {
+        __result.set("child", Parcelable.class.cast(child));
+      } else if (Serializable.class.isAssignableFrom(ChildCategory.class)) {
+        __result.set("child", Serializable.class.cast(child));
+      } else {
+        throw new UnsupportedOperationException(ChildCategory.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
+      }
+    }
+    if (arguments.containsKey("Parent")) {
+      ParentCategory Parent = (ParentCategory) arguments.get("Parent");
+      if (Parcelable.class.isAssignableFrom(ParentCategory.class) || Parent == null) {
+        __result.set("Parent", Parcelable.class.cast(Parent));
+      } else if (Serializable.class.isAssignableFrom(ParentCategory.class)) {
+        __result.set("Parent", Serializable.class.cast(Parent));
       } else {
         throw new UnsupportedOperationException(ParentCategory.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
       }
@@ -135,11 +185,11 @@ public class UploadFragmentArgs implements NavArgs {
         + "}";
   }
 
-  public static class Builder {
+  public static final class Builder {
     private final HashMap arguments = new HashMap();
 
     @SuppressWarnings("unchecked")
-    public Builder(UploadFragmentArgs original) {
+    public Builder(@NonNull UploadFragmentArgs original) {
       this.arguments.putAll(original.arguments);
     }
 
@@ -169,13 +219,13 @@ public class UploadFragmentArgs implements NavArgs {
       return this;
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked","GetterOnBuilder"})
     @Nullable
     public ChildCategory getChild() {
       return (ChildCategory) arguments.get("child");
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked","GetterOnBuilder"})
     @Nullable
     public ParentCategory getParent() {
       return (ParentCategory) arguments.get("Parent");

@@ -59,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -190,7 +189,7 @@
                         android:layout_marginTop="8dp"
                         android:src="@drawable/share"
                         app:layout_constraintStart_toStartOf="@+id/description"
-                        app:layout_constraintTop_toBottomOf="@+id/description" />
+                        app:layout_constraintTop_toBottomOf="@+id/addToggalsScrollView" />
 
 
                     <TextView
@@ -198,8 +197,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:lines="20"
-                        android:maxLines="20"
                         android:text="@string/description"
                         android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -250,6 +247,26 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+                    <HorizontalScrollView
+                        android:orientation="horizontal"
+                        android:id="@+id/addToggalsScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/description"
+                        app:layout_constraintStart_toStartOf="@+id/description"
+                        app:layout_constraintTop_toBottomOf="@+id/description">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:id="@+id/addToggalsLinearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
@@ -284,7 +301,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/textView6">
 
                             <TextView
-                                android:id="@+id/textView70"
+                                android:id="@+id/ratingSeller"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
@@ -308,7 +325,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
-                            android:text="27 ratings"
+                            android:text="0 ratings"
                             android:textColor="#000"
                             app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
                             app:layout_constraintHorizontal_bias="0.498"
@@ -649,10 +666,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="8dp"
                             android:gravity="center"
                             android:orientation="horizontal"
-                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv_your_ratins">
@@ -664,6 +679,147 @@
                                 tools:rating="4.5" />
                         </LinearLayout>
 
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/rate_now_container">
+
+                            <lecho.lib.hellocharts.view.PieChartView
+                                android:id="@+id/pieChartView"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@+id/pieChartView"
+                                app:layout_constraintStart_toEndOf="@+id/pieChartView"
+                                app:layout_constraintTop_toTopOf="@+id/pieChartView">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="5dp"
+                                    android:paddingBottom="5dp">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="center"
+                                        android:src="@color/green" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5 Star"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="5dp">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="center"
+                                        android:src="@color/yellow" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="4 Star"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="5dp">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="center"
+                                        android:src="@color/yellow" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="3 Star"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="5dp">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="center"
+                                        android:src="@color/red" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2 Star"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="5dp">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="center"
+                                        android:src="@color/red" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="1 Star"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -683,13 +839,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <lecho.lib.hellocharts.view.PieChartView
-        android:id="@+id/pieChartView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@+id/fab"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

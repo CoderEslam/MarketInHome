@@ -5,13 +5,10 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.RatingBar
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.widget.AppCompatToggleButton
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
@@ -26,7 +23,6 @@ import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
 import lecho.lib.hellocharts.view.PieChartView
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class productFragment : BaseFragment() {
@@ -52,6 +48,7 @@ class productFragment : BaseFragment() {
     private lateinit var progressBar5: ProgressBar
     private lateinit var yourRate: RatingBar;
     private lateinit var rateViewModel: RateViewModel;
+    private lateinit var addToggalsLinearLayout: LinearLayout
     var r1 = 0f
     var r2 = 0f
     var r3 = 0f
@@ -63,6 +60,10 @@ class productFragment : BaseFragment() {
     var q: Int = 0
     lateinit var share: ImageView
     lateinit var pieChartView: PieChartView
+    lateinit var ratingSeller: TextView
+    private var list: MutableList<SliceValue> = ArrayList();
+    private var ToggleItem: String? = ""
+
 
     private val product by navArgs<productFragmentArgs>()
 
@@ -99,16 +100,40 @@ class productFragment : BaseFragment() {
         progressBar4 = view.findViewById(R.id.progressBar4);
         progressBar5 = view.findViewById(R.id.progressBar5);
         yourRate = view.findViewById(R.id.yourRate);
+        addToggalsLinearLayout = view.findViewById(R.id.addToggalsLinearLayout);
         plus = view.findViewById(R.id.plus)
         quantity = view.findViewById(R.id.quantity)
         mins = view.findViewById(R.id.mins)
         share = view.findViewById(R.id.share);
+        ratingSeller = view.findViewById(R.id.ratingSeller)
         pieChartView = view.findViewById(R.id.pieChartView);
         productName.text = product.product!!.productName
         trarmark.text = product.product!!.tradeMark
         price.text = product.product!!.price.toString()
         lastPrice.text = product.product!!.lastPrice.toString()
         description.text = product.product!!.description
+        var spliter = product!!.product!!.toggals.toString().replace("[", "").replace("]", "")
+            .replace(" ", "").split(",")
+        for (i in 0 until spliter.size) {
+            var togal = AppCompatToggleButton(requireContext())
+            togal.text = spliter[i]
+            togal.textOff = spliter[i]
+            togal.textOn = spliter[i]
+            togal.setOnClickListener {
+                if (!ToggleItem!!.contains(spliter[i])) {
+                    if (togal.isChecked) {
+                        ToggleItem = ToggleItem!! + spliter[i] + ","
+                    }
+                } else {
+                    if (!togal.isChecked) {
+                        ToggleItem += ToggleItem!!.replace(spliter[i], "")
+                        Toast.makeText(requireContext(), ToggleItem.toString(), Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+            addToggalsLinearLayout.addView(togal)
+        }
+        ratingSeller.text = product.product!!.ratingSeller.toInt().toString()
         setBannerSliderViewPager(product!!.product!!.images)
         rateViewModel.getMyRate(myId, product.product!!.productId)
         rateViewModel.myRateing.observe(viewLifecycleOwner, Observer {
@@ -118,57 +143,65 @@ class productFragment : BaseFragment() {
         })
         rateViewModel.getAllRate(product.product!!.productId)
         rateViewModel.allRateing.observe(viewLifecycleOwner, Observer {
-            TotalRating.text = it.size.toString()
+            TotalRating.text = it.size.toString() + " ratings"
             var map: HashMap<String, Any> = HashMap();
             map.put("TotalRating", (it.size));
             reference.child(PRODUCT).child(product.product!!.productId).updateChildren(map);
             for (i in it) {
                 if (0.0 < i.rate.toFloat() && i.rate.toFloat() <= 1.0) {
                     r1 += 1
+                    list.add(SliceValue(r1, Color.RED))
                     progressBar1.progress = ((r1.toInt() / it.size) * 100)
                     tvRate1.text = r1.toInt().toString()
 
                 }
                 if (1.0 < i.rate.toFloat() && i.rate.toFloat() <= 2.0) {
                     r2 += 1
+                    list.add(SliceValue(r2, Color.RED))
                     progressBar2.progress = ((r2.toInt() / it.size) * 100)
                     tvRate2.text = r2.toInt().toString()
 
                 }
                 if (2.0 < i.rate.toFloat() && i.rate.toFloat() <= 3.0) {
                     r3 += 1
+                    list.add(SliceValue(r3, Color.YELLOW))
                     progressBar3.progress = ((r3.toInt() / it.size) * 100)
                     tvRate3.text = r3.toInt().toString()
 
                 }
                 if (3.0 < i.rate.toFloat() && i.rate.toFloat() <= 4.0) {
                     r4 += 1
+                    list.add(SliceValue(r4, Color.YELLOW))
                     progressBar4.progress = ((r4.toInt() / it.size) * 100)
                     tvRate4.text = r4.toInt().toString()
 
                 }
                 if (4.0 < i.rate.toFloat() && i.rate.toFloat() <= 5.0) {
                     r5 += 1
+                    list.add(SliceValue(r5, Color.GREEN))
                     progressBar5.progress = ((r5.toInt() / it.size) * 100)
                     tvRate5.text = r5.toInt().toString()
                 }
             }
+            var data = PieChartData(list);
+            pieChartView.pieChartData = data;
         })
 
         fab.setOnClickListener { v: View? ->
-            if (q != 0) {
-                var id = myId + ":" + product.product!!.productId
-                var map: HashMap<String, Any> = HashMap();
+            if (q != 0 && !ToggleItem.equals("")) {
+                val id = myId + ":" + product.product!!.productId
+                val map: HashMap<String, Any> = HashMap();
                 map["ProductId"] = product.product!!.productId;
                 map["BuyerId"] = myId;
                 map["SellerId"] = product.product!!.adminId;
                 map["TotalPrice"] = (q.toDouble() * product.product!!.price.toDouble()).toLong();
                 map["Quantity"] = q.toLong();
                 map["price"] = product.product!!.price.toLong();
-                map["image"] = product.product!!.image;
+                map["images"] = product.product!!.images;
                 map["productName"] = product.product!!.productName;
                 map["lastPrice"] = product.product!!.lastPrice
                 map["id"] = id;
+                map["ToggleItem"] = ToggleItem!!
                 reference.child(CART).child(id).setValue(map);
             } else {
                 ShowToast(context, "you can't order less than one!");
@@ -224,7 +257,6 @@ class productFragment : BaseFragment() {
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }
-        Chart()
         return view;
     }
 
@@ -235,18 +267,5 @@ class productFragment : BaseFragment() {
         banner_slier_view_pager.pageMargin = 20
     }
 
-
-    fun Chart() {
-        var list: MutableList<SliceValue> = ArrayList();
-        list.add(SliceValue(5.6f, Color.RED))
-        list.add(SliceValue(5.6f, Color.BLUE))
-        list.add(SliceValue(5.6f, Color.BLACK))
-        list.add(SliceValue(5.6f, Color.RED))
-        list.add(SliceValue(5.6f, Color.BLUE))
-        list.add(SliceValue(5.6f, Color.BLACK))
-        var data: PieChartData = PieChartData(list);
-        pieChartView.pieChartData = data;
-
-    }
 
 }

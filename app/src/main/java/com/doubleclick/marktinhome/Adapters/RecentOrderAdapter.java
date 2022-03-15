@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.doubleclick.OnProduct;
+import com.doubleclick.RecentOrderInterface;
 import com.doubleclick.marktinhome.Model.RecentOrder;
 import com.doubleclick.marktinhome.R;
 
@@ -27,6 +29,7 @@ public class RecentOrderAdapter extends RecyclerView.Adapter<RecentOrderAdapter.
         this.recentOrderArrayList = recentOrderArrayList;
     }
 
+
     @NonNull
     @Override
     public RecentOrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,7 +43,7 @@ public class RecentOrderAdapter extends RecyclerView.Adapter<RecentOrderAdapter.
             holder.CartName.setText(recentOrderArrayList.get(position).getProductName());
             holder.price.setText(String.format("%s", recentOrderArrayList.get(position).getPrice()));
             holder.quantity.setText(String.format("%s", recentOrderArrayList.get(position).getQuantity()));
-            Glide.with(holder.itemView.getContext()).load(recentOrderArrayList.get(position).getImage()).into(holder.imageCart);
+            Glide.with(holder.itemView.getContext()).load(recentOrderArrayList.get(position).getOnlyImage()).into(holder.imageCart);
         }
 
     }

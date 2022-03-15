@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.SavedStateHandle;
 import androidx.navigation.NavArgs;
 import com.doubleclick.marktinhome.Model.ParentCategory;
 import java.io.Serializable;
@@ -44,6 +45,21 @@ public class FilterParentFragmentArgs implements NavArgs {
     return __result;
   }
 
+  @NonNull
+  @SuppressWarnings("unchecked")
+  public static FilterParentFragmentArgs fromSavedStateHandle(
+      @NonNull SavedStateHandle savedStateHandle) {
+    FilterParentFragmentArgs __result = new FilterParentFragmentArgs();
+    if (savedStateHandle.contains("ParentCategory")) {
+      ParentCategory ParentCategory;
+      ParentCategory = savedStateHandle.get("ParentCategory");
+      __result.arguments.put("ParentCategory", ParentCategory);
+    } else {
+      throw new IllegalArgumentException("Required argument \"ParentCategory\" is missing and does not have an android:defaultValue");
+    }
+    return __result;
+  }
+
   @SuppressWarnings("unchecked")
   @Nullable
   public ParentCategory getParentCategory() {
@@ -60,6 +76,23 @@ public class FilterParentFragmentArgs implements NavArgs {
         __result.putParcelable("ParentCategory", Parcelable.class.cast(ParentCategory));
       } else if (Serializable.class.isAssignableFrom(ParentCategory.class)) {
         __result.putSerializable("ParentCategory", Serializable.class.cast(ParentCategory));
+      } else {
+        throw new UnsupportedOperationException(ParentCategory.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
+      }
+    }
+    return __result;
+  }
+
+  @SuppressWarnings("unchecked")
+  @NonNull
+  public SavedStateHandle toSavedStateHandle() {
+    SavedStateHandle __result = new SavedStateHandle();
+    if (arguments.containsKey("ParentCategory")) {
+      ParentCategory ParentCategory = (ParentCategory) arguments.get("ParentCategory");
+      if (Parcelable.class.isAssignableFrom(ParentCategory.class) || ParentCategory == null) {
+        __result.set("ParentCategory", Parcelable.class.cast(ParentCategory));
+      } else if (Serializable.class.isAssignableFrom(ParentCategory.class)) {
+        __result.set("ParentCategory", Serializable.class.cast(ParentCategory));
       } else {
         throw new UnsupportedOperationException(ParentCategory.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
       }
@@ -99,11 +132,11 @@ public class FilterParentFragmentArgs implements NavArgs {
         + "}";
   }
 
-  public static class Builder {
+  public static final class Builder {
     private final HashMap arguments = new HashMap();
 
     @SuppressWarnings("unchecked")
-    public Builder(FilterParentFragmentArgs original) {
+    public Builder(@NonNull FilterParentFragmentArgs original) {
       this.arguments.putAll(original.arguments);
     }
 
@@ -125,7 +158,7 @@ public class FilterParentFragmentArgs implements NavArgs {
       return this;
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked","GetterOnBuilder"})
     @Nullable
     public ParentCategory getParentCategory() {
       return (ParentCategory) arguments.get("ParentCategory");

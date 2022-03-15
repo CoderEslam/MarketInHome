@@ -4,6 +4,7 @@ package com.doubleclick.marktinhome.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -30,6 +31,12 @@ public final class FragmentProductBinding implements ViewBinding {
 
   @NonNull
   public final TextView TotalRating;
+
+  @NonNull
+  public final LinearLayout addToggalsLinearLayout;
+
+  @NonNull
+  public final HorizontalScrollView addToggalsScrollView;
 
   @NonNull
   public final ViewPager bannerSlierViewPager;
@@ -128,6 +135,9 @@ public final class FragmentProductBinding implements ViewBinding {
   public final LinearLayout rateNowContainer;
 
   @NonNull
+  public final TextView ratingSeller;
+
+  @NonNull
   public final ScrollView scrollView2;
 
   @NonNull
@@ -164,9 +174,6 @@ public final class FragmentProductBinding implements ViewBinding {
   public final TextView textView7;
 
   @NonNull
-  public final TextView textView70;
-
-  @NonNull
   public final TextView trarmark;
 
   @NonNull
@@ -191,29 +198,33 @@ public final class FragmentProductBinding implements ViewBinding {
   public final RatingBar yourRate;
 
   private FragmentProductBinding(@NonNull ConstraintLayout rootView, @NonNull TextView TotalRating,
-      @NonNull ViewPager bannerSlierViewPager, @NonNull CardView cardView,
-      @NonNull CardView cardView11, @NonNull ConstraintLayout constraintLayout,
-      @NonNull ConstraintLayout constraintLayout2, @NonNull ConstraintLayout constraintLayout3,
-      @NonNull ConstraintLayout constraintLayout4, @NonNull ConstraintLayout constraintLayout7,
-      @NonNull ConstraintLayout constraintLayout8, @NonNull TextView description,
-      @NonNull FloatingActionButton fab, @NonNull ImageView imageView3,
-      @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
-      @NonNull ImageView imageView7, @NonNull ImageView imageView8, @NonNull TextView lastPrice,
-      @NonNull LinearLayout linearLayout5, @NonNull ConstraintLayout linearLayout7,
-      @NonNull ImageView mins, @NonNull PieChartView pieChartView, @NonNull ImageView plus,
-      @NonNull TextView price, @NonNull TextView productName, @NonNull ProgressBar progressBar1,
+      @NonNull LinearLayout addToggalsLinearLayout,
+      @NonNull HorizontalScrollView addToggalsScrollView, @NonNull ViewPager bannerSlierViewPager,
+      @NonNull CardView cardView, @NonNull CardView cardView11,
+      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout2,
+      @NonNull ConstraintLayout constraintLayout3, @NonNull ConstraintLayout constraintLayout4,
+      @NonNull ConstraintLayout constraintLayout7, @NonNull ConstraintLayout constraintLayout8,
+      @NonNull TextView description, @NonNull FloatingActionButton fab,
+      @NonNull ImageView imageView3, @NonNull ImageView imageView4, @NonNull ImageView imageView5,
+      @NonNull ImageView imageView6, @NonNull ImageView imageView7, @NonNull ImageView imageView8,
+      @NonNull TextView lastPrice, @NonNull LinearLayout linearLayout5,
+      @NonNull ConstraintLayout linearLayout7, @NonNull ImageView mins,
+      @NonNull PieChartView pieChartView, @NonNull ImageView plus, @NonNull TextView price,
+      @NonNull TextView productName, @NonNull ProgressBar progressBar1,
       @NonNull ProgressBar progressBar2, @NonNull ProgressBar progressBar3,
       @NonNull ProgressBar progressBar4, @NonNull ProgressBar progressBar5,
       @NonNull TextView quantity, @NonNull LinearLayout rateNowContainer,
-      @NonNull ScrollView scrollView2, @NonNull ImageView share, @NonNull TextView textView12,
-      @NonNull TextView textView13, @NonNull TextView textView14, @NonNull TextView textView15,
-      @NonNull TextView textView16, @NonNull TextView textView4, @NonNull TextView textView5,
-      @NonNull TextView textView6, @NonNull TextView textView60, @NonNull TextView textView7,
-      @NonNull TextView textView70, @NonNull TextView trarmark, @NonNull TextView tvRate1,
+      @NonNull TextView ratingSeller, @NonNull ScrollView scrollView2, @NonNull ImageView share,
+      @NonNull TextView textView12, @NonNull TextView textView13, @NonNull TextView textView14,
+      @NonNull TextView textView15, @NonNull TextView textView16, @NonNull TextView textView4,
+      @NonNull TextView textView5, @NonNull TextView textView6, @NonNull TextView textView60,
+      @NonNull TextView textView7, @NonNull TextView trarmark, @NonNull TextView tvRate1,
       @NonNull TextView tvRate2, @NonNull TextView tvRate3, @NonNull TextView tvRate4,
       @NonNull TextView tvRate5, @NonNull TextView tvYourRatins, @NonNull RatingBar yourRate) {
     this.rootView = rootView;
     this.TotalRating = TotalRating;
+    this.addToggalsLinearLayout = addToggalsLinearLayout;
+    this.addToggalsScrollView = addToggalsScrollView;
     this.bannerSlierViewPager = bannerSlierViewPager;
     this.cardView = cardView;
     this.cardView11 = cardView11;
@@ -246,6 +257,7 @@ public final class FragmentProductBinding implements ViewBinding {
     this.progressBar5 = progressBar5;
     this.quantity = quantity;
     this.rateNowContainer = rateNowContainer;
+    this.ratingSeller = ratingSeller;
     this.scrollView2 = scrollView2;
     this.share = share;
     this.textView12 = textView12;
@@ -258,7 +270,6 @@ public final class FragmentProductBinding implements ViewBinding {
     this.textView6 = textView6;
     this.textView60 = textView60;
     this.textView7 = textView7;
-    this.textView70 = textView70;
     this.trarmark = trarmark;
     this.tvRate1 = tvRate1;
     this.tvRate2 = tvRate2;
@@ -299,6 +310,18 @@ public final class FragmentProductBinding implements ViewBinding {
       id = R.id.TotalRating;
       TextView TotalRating = ViewBindings.findChildViewById(rootView, id);
       if (TotalRating == null) {
+        break missingId;
+      }
+
+      id = R.id.addToggalsLinearLayout;
+      LinearLayout addToggalsLinearLayout = ViewBindings.findChildViewById(rootView, id);
+      if (addToggalsLinearLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.addToggalsScrollView;
+      HorizontalScrollView addToggalsScrollView = ViewBindings.findChildViewById(rootView, id);
+      if (addToggalsScrollView == null) {
         break missingId;
       }
 
@@ -494,6 +517,12 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ratingSeller;
+      TextView ratingSeller = ViewBindings.findChildViewById(rootView, id);
+      if (ratingSeller == null) {
+        break missingId;
+      }
+
       id = R.id.scrollView2;
       ScrollView scrollView2 = ViewBindings.findChildViewById(rootView, id);
       if (scrollView2 == null) {
@@ -566,12 +595,6 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView70;
-      TextView textView70 = ViewBindings.findChildViewById(rootView, id);
-      if (textView70 == null) {
-        break missingId;
-      }
-
       id = R.id.trarmark;
       TextView trarmark = ViewBindings.findChildViewById(rootView, id);
       if (trarmark == null) {
@@ -621,14 +644,15 @@ public final class FragmentProductBinding implements ViewBinding {
       }
 
       return new FragmentProductBinding((ConstraintLayout) rootView, TotalRating,
-          bannerSlierViewPager, cardView, cardView11, constraintLayout, constraintLayout2,
-          constraintLayout3, constraintLayout4, constraintLayout7, constraintLayout8, description,
-          fab, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, lastPrice,
-          linearLayout5, linearLayout7, mins, pieChartView, plus, price, productName, progressBar1,
-          progressBar2, progressBar3, progressBar4, progressBar5, quantity, rateNowContainer,
-          scrollView2, share, textView12, textView13, textView14, textView15, textView16, textView4,
-          textView5, textView6, textView60, textView7, textView70, trarmark, tvRate1, tvRate2,
-          tvRate3, tvRate4, tvRate5, tvYourRatins, yourRate);
+          addToggalsLinearLayout, addToggalsScrollView, bannerSlierViewPager, cardView, cardView11,
+          constraintLayout, constraintLayout2, constraintLayout3, constraintLayout4,
+          constraintLayout7, constraintLayout8, description, fab, imageView3, imageView4,
+          imageView5, imageView6, imageView7, imageView8, lastPrice, linearLayout5, linearLayout7,
+          mins, pieChartView, plus, price, productName, progressBar1, progressBar2, progressBar3,
+          progressBar4, progressBar5, quantity, rateNowContainer, ratingSeller, scrollView2, share,
+          textView12, textView13, textView14, textView15, textView16, textView4, textView5,
+          textView6, textView60, textView7, trarmark, tvRate1, tvRate2, tvRate3, tvRate4, tvRate5,
+          tvYourRatins, yourRate);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

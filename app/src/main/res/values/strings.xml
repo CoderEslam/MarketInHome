@@ -55,5 +55,14 @@
     <string name="confirm">Confirm</string>
     <string name="my_order">my Order</string>
     <string name="my_recent_order">my recent Order</string>
-
+    <string name="name_button">name button</string>
+    <string name="off">off</string>
+    <string name="on">on</string>
+    <string name="get_my_location">get My Location</string>
+    <string name="customer_name">Customer name :</string>
+    <string name="customer_phone">Customer Phone :</string>
+    <string name="custommer_address">custommer address :</string>
+    <string name="another_customer_phone">Another customer Phone :</string>
+    <string name="customer_location">Customer Location</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAtpMpGCaIxWOPMOH9TNWQ93_zYmwkdc44</string>
 </resources>

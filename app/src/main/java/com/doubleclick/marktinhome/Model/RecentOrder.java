@@ -1,5 +1,8 @@
 package com.doubleclick.marktinhome.Model;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created By Eslam Ghazy on 3/12/2022
  */
@@ -9,12 +12,17 @@ public class RecentOrder {
     private double price;
     private long Quantity;
     private String productName;
-    private String image;
+    private String images;
     private String id;
     private String BuyerId;
     private String SellerId;
     private double TotalPrice;
     private long date;
+    private String address;
+    private String phone;
+    private String anotherPhone;
+    private String locationUri;
+    private String ToggleItem;
 
     public RecentOrder() {
     }
@@ -36,13 +44,6 @@ public class RecentOrder {
         this.productName = productName;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public String getId() {
         return id;
@@ -99,5 +100,57 @@ public class RecentOrder {
 
     public void setDate(long date) {
         this.date = date;
+    }
+
+    public String getImages() {
+        return images;
+    }
+    public String getOnlyImage() {
+        List<String> image = Arrays.asList(images.replace("[", "").replace("]", "").replace(" ", "").trim().split(","));
+        return image.get(0);
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAnotherPhone() {
+        return anotherPhone;
+    }
+
+    public void setAnotherPhone(String anotherPhone) {
+        this.anotherPhone = anotherPhone;
+    }
+
+    public String getLocationUri() {
+        return locationUri;
+    }
+
+    public void setLocationUri(String locationUri) {
+        this.locationUri = locationUri;
+    }
+
+    public String getToggleItem() {
+        return ToggleItem;
+    }
+
+    public void setToggleItem(String toggleItem) {
+        ToggleItem = toggleItem;
     }
 }

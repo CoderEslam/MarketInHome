@@ -80,7 +80,7 @@ public class ProductActivity extends AppCompatActivity {
         price.setText(String.format("%s", product.getPrice()));
         lastPrice.setText(String.format("%s", product.getLastPrice()));
         description.setText(product.getDescription());
-        Glide.with(this).load(product.getImage()).into(imageProduct);
+//        Glide.with(this).load(product.getImage()).into(imageProduct);
         rateViewModel.getMyRate(myId, product.getProductId());
         rateViewModel.getMyRateing().observe(this, new Observer<Rate>() {
             @Override
@@ -139,7 +139,7 @@ public class ProductActivity extends AppCompatActivity {
                 map.put("TotalPrice", (q * product.getPrice()));
                 map.put("Quantity", q + "");
                 map.put("price", product.getPrice());
-                map.put("image", product.getImage());
+//                map.put("image", product.getImage());
                 reference.child(CART).child(pushId).updateChildren(map);
             } else {
                 Toast.makeText(this, "you can't order less than one!", Toast.LENGTH_LONG).show();

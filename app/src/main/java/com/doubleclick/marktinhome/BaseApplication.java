@@ -40,7 +40,9 @@ public class BaseApplication extends Application {
         MultiDex.install(this);
         Dexter.withContext(this).withPermissions(
                 Manifest.permission.ACCESS_NETWORK_STATE,
-                Manifest.permission.INTERNET
+                Manifest.permission.INTERNET,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
         ).withListener(new MultiplePermissionsListener() {
             @Override
             public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {

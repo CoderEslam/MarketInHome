@@ -3,9 +3,12 @@ package com.doubleclick.marktinhome.Adapters;
 import static com.doubleclick.marktinhome.Model.Constantes.CART;
 import static com.doubleclick.marktinhome.Model.Constantes.RECENTORDER;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +27,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created By Eslam Ghazy on 3/7/2022
@@ -52,16 +57,32 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.PriceOrder.setText(String.format("%s", orders.get(holder.getAdapterPosition()).getPrice()));
         holder.quantityOrder.setText(String.format("%s", orders.get(holder.getAdapterPosition()).getQuantity()));
         holder.totalPrice.setText(String.format("%s", orders.get(holder.getAdapterPosition()).getTotalPrice()));
-        Glide.with(holder.itemView.getContext()).load(orders.get(holder.getAdapterPosition()).getImage()).into(holder.orderImage);
+        holder.custommerName.setText(orders.get(position).getName());
+        holder.custommerPhone.setText(orders.get(position).getPhone());
+        holder.AnothercustommerPhone.setText(orders.get(position).getAnotherPhone());
+        holder.custommerAddress.setText(orders.get(position).getAddress());
+        holder.CustomerLocation.setOnClickListener(v -> {
+            List<String> uri = Arrays.asList(orders.get(position).getLocationUri().replace("[", "").replace("]", "").replace(" ", "").trim().split(","));
+            // https://developer.android.com/guide/components/intents-common#ViewMap
+            Uri i = Uri.parse("geo:0,0?q=" + uri.get(0) + "," + uri.get(1));
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, i);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            if (mapIntent.resolveActivity(holder.itemView.getContext().getPackageManager()) != null) {
+                holder.itemView.getContext().startActivity(mapIntent);
+            }
+        });
+        Glide.with(holder.itemView.getContext()).load(orders.get(holder.getAdapterPosition()).getOnlyImage()).into(holder.orderImage);
         holder.ok.setOnClickListener(v -> {
             onOrder.OnOKItemOrder(orders.get(holder.getAdapterPosition()));
             holder.itemView.setVisibility(View.GONE);
+            orders.remove(holder.getAdapterPosition());
             notifyItemRemoved(holder.getAdapterPosition());
         });
 
         holder.cancel.setOnClickListener(v -> {
             onOrder.OnCancelItemOrder(orders.get(holder.getAdapterPosition()));
             holder.itemView.setVisibility(View.GONE);
+            orders.remove(holder.getAdapterPosition());
             notifyItemRemoved(holder.getAdapterPosition());
         });
 
@@ -74,7 +95,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     public class OrderViewHolder extends RecyclerView.ViewHolder {
         private ImageView orderImage;
-        private TextView nameOrder, PriceOrder, cancel, ok, quantityOrder, totalPrice;
+        private TextView nameOrder, PriceOrder, cancel, ok, quantityOrder, totalPrice, custommerName, custommerPhone, AnothercustommerPhone, custommerAddress;
+        private Button CustomerLocation;
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +107,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             totalPrice = itemView.findViewById(R.id.totalPrice);
             cancel = itemView.findViewById(R.id.cancel);
             ok = itemView.findViewById(R.id.ok);
+            custommerName = itemView.findViewById(R.id.custommerName);
+            custommerPhone = itemView.findViewById(R.id.custommerPhone);
+            AnothercustommerPhone = itemView.findViewById(R.id.AnothercustommerPhone);
+            custommerAddress = itemView.findViewById(R.id.custommerAddress);
+            CustomerLocation = itemView.findViewById(R.id.CustomerLocation);
+
         }
 
     }

@@ -1,5 +1,8 @@
 package com.doubleclick.marktinhome.Model;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created By Eslam Ghazy on 3/12/2022
  */
@@ -10,7 +13,7 @@ public class Orders {
     private long Quantity;
     private double lastPrice;
     private String productName;
-    private String image;
+    private String images;
     private String id;
     private String BuyerId;
     private String SellerId;
@@ -20,6 +23,17 @@ public class Orders {
     private String address;
     private String name;
     private long date;
+    private String ToggleItem;
+
+    public String getLocationUri() {
+        return locationUri;
+    }
+
+    public void setLocationUri(String locationUri) {
+        this.locationUri = locationUri;
+    }
+
+    private String locationUri;
 
     public Orders() {
     }
@@ -41,13 +55,6 @@ public class Orders {
         this.productName = productName;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public String getId() {
         return id;
@@ -72,7 +79,6 @@ public class Orders {
     public void setSellerId(String sellerId) {
         SellerId = sellerId;
     }
-
 
 
     public String getPhone() {
@@ -146,4 +152,26 @@ public class Orders {
     public void setDate(long date) {
         this.date = date;
     }
+
+    public String getImages() {
+        return images;
+    }
+
+    public String getOnlyImage() {
+        List<String> image = Arrays.asList(images.replace("[", "").replace("]", "").replace(" ", "").trim().split(","));
+        return image.get(0);
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
+
+    public String getToggleItem() {
+        return ToggleItem;
+    }
+
+    public void setToggleItem(String toggleItem) {
+        ToggleItem = toggleItem;
+    }
+
 }

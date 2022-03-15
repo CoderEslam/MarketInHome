@@ -34,12 +34,7 @@ class OrderSelllerFragment : BaseFragment(), OnOrder {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_order_selller, container, false)
         cartViewModel = ViewModelProvider(this)[CartViewModel::class.java]
         orderViewModel = ViewModelProvider(this)[OrderViewModel::class.java]
@@ -63,10 +58,15 @@ class OrderSelllerFragment : BaseFragment(), OnOrder {
         map["TotalPrice"] = orders.totalPrice;
         map["Quantity"] = orders.quantity;
         map["price"] = orders.price;
-        map["image"] = orders.image;
+        map["images"] = orders.images;
         map["productName"] = orders.productName;
         map["id"] = pushId;
         map["date"] = time;
+        map["address"] = orders.address;
+        map["phone"] = orders.phone;
+        map["anotherPhone"] = orders.anotherPhone;
+        map["locationUri"] = orders.locationUri;
+        map["ToggleItem"] = orders.toggleItem;
         reference.child(RECENTORDER).child(pushId).updateChildren(map);
         reference.child(ORDERS).child(orders.id)
             .removeValue()

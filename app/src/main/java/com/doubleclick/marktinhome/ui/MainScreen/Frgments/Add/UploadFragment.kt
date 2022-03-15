@@ -3,6 +3,7 @@ package com.doubleclick.marktinhome.ui.MainScreen.Frgments.Add
 
 import android.app.Activity.RESULT_OK
 import android.app.ProgressDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,7 +13,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatSpinner
+import androidx.appcompat.widget.AppCompatToggleButton
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
@@ -26,10 +29,12 @@ import com.doubleclick.marktinhome.R
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
 import java.util.*
+import kotlin.collections.HashMap
 
 
 class UploadFragment : BaseFragment() {
@@ -49,6 +54,12 @@ class UploadFragment : BaseFragment() {
     private lateinit var productImages: RecyclerView
     private lateinit var downloadUri: HashMap<String, Any>
     lateinit var selectImages: Button
+    lateinit var ratingSeller: RatingBar
+    lateinit var mapToggalButton: HashMap<String, Any>
+    var rate: Float = 0f
+    lateinit var addToggleButton: LinearLayout
+    lateinit var addView: ImageView
+    private lateinit var builder: AlertDialog.Builder
 
     val parent_child by navArgs<UploadFragmentArgs>()
 
@@ -76,8 +87,12 @@ class UploadFragment : BaseFragment() {
         keywords = view.findViewById(R.id.keywords);
         productImages = view.findViewById(R.id.productImages);
         selectImages = view.findViewById(R.id.selectImages);
+        ratingSeller = view.findViewById(R.id.ratingSeller);
+        addToggleButton = view.findViewById(R.id.addToggleButton);
+        addView = view.findViewById(R.id.addView);
         uris = ArrayList()
         downloadUri = HashMap();
+        mapToggalButton = HashMap();
         tradmarkViewModel = ViewModelProvider(this)[TradmarkViewModel::class.java]
         tradmarkViewModel.namesMark.observe(viewLifecycleOwner, Observer {
 //            var trademarkAdapter  = TrademarkAdapter(it)
@@ -101,6 +116,9 @@ class UploadFragment : BaseFragment() {
             val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, it)
             trademark.setAdapter(adapter)
         })
+        ratingSeller.setOnRatingBarChangeListener({ ratingBar, rating, fromUser ->
+            rate = rating;
+        })
         Upload.setOnClickListener {
             UploadImages(
                 productName.text.toString(),
@@ -117,6 +135,27 @@ class UploadFragment : BaseFragment() {
         }
         selectImages.setOnClickListener {
             openImage()
+        }
+
+        addView.setOnClickListener {
+            builder = AlertDialog.Builder(requireContext())
+            var toggal: AppCompatToggleButton = AppCompatToggleButton(requireContext())
+            val view = LayoutInflater.from(context).inflate(R.layout.add_toggal, null, false)
+            val editorder: TextInputEditText = view.findViewById(R.id.editname)
+            builder.setTitle("Add Options")
+            builder.setPositiveButton("ok", DialogInterface.OnClickListener { dialog , which ->
+                toggal.setText("" + editorder.text.toString())
+                mapToggalButton["" + addToggleButton.childCount] = editorder.text.toString()
+                addToggleButton.addView(toggal)
+                Log.e("addToggleButton", editorder.text.toString())
+                dialog.dismiss()
+            })
+            builder.setNegativeButton("cancel", DialogInterface.OnClickListener { dialog, which ->
+                dialog.dismiss()
+            })
+            builder.setView(view)
+            builder.show()
+
         }
         return view;
     }
@@ -151,73 +190,6 @@ class UploadFragment : BaseFragment() {
         val mimeTypeMap = MimeTypeMap.getSingleton()
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri!!))
     }
-
-
-    /*override fun upload(
-        name: String?,
-        price: Double,
-        LastPrice: Double,
-        descroiprion: String,
-        keywords: String,
-        trademark: String?,
-        ParentId: String?,
-        ChildId: String?,
-        ParentName: String?,
-        ChildName: String?
-    ) {
-        val pd = ProgressDialog(context)
-        pd.setMessage("Uploading")
-        pd.show()
-        if (uris.size != 0) {
-            val fileReference = storageReference.child(
-                System.currentTimeMillis().toString() + "." + getFileExtension(imageUri)
-            )
-            val uploadTask: StorageTask<*>
-            uploadTask = fileReference.putFile(imageUri)
-            uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot?, Task<Uri?>?> { task ->
-                if (!task.isSuccessful) {
-                    throw task.exception!!
-                }
-                fileReference.downloadUrl
-            }).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    val downloadUri: Uri? = task.result
-                    val mUri = downloadUri.toString()
-                    val push = reference.push().key.toString()
-                    val date = Date()
-                    val map: HashMap<String, Any> = HashMap()
-                    val discount = 100.0 - -1.0 * (price / LastPrice * 100.0)
-                    map["productId"] = push
-                    map["price"] = price
-                    map["description"] = descroiprion + ""
-                    map["date"] = date.time
-                    map["adminId"] = myId
-                    map["productName"] = name!!
-                    map["lastPrice"] = LastPrice
-                    map["tradeMark"] = trademark!!
-                    map["parentCategoryId"] = ParentId!!
-                    map["childCategoryId"] = ChildId!!
-                    map["parentCategoryName"] = ParentName!!
-                    map["childCategoryName"] = ChildName!!
-                    map["keywords"] = keywords + ""
-                    map["Image"] = mUri
-                    map["TotalRating"] = 0
-                    map["discount"] = discount
-                    reference.child(Constantes.PRODUCT).child(Objects.requireNonNull(push))
-                        .setValue(map)
-                    pd.dismiss()
-                } else {
-                    Toast.makeText(context, "Failed!", Toast.LENGTH_SHORT).show()
-                    pd.dismiss()
-                }
-            }.addOnFailureListener { e ->
-                Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
-                pd.dismiss()
-            }
-        } else {
-            Toast.makeText(context, "No image selected", Toast.LENGTH_SHORT).show()
-        }
-    }*/
 
     fun UploadImages(
         name: String?,
@@ -301,28 +273,27 @@ class UploadFragment : BaseFragment() {
             lastMoney = LastPrice
         }
         val discount = ((-1.0 * (price / LastPrice * 100.0)) - 100)
-        map["productId"] = push
+        map["productId"] = push.toString()
         map["price"] = money
-        map["description"] = descroiprion + ""
+        map["description"] = descroiprion.toString()
         map["date"] = date.time
-        map["adminId"] = myId
-        map["productName"] = name!!
+        map["adminId"] = myId.toString()
+        map["productName"] = name!!.toString()
         map["lastPrice"] = lastMoney
-        map["tradeMark"] = trademark!!
-        map["parentCategoryId"] = ParentId!!
-        map["childCategoryId"] = ChildId!!
-        map["parentCategoryName"] = ParentName!!
-        map["childCategoryName"] = ChildName!!
-        map["keywords"] = keywords + ""
+        map["tradeMark"] = trademark!!.toString()
+        map["parentCategoryId"] = ParentId!!.toString()
+        map["childCategoryId"] = ChildId!!.toString()
+        map["parentCategoryName"] = ParentName!!.toString()
+        map["childCategoryName"] = ChildName!!.toString()
+        map["keywords"] = keywords.toString()
         map["TotalRating"] = 0
         map["discount"] = discount
+        map["ratingSeller"] = rate
+        map["Images"] = downloadUri.values.toString()
+        map["Toggals"] = mapToggalButton.values.toString()
         reference.child(PRODUCT).child(Objects.requireNonNull(push)).updateChildren(map)
-        uploadImages(push)
     }
 
-    fun uploadImages(id: String) {
-        reference.child(PRODUCT).child(id).child("Images").setValue(downloadUri.values.toString())
-    }
 
 }
 

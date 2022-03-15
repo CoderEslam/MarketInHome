@@ -123,6 +123,9 @@ public final class ActivityProductBinding implements ViewBinding {
   public final LinearLayout rateNowContainer;
 
   @NonNull
+  public final TextView ratingSeller;
+
+  @NonNull
   public final ScrollView scrollView2;
 
   @NonNull
@@ -157,9 +160,6 @@ public final class ActivityProductBinding implements ViewBinding {
 
   @NonNull
   public final TextView textView7;
-
-  @NonNull
-  public final TextView textView70;
 
   @NonNull
   public final TextView trarmark;
@@ -200,11 +200,11 @@ public final class ActivityProductBinding implements ViewBinding {
       @NonNull ProgressBar progressBar2, @NonNull ProgressBar progressBar3,
       @NonNull ProgressBar progressBar4, @NonNull ProgressBar progressBar5,
       @NonNull TextView quantity, @NonNull LinearLayout rateNowContainer,
-      @NonNull ScrollView scrollView2, @NonNull ImageView share, @NonNull TextView textView12,
-      @NonNull TextView textView13, @NonNull TextView textView14, @NonNull TextView textView15,
-      @NonNull TextView textView16, @NonNull TextView textView4, @NonNull TextView textView5,
-      @NonNull TextView textView6, @NonNull TextView textView60, @NonNull TextView textView7,
-      @NonNull TextView textView70, @NonNull TextView trarmark, @NonNull TextView tvRate1,
+      @NonNull TextView ratingSeller, @NonNull ScrollView scrollView2, @NonNull ImageView share,
+      @NonNull TextView textView12, @NonNull TextView textView13, @NonNull TextView textView14,
+      @NonNull TextView textView15, @NonNull TextView textView16, @NonNull TextView textView4,
+      @NonNull TextView textView5, @NonNull TextView textView6, @NonNull TextView textView60,
+      @NonNull TextView textView7, @NonNull TextView trarmark, @NonNull TextView tvRate1,
       @NonNull TextView tvRate2, @NonNull TextView tvRate3, @NonNull TextView tvRate4,
       @NonNull TextView tvRate5, @NonNull TextView tvYourRatins, @NonNull RatingBar yourRate) {
     this.rootView = rootView;
@@ -240,6 +240,7 @@ public final class ActivityProductBinding implements ViewBinding {
     this.progressBar5 = progressBar5;
     this.quantity = quantity;
     this.rateNowContainer = rateNowContainer;
+    this.ratingSeller = ratingSeller;
     this.scrollView2 = scrollView2;
     this.share = share;
     this.textView12 = textView12;
@@ -252,7 +253,6 @@ public final class ActivityProductBinding implements ViewBinding {
     this.textView6 = textView6;
     this.textView60 = textView60;
     this.textView7 = textView7;
-    this.textView70 = textView70;
     this.trarmark = trarmark;
     this.tvRate1 = tvRate1;
     this.tvRate2 = tvRate2;
@@ -482,6 +482,12 @@ public final class ActivityProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ratingSeller;
+      TextView ratingSeller = ViewBindings.findChildViewById(rootView, id);
+      if (ratingSeller == null) {
+        break missingId;
+      }
+
       id = R.id.scrollView2;
       ScrollView scrollView2 = ViewBindings.findChildViewById(rootView, id);
       if (scrollView2 == null) {
@@ -554,12 +560,6 @@ public final class ActivityProductBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView70;
-      TextView textView70 = ViewBindings.findChildViewById(rootView, id);
-      if (textView70 == null) {
-        break missingId;
-      }
-
       id = R.id.trarmark;
       TextView trarmark = ViewBindings.findChildViewById(rootView, id);
       if (trarmark == null) {
@@ -613,9 +613,9 @@ public final class ActivityProductBinding implements ViewBinding {
           constraintLayout7, constraintLayout8, description, fab, imageProduct, imageView3,
           imageView4, imageView5, imageView6, imageView7, imageView8, lastPrice, linearLayout5,
           linearLayout7, mins, plus, price, productName, progressBar1, progressBar2, progressBar3,
-          progressBar4, progressBar5, quantity, rateNowContainer, scrollView2, share, textView12,
-          textView13, textView14, textView15, textView16, textView4, textView5, textView6,
-          textView60, textView7, textView70, trarmark, tvRate1, tvRate2, tvRate3, tvRate4, tvRate5,
+          progressBar4, progressBar5, quantity, rateNowContainer, ratingSeller, scrollView2, share,
+          textView12, textView13, textView14, textView15, textView16, textView4, textView5,
+          textView6, textView60, textView7, trarmark, tvRate1, tvRate2, tvRate3, tvRate4, tvRate5,
           tvYourRatins, yourRate);
     }
     String missingId = rootView.getResources().getResourceName(id);

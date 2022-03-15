@@ -242,8 +242,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="600" />
-                            <option name="y" value="-15" />
+                            <option name="x" value="616" />
+                            <option name="y" value="5" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -254,8 +254,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="554" />
-                            <option name="y" value="-350" />
+                            <option name="x" value="818" />
+                            <option name="y" value="-366" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -278,6 +278,15 @@
                             <option name="x" value="915" />
                             <option name="y" value="397" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_recentOrderFragment_to_productFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

@@ -23,7 +23,7 @@ public class OrdersRepository extends BaseRepository {
     private ArrayList<Orders> ordersArrayList = new ArrayList<>();
     private OrderLisinter orderLisinter;
 
-    public OrdersRepository( OrderLisinter orderLisinter) {
+    public OrdersRepository(OrderLisinter orderLisinter) {
         this.orderLisinter = orderLisinter;
     }
 
@@ -31,16 +31,18 @@ public class OrdersRepository extends BaseRepository {
         reference.child(ORDERS).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-
                 try {
-                    if (isNetworkConnected() && task.getResult().exists()) {
-                        DataSnapshot snapshot = task.getResult();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Orders orders = dataSnapshot.getValue(Orders.class);
-                            ordersArrayList.add(orders);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Orders orders = dataSnapshot.getValue(Orders.class);
+                                ordersArrayList.add(orders);
+                            }
+                            orderLisinter.OnOrder(ordersArrayList);
+                        } else {
+                            ShowToast("you don't have an orders");
                         }
-                        orderLisinter.OnOrder(ordersArrayList);
-
                     } else {
                         ShowToast("No Internet Connection");
                     }

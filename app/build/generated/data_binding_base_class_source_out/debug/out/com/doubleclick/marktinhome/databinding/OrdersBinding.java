@@ -4,6 +4,7 @@ package com.doubleclick.marktinhome.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,10 +22,28 @@ public final class OrdersBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView AnothercustommerPhone;
+
+  @NonNull
+  public final Button CustomerLocation;
+
+  @NonNull
   public final TextView PriceOrder;
 
   @NonNull
   public final TextView cancel;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout9;
+
+  @NonNull
+  public final TextView custommerAddress;
+
+  @NonNull
+  public final TextView custommerName;
+
+  @NonNull
+  public final TextView custommerPhone;
 
   @NonNull
   public final TextView nameOrder;
@@ -39,19 +58,44 @@ public final class OrdersBinding implements ViewBinding {
   public final TextView quantityOrder;
 
   @NonNull
+  public final TextView textView1;
+
+  @NonNull
+  public final TextView textView2;
+
+  @NonNull
+  public final TextView textView3;
+
+  @NonNull
+  public final TextView textView4;
+
+  @NonNull
   public final TextView totalPrice;
 
-  private OrdersBinding(@NonNull ConstraintLayout rootView, @NonNull TextView PriceOrder,
-      @NonNull TextView cancel, @NonNull TextView nameOrder, @NonNull TextView ok,
-      @NonNull ImageView orderImage, @NonNull TextView quantityOrder,
-      @NonNull TextView totalPrice) {
+  private OrdersBinding(@NonNull ConstraintLayout rootView, @NonNull TextView AnothercustommerPhone,
+      @NonNull Button CustomerLocation, @NonNull TextView PriceOrder, @NonNull TextView cancel,
+      @NonNull ConstraintLayout constraintLayout9, @NonNull TextView custommerAddress,
+      @NonNull TextView custommerName, @NonNull TextView custommerPhone,
+      @NonNull TextView nameOrder, @NonNull TextView ok, @NonNull ImageView orderImage,
+      @NonNull TextView quantityOrder, @NonNull TextView textView1, @NonNull TextView textView2,
+      @NonNull TextView textView3, @NonNull TextView textView4, @NonNull TextView totalPrice) {
     this.rootView = rootView;
+    this.AnothercustommerPhone = AnothercustommerPhone;
+    this.CustomerLocation = CustomerLocation;
     this.PriceOrder = PriceOrder;
     this.cancel = cancel;
+    this.constraintLayout9 = constraintLayout9;
+    this.custommerAddress = custommerAddress;
+    this.custommerName = custommerName;
+    this.custommerPhone = custommerPhone;
     this.nameOrder = nameOrder;
     this.ok = ok;
     this.orderImage = orderImage;
     this.quantityOrder = quantityOrder;
+    this.textView1 = textView1;
+    this.textView2 = textView2;
+    this.textView3 = textView3;
+    this.textView4 = textView4;
     this.totalPrice = totalPrice;
   }
 
@@ -82,6 +126,18 @@ public final class OrdersBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.AnothercustommerPhone;
+      TextView AnothercustommerPhone = ViewBindings.findChildViewById(rootView, id);
+      if (AnothercustommerPhone == null) {
+        break missingId;
+      }
+
+      id = R.id.CustomerLocation;
+      Button CustomerLocation = ViewBindings.findChildViewById(rootView, id);
+      if (CustomerLocation == null) {
+        break missingId;
+      }
+
       id = R.id.PriceOrder;
       TextView PriceOrder = ViewBindings.findChildViewById(rootView, id);
       if (PriceOrder == null) {
@@ -91,6 +147,30 @@ public final class OrdersBinding implements ViewBinding {
       id = R.id.cancel;
       TextView cancel = ViewBindings.findChildViewById(rootView, id);
       if (cancel == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout9;
+      ConstraintLayout constraintLayout9 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout9 == null) {
+        break missingId;
+      }
+
+      id = R.id.custommerAddress;
+      TextView custommerAddress = ViewBindings.findChildViewById(rootView, id);
+      if (custommerAddress == null) {
+        break missingId;
+      }
+
+      id = R.id.custommerName;
+      TextView custommerName = ViewBindings.findChildViewById(rootView, id);
+      if (custommerName == null) {
+        break missingId;
+      }
+
+      id = R.id.custommerPhone;
+      TextView custommerPhone = ViewBindings.findChildViewById(rootView, id);
+      if (custommerPhone == null) {
         break missingId;
       }
 
@@ -118,14 +198,40 @@ public final class OrdersBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView1;
+      TextView textView1 = ViewBindings.findChildViewById(rootView, id);
+      if (textView1 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView3;
+      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
+      if (textView3 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView4;
+      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
+      if (textView4 == null) {
+        break missingId;
+      }
+
       id = R.id.totalPrice;
       TextView totalPrice = ViewBindings.findChildViewById(rootView, id);
       if (totalPrice == null) {
         break missingId;
       }
 
-      return new OrdersBinding((ConstraintLayout) rootView, PriceOrder, cancel, nameOrder, ok,
-          orderImage, quantityOrder, totalPrice);
+      return new OrdersBinding((ConstraintLayout) rootView, AnothercustommerPhone, CustomerLocation,
+          PriceOrder, cancel, constraintLayout9, custommerAddress, custommerName, custommerPhone,
+          nameOrder, ok, orderImage, quantityOrder, textView1, textView2, textView3, textView4,
+          totalPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

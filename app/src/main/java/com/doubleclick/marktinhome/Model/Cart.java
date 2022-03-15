@@ -3,6 +3,9 @@ package com.doubleclick.marktinhome.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created By Eslam Ghazy on 3/1/2022
  */
@@ -13,11 +16,21 @@ public class Cart implements Parcelable {
     private double Quantity;
     private double lastPrice;
     private String productName;
-    private String image;
+    private String images;
     private String id;
     private String BuyerId;
     private String SellerId;
     private double TotalPrice;
+
+    public String getToggleItem() {
+        return ToggleItem;
+    }
+
+    public void setToggleItem(String toggleItem) {
+        ToggleItem = toggleItem;
+    }
+
+    private String ToggleItem;
 
     protected Cart(Parcel in) {
         ProductId = in.readString();
@@ -25,7 +38,7 @@ public class Cart implements Parcelable {
         Quantity = in.readLong();
         lastPrice = in.readDouble();
         productName = in.readString();
-        image = in.readString();
+        images = in.readString();
         id = in.readString();
         BuyerId = in.readString();
         SellerId = in.readString();
@@ -83,14 +96,6 @@ public class Cart implements Parcelable {
         this.productName = productName;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public String getId() {
         return id;
     }
@@ -113,7 +118,7 @@ public class Cart implements Parcelable {
         dest.writeDouble(Quantity);
         dest.writeDouble(lastPrice);
         dest.writeString(productName);
-        dest.writeString(image);
+        dest.writeString(images);
         dest.writeString(id);
         dest.writeString(BuyerId);
         dest.writeString(SellerId);
@@ -128,7 +133,7 @@ public class Cart implements Parcelable {
                 ", Quantity='" + Quantity + '\'' +
                 ", lastPrice='" + lastPrice + '\'' +
                 ", productName='" + productName + '\'' +
-                ", image='" + image + '\'' +
+                ", images='" + images + '\'' +
                 ", id='" + id + '\'' +
                 ", BuyerId='" + BuyerId + '\'' +
                 ", SellerId='" + SellerId + '\'' +
@@ -167,4 +172,19 @@ public class Cart implements Parcelable {
     public void setTotalPrice(double totalPrice) {
         TotalPrice = totalPrice;
     }
+
+    public String getImages() {
+        return images;
+    }
+
+    public String getOnlyImage(){
+        List<String> image = Arrays.asList(images.replace("[", "").replace("]", "").replace(" ", "").trim().split(","));
+        return image.get(0);
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
+
+
 }

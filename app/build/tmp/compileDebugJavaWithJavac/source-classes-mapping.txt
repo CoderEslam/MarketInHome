@@ -57,6 +57,8 @@ com/doubleclick/marktinhome/Model/ClassificationPC.java
  com.doubleclick.marktinhome.Model.ClassificationPC
 com/doubleclick/marktinhome/Notifications/MyFirebaseMessaging.java
  com.doubleclick.marktinhome.Notifications.MyFirebaseMessaging
+com/doubleclick/marktinhome/databinding/LayoutSmallProductBinding.java
+ com.doubleclick.marktinhome.databinding.LayoutSmallProductBinding
 com/doubleclick/marktinhome/Repository/RecentSearchRepository.java
  com.doubleclick.marktinhome.Repository.RecentSearchRepository
  com.doubleclick.marktinhome.Repository.RecentSearchRepository$1
@@ -105,6 +107,8 @@ com/doubleclick/marktinhome/Repository/CartRepository.java
  com.doubleclick.marktinhome.Repository.CartRepository$1
 com/doubleclick/ViewModel/OrderViewModel.java
  com.doubleclick.ViewModel.OrderViewModel
+com/doubleclick/marktinhome/databinding/AddToggalBinding.java
+ com.doubleclick.marktinhome.databinding.AddToggalBinding
 com/doubleclick/marktinhome/databinding/LayoutCategoriesBinding.java
  com.doubleclick.marktinhome.databinding.LayoutCategoriesBinding
 com/doubleclick/marktinhome/databinding/FragmentParentBinding.java
@@ -343,6 +347,8 @@ com/doubleclick/marktinhome/Model/Product.java
  com.doubleclick.marktinhome.Model.Product
 com/doubleclick/marktinhome/Adapters/HomeAdapter.java
  com.doubleclick.marktinhome.Adapters.HomeAdapter
+com/doubleclick/marktinhome/databinding/MapBinding.java
+ com.doubleclick.marktinhome.databinding.MapBinding
 com/doubleclick/marktinhome/Model/CatecoriesModel.java
  com.doubleclick.marktinhome.Model.CatecoriesModel
 com/doubleclick/marktinhome/Views/PhotoView/OnGestureListener.java

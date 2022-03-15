@@ -142,6 +142,7 @@ attr alpha
 attr alphabeticModifiers
 attr altSrc
 attr alwaysExpand
+attr ambientEnabled
 attr animateCircleAngleTo
 attr animateRelativeTo
 attr animationMode
@@ -232,6 +233,13 @@ attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
 attr button_drawable
+attr cameraBearing
+attr cameraMaxZoomPreference
+attr cameraMinZoomPreference
+attr cameraTargetLat
+attr cameraTargetLng
+attr cameraTilt
+attr cameraZoom
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -675,6 +683,10 @@ attr labelBehavior
 attr labelStyle
 attr labelVisibilityMode
 attr lastBaselineToBottomHeight
+attr latLngBoundsNorthEastLatitude
+attr latLngBoundsNorthEastLongitude
+attr latLngBoundsSouthWestLatitude
+attr latLngBoundsSouthWestLongitude
 attr launchSingleTop
 attr layout
 attr layoutDescription
@@ -770,6 +782,7 @@ attr listPreferredItemPaddingEnd
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
+attr liteMode
 attr logo
 attr logoDescription
 attr lottie_autoPlay
@@ -788,6 +801,8 @@ attr lottie_repeatMode
 attr lottie_scale
 attr lottie_speed
 attr lottie_url
+attr mapId
+attr mapType
 attr marginHorizontal
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogButtonSpacerVisibility
@@ -1241,10 +1256,19 @@ attr triggerId
 attr triggerReceiver
 attr triggerSlack
 attr ttcIndex
+attr uiCompass
+attr uiMapToolbar
+attr uiRotateGestures
+attr uiScrollGestures
+attr uiScrollGesturesDuringRotateOrZoom
+attr uiTiltGestures
+attr uiZoomControls
+attr uiZoomGestures
 attr upDuration
 attr uri
 attr useCompatPadding
 attr useMaterialThemeColors
+attr useViewLifecycle
 attr values
 attr verticalOffset
 attr verticalOffsetWithText
@@ -1275,6 +1299,7 @@ attr windowNoTitle
 attr yearSelectedStyle
 attr yearStyle
 attr yearTodayStyle
+attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_config_actionMenuItemAllCaps
 bool m3_sys_typescale_body_large_text_all_caps
@@ -2754,12 +2779,14 @@ id ALT
 id AddAdv
 id AddProduct
 id AddTradmark
+id AnothercustommerPhone
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id CartName
 id ChildRecycler
 id Continue
+id CustomerLocation
 id FUNCTION
 id FilterRecycler
 id FilterRecyclerView
@@ -2859,6 +2886,10 @@ id actions
 id activity_chooser_view_content
 id add
 id addParent
+id addToggalsLinearLayout
+id addToggalsScrollView
+id addToggleButton
+id addView
 id add_navigation
 id address
 id addressFragment
@@ -2957,6 +2988,7 @@ id constraintLayout5
 id constraintLayout6
 id constraintLayout7
 id constraintLayout8
+id constraintLayout9
 id container
 id containerCV
 id containerLL
@@ -2970,6 +3002,9 @@ id counterclockwise
 id currentState
 id custom
 id customPanel
+id custommerAddress
+id custommerName
+id custommerPhone
 id cut
 id dark
 id dataBinding
@@ -3063,6 +3098,7 @@ id homeAsUp
 id homeFragment
 id honorRequest
 id horizontal_only
+id hybrid
 id icon
 id icon_group
 id icon_only
@@ -3138,6 +3174,7 @@ id lottie_layer_name
 id ltr
 id mainFragment
 id main_fragment
+id map
 id masked
 id match_constraint
 id match_parent
@@ -3206,6 +3243,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id myAdv
 id myImage
+id myLocation
 id myRecentOrder
 id name
 id nameMark
@@ -3284,6 +3322,7 @@ id quantity
 id quantityOrder
 id radio
 id rate_now_container
+id ratingSeller
 id ratio
 id recentOrder
 id recentOrderFragment
@@ -3302,6 +3341,7 @@ id rounded
 id row_index_key
 id rr
 id rtl
+id satellite
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3387,6 +3427,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id terrain
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -3402,11 +3443,13 @@ id textInputLayout5
 id textInputLayout6
 id textInputLayout7
 id textInputLayout8
+id textInputLayout9
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView1
 id textView10
 id textView12
 id textView13
@@ -3420,7 +3463,6 @@ id textView5
 id textView6
 id textView60
 id textView7
-id textView70
 id textView8
 id textView9
 id textWatcher
@@ -3598,6 +3640,7 @@ layout activity_main_screen
 layout activity_product
 layout activity_seller
 layout activity_trademark
+layout add_toggal
 layout all_tradmark
 layout botton_navigation
 layout browser_actions_context_menu_page
@@ -3656,6 +3699,7 @@ layout layout_categories
 layout layout_edit
 layout layout_product
 layout layout_recent_order
+layout layout_small_product
 layout layout_top_deals
 layout layout_upload
 layout list_group
@@ -3663,6 +3707,7 @@ layout list_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
+layout map
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -3802,6 +3847,7 @@ string abc_toolbar_collapse_description
 string add
 string all_cartegories
 string androidx_startup
+string another_customer_phone
 string another_number_phone
 string app_name
 string appbar_scrolling_view_behavior
@@ -3835,6 +3881,10 @@ string common_signin_button_text
 string common_signin_button_text_long
 string confirm
 string create_by_x_team
+string customer_location
+string customer_name
+string customer_phone
+string custommer_address
 string default_web_client_id
 string description
 string easy_to_hundel
@@ -3850,9 +3900,11 @@ string fcm_fallback_notification_channel_label
 string filter
 string froget_password
 string gcm_defaultSenderId
+string get_my_location
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_maps_key
 string google_storage_bucket
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
@@ -3949,9 +4001,12 @@ string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
 string my_order
 string my_recent_order
+string name_button
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string new_user
+string off
+string on
 string password
 string password_toggle_content_description
 string path_arrow
@@ -5098,6 +5153,7 @@ styleable LiquidPager button_drawable
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
 styleable LottieAnimationView lottie_autoPlay lottie_cacheComposition lottie_colorFilter lottie_enableMergePathsForKitKatAndAbove lottie_fallbackRes lottie_fileName lottie_imageAssetsFolder lottie_loop lottie_progress lottie_rawRes lottie_renderMode lottie_repeatCount lottie_repeatMode lottie_scale lottie_speed lottie_url
+styleable MapAttrs ambientEnabled backgroundColor cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapId mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType

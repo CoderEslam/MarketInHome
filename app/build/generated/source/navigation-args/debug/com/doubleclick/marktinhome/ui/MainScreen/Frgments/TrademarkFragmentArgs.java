@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.SavedStateHandle;
 import androidx.navigation.NavArgs;
 import com.doubleclick.marktinhome.Model.Trademark;
 import java.io.Serializable;
@@ -44,6 +45,21 @@ public class TrademarkFragmentArgs implements NavArgs {
     return __result;
   }
 
+  @NonNull
+  @SuppressWarnings("unchecked")
+  public static TrademarkFragmentArgs fromSavedStateHandle(
+      @NonNull SavedStateHandle savedStateHandle) {
+    TrademarkFragmentArgs __result = new TrademarkFragmentArgs();
+    if (savedStateHandle.contains("trademark")) {
+      Trademark trademark;
+      trademark = savedStateHandle.get("trademark");
+      __result.arguments.put("trademark", trademark);
+    } else {
+      throw new IllegalArgumentException("Required argument \"trademark\" is missing and does not have an android:defaultValue");
+    }
+    return __result;
+  }
+
   @SuppressWarnings("unchecked")
   @Nullable
   public Trademark getTrademark() {
@@ -60,6 +76,23 @@ public class TrademarkFragmentArgs implements NavArgs {
         __result.putParcelable("trademark", Parcelable.class.cast(trademark));
       } else if (Serializable.class.isAssignableFrom(Trademark.class)) {
         __result.putSerializable("trademark", Serializable.class.cast(trademark));
+      } else {
+        throw new UnsupportedOperationException(Trademark.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
+      }
+    }
+    return __result;
+  }
+
+  @SuppressWarnings("unchecked")
+  @NonNull
+  public SavedStateHandle toSavedStateHandle() {
+    SavedStateHandle __result = new SavedStateHandle();
+    if (arguments.containsKey("trademark")) {
+      Trademark trademark = (Trademark) arguments.get("trademark");
+      if (Parcelable.class.isAssignableFrom(Trademark.class) || trademark == null) {
+        __result.set("trademark", Parcelable.class.cast(trademark));
+      } else if (Serializable.class.isAssignableFrom(Trademark.class)) {
+        __result.set("trademark", Serializable.class.cast(trademark));
       } else {
         throw new UnsupportedOperationException(Trademark.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
       }
@@ -99,11 +132,11 @@ public class TrademarkFragmentArgs implements NavArgs {
         + "}";
   }
 
-  public static class Builder {
+  public static final class Builder {
     private final HashMap arguments = new HashMap();
 
     @SuppressWarnings("unchecked")
-    public Builder(TrademarkFragmentArgs original) {
+    public Builder(@NonNull TrademarkFragmentArgs original) {
       this.arguments.putAll(original.arguments);
     }
 
@@ -125,7 +158,7 @@ public class TrademarkFragmentArgs implements NavArgs {
       return this;
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked","GetterOnBuilder"})
     @Nullable
     public Trademark getTrademark() {
       return (Trademark) arguments.get("trademark");

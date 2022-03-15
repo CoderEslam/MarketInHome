@@ -1,6 +1,7 @@
 package com.doubleclick.marktinhome.Model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -21,14 +22,50 @@ public class Product implements Serializable, Comparable {
     private String childCategoryName;
     private String parentCategoryId;
     private String childCategoryId;
-    private String Image;
     private int TotalRating;
     private int discount;
     private String keywords;
     private String Images;
+    private String Toggals;
+
+    public Product(double price, String productName, String images, String toggals) {
+        this.price = price;
+        this.description = description;
+        this.productName = productName;
+        this.lastPrice = lastPrice;
+        this.tradeMark = tradeMark;
+        Images = images;
+        Toggals = toggals;
+    }
+
+
+    public String getToggals() {
+        return Toggals;
+    }
+
+    public void setToggals(String toggals) {
+        Toggals = toggals;
+    }
+
+
+
+    public float getRatingSeller() {
+        return ratingSeller;
+    }
+
+    public void setRatingSeller(float ratingSeller) {
+        this.ratingSeller = ratingSeller;
+    }
+
+    private float ratingSeller;
 
     public String getImages() {
         return Images;
+    }
+
+    public String getOnlyImage(){
+        List<String> image = Arrays.asList(getImages().replace("[", "").replace("]", "").replace(" ", "").trim().split(","));
+        return image.get(0);
     }
 
     public void setImages(String images) {
@@ -142,13 +179,6 @@ public class Product implements Serializable, Comparable {
         this.childCategoryId = childCategoryId;
     }
 
-    public String getImage() {
-        return Image;
-    }
-
-    public void setImage(String image) {
-        Image = image;
-    }
 
     public int getTotalRating() {
         return TotalRating;
@@ -189,7 +219,7 @@ public class Product implements Serializable, Comparable {
                 ", childCategoryName='" + childCategoryName + '\'' +
                 ", parentCategoryId='" + parentCategoryId + '\'' +
                 ", childCategoryId='" + childCategoryId + '\'' +
-                ", Image='" + Image + '\'' +
+                ", Images='" + Images + '\'' +
                 ", TotalRating=" + TotalRating +
                 ", discount=" + discount +
                 ", keywords='" + keywords + '\'' +
