@@ -1,6 +1,7 @@
 package com.doubleclick.marktinhome.ui.ProductActivity
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,7 +22,11 @@ import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Constantes.*
 import com.doubleclick.marktinhome.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import lecho.lib.hellocharts.model.PieChartData
+import lecho.lib.hellocharts.model.SliceValue
+import lecho.lib.hellocharts.view.PieChartView
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class productFragment : BaseFragment() {
@@ -57,7 +62,7 @@ class productFragment : BaseFragment() {
     lateinit var quantity: TextView
     var q: Int = 0
     lateinit var share: ImageView
-
+    lateinit var pieChartView: PieChartView
 
     private val product by navArgs<productFragmentArgs>()
 
@@ -98,6 +103,7 @@ class productFragment : BaseFragment() {
         quantity = view.findViewById(R.id.quantity)
         mins = view.findViewById(R.id.mins)
         share = view.findViewById(R.id.share);
+        pieChartView = view.findViewById(R.id.pieChartView);
         productName.text = product.product!!.productName
         trarmark.text = product.product!!.tradeMark
         price.text = product.product!!.price.toString()
@@ -218,6 +224,7 @@ class productFragment : BaseFragment() {
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }
+        Chart()
         return view;
     }
 
@@ -226,6 +233,20 @@ class productFragment : BaseFragment() {
         banner_slier_view_pager.adapter = sliderAdapter
         banner_slier_view_pager.clipToPadding = false
         banner_slier_view_pager.pageMargin = 20
+    }
+
+
+    fun Chart() {
+        var list: MutableList<SliceValue> = ArrayList();
+        list.add(SliceValue(5.6f, Color.RED))
+        list.add(SliceValue(5.6f, Color.BLUE))
+        list.add(SliceValue(5.6f, Color.BLACK))
+        list.add(SliceValue(5.6f, Color.RED))
+        list.add(SliceValue(5.6f, Color.BLUE))
+        list.add(SliceValue(5.6f, Color.BLACK))
+        var data: PieChartData = PieChartData(list);
+        pieChartView.pieChartData = data;
+
     }
 
 }

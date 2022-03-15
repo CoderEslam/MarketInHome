@@ -79,5 +79,7 @@ dependencies {
 
     implementation 'com.firebaseui:firebase-ui-database:6.0.2'
 
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
 
 }

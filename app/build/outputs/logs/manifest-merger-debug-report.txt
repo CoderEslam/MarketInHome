@@ -61,6 +61,7 @@ MERGED from [androidx.window:window:1.0.0] C:\Users\eslam\.gradle\caches\transfo
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\eslam\.gradle\caches\transforms-3\87a5ffa9196dad063cd9144f48a3403b\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\eslam\.gradle\caches\transforms-3\158b202ec98b00f5b612ef411cabccf5\transformed\jetified-circleimageview-2.2.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.mxn.soul:flowingdrawer-core:2.1.0] C:\Users\eslam\.gradle\caches\transforms-3\94acbcd7d8d1645dc97e2186f845d0b2\transformed\jetified-flowingdrawer-core-2.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.lecho:hellocharts-library:1.5.8] C:\Users\eslam\.gradle\caches\transforms-3\a04db13d2eafa421649bf0755d427fba\transformed\jetified-hellocharts-library-1.5.8\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\eslam\.gradle\caches\transforms-3\f5fcd91b8cd53edf0a2ac6c1a2fb3b82\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.2.4] C:\Users\eslam\.gradle\caches\transforms-3\8a554a71fea47ebc40cd11b6d3469a19\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.4.1] C:\Users\eslam\.gradle\caches\transforms-3\b74235cce1427b30f107d38a425fd7f4\transformed\jetified-appcompat-resources-1.4.1\AndroidManifest.xml:17:1-24:12
@@ -461,6 +462,8 @@ MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\eslam\.gradle\caches\t
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\eslam\.gradle\caches\transforms-3\158b202ec98b00f5b612ef411cabccf5\transformed\jetified-circleimageview-2.2.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.mxn.soul:flowingdrawer-core:2.1.0] C:\Users\eslam\.gradle\caches\transforms-3\94acbcd7d8d1645dc97e2186f845d0b2\transformed\jetified-flowingdrawer-core-2.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.mxn.soul:flowingdrawer-core:2.1.0] C:\Users\eslam\.gradle\caches\transforms-3\94acbcd7d8d1645dc97e2186f845d0b2\transformed\jetified-flowingdrawer-core-2.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lecho:hellocharts-library:1.5.8] C:\Users\eslam\.gradle\caches\transforms-3\a04db13d2eafa421649bf0755d427fba\transformed\jetified-hellocharts-library-1.5.8\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lecho:hellocharts-library:1.5.8] C:\Users\eslam\.gradle\caches\transforms-3\a04db13d2eafa421649bf0755d427fba\transformed\jetified-hellocharts-library-1.5.8\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\eslam\.gradle\caches\transforms-3\f5fcd91b8cd53edf0a2ac6c1a2fb3b82\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\eslam\.gradle\caches\transforms-3\f5fcd91b8cd53edf0a2ac6c1a2fb3b82\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.2.4] C:\Users\eslam\.gradle\caches\transforms-3\8a554a71fea47ebc40cd11b6d3469a19\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41

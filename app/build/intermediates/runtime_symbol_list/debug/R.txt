@@ -3261,6 +3261,7 @@ int id peekHeight 0x7f0a01fd
 int id percent 0x7f0a01fe
 int id person 0x7f0a01ff
 int id phone 0x7f0a0200
+int id pieChartView 0x7f0a02f1
 int id pin 0x7f0a0201
 int id plus 0x7f0a0202
 int id position 0x7f0a0203

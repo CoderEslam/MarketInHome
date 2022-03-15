@@ -3262,6 +3262,7 @@ id peekHeight
 id percent
 id person
 id phone
+id pieChartView
 id pin
 id plus
 id position
