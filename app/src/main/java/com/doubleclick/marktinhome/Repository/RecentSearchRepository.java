@@ -49,7 +49,7 @@ public class RecentSearchRepository extends BaseRepository {
                             DataSnapshot snapshot = task.getResult();
                             RecentSearch recentSearch = snapshot.getValue(RecentSearch.class);
                             LastSearchList.add(recentSearch.getRecentSearch());
-                            wordsSearchList = recentSearch.getRecentSearch().split(",");
+                            wordsSearchList = recentSearch.getRecentSearch().replace(" ","").split(",");
                             LastSearchList = Arrays.asList(wordsSearchList);
                             getLastProductResearch(LastSearchList);
                         }
@@ -78,11 +78,10 @@ public class RecentSearchRepository extends BaseRepository {
                                     assert product != null;
                                     if (product.getProductName().equals(i)||product.getTradeMark().contains(i) || product.getKeywords().contains(i) || product.getDescription().contains(i) || product.getChildCategoryName().equals(i) || product.getParentCategoryName().equals(i)) {
                                         productArrayList.add(product);
-                                        recentSearchInterface.getLastListSearchAboutProductOneTime(productArrayList);
                                     }
                                 }
-
                             }
+                            recentSearchInterface.getLastListSearchAboutProductOneTime(productArrayList);
                         }
                     } else {
                         ShowToast("No Internet Connection");
