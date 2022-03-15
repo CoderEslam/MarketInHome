@@ -143,7 +143,7 @@ class UploadFragment : BaseFragment() {
             val view = LayoutInflater.from(context).inflate(R.layout.add_toggal, null, false)
             val editorder: TextInputEditText = view.findViewById(R.id.editname)
             builder.setTitle("Add Options")
-            builder.setPositiveButton("ok", DialogInterface.OnClickListener { dialog , which ->
+            builder.setPositiveButton("ok", DialogInterface.OnClickListener { dialog, which ->
                 toggal.setText("" + editorder.text.toString())
                 mapToggalButton["" + addToggleButton.childCount] = editorder.text.toString()
                 addToggleButton.addView(toggal)
@@ -272,7 +272,7 @@ class UploadFragment : BaseFragment() {
             money = price
             lastMoney = LastPrice
         }
-        val discount = ((-1.0 * (price / LastPrice * 100.0)) - 100)
+        val discount = (-1 * (100 - ((price / LastPrice) * 100.0)))
         map["productId"] = push.toString()
         map["price"] = money
         map["description"] = descroiprion.toString()

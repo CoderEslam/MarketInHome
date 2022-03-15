@@ -276,7 +276,7 @@ public class ProductRepository extends BaseRepository {
     }
 
     public void getSearchByChild(String ChildId) {
-        reference.child(PRODUCT).orderByChild("parentCategoryId").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        reference.child(PRODUCT).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
@@ -332,7 +332,7 @@ public class ProductRepository extends BaseRepository {
 
     // to get Top Deals
     public void TopDeals() {
-        reference.child(PRODUCT).orderByChild("discount").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        reference.child(PRODUCT).orderByChild("discount").limitToFirst(20).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
@@ -379,36 +379,5 @@ public class ProductRepository extends BaseRepository {
         });
 
     }
-
-
-    /*public void getLastSearches(List<String> recentSearches) {
-        reference.child(PRODUCT).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                try {
-                    if (isNetworkConnected()) {
-                        if (task.getResult().exists()) {
-                            DataSnapshot snapshot = task.getResult();
-                            recentSearchProduct.clear();
-                            for (String recentSearch : recentSearches) {
-                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                    Product product = dataSnapshot.getValue(Product.class);
-                                    if (product.getKeywords().contains(recentSearch)) {
-                                        recentSearchProduct.add(product);
-                                    }
-                                }
-                            }
-                            product.getLastSearchProduct(recentSearchProduct);
-                        }
-                    } else {
-                        ShowToast("No Internet Connection");
-                    }
-                } catch (Exception e) {
-                    Log.e("ExceptionLastSearches", e.toString());
-                }
-
-            }
-        });
-    }*/
 
 }
