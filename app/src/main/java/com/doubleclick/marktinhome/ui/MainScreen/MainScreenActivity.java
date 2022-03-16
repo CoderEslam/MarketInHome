@@ -43,6 +43,7 @@ import com.doubleclick.marktinhome.Repository.Sending;
 import com.doubleclick.marktinhome.Views.SmoothButtom.SmoothBottomBar;
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity;
 import com.doubleclick.marktinhome.ui.MainScreen.Frgments.menu_listFragment;
+import com.doubleclick.marktinhome.ui.ProductActivity.productFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.common.util.NumberUtils;
@@ -159,6 +160,8 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
             if (!ProductId.equals("")) {
                 Bundle bundle = new Bundle();
                 bundle.putString("idProduct",ProductId);
+                productFragment productFragment = new productFragment();
+//                Navigation.findNavController(this,R.id.main_fragment).navigate();
                 Intent intent = new Intent(MainScreenActivity.this, FilterActivity.class);
                 intent.putExtra("idProduct", ProductId);
                 startActivity(intent);
