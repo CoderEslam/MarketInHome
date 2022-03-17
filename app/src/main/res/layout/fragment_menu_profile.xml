@@ -226,7 +226,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/AddProduct"
+            android:id="@+id/chat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -236,11 +236,11 @@
             app:layout_constraintTop_toBottomOf="@+id/recentOrder">
 
             <ImageView
-                android:id="@+id/imageView55"
+                android:id="@+id/imageView564"
                 android:layout_width="30dp"
                 android:layout_height="30sp"
                 android:padding="5dp"
-                android:src="@drawable/add_circle"
+                android:src="@drawable/textsms"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.25"
@@ -252,40 +252,31 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:text="Add Products"
+                android:text="@string/chat_us"
                 android:textColor="@color/textclor"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView55"
-                app:layout_constraintStart_toEndOf="@+id/imageView55"
-                app:layout_constraintTop_toTopOf="@+id/imageView55" />
+                app:layout_constraintBottom_toBottomOf="@+id/imageView564"
+                app:layout_constraintStart_toEndOf="@+id/imageView564"
+                app:layout_constraintTop_toTopOf="@+id/imageView564" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/edit"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/AddAdv"
+            android:id="@+id/joinUs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AddProduct">
+            app:layout_constraintTop_toBottomOf="@+id/chat">
 
             <ImageView
-                android:id="@+id/imageView555"
+                android:id="@+id/imageView51"
                 android:layout_width="30dp"
                 android:layout_height="30sp"
                 android:padding="5dp"
-                android:src="@drawable/add_circle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.25"
@@ -297,68 +288,150 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:text="Add Adv"
+                android:text="@string/connect_us"
                 android:textColor="@color/textclor"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView555"
-                app:layout_constraintStart_toEndOf="@+id/imageView555"
-                app:layout_constraintTop_toTopOf="@+id/imageView555" />
+                app:layout_constraintBottom_toBottomOf="@+id/imageView51"
+                app:layout_constraintStart_toEndOf="@+id/imageView51"
+                app:layout_constraintTop_toTopOf="@+id/imageView51" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/edit"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/AddTradmark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AddAdv">
 
-            <ImageView
-                android:id="@+id/imageView556"
-                android:layout_width="30dp"
-                android:layout_height="30sp"
-                android:padding="5dp"
-                android:src="@drawable/add_circle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/AddProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recentOrder">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                android:text="Add Tradmark"
-                android:textColor="@color/textclor"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView556"
-                app:layout_constraintStart_toEndOf="@+id/imageView556"
-                app:layout_constraintTop_toTopOf="@+id/imageView556" />
+                    <ImageView
+                        android:id="@+id/imageView55"
+                        android:layout_width="30dp"
+                        android:layout_height="30sp"
+                        android:padding="5dp"
+                        android:src="@drawable/add_circle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.25"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/edit"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:text="Add Products"
+                        android:textColor="@color/textclor"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView55"
+                        app:layout_constraintStart_toEndOf="@+id/imageView55"
+                        app:layout_constraintTop_toTopOf="@+id/imageView55" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/AddAdv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/AddProduct">
+
+                    <ImageView
+                        android:id="@+id/imageView555"
+                        android:layout_width="30dp"
+                        android:layout_height="30sp"
+                        android:padding="5dp"
+                        android:src="@drawable/add_circle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.25"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:text="Add Adv"
+                        android:textColor="@color/textclor"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView555"
+                        app:layout_constraintStart_toEndOf="@+id/imageView555"
+                        app:layout_constraintTop_toTopOf="@+id/imageView555" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/AddTradmark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/AddAdv">
+
+                    <ImageView
+                        android:id="@+id/imageView556"
+                        android:layout_width="30dp"
+                        android:layout_height="30sp"
+                        android:padding="5dp"
+                        android:src="@drawable/add_circle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.25"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:text="Add Tradmark"
+                        android:textColor="@color/textclor"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView556"
+                        app:layout_constraintStart_toEndOf="@+id/imageView556"
+                        app:layout_constraintTop_toTopOf="@+id/imageView556" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/logout"
             android:layout_width="match_parent"
@@ -367,7 +440,7 @@
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+            app:layout_constraintTop_toBottomOf="@+id/joinUs">
 
             <ImageView
                 android:id="@+id/imageView56"
@@ -405,7 +478,7 @@
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logout">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
             <ImageView
                 android:id="@+id/imageView566"

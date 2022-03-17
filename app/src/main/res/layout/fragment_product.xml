@@ -680,6 +680,7 @@
                         </LinearLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -723,7 +724,7 @@
                                         android:text="5 Star"
                                         android:textAllCaps="false"
                                         android:textColor="@color/black"
-                                        android:textSize="15sp"/>
+                                        android:textSize="15sp" />
 
                                 </LinearLayout>
 
@@ -745,7 +746,7 @@
                                         android:text="4 Star"
                                         android:textAllCaps="false"
                                         android:textColor="@color/black"
-                                        android:textSize="15sp"/>
+                                        android:textSize="15sp" />
 
                                 </LinearLayout>
 
@@ -767,7 +768,7 @@
                                         android:text="3 Star"
                                         android:textAllCaps="false"
                                         android:textColor="@color/black"
-                                        android:textSize="15sp"/>
+                                        android:textSize="15sp" />
 
                                 </LinearLayout>
 
@@ -789,7 +790,7 @@
                                         android:text="2 Star"
                                         android:textAllCaps="false"
                                         android:textColor="@color/black"
-                                        android:textSize="15sp"/>
+                                        android:textSize="15sp" />
 
                                 </LinearLayout>
 
@@ -811,7 +812,7 @@
                                         android:text="1 Star"
                                         android:textAllCaps="false"
                                         android:textColor="@color/black"
-                                        android:textSize="15sp"/>
+                                        android:textSize="15sp" />
 
                                 </LinearLayout>
 
@@ -821,6 +822,17 @@
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
+                        <TextView
+                            android:id="@+id/comments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:drawableEnd="@drawable/_arrow_right"
+                            android:text="@string/comments"
+                            android:textColor="@color/green"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout11" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

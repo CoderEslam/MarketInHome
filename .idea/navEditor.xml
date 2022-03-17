@@ -107,6 +107,30 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="commentsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1159" />
+                            <option name="y" value="-365" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="connctUsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="583" />
+                            <option name="y" value="1127" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="filterParentFragment">
                     <value>
                       <LayoutPositions>
@@ -164,6 +188,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="joinUsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="853" />
+                            <option name="y" value="1164" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="menu_Cart">
                     <value>
                       <LayoutPositions>
@@ -206,6 +242,16 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_menu_profile_to_connctUsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_menu_profile_to_joinUsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_menu_profile_to_recentOrderFragment">
                               <value>
                                 <LayoutPositions />
@@ -260,6 +306,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_productFragment_to_commentsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_productFragment_to_homeFragment">
                               <value>
                                 <LayoutPositions />

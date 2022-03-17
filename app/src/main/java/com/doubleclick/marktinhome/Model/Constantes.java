@@ -16,5 +16,8 @@ public class Constantes {
     public static final String ADVERTISEMENT = "Advertisement";
     public static final String RECENTSEARCH = "recentSearch";
     public static final String RECENTORDER = "RecentOrder";
+    public static final String CHATS = "chats";
+    public static final String COMMENTS = "comments";
+
 
 }

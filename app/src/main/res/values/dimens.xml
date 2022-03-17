@@ -4,4 +4,9 @@
     <dimen name="activity_horizontal_margin">16</dimen>
     <dimen name="nav_header_height">176</dimen>
     <dimen name="nav_header_vertical_spacing">8</dimen>
+    <dimen name="speech_bubble_corners">10dp</dimen>
+    <dimen name="speech_bubble_corners_plus_tail">15dp</dimen>
+    <dimen name="speech_bubble_spacing">5dp</dimen>
+    <dimen name="speech_bubble_tail">25dp</dimen>
+    <dimen name="padding_left">20dp</dimen>
 </resources>

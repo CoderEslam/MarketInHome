@@ -48,7 +48,13 @@ public final class FragmentProductBinding implements ViewBinding {
   public final CardView cardView11;
 
   @NonNull
+  public final TextView comments;
+
+  @NonNull
   public final ConstraintLayout constraintLayout;
+
+  @NonNull
+  public final ConstraintLayout constraintLayout11;
 
   @NonNull
   public final ConstraintLayout constraintLayout2;
@@ -200,17 +206,17 @@ public final class FragmentProductBinding implements ViewBinding {
   private FragmentProductBinding(@NonNull ConstraintLayout rootView, @NonNull TextView TotalRating,
       @NonNull LinearLayout addToggalsLinearLayout,
       @NonNull HorizontalScrollView addToggalsScrollView, @NonNull ViewPager bannerSlierViewPager,
-      @NonNull CardView cardView, @NonNull CardView cardView11,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull ConstraintLayout constraintLayout3, @NonNull ConstraintLayout constraintLayout4,
-      @NonNull ConstraintLayout constraintLayout7, @NonNull ConstraintLayout constraintLayout8,
-      @NonNull TextView description, @NonNull FloatingActionButton fab,
-      @NonNull ImageView imageView3, @NonNull ImageView imageView4, @NonNull ImageView imageView5,
-      @NonNull ImageView imageView6, @NonNull ImageView imageView7, @NonNull ImageView imageView8,
-      @NonNull TextView lastPrice, @NonNull LinearLayout linearLayout5,
-      @NonNull ConstraintLayout linearLayout7, @NonNull ImageView mins,
-      @NonNull PieChartView pieChartView, @NonNull ImageView plus, @NonNull TextView price,
-      @NonNull TextView productName, @NonNull ProgressBar progressBar1,
+      @NonNull CardView cardView, @NonNull CardView cardView11, @NonNull TextView comments,
+      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout11,
+      @NonNull ConstraintLayout constraintLayout2, @NonNull ConstraintLayout constraintLayout3,
+      @NonNull ConstraintLayout constraintLayout4, @NonNull ConstraintLayout constraintLayout7,
+      @NonNull ConstraintLayout constraintLayout8, @NonNull TextView description,
+      @NonNull FloatingActionButton fab, @NonNull ImageView imageView3,
+      @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
+      @NonNull ImageView imageView7, @NonNull ImageView imageView8, @NonNull TextView lastPrice,
+      @NonNull LinearLayout linearLayout5, @NonNull ConstraintLayout linearLayout7,
+      @NonNull ImageView mins, @NonNull PieChartView pieChartView, @NonNull ImageView plus,
+      @NonNull TextView price, @NonNull TextView productName, @NonNull ProgressBar progressBar1,
       @NonNull ProgressBar progressBar2, @NonNull ProgressBar progressBar3,
       @NonNull ProgressBar progressBar4, @NonNull ProgressBar progressBar5,
       @NonNull TextView quantity, @NonNull LinearLayout rateNowContainer,
@@ -228,7 +234,9 @@ public final class FragmentProductBinding implements ViewBinding {
     this.bannerSlierViewPager = bannerSlierViewPager;
     this.cardView = cardView;
     this.cardView11 = cardView11;
+    this.comments = comments;
     this.constraintLayout = constraintLayout;
+    this.constraintLayout11 = constraintLayout11;
     this.constraintLayout2 = constraintLayout2;
     this.constraintLayout3 = constraintLayout3;
     this.constraintLayout4 = constraintLayout4;
@@ -343,9 +351,21 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.comments;
+      TextView comments = ViewBindings.findChildViewById(rootView, id);
+      if (comments == null) {
+        break missingId;
+      }
+
       id = R.id.constraintLayout;
       ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
       if (constraintLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.constraintLayout11;
+      ConstraintLayout constraintLayout11 = ViewBindings.findChildViewById(rootView, id);
+      if (constraintLayout11 == null) {
         break missingId;
       }
 
@@ -645,14 +665,14 @@ public final class FragmentProductBinding implements ViewBinding {
 
       return new FragmentProductBinding((ConstraintLayout) rootView, TotalRating,
           addToggalsLinearLayout, addToggalsScrollView, bannerSlierViewPager, cardView, cardView11,
-          constraintLayout, constraintLayout2, constraintLayout3, constraintLayout4,
-          constraintLayout7, constraintLayout8, description, fab, imageView3, imageView4,
-          imageView5, imageView6, imageView7, imageView8, lastPrice, linearLayout5, linearLayout7,
-          mins, pieChartView, plus, price, productName, progressBar1, progressBar2, progressBar3,
-          progressBar4, progressBar5, quantity, rateNowContainer, ratingSeller, scrollView2, share,
-          textView12, textView13, textView14, textView15, textView16, textView4, textView5,
-          textView6, textView60, textView7, trarmark, tvRate1, tvRate2, tvRate3, tvRate4, tvRate5,
-          tvYourRatins, yourRate);
+          comments, constraintLayout, constraintLayout11, constraintLayout2, constraintLayout3,
+          constraintLayout4, constraintLayout7, constraintLayout8, description, fab, imageView3,
+          imageView4, imageView5, imageView6, imageView7, imageView8, lastPrice, linearLayout5,
+          linearLayout7, mins, pieChartView, plus, price, productName, progressBar1, progressBar2,
+          progressBar3, progressBar4, progressBar5, quantity, rateNowContainer, ratingSeller,
+          scrollView2, share, textView12, textView13, textView14, textView15, textView16, textView4,
+          textView5, textView6, textView60, textView7, trarmark, tvRate1, tvRate2, tvRate3, tvRate4,
+          tvRate5, tvYourRatins, yourRate);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

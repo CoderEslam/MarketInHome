@@ -43,7 +43,7 @@ public class menu_profileFragment extends BaseFragment {
     private ImageView editAddress, editPhone, editname;
     private AlertDialog.Builder builder;
     private ImageView fab;
-    private ConstraintLayout AddProduct, AddAdv, AddTradmark, recentOrder;
+    private ConstraintLayout AddProduct, AddAdv, AddTradmark, recentOrder, chat,joinUs;
     private ConstraintLayout logout;
 
     public menu_profileFragment() {
@@ -77,11 +77,13 @@ public class menu_profileFragment extends BaseFragment {
         editAddress = view.findViewById(R.id.editAddress);
         editPhone = view.findViewById(R.id.editPhone);
         editname = view.findViewById(R.id.editname);
-        AddProduct = view.findViewById(R.id.AddProduct);
+        joinUs = view.findViewById(R.id.joinUs);
+//        AddProduct = view.findViewById(R.id.AddProduct);
         logout = view.findViewById(R.id.logout);
-        AddAdv = view.findViewById(R.id.AddAdv);
-        AddTradmark = view.findViewById(R.id.AddTradmark);
+//        AddAdv = view.findViewById(R.id.AddAdv);
+//        AddTradmark = view.findViewById(R.id.AddTradmark);
         recentOrder = view.findViewById(R.id.recentOrder);
+        chat = view.findViewById(R.id.chat);
 
         userViewModel.getUser().observe(getViewLifecycleOwner(), user -> {
             if (user != null) {
@@ -105,19 +107,27 @@ public class menu_profileFragment extends BaseFragment {
         editname.setOnClickListener(v -> {
             ShowEdite("name");
         });
-        AddProduct.setOnClickListener(v -> {
-            startActivity(new Intent(getContext(), AddActivity.class));
-        });
-        AddAdv.setOnClickListener(v -> {
-            startActivity(new Intent(getContext(), AdvertisementActivity.class));
-        });
-        AddTradmark.setOnClickListener(v -> {
-            startActivity(new Intent(getContext(), TrademarkActivity.class));
-        });
+//        AddProduct.setOnClickListener(v -> {
+//            startActivity(new Intent(getContext(), AddActivity.class));
+//        });
+//        AddAdv.setOnClickListener(v -> {
+//            startActivity(new Intent(getContext(), AdvertisementActivity.class));
+//        });
+//        AddTradmark.setOnClickListener(v -> {
+//            startActivity(new Intent(getContext(), TrademarkActivity.class));
+//        });
         logout.setOnClickListener(v -> {
             mAuth.signOut();
             startActivity(new Intent(getContext(), MainActivity.class));
         });
+        chat.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToConnctUsFragment());
+        });
+
+        joinUs.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToJoinUsFragment());
+        });
+
         recentOrder.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToRecentOrderFragment());
         });

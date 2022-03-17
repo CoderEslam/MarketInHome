@@ -11,6 +11,7 @@ import android.widget.*
 import androidx.appcompat.widget.AppCompatToggleButton
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager.widget.ViewPager
 import com.doubleclick.ViewModel.RateViewModel
@@ -63,6 +64,8 @@ class productFragment : BaseFragment() {
     lateinit var ratingSeller: TextView
     private var list: MutableList<SliceValue> = ArrayList();
     private var ToggleItem: String? = ""
+    lateinit var idProduct: String
+    lateinit var comments: TextView;
 
 
     private val product by navArgs<productFragmentArgs>()
@@ -70,12 +73,13 @@ class productFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
+            idProduct = it.getString("idProduct", "").toString();
         }
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
@@ -100,6 +104,7 @@ class productFragment : BaseFragment() {
         progressBar4 = view.findViewById(R.id.progressBar4);
         progressBar5 = view.findViewById(R.id.progressBar5);
         yourRate = view.findViewById(R.id.yourRate);
+        comments = view.findViewById(R.id.comments);
         addToggalsLinearLayout = view.findViewById(R.id.addToggalsLinearLayout);
         plus = view.findViewById(R.id.plus)
         quantity = view.findViewById(R.id.quantity)
@@ -127,7 +132,8 @@ class productFragment : BaseFragment() {
                 } else {
                     if (!togal.isChecked) {
                         ToggleItem += ToggleItem!!.replace(spliter[i], "")
-                        Toast.makeText(requireContext(), ToggleItem.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), ToggleItem.toString(), Toast.LENGTH_LONG)
+                            .show()
                     }
                 }
             }
@@ -246,18 +252,20 @@ class productFragment : BaseFragment() {
         }
 
         share.setOnClickListener {
-            val sendIntent: Intent = Intent().apply {
-                action = Intent.ACTION_SEND
-                putExtra(
-                    Intent.EXTRA_TEXT,
-                    "https://www.market.doublethink.com/" + product.product!!.productId
-                )
-                type = "text/plain"
-            }
-            val shareIntent = Intent.createChooser(sendIntent, null)
-            startActivity(shareIntent)
+            ShareProduct()
+        }
+        if (!idProduct.equals("")) {
+            getProductById(idProduct)
+        }
+
+        comments.setOnClickListener {
+            findNavController().navigate(productFragmentDirections.actionProductFragmentToCommentsFragment(product.product!!.productId))
         }
         return view;
+    }
+
+    private fun getProductById(idProduct: String) {
+        ShowToast(context, idProduct)
     }
 
     fun setBannerSliderViewPager(list: String?) {
@@ -267,5 +275,18 @@ class productFragment : BaseFragment() {
         banner_slier_view_pager.pageMargin = 20
     }
 
+
+    fun ShareProduct() {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(
+                Intent.EXTRA_TEXT,
+                "https://www.market.doublethink.com/" + product.product!!.productId
+            )
+            type = "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+    }
 
 }

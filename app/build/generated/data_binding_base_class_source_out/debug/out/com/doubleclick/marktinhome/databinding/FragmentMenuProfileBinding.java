@@ -22,16 +22,10 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ConstraintLayout AddAdv;
-
-  @NonNull
-  public final ConstraintLayout AddProduct;
-
-  @NonNull
-  public final ConstraintLayout AddTradmark;
-
-  @NonNull
   public final TextView address;
+
+  @NonNull
+  public final ConstraintLayout chat;
 
   @NonNull
   public final ConstraintLayout constraintLayout3;
@@ -70,19 +64,19 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
   public final ImageView imageView32;
 
   @NonNull
-  public final ImageView imageView55;
-
-  @NonNull
-  public final ImageView imageView555;
-
-  @NonNull
-  public final ImageView imageView556;
+  public final ImageView imageView51;
 
   @NonNull
   public final ImageView imageView56;
 
   @NonNull
+  public final ImageView imageView564;
+
+  @NonNull
   public final ImageView imageView566;
+
+  @NonNull
+  public final ConstraintLayout joinUs;
 
   @NonNull
   public final ConstraintLayout logout;
@@ -102,25 +96,21 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
   @NonNull
   public final TextView username;
 
-  private FragmentMenuProfileBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout AddAdv, @NonNull ConstraintLayout AddProduct,
-      @NonNull ConstraintLayout AddTradmark, @NonNull TextView address,
-      @NonNull ConstraintLayout constraintLayout3, @NonNull ConstraintLayout constraintLayout4,
-      @NonNull ConstraintLayout constraintLayout5, @NonNull ConstraintLayout constraintLayout6,
-      @NonNull ImageView editAddress, @NonNull ImageView editPhone, @NonNull ImageView editname,
-      @NonNull TextView email, @NonNull ImageView fab, @NonNull ImageView imageView3,
-      @NonNull ImageView imageView30, @NonNull ImageView imageView32,
-      @NonNull ImageView imageView55, @NonNull ImageView imageView555,
-      @NonNull ImageView imageView556, @NonNull ImageView imageView56,
-      @NonNull ImageView imageView566, @NonNull ConstraintLayout logout,
-      @NonNull CircleImageView person, @NonNull TextView phone,
+  private FragmentMenuProfileBinding(@NonNull ConstraintLayout rootView, @NonNull TextView address,
+      @NonNull ConstraintLayout chat, @NonNull ConstraintLayout constraintLayout3,
+      @NonNull ConstraintLayout constraintLayout4, @NonNull ConstraintLayout constraintLayout5,
+      @NonNull ConstraintLayout constraintLayout6, @NonNull ImageView editAddress,
+      @NonNull ImageView editPhone, @NonNull ImageView editname, @NonNull TextView email,
+      @NonNull ImageView fab, @NonNull ImageView imageView3, @NonNull ImageView imageView30,
+      @NonNull ImageView imageView32, @NonNull ImageView imageView51,
+      @NonNull ImageView imageView56, @NonNull ImageView imageView564,
+      @NonNull ImageView imageView566, @NonNull ConstraintLayout joinUs,
+      @NonNull ConstraintLayout logout, @NonNull CircleImageView person, @NonNull TextView phone,
       @NonNull ConstraintLayout recentOrder, @NonNull TextView textView3,
       @NonNull TextView username) {
     this.rootView = rootView;
-    this.AddAdv = AddAdv;
-    this.AddProduct = AddProduct;
-    this.AddTradmark = AddTradmark;
     this.address = address;
+    this.chat = chat;
     this.constraintLayout3 = constraintLayout3;
     this.constraintLayout4 = constraintLayout4;
     this.constraintLayout5 = constraintLayout5;
@@ -133,11 +123,11 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
     this.imageView3 = imageView3;
     this.imageView30 = imageView30;
     this.imageView32 = imageView32;
-    this.imageView55 = imageView55;
-    this.imageView555 = imageView555;
-    this.imageView556 = imageView556;
+    this.imageView51 = imageView51;
     this.imageView56 = imageView56;
+    this.imageView564 = imageView564;
     this.imageView566 = imageView566;
+    this.joinUs = joinUs;
     this.logout = logout;
     this.person = person;
     this.phone = phone;
@@ -173,27 +163,15 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.AddAdv;
-      ConstraintLayout AddAdv = ViewBindings.findChildViewById(rootView, id);
-      if (AddAdv == null) {
-        break missingId;
-      }
-
-      id = R.id.AddProduct;
-      ConstraintLayout AddProduct = ViewBindings.findChildViewById(rootView, id);
-      if (AddProduct == null) {
-        break missingId;
-      }
-
-      id = R.id.AddTradmark;
-      ConstraintLayout AddTradmark = ViewBindings.findChildViewById(rootView, id);
-      if (AddTradmark == null) {
-        break missingId;
-      }
-
       id = R.id.address;
       TextView address = ViewBindings.findChildViewById(rootView, id);
       if (address == null) {
+        break missingId;
+      }
+
+      id = R.id.chat;
+      ConstraintLayout chat = ViewBindings.findChildViewById(rootView, id);
+      if (chat == null) {
         break missingId;
       }
 
@@ -269,21 +247,9 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView55;
-      ImageView imageView55 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView55 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView555;
-      ImageView imageView555 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView555 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView556;
-      ImageView imageView556 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView556 == null) {
+      id = R.id.imageView51;
+      ImageView imageView51 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView51 == null) {
         break missingId;
       }
 
@@ -293,9 +259,21 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView564;
+      ImageView imageView564 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView564 == null) {
+        break missingId;
+      }
+
       id = R.id.imageView566;
       ImageView imageView566 = ViewBindings.findChildViewById(rootView, id);
       if (imageView566 == null) {
+        break missingId;
+      }
+
+      id = R.id.joinUs;
+      ConstraintLayout joinUs = ViewBindings.findChildViewById(rootView, id);
+      if (joinUs == null) {
         break missingId;
       }
 
@@ -335,11 +313,11 @@ public final class FragmentMenuProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMenuProfileBinding((ConstraintLayout) rootView, AddAdv, AddProduct,
-          AddTradmark, address, constraintLayout3, constraintLayout4, constraintLayout5,
-          constraintLayout6, editAddress, editPhone, editname, email, fab, imageView3, imageView30,
-          imageView32, imageView55, imageView555, imageView556, imageView56, imageView566, logout,
-          person, phone, recentOrder, textView3, username);
+      return new FragmentMenuProfileBinding((ConstraintLayout) rootView, address, chat,
+          constraintLayout3, constraintLayout4, constraintLayout5, constraintLayout6, editAddress,
+          editPhone, editname, email, fab, imageView3, imageView30, imageView32, imageView51,
+          imageView56, imageView564, imageView566, joinUs, logout, person, phone, recentOrder,
+          textView3, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

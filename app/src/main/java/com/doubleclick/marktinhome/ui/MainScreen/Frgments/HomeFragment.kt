@@ -39,11 +39,12 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
     lateinit var trademarkViewModel: TradmarkViewModel
     lateinit var animationView: LottieAnimationView
     lateinit var recentSearchViewModel: RecentSearchViewModel
+    private var idProduct: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
+            idProduct = it.getString("idProduct", "")
         }
     }
 
@@ -97,6 +98,10 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
                 homeModels.add(HomeModel(HomeModel.RecentSearch, it, this))
             }
         })
+
+        if (idProduct != "") {
+            ShowToast(context, idProduct)
+        }
 
         return view;
     }

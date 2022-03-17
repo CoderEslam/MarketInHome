@@ -42,6 +42,7 @@ import com.doubleclick.marktinhome.R;
 import com.doubleclick.marktinhome.Repository.Sending;
 import com.doubleclick.marktinhome.Views.SmoothButtom.SmoothBottomBar;
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity;
+import com.doubleclick.marktinhome.ui.MainScreen.Frgments.HomeFragment;
 import com.doubleclick.marktinhome.ui.MainScreen.Frgments.menu_listFragment;
 import com.doubleclick.marktinhome.ui.ProductActivity.productFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -159,12 +160,15 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         try {
             if (!ProductId.equals("")) {
                 Bundle bundle = new Bundle();
-                bundle.putString("idProduct",ProductId);
+                bundle.putString("idProduct", ProductId);
+                HomeFragment homeFragment = new HomeFragment();
+                homeFragment.setArguments(bundle);
                 productFragment productFragment = new productFragment();
-//                Navigation.findNavController(this,R.id.main_fragment).navigate();
-                Intent intent = new Intent(MainScreenActivity.this, FilterActivity.class);
-                intent.putExtra("idProduct", ProductId);
-                startActivity(intent);
+                productFragment.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction().add(R.id.main_fragment, homeFragment).commit();
+//                Intent intent = new Intent(MainScreenActivity.this, FilterActivity.class);
+//                intent.putExtra("idProduct", ProductId);
+//                startActivity(intent);
             }
         } catch (NullPointerException e) {
 

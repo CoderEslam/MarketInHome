@@ -36,9 +36,10 @@ public class UserRepository extends BaseRepository {
                             User user = snapshot.getValue(User.class);
                             userInter.ItemUser(user);
                         }
+                    }else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
                     Log.e("Exception", e.getMessage());
                 }
             }
