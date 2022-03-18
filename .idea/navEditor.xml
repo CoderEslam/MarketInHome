@@ -133,8 +133,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="534" />
-                            <option name="y" value="1192" />
+                            <option name="x" value="358" />
+                            <option name="y" value="1204" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -170,17 +170,14 @@
                             <option name="y" value="1192" />
                           </Point>
                         </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="filterActivity">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="799" />
-                            <option name="y" value="-842" />
-                          </Point>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_connctUsFragment_to_allUserFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -211,8 +208,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-885" />
-                            <option name="y" value="-211" />
+                            <option name="x" value="-973" />
+                            <option name="y" value="-129" />
                           </Point>
                         </option>
                         <option name="myPositions">

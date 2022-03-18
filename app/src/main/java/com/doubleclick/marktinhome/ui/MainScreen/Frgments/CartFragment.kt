@@ -109,10 +109,16 @@ class CartFragment : BaseFragment(), OnCartLisnter {
     override fun OnMinsItemOrder(cart: Cart?) {
         var quantity: Int = cart!!.quantity.toInt()
         quantity--;
-        var map: HashMap<String, Any> = HashMap();
-        map.put("Quantity", quantity)
-        map.put("TotalPrice", (cart.price.toInt() * quantity).toLong())
-        reference.child(CART).child(cart!!.buyerId + ":" + cart.productId).updateChildren(map)
+        if(quantity==0){
+            ShowToast(context, "you can't order less than one!")
+            return
+        }else{
+            var map: HashMap<String, Any> = HashMap();
+            map.put("Quantity", quantity)
+            map.put("TotalPrice", (cart.price.toInt() * quantity).toLong())
+            reference.child(CART).child(cart!!.buyerId + ":" + cart.productId).updateChildren(map)
+        }
+
     }
 
     override fun OnDeleteItemOrder(cart: Cart?) {

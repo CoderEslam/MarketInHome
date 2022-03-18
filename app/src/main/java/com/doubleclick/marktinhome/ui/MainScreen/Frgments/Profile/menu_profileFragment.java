@@ -1,15 +1,12 @@
 package com.doubleclick.marktinhome.ui.MainScreen.Frgments.Profile;
 
 import static com.doubleclick.marktinhome.Model.Constantes.USER;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,21 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.doubleclick.ViewModel.UserViewModel;
 import com.doubleclick.marktinhome.BaseFragment;
 import com.doubleclick.marktinhome.MainActivity;
 import com.doubleclick.marktinhome.R;
-import com.doubleclick.marktinhome.ui.Add.AddActivity;
-import com.doubleclick.marktinhome.ui.Advertisement.AdvertisementActivity;
-import com.doubleclick.marktinhome.ui.Trademark.TrademarkActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
-
 import java.util.HashMap;
-import java.util.Objects;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -43,8 +33,8 @@ public class menu_profileFragment extends BaseFragment {
     private TextView username, address, email, phone;
     private ImageView editAddress, editPhone, editname;
     private AlertDialog.Builder builder;
-    private ImageView fab;
-    private ConstraintLayout AddProduct, AddAdv, AddTradmark, recentOrder, chat, joinUs;
+    private FloatingActionButton fab;
+    private ConstraintLayout  recentOrder, chat, joinUs;
     private ConstraintLayout logout;
 
     public menu_profileFragment() {
@@ -79,10 +69,7 @@ public class menu_profileFragment extends BaseFragment {
         editPhone = view.findViewById(R.id.editPhone);
         editname = view.findViewById(R.id.editname);
         joinUs = view.findViewById(R.id.joinUs);
-//        AddProduct = view.findViewById(R.id.AddProduct);
         logout = view.findViewById(R.id.logout);
-//        AddAdv = view.findViewById(R.id.AddAdv);
-//        AddTradmark = view.findViewById(R.id.AddTradmark);
         recentOrder = view.findViewById(R.id.recentOrder);
         chat = view.findViewById(R.id.chat);
 
@@ -108,15 +95,6 @@ public class menu_profileFragment extends BaseFragment {
         editname.setOnClickListener(v -> {
             ShowEdite("name");
         });
-//        AddProduct.setOnClickListener(v -> {
-//            startActivity(new Intent(getContext(), AddActivity.class));
-//        });
-//        AddAdv.setOnClickListener(v -> {
-//            startActivity(new Intent(getContext(), AdvertisementActivity.class));
-//        });
-//        AddTradmark.setOnClickListener(v -> {
-//            startActivity(new Intent(getContext(), TrademarkActivity.class));
-//        });
         logout.setOnClickListener(v -> {
             mAuth.signOut();
             startActivity(new Intent(getContext(), MainActivity.class));
@@ -133,7 +111,6 @@ public class menu_profileFragment extends BaseFragment {
         recentOrder.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToRecentOrderFragment());
         });
-
         return view;
     }
 
@@ -151,9 +128,7 @@ public class menu_profileFragment extends BaseFragment {
                 ShowToast(getContext(), "Done");
             } else {
                 ShowToast(getContext(), "you can't set empty text");
-
             }
-
         });
         builder.setView(view);
         builder.setCancelable(true);

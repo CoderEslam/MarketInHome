@@ -11,8 +11,6 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
-anim blink_anim
-anim bounce
 anim btn_checkbox_to_checked_box_inner_merged_animation
 anim btn_checkbox_to_checked_box_outer_merged_animation
 anim btn_checkbox_to_checked_icon_null_animation
@@ -29,11 +27,8 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
-anim fadein
-anim fadeout
 anim fragment_fast_out_extra_slow_in
 anim lefttoright
-anim mixed_anim
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
@@ -42,10 +37,6 @@ anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
 anim righttoleft
-anim rotate
-anim sample_anim
-anim zoomin
-anim zoomout
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1440,6 +1431,7 @@ color gray
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2683,7 +2675,6 @@ drawable dot_white
 drawable e
 drawable edit
 drawable email
-drawable feed_bg
 drawable filter_list
 drawable fram_blue
 drawable googleg_disabled_color_18
@@ -2692,6 +2683,7 @@ drawable group645
 drawable group861
 drawable group934
 drawable group983
+drawable groups
 drawable ic_arrow_back_24
 drawable ic_button
 drawable ic_clock_black_24dp
@@ -2699,7 +2691,6 @@ drawable ic_dashboard_white_24dp
 drawable ic_home_white_24dp
 drawable ic_icon_google
 drawable ic_keyboard_black_24dp
-drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
@@ -2708,7 +2699,6 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable ic_multiline_chart_white_24dp
 drawable ic_path_1306
 drawable ic_person_outline_white_24dp
 drawable ic_stars_black_cercil24dp
@@ -2735,7 +2725,6 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
-drawable message_bg
 drawable mins_circle
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -2747,10 +2736,7 @@ drawable mtrl_navigation_bar_item_background
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_overlay
 drawable mtrl_tabs_default_indicator
-drawable music_bg
 drawable navigation_empty_icon
-drawable news_bg
-drawable nex_button
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -2790,7 +2776,6 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id CartName
-id ChildRecycler
 id Continue
 id CustomerLocation
 id FUNCTION
@@ -2802,7 +2787,6 @@ id MyOrder
 id MyTrademark
 id NO_DEBUG
 id NewUser
-id ParentRecyceler
 id PriceOrder
 id ProductRecycler
 id SHIFT
@@ -2814,7 +2798,6 @@ id SignIn
 id TOP_END
 id TOP_START
 id TotalRating
-id Upload
 id ViewMoreFragment
 id ViewMoreRecyclerView
 id accelerate
@@ -2865,8 +2848,6 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
-id action_childFragment_to_parentFragment
-id action_childFragment_to_uploadFragment
 id action_connctUsFragment_to_allUserFragment
 id action_container
 id action_context_bar
@@ -2890,23 +2871,17 @@ id action_menu_store_to_menu_Cart
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_parentFragment_to_childFragment
 id action_productFragment_to_commentsFragment
 id action_productFragment_to_homeFragment
 id action_recentOrderFragment_to_productFragment
 id action_text
 id action_trademarkFragment_to_homeFragment
 id action_trademarkFragment_to_productFragment
-id action_uploadFragment_to_childFragment
 id actions
 id activity_chooser_view_content
 id add
-id addParent
 id addToggalsLinearLayout
 id addToggalsScrollView
-id addToggleButton
-id addView
-id add_navigation
 id address
 id addressFragment
 id adjust_height
@@ -2982,7 +2957,6 @@ id chat
 id chatRecycler
 id checkbox
 id checked
-id childFragment
 id chip
 id chip1
 id chip2
@@ -3176,7 +3150,6 @@ id joinUs
 id joinUsFragment
 id jumpToEnd
 id jumpToStart
-id keywords
 id labeled
 id lastPrice
 id layout
@@ -3208,7 +3181,6 @@ id map
 id masked
 id match_constraint
 id match_parent
-id materialToolbar
 id material_clock_display
 id material_clock_face
 id material_clock_hand
@@ -3280,9 +3252,7 @@ id nameMark
 id nameOrder
 id nav_controller_view_tag
 id nav_graph
-id nav_host_fragment
 id nav_host_fragment_container
-id nav_seller_graph
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3318,7 +3288,6 @@ id packed
 id pager
 id parallax
 id parent
-id parentFragment
 id parentPanel
 id parentRelative
 id parent_matrix
@@ -3337,7 +3306,6 @@ id position
 id postLayout
 id price
 id productFragment
-id productImages
 id productLastPrice
 id productName
 id productPrice
@@ -3397,7 +3365,6 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id selectImages
 id select_dialog_listview
 id selected
 id selection_type
@@ -3556,7 +3523,6 @@ id uniform
 id unlabeled
 id up
 id upload
-id uploadFragment
 id useLogo
 id userName
 id user_profile_image
@@ -3671,7 +3637,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_add
 layout activity_address
 layout activity_advertisement
 layout activity_comments
@@ -3679,7 +3644,6 @@ layout activity_filter
 layout activity_main
 layout activity_main_screen
 layout activity_product
-layout activity_seller
 layout activity_trademark
 layout add_toggal
 layout all_tradmark
@@ -3710,7 +3674,6 @@ layout fragment_address
 layout fragment_all_user
 layout fragment_call_us
 layout fragment_cart
-layout fragment_child
 layout fragment_comments
 layout fragment_filter_parent
 layout fragment_forget
@@ -3722,8 +3685,6 @@ layout fragment_menu__cart
 layout fragment_menu_list
 layout fragment_menu_profile
 layout fragment_menu_store
-layout fragment_order_selller
-layout fragment_parent
 layout fragment_product
 layout fragment_recent_order
 layout fragment_register
@@ -3732,7 +3693,6 @@ layout fragment_splash2
 layout fragment_splash3
 layout fragment_splash4
 layout fragment_trademark
-layout fragment_upload
 layout fragment_viewmore
 layout g_v_layout
 layout h_top_recyclerview
@@ -3855,9 +3815,7 @@ menu example_menu2
 menu menu_bottom
 mipmap ic_launcher
 mipmap ic_launcher_round
-navigation add_navigation
 navigation nav_graph
-navigation nav_seller_graph
 plurals mtrl_badge_content_description
 raw loading
 raw loading2
@@ -3933,7 +3891,6 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string confirm
-string connect_us
 string create_by_x_team
 string customer_location
 string customer_name
@@ -3965,6 +3922,7 @@ string hide_bottom_view_on_scroll_behavior
 string i_have_already_account
 string icon_content_description
 string item_view_role_description
+string join_us
 string keywords
 string log_in
 string logout

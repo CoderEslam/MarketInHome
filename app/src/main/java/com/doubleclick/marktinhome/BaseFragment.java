@@ -204,66 +204,6 @@ public class BaseFragment extends Fragment {
         }
     }
 
-    public void upload(String name, double price, double LastPrice, String descroiprion, String keywords, String trademark, String ParentId, String ChildId, String ParentName, String ChildName) {
-        final ProgressDialog pd = new ProgressDialog(getContext());
-        pd.setMessage("Uploading");
-        pd.show();
-        if (imageUri != null) {
-            final StorageReference fileReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
-            uploadTask = fileReference.putFile(imageUri);
-            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                @Override
-                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                    if (!task.isSuccessful()) {
-                        throw task.getException();
-                    }
-                    return fileReference.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()) {
-                        Uri downloadUri = task.getResult();
-                        String mUri = downloadUri.toString();
-                        String push = reference.push().getKey();
-                        Date date = new Date();
-                        HashMap<String, Object> map = new HashMap();
-                        double discount = (100.0 - (-1.0 * ((price / LastPrice) * 100.0)));
-                        map.put("productId", push);
-                        map.put("price", price);
-                        map.put("description", descroiprion + "");
-                        map.put("date", date.getTime());
-                        map.put("adminId", myId);
-                        map.put("productName", name);
-                        map.put("lastPrice", LastPrice);
-                        map.put("tradeMark", trademark);
-                        map.put("parentCategoryId", ParentId);
-                        map.put("childCategoryId", ChildId);
-                        map.put("parentCategoryName", ParentName);
-                        map.put("childCategoryName", ChildName);
-                        map.put("keywords", keywords + "");
-                        map.put("Image", mUri);
-                        map.put("TotalRating", 0);
-                        map.put("discount", discount);
-                        reference.child(PRODUCT).child(Objects.requireNonNull(push)).setValue(map);
-                        pd.dismiss();
-                    } else {
-                        Toast.makeText(getContext(), "Failed!", Toast.LENGTH_SHORT).show();
-                        pd.dismiss();
-                    }
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                    pd.dismiss();
-                }
-            });
-        } else {
-            Toast.makeText(getContext(), "No image selected", Toast.LENGTH_SHORT).show();
-        }
-    }
-
     public void sendNotifiaction(Context context, String receiver, final String Productname) {
         reference.child(USER).child(receiver).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -282,10 +222,8 @@ public class BaseFragment extends Fragment {
                                     }
                                 }
                             }
-
                             @Override
                             public void onFailure(Call<MyResponse> call, Throwable t) {
-
                             }
                         });
             }

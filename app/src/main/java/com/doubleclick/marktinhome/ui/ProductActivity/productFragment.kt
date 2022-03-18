@@ -37,7 +37,8 @@ class productFragment : BaseFragment() {
     private lateinit var lastPrice: TextView
     private lateinit var description: TextView
     private lateinit var TotalRating: TextView;
-//    private lateinit var tvRate1: TextView
+
+    //    private lateinit var tvRate1: TextView
 //    private lateinit var tvRate2: TextView
 //    private lateinit var tvRate3: TextView
 //    private lateinit var tvRate4: TextView
@@ -59,7 +60,7 @@ class productFragment : BaseFragment() {
     lateinit var ratingSeller: TextView
     private var ToggleItem: String? = ""
     lateinit var comments: TextView;
-    lateinit var radioGroup:RadioGroup
+    lateinit var radioGroup: RadioGroup
 
 
     private val product by navArgs<productFragmentArgs>()
@@ -67,7 +68,6 @@ class productFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
 
 
         }
@@ -138,7 +138,11 @@ class productFragment : BaseFragment() {
             val map: HashMap<String, Any> = HashMap();
             map["TotalRating"] = (it.size);
             reference.child(PRODUCT).child(product.product!!.productId).updateChildren(map);
-            var r1 = 0f; var r2 = 0f; var r3 = 0f; var r4 = 0f; var r5 = 0f
+            var r1 = 0f;
+            var r2 = 0f;
+            var r3 = 0f;
+            var r4 = 0f;
+            var r5 = 0f
             val list: MutableList<SliceValue> = ArrayList();
             for (i in it) {
                 if (0.0 < i.rate.toFloat() && i.rate.toFloat() <= 1.0) {
@@ -183,21 +187,25 @@ class productFragment : BaseFragment() {
         })
 
         fab.setOnClickListener { v: View? ->
-            if (qNumber != 0 && !ToggleItem.equals("")) {
-                val id = myId + ":" + product.product!!.productId
-                val map: HashMap<String, Any> = HashMap();
-                map["ProductId"] = product.product!!.productId;
-                map["BuyerId"] = myId;
-                map["SellerId"] = product.product!!.adminId;
-                map["TotalPrice"] = (qNumber.toDouble() * product.product!!.price.toDouble()).toLong();
-                map["Quantity"] = qNumber.toLong();
-                map["price"] = product.product!!.price.toLong();
-                map["images"] = product.product!!.images;
-                map["productName"] = product.product!!.productName;
-                map["lastPrice"] = product.product!!.lastPrice
-                map["id"] = id;
-                map["ToggleItem"] = ToggleItem!!
-                reference.child(CART).child(id).setValue(map);
+            if (qNumber != 0) {
+                if (!spliter.equals("") && ToggleItem.equals("")) {
+                    ShowToast(context, "yoy have to choose");
+                } else {
+                    val id = myId + ":" + product.product!!.productId
+                    val map: HashMap<String, Any> = HashMap();
+                    map["ProductId"] = product.product!!.productId;
+                    map["BuyerId"] = myId;
+                    map["SellerId"] = product.product!!.adminId;
+                    map["TotalPrice"] = (qNumber.toDouble() * product.product!!.price.toDouble()).toLong();
+                    map["Quantity"] = qNumber.toLong();
+                    map["price"] = product.product!!.price.toLong();
+                    map["images"] = product.product!!.images;
+                    map["productName"] = product.product!!.productName;
+                    map["lastPrice"] = product.product!!.lastPrice
+                    map["id"] = id;
+                    map["ToggleItem"] = ToggleItem!!
+                    reference.child(CART).child(id).setValue(map);
+                }
             } else {
                 ShowToast(context, "you can't order less than one!");
             }
@@ -227,17 +235,13 @@ class productFragment : BaseFragment() {
         }
 
         mins.setOnClickListener {
-
-            if (quantity.text.toString() == "0") {
-                qNumber = 1;
-                quantity.text = qNumber.toString()
+            if (qNumber == 0) {
                 ShowToast(context, "you can't order less than one!");
                 return@setOnClickListener
             } else {
                 qNumber--
                 quantity.text = qNumber.toString()
             }
-
         }
 
         share.setOnClickListener {
