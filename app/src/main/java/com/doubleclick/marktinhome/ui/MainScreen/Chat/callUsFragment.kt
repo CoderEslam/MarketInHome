@@ -76,7 +76,7 @@ class callUsFragment : BaseFragment() {
             var map: HashMap<String, Any> = HashMap()
             // id of admin + id of user
             var id = "WoWDlmZx7lUwRr9ZD2LAkHRwkoi1" + ":" + myId
-            map["sender"] = "X37enb8bbDZd6kUrkxWyI5yCzmr1" //  id of Admin
+            map["sender"] = "WoWDlmZx7lUwRr9ZD2LAkHRwkoi1" //  id of Admin
             map["message"] = "How I can help you ? "
             map["type"] = "text"
             map["receiver"] = myId // Id of user
