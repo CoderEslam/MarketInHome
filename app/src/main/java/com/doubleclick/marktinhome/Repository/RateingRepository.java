@@ -49,24 +49,27 @@ public class RateingRepository extends BaseRepository {
 
 
     public void getAllRate(String productId) {
-
         reference.child(RATE).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (isNetworkConnected() && task.isComplete() && task.getResult().exists()) {
-                        DataSnapshot dataSnapshot = task.getResult();
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Rate rate = snapshot.getValue(Rate.class);
-                            if (productId.equals(Objects.requireNonNull(rate).getProductId())) {
-                                rates.add(rate);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot dataSnapshot = task.getResult();
+                            rates.clear();
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                Rate rate = snapshot.getValue(Rate.class);
+                                if (productId.equals(Objects.requireNonNull(rate).getProductId())) {
+                                    rates.add(rate);
+                                }
                             }
                         }
-                        rateing.AllRate(rates);
+                    } else {
+                        ShowToast("No Internet Connection");
                     }
+                    rateing.AllRate(rates);
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
-                    Log.e("Exception", e.getMessage());
+                    Log.e("ExceptionRating", e.getMessage());
                 }
             }
         });

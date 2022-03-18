@@ -3,6 +3,7 @@ package com.doubleclick.marktinhome.Model;
 import com.doubleclick.OnItem;
 import com.doubleclick.OnProduct;
 import com.doubleclick.Tradmarkinterface;
+import com.doubleclick.ViewMore;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,11 @@ public class HomeModel {
     private ArrayList<ParentCategory> parentCategories;
     private ArrayList<Advertisement> advertisements;
     private ArrayList<Product> productsTopDaels;
+    private ArrayList<Product> productArrayList;
+    private int type;
+    private OnItem onItemPerantTop;
+    private OnProduct onProduct;
+    public ViewMore viewMore;
 
     public ArrayList<Product> getProductsRecentSearch() {
         return productsRecentSearch;
@@ -31,16 +37,18 @@ public class HomeModel {
 
     private ArrayList<Product> productsRecentSearch;
 
-    public HomeModel(ArrayList<Product> productsTopDaels, int type, OnProduct onProduct, int fake) {
+    public HomeModel(ArrayList<Product> productsTopDaels, int type, OnProduct onProduct, ViewMore viewMore) {
         this.productsTopDaels = productsTopDaels;
         this.type = type;
         this.onProduct = onProduct;
+        this.viewMore = viewMore;
     }
 
-    public HomeModel(int type, ArrayList<Product> productsRecentSearch, OnProduct onProduct) {
+    public HomeModel(int type, ArrayList<Product> productsRecentSearch, OnProduct onProduct, ViewMore viewMore,int fake) {
         this.productsRecentSearch = productsRecentSearch;
         this.type = type;
         this.onProduct = onProduct;
+        this.viewMore = viewMore;
     }
 
     public Tradmarkinterface getTradmarkinterface() {
@@ -70,7 +78,7 @@ public class HomeModel {
 
     private ArrayList<Trademark> trademarkArrayList;
 
-    public HomeModel(ArrayList<com.doubleclick.marktinhome.Model.Advertisement> advertisements, int type) {
+    public HomeModel(ArrayList<Advertisement> advertisements, int type) {
         this.advertisements = advertisements;
         this.type = type;
     }
@@ -98,12 +106,6 @@ public class HomeModel {
     public void setProductArrayList(ArrayList<Product> productArrayList) {
         this.productArrayList = productArrayList;
     }
-
-    private ArrayList<Product> productArrayList;
-
-    private int type;
-    private OnItem onItemPerantTop;
-    private OnProduct onProduct;
 
 
     public HomeModel(ArrayList<ParentCategory> parentCategories, int type, OnItem onItemPerantTop) {
@@ -134,11 +136,11 @@ public class HomeModel {
         return Advertisement;
     }
 
-    public ArrayList<com.doubleclick.marktinhome.Model.Advertisement> getAdvertisements() {
+    public ArrayList<Advertisement> getAdvertisements() {
         return advertisements;
     }
 
-    public void setAdvertisements(ArrayList<com.doubleclick.marktinhome.Model.Advertisement> advertisements) {
+    public void setAdvertisements(ArrayList<Advertisement> advertisements) {
         this.advertisements = advertisements;
     }
 
@@ -165,5 +167,13 @@ public class HomeModel {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public ViewMore getViewMore() {
+        return viewMore;
+    }
+
+    public void setViewMore(ViewMore viewMore) {
+        this.viewMore = viewMore;
     }
 }

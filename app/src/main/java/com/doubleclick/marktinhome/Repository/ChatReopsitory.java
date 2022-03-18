@@ -26,7 +26,7 @@ public class ChatReopsitory extends BaseRepository {
         this.chats = chats;
     }
 
-    public void getChats() {
+    public void getChats(String userId) {
         reference.child(CHATS).orderByChild("date").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -36,8 +36,9 @@ public class ChatReopsitory extends BaseRepository {
                             myChats.clear();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Chat chat = dataSnapshot.getValue(Chat.class);
-                                if (chat.getReceiver().equals(myId)) {
+                                if ((chat.getReceiver().equals(myId) && chat.getSender().equals(userId)) || (chat.getSender().equals(myId) && chat.getReceiver().equals(userId))) {
                                     myChats.add(chat);
+                                    Log.e("chat", chat.toString());
                                 }
                             }
                             chats.getChat(myChats);

@@ -2815,6 +2815,8 @@ id TOP_END
 id TOP_START
 id TotalRating
 id Upload
+id ViewMoreFragment
+id ViewMoreRecyclerView
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2853,7 +2855,9 @@ id action0
 id actionDown
 id actionDownUp
 id actionUp
+id action_ViewMoreFragment_to_productFragment
 id action_addressFragment_to_homeFragment
+id action_allUserFragment_to_connctUsFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -2867,6 +2871,7 @@ id action_container
 id action_context_bar
 id action_divider
 id action_filterParentFragment_to_productFragment
+id action_homeFragment_to_ViewMoreFragment
 id action_homeFragment_to_filterParentFragment
 id action_homeFragment_to_menu_Cart
 id action_homeFragment_to_productFragment2
@@ -2877,7 +2882,7 @@ id action_menu_Cart_to_menu_profile
 id action_menu_Cart_to_orderSelllerFragment
 id action_menu_divider
 id action_menu_presenter
-id action_menu_profile_to_connctUsFragment
+id action_menu_profile_to_allUserFragment
 id action_menu_profile_to_joinUsFragment
 id action_menu_profile_to_recentOrderFragment
 id action_menu_store_to_menu_Cart
@@ -2910,6 +2915,7 @@ id aligned
 id all
 id allStates
 id allUser
+id allUserFragment
 id always
 id androidx_window_activity_scope
 id animateToEnd
@@ -3106,7 +3112,6 @@ id gone
 id google
 id graph
 id graph_wrap
-id gridViewTopDeals
 id group_divider
 id grouping
 id groups
@@ -3700,10 +3705,10 @@ layout each_item
 layout edit_on_product
 layout fragment_address
 layout fragment_all_user
+layout fragment_call_us
 layout fragment_cart
 layout fragment_child
 layout fragment_comments
-layout fragment_connct_us
 layout fragment_filter_parent
 layout fragment_forget
 layout fragment_home
@@ -3723,9 +3728,9 @@ layout fragment_splash1
 layout fragment_splash2
 layout fragment_splash3
 layout fragment_splash4
-layout fragment_top_deals
 layout fragment_trademark
 layout fragment_upload
+layout fragment_viewmore
 layout g_v_layout
 layout h_top_recyclerview
 layout h_treademark_recyclerview

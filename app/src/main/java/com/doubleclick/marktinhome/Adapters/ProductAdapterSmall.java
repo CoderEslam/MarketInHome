@@ -14,6 +14,10 @@ import com.bumptech.glide.Glide;
 import com.doubleclick.OnProduct;
 import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.R;
+import com.doubleclick.marktinhome.ui.MainScreen.Frgments.ViewMoreFragment;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,11 +30,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmall.ProductViewHolder> {
 
-    ArrayList<Product> products = new ArrayList<>();
+    List<Product> products ;
     private OnProduct onProduct;
 
     public ProductAdapterSmall(ArrayList<Product> products, OnProduct onProductItemListener) {
         this.products = products;
+        this.onProduct = onProductItemListener;
+    }
+
+    public ProductAdapterSmall(@Nullable Product[] productArray, @NotNull OnProduct onProductItemListener, int fake) {
+        assert productArray != null;
+        this.products = Arrays.asList(productArray);
         this.onProduct = onProductItemListener;
     }
 
@@ -49,7 +59,6 @@ public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmal
         holder.trademark.setText(products.get(position).getTradeMark());
         Log.e("getOnlyImage", products.get(position).getOnlyImage().trim());
         Glide.with(holder.itemView.getContext()).load(products.get(position).getOnlyImage().trim()).into(holder.imageProduct);
-
 
         holder.itemView.setOnClickListener(v -> {
             onProduct.onItemProduct(products.get(position));

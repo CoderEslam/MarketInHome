@@ -12,6 +12,9 @@ public class Chat {
     private long date;
     private String id;
 
+    public Chat() {
+    }
+
     public String getType() {
         return type;
     }
@@ -58,5 +61,17 @@ public class Chat {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "Chat{" +
+                "message='" + message + '\'' +
+                ", type='" + type + '\'' +
+                ", sender='" + sender + '\'' +
+                ", receiver='" + receiver + '\'' +
+                ", date=" + date +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

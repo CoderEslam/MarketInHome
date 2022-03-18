@@ -21,12 +21,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Created By Eslam Ghazy on 3/5/2022
  */
-public class TopCategory extends RecyclerView.Adapter<TopCategory.TopViewHilder> {
+public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.TopViewHilder> {
 
     ArrayList<ParentCategory> parentCategories = new ArrayList<>();
     private OnItem onItem;
 
-    public TopCategory(ArrayList<ParentCategory> parentCategories, OnItem onItem) {
+    public AllCategoryAdapter(ArrayList<ParentCategory> parentCategories, OnItem onItem) {
         this.parentCategories = parentCategories;
         this.onItem = onItem;
     }

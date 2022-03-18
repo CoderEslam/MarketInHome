@@ -7,4 +7,7 @@ import com.doubleclick.marktinhome.Model.User
  */
 interface UserInter {
     fun ItemUser(user: User?)
+    fun AllUser(user: ArrayList<User>?)
+    fun OnUserLisitner(user: User)
+
 }

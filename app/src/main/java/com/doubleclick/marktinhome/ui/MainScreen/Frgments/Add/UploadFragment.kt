@@ -55,7 +55,7 @@ class UploadFragment : BaseFragment() {
     private lateinit var downloadUri: HashMap<String, Any>
     lateinit var selectImages: Button
     lateinit var ratingSeller: RatingBar
-    lateinit var mapToggalButton: HashMap<String, Any>
+    lateinit var mapToggleButton: HashMap<String, Any>
     var rate: Float = 0f
     lateinit var addToggleButton: LinearLayout
     lateinit var addView: ImageView
@@ -92,7 +92,7 @@ class UploadFragment : BaseFragment() {
         addView = view.findViewById(R.id.addView);
         uris = ArrayList()
         downloadUri = HashMap();
-        mapToggalButton = HashMap();
+        mapToggleButton = HashMap();
         tradmarkViewModel = ViewModelProvider(this)[TradmarkViewModel::class.java]
         tradmarkViewModel.namesMark.observe(viewLifecycleOwner, Observer {
 //            var trademarkAdapter  = TrademarkAdapter(it)
@@ -139,14 +139,14 @@ class UploadFragment : BaseFragment() {
 
         addView.setOnClickListener {
             builder = AlertDialog.Builder(requireContext())
-            var toggal: AppCompatToggleButton = AppCompatToggleButton(requireContext())
+            var radio  = RadioButton(requireContext())
             val view = LayoutInflater.from(context).inflate(R.layout.add_toggal, null, false)
             val editorder: TextInputEditText = view.findViewById(R.id.editname)
             builder.setTitle("Add Options")
             builder.setPositiveButton("ok", DialogInterface.OnClickListener { dialog, which ->
-                toggal.setText("" + editorder.text.toString())
-                mapToggalButton["" + addToggleButton.childCount] = editorder.text.toString()
-                addToggleButton.addView(toggal)
+                radio.setText("" + editorder.text.toString())
+                mapToggleButton["" + addToggleButton.childCount] = editorder.text.toString()
+                addToggleButton.addView(radio)
                 Log.e("addToggleButton", editorder.text.toString())
                 dialog.dismiss()
             })
@@ -290,7 +290,7 @@ class UploadFragment : BaseFragment() {
         map["discount"] = discount
         map["ratingSeller"] = rate
         map["Images"] = downloadUri.values.toString()
-        map["Toggals"] = mapToggalButton.values.toString()
+        map["Toggals"] = mapToggleButton.values.toString()
         reference.child(PRODUCT).child(Objects.requireNonNull(push)).updateChildren(map)
     }
 

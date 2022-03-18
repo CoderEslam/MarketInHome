@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RatingBar
@@ -27,7 +29,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import de.hdodenhof.circleimageview.CircleImageView
 import java.util.*
 import kotlin.collections.HashMap
-
 
 class CommentsFragment : BaseFragment() {
 
@@ -81,14 +82,20 @@ class CommentsFragment : BaseFragment() {
         }
         send.setOnClickListener {
             SendRate(yourRateText.text.toString(), rating);
+            var animation = AnimationUtils.loadAnimation(context,R.anim.righttoleft)
+            cartRate.animation = animation
             cartRate.visibility = View.GONE
             open = true
         }
         putRate.setOnClickListener {
             if (!open) {
                 cartRate.visibility = View.VISIBLE
+                var animation = AnimationUtils.loadAnimation(context,R.anim.lefttoright)
+                cartRate.animation = animation
                 open = true
             } else {
+                var animation = AnimationUtils.loadAnimation(context,R.anim.righttoleft)
+                cartRate.animation = animation
                 cartRate.visibility = View.GONE
                 open = false
             }

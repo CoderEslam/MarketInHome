@@ -121,7 +121,7 @@ public class menu_profileFragment extends BaseFragment {
             startActivity(new Intent(getContext(), MainActivity.class));
         });
         chat.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToConnctUsFragment());
+            Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToAllUserFragment());
         });
 
         joinUs.setOnClickListener(v -> {

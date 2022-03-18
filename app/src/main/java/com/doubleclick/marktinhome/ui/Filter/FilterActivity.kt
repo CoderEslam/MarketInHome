@@ -65,7 +65,7 @@ class FilterActivity : AppCompatActivity(), OnProduct {
 
     override fun onItemProduct(product: Product?) {
         var intent = Intent(applicationContext,ProductActivity::class.java);
-        intent.putExtra("Product",product);
+//        intent.putExtra("Product",product);
         startActivity(intent)
     }
 }

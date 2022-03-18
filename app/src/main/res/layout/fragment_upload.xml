@@ -113,7 +113,6 @@
             android:layout_height="match_parent"
             android:gravity="end"
             android:orientation="horizontal">
-
             <ImageView
                 android:id="@+id/addView"
                 android:layout_width="wrap_content"
@@ -121,6 +120,38 @@
                 android:layout_gravity="center"
                 android:padding="5dp"
                 android:src="@drawable/add_circle" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:text="XL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:text="XL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:text="XL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:text="XL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:text="XL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:text="XL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
 
         </LinearLayout>
 

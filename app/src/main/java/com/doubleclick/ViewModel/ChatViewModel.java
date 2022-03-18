@@ -19,7 +19,9 @@ public class ChatViewModel extends ViewModel implements ChatReopsitory.Chats {
     ChatReopsitory chatReopsitory = new ChatReopsitory(this);
 
     public ChatViewModel() {
-        chatReopsitory.getChats();
+    }
+    public void ChatById(String userId){
+        chatReopsitory.getChats(userId);
     }
 
     public LiveData<ArrayList<Chat>> getMyChat() {

@@ -1,14 +1,20 @@
 package com.doubleclick.marktinhome.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import kotlinx.android.parcel.Parcelize;
+
 /**
  * Created By Eslam Ghazy on 3/1/2022
  */
-public class Product implements Serializable, Comparable {
+@Parcelize
+public class Product implements Serializable, Comparable, Parcelable {
 
     private String productId;
     private double price;
@@ -39,6 +45,39 @@ public class Product implements Serializable, Comparable {
     }
 
 
+    protected Product(Parcel in) {
+        productId = in.readString();
+        price = in.readDouble();
+        description = in.readString();
+        date = in.readLong();
+        adminId = in.readString();
+        productName = in.readString();
+        lastPrice = in.readDouble();
+        tradeMark = in.readString();
+        parentCategoryName = in.readString();
+        childCategoryName = in.readString();
+        parentCategoryId = in.readString();
+        childCategoryId = in.readString();
+        TotalRating = in.readInt();
+        discount = in.readInt();
+        keywords = in.readString();
+        Images = in.readString();
+        Toggals = in.readString();
+        ratingSeller = in.readFloat();
+    }
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
+
     public String getToggals() {
         return Toggals;
     }
@@ -46,7 +85,6 @@ public class Product implements Serializable, Comparable {
     public void setToggals(String toggals) {
         Toggals = toggals;
     }
-
 
 
     public float getRatingSeller() {
@@ -63,7 +101,7 @@ public class Product implements Serializable, Comparable {
         return Images;
     }
 
-    public String getOnlyImage(){
+    public String getOnlyImage() {
         List<String> image = Arrays.asList(getImages().replace("[", "").replace("]", "").replace(" ", "").trim().split(","));
         return image.get(0);
     }
@@ -224,5 +262,32 @@ public class Product implements Serializable, Comparable {
                 ", discount=" + discount +
                 ", keywords='" + keywords + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(productId);
+        dest.writeDouble(price);
+        dest.writeString(description);
+        dest.writeLong(date);
+        dest.writeString(adminId);
+        dest.writeString(productName);
+        dest.writeDouble(lastPrice);
+        dest.writeString(tradeMark);
+        dest.writeString(parentCategoryName);
+        dest.writeString(childCategoryName);
+        dest.writeString(parentCategoryId);
+        dest.writeString(childCategoryId);
+        dest.writeInt(TotalRating);
+        dest.writeInt(discount);
+        dest.writeString(keywords);
+        dest.writeString(Images);
+        dest.writeString(Toggals);
+        dest.writeFloat(ratingSeller);
     }
 }

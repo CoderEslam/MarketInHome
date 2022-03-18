@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
@@ -19,6 +20,7 @@ import com.doubleclick.ViewModel.AdvertisementViewModel
 import com.doubleclick.ViewModel.ProductViewModel
 import com.doubleclick.ViewModel.RecentSearchViewModel
 import com.doubleclick.ViewModel.TradmarkViewModel
+import com.doubleclick.ViewMore
 import com.doubleclick.marktinhome.Adapters.HomeAdapter
 import com.doubleclick.marktinhome.BaseApplication
 import com.doubleclick.marktinhome.BaseFragment
@@ -28,7 +30,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
+class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewMore {
 
 
     lateinit var MainRecyceler: RecyclerView
@@ -83,7 +85,7 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
 
             });
         productViewModel.getTopDealsLiveData().observe(viewLifecycleOwner, Observer {
-            homeModels.add(HomeModel(it, HomeModel.TopDeal, this, HomeModel.TopDeal))
+            homeModels.add(HomeModel(it, HomeModel.TopDeal, this, this));
         })
 
 
@@ -95,7 +97,7 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
 
         recentSearchViewModel.lastSearchListLiveDataOneTime.observe(viewLifecycleOwner, Observer {
             if (it.size != 0) {
-                homeModels.add(HomeModel(HomeModel.RecentSearch, it, this))
+                homeModels.add(HomeModel(HomeModel.RecentSearch, it, this, this, 0))
             }
         })
 
@@ -135,4 +137,9 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface {
             )
         )
     }
+
+    override fun getViewMore(products: ArrayList<Product>) {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToViewMoreFragment(products.toTypedArray()))
+    }
 }
+

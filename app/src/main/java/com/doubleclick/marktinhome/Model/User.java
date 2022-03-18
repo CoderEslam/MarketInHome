@@ -1,9 +1,11 @@
 package com.doubleclick.marktinhome.Model;
 
+import java.io.Serializable;
+
 /**
  * Created By Eslam Ghazy on 3/1/2022
  */
-public class User {
+public class User implements Serializable {
 
 
     public User() {

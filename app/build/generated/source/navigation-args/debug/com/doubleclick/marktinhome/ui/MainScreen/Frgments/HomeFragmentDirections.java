@@ -11,6 +11,7 @@ import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.Model.Trademark;
 import com.doubleclick.marktinhome.R;
 import java.io.Serializable;
+import java.lang.IllegalArgumentException;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -42,6 +43,12 @@ public class HomeFragmentDirections {
   public static ActionHomeFragmentToTrademarkFragment actionHomeFragmentToTrademarkFragment(
       @Nullable Trademark trademark) {
     return new ActionHomeFragmentToTrademarkFragment(trademark);
+  }
+
+  @NonNull
+  public static ActionHomeFragmentToViewMoreFragment actionHomeFragmentToViewMoreFragment(
+      @NonNull Product[] productArray) {
+    return new ActionHomeFragmentToViewMoreFragment(productArray);
   }
 
   public static class ActionHomeFragmentToProductFragment2 implements NavDirections {
@@ -284,6 +291,87 @@ public class HomeFragmentDirections {
     public String toString() {
       return "ActionHomeFragmentToTrademarkFragment(actionId=" + getActionId() + "){"
           + "trademark=" + getTrademark()
+          + "}";
+    }
+  }
+
+  public static class ActionHomeFragmentToViewMoreFragment implements NavDirections {
+    private final HashMap arguments = new HashMap();
+
+    @SuppressWarnings("unchecked")
+    private ActionHomeFragmentToViewMoreFragment(@NonNull Product[] productArray) {
+      if (productArray == null) {
+        throw new IllegalArgumentException("Argument \"productArray\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("productArray", productArray);
+    }
+
+    @NonNull
+    @SuppressWarnings("unchecked")
+    public ActionHomeFragmentToViewMoreFragment setProductArray(@NonNull Product[] productArray) {
+      if (productArray == null) {
+        throw new IllegalArgumentException("Argument \"productArray\" is marked as non-null but was passed a null value.");
+      }
+      this.arguments.put("productArray", productArray);
+      return this;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    @NonNull
+    public Bundle getArguments() {
+      Bundle __result = new Bundle();
+      if (arguments.containsKey("productArray")) {
+        Product[] productArray = (Product[]) arguments.get("productArray");
+        __result.putParcelableArray("productArray", productArray);
+      }
+      return __result;
+    }
+
+    @Override
+    public int getActionId() {
+      return R.id.action_homeFragment_to_ViewMoreFragment;
+    }
+
+    @SuppressWarnings("unchecked")
+    @NonNull
+    public Product[] getProductArray() {
+      return (Product[]) arguments.get("productArray");
+    }
+
+    @Override
+    public boolean equals(Object object) {
+      if (this == object) {
+          return true;
+      }
+      if (object == null || getClass() != object.getClass()) {
+          return false;
+      }
+      ActionHomeFragmentToViewMoreFragment that = (ActionHomeFragmentToViewMoreFragment) object;
+      if (arguments.containsKey("productArray") != that.arguments.containsKey("productArray")) {
+        return false;
+      }
+      if (getProductArray() != null ? !getProductArray().equals(that.getProductArray()) : that.getProductArray() != null) {
+        return false;
+      }
+      if (getActionId() != that.getActionId()) {
+        return false;
+      }
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = 1;
+      result = 31 * result + java.util.Arrays.hashCode(getProductArray());
+      result = 31 * result + getActionId();
+      return result;
+    }
+
+    @Override
+    public String toString() {
+      return "ActionHomeFragmentToViewMoreFragment(actionId=" + getActionId() + "){"
+          + "productArray=" + getProductArray()
           + "}";
     }
   }

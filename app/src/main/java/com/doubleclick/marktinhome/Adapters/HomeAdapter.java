@@ -62,10 +62,10 @@ public class HomeAdapter extends RecyclerView.Adapter {
                 ((TrademarkViewHolder) holder).setTrademark(homeModels.get(position).getTrademarkArrayList(), homeModels.get(position).getTradmarkinterface());
                 break;
             case HomeModel.TopDeal:
-                ((TopDealsViewHolder) holder).setTopDeals(homeModels.get(position).getProductsTopDaels(), homeModels.get(position).getOnProduct());
+                ((TopDealsViewHolder) holder).setTopDeals(homeModels.get(position).getProductsTopDaels(), homeModels.get(position).getOnProduct(), homeModels.get(position).getViewMore());
                 break;
             case HomeModel.RecentSearch:
-                ((RecentResearchViewHolder) holder).setRecentSearch(homeModels.get(position).getProductsRecentSearch(), homeModels.get(position).getOnProduct());
+                ((RecentResearchViewHolder) holder).setRecentSearch(homeModels.get(position).getProductsRecentSearch(), homeModels.get(position).getOnProduct(), homeModels.get(position).getViewMore());
                 break;
             case HomeModel.TopCategory:
                 ((TopViewHolder) holder).setParent(homeModels.get(position).getParentCategories(), homeModels.get(position).getOnItemPerantTop());
