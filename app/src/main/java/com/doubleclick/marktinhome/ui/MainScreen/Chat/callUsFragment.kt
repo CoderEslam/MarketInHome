@@ -80,7 +80,7 @@ class callUsFragment : BaseFragment() {
             map["message"] = "How I can help you ? "
             map["type"] = "text"
             map["receiver"] = myId // Id of user
-            map["date"] = Date().time
+            map["date"] = 0
             map["id"] = id
             reference.child(CHATS).child(id).updateChildren(map)
         }
