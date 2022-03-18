@@ -14,7 +14,7 @@ import kotlinx.android.parcel.Parcelize;
  * Created By Eslam Ghazy on 3/1/2022
  */
 @Parcelize
-public class Product implements Serializable, Comparable, Parcelable {
+public class Product implements  Comparable, Parcelable {
 
     private String productId;
     private double price;
@@ -77,6 +77,27 @@ public class Product implements Serializable, Comparable, Parcelable {
             return new Product[size];
         }
     };
+
+    public Product(String productId, double price, String description, long date, String adminId, String productName, double lastPrice, String tradeMark, String parentCategoryName, String childCategoryName, String parentCategoryId, String childCategoryId, int totalRating, int discount, String keywords, String images, String toggals, float ratingSeller) {
+        this.productId = productId;
+        this.price = price;
+        this.description = description;
+        this.date = date;
+        this.adminId = adminId;
+        this.productName = productName;
+        this.lastPrice = lastPrice;
+        this.tradeMark = tradeMark;
+        this.parentCategoryName = parentCategoryName;
+        this.childCategoryName = childCategoryName;
+        this.parentCategoryId = parentCategoryId;
+        this.childCategoryId = childCategoryId;
+        TotalRating = totalRating;
+        this.discount = discount;
+        this.keywords = keywords;
+        Images = images;
+        Toggals = toggals;
+        this.ratingSeller = ratingSeller;
+    }
 
     public String getToggals() {
         return Toggals;

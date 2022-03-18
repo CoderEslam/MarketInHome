@@ -4,8 +4,8 @@
     package="com.doubleclick.marktinhome">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".BaseApplication"
@@ -15,9 +15,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarktInHome">
+        <activity
+            android:name=".ui.MainScreen.Comments.CommentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ProductActivity.productActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Filter.FilterActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name="com.doubleclick.Address.AddressActivity"
             android:exported="false" />
@@ -28,36 +39,33 @@
             android:name=".ui.Advertisement.AdvertisementActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Filter.FilterActivity"
-            android:exported="false" />
-        <activity
             android:name=".Seller.SellerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ProductActivity.ProductActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainScreen.MainScreenActivity"
-            android:exported="true" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.VIEW" />-->
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+            android:exported="true">
 
-<!--                <data-->
-<!--                    android:host="www.market.doublethink.com"-->
-<!--                    android:scheme="https" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+
+
+            <!-- <data -->
+            <!-- android:host="www.market.doublethink.com" -->
+            <!-- android:scheme="https" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
@@ -70,7 +78,6 @@
                     android:host="www.market.doublethink.com"
                     android:scheme="https" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".ui.Add.AddActivity"
@@ -91,7 +98,5 @@
 
         <receiver android:name="com.doubleclick.Servies.NotificationReceiver" />
     </application>
-
-
 
 </manifest>

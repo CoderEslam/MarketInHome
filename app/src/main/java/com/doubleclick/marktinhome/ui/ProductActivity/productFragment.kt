@@ -18,6 +18,7 @@ import com.doubleclick.marktinhome.Adapters.ProductSliderAdapter
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Constantes.*
 import com.doubleclick.marktinhome.R
+import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
@@ -57,8 +58,8 @@ class productFragment : BaseFragment() {
     lateinit var pieChartView: PieChartView
     lateinit var ratingSeller: TextView
     private var ToggleItem: String? = ""
-    lateinit var idProduct: String
     lateinit var comments: TextView;
+    lateinit var radioGroup:RadioGroup
 
 
     private val product by navArgs<productFragmentArgs>()
@@ -66,7 +67,9 @@ class productFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            idProduct = it.getString("idProduct", "").toString();
+
+
+
         }
     }
 
@@ -105,6 +108,7 @@ class productFragment : BaseFragment() {
         share = view.findViewById(R.id.share);
         ratingSeller = view.findViewById(R.id.ratingSeller)
         pieChartView = view.findViewById(R.id.pieChartView);
+        radioGroup = view.findViewById(R.id.radioGroup)
         productName.text = product.product!!.productName
         trarmark.text = product.product!!.tradeMark
         price.text = product.product!!.price.toString()
@@ -113,24 +117,12 @@ class productFragment : BaseFragment() {
         var spliter = product!!.product!!.toggals.toString().replace("[", "").replace("]", "")
             .replace(" ", "").split(",")
         for (i in 0 until spliter.size) {
-            var togal = AppCompatToggleButton(requireContext())
+            var togal = RadioButton(requireContext())
             togal.text = spliter[i]
-            togal.textOff = spliter[i]
-            togal.textOn = spliter[i]
             togal.setOnClickListener {
-                if (!ToggleItem!!.contains(spliter[i])) {
-                    if (togal.isChecked) {
-                        ToggleItem = ToggleItem!! + spliter[i] + ","
-                    }
-                } else {
-                    if (!togal.isChecked) {
-                        ToggleItem += ToggleItem!!.replace(spliter[i], "")
-                        Toast.makeText(requireContext(), ToggleItem.toString(), Toast.LENGTH_LONG)
-                            .show()
-                    }
-                }
+                ToggleItem = spliter[i]
             }
-            addToggalsLinearLayout.addView(togal)
+            radioGroup.addView(togal)
         }
         ratingSeller.text = product.product!!.ratingSeller.toInt().toString()
         setBannerSliderViewPager(product.product!!.images)
@@ -251,9 +243,7 @@ class productFragment : BaseFragment() {
         share.setOnClickListener {
             ShareProduct()
         }
-        if (!idProduct.equals("")) {
-            getProductById(idProduct)
-        }
+
 
         comments.setOnClickListener {
             findNavController().navigate(
@@ -265,9 +255,6 @@ class productFragment : BaseFragment() {
         return view;
     }
 
-    private fun getProductById(idProduct: String) {
-        ShowToast(context, idProduct)
-    }
 
     fun setBannerSliderViewPager(list: String?) {
         val sliderAdapter = ProductSliderAdapter(list)

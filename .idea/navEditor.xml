@@ -173,6 +173,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="filterActivity">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="799" />
+                            <option name="y" value="-842" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="filterParentFragment">
                     <value>
                       <LayoutPositions>
@@ -220,7 +232,7 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_homeFragment_to_productFragment2">
+                            <entry key="action_homeFragment_to_productFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

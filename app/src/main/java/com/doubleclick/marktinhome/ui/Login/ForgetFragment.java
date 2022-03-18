@@ -52,7 +52,7 @@ public class ForgetFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_forget, container, false);
         send_email = view.findViewById(R.id.send_email);
         btn_reset = view.findViewById(R.id.btn_reset);
-        mainFragment = getActivity().findViewById(R.id.mainFragment);
+        mainFragment = getActivity().findViewById(R.id.mainLoginFragment);
         ResetEmail(send_email.getText().toString());
         return view;
     }

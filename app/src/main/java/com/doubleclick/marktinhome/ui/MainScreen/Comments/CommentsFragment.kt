@@ -43,6 +43,7 @@ class CommentsFragment : BaseFragment() {
     private var open = false
     private var rating: Float = 0.0f
     private lateinit var commentsViewModel: CommentsViewModel
+
     private val idproduct by navArgs<CommentsFragmentArgs>()
 
     lateinit var commentsRecycler: RecyclerView;

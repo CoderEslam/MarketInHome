@@ -2867,6 +2867,7 @@ id action_bar_subtitle
 id action_bar_title
 id action_childFragment_to_parentFragment
 id action_childFragment_to_uploadFragment
+id action_connctUsFragment_to_allUserFragment
 id action_container
 id action_context_bar
 id action_divider
@@ -2874,7 +2875,7 @@ id action_filterParentFragment_to_productFragment
 id action_homeFragment_to_ViewMoreFragment
 id action_homeFragment_to_filterParentFragment
 id action_homeFragment_to_menu_Cart
-id action_homeFragment_to_productFragment2
+id action_homeFragment_to_productFragment
 id action_homeFragment_to_trademarkFragment
 id action_image
 id action_menu_Cart_to_addressFragment
@@ -3201,7 +3202,7 @@ id login
 id logout
 id lottie_layer_name
 id ltr
-id mainFragment
+id mainLoginFragment
 id main_fragment
 id map
 id masked
@@ -3351,6 +3352,7 @@ id putRate
 id quantity
 id quantityOrder
 id radio
+id radioGroup
 id rate_now_container
 id ratingBar
 id ratingSeller
@@ -3672,6 +3674,7 @@ layout abc_tooltip
 layout activity_add
 layout activity_address
 layout activity_advertisement
+layout activity_comments
 layout activity_filter
 layout activity_main
 layout activity_main_screen
@@ -3714,7 +3717,7 @@ layout fragment_forget
 layout fragment_home
 layout fragment_join_us
 layout fragment_log_in
-layout fragment_main
+layout fragment_main_login
 layout fragment_menu__cart
 layout fragment_menu_list
 layout fragment_menu_profile

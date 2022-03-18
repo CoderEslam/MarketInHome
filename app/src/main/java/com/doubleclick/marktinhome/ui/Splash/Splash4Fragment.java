@@ -50,7 +50,7 @@ public class Splash4Fragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_splash4, container, false);
-        mainFragment = getActivity().findViewById(R.id.mainFragment);
+        mainFragment = getActivity().findViewById(R.id.mainLoginFragment);
         SignIn = view.findViewById(R.id.SignIn);
         NewUser = view.findViewById(R.id.NewUser);
         SignIn.setOnClickListener(v -> {

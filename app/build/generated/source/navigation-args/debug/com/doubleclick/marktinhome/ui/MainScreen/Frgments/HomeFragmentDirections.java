@@ -28,9 +28,9 @@ public class HomeFragmentDirections {
   }
 
   @NonNull
-  public static ActionHomeFragmentToProductFragment2 actionHomeFragmentToProductFragment2(
+  public static ActionHomeFragmentToProductFragment actionHomeFragmentToProductFragment(
       @Nullable Product Product) {
-    return new ActionHomeFragmentToProductFragment2(Product);
+    return new ActionHomeFragmentToProductFragment(Product);
   }
 
   @NonNull
@@ -51,17 +51,17 @@ public class HomeFragmentDirections {
     return new ActionHomeFragmentToViewMoreFragment(productArray);
   }
 
-  public static class ActionHomeFragmentToProductFragment2 implements NavDirections {
+  public static class ActionHomeFragmentToProductFragment implements NavDirections {
     private final HashMap arguments = new HashMap();
 
     @SuppressWarnings("unchecked")
-    private ActionHomeFragmentToProductFragment2(@Nullable Product Product) {
+    private ActionHomeFragmentToProductFragment(@Nullable Product Product) {
       this.arguments.put("Product", Product);
     }
 
     @NonNull
     @SuppressWarnings("unchecked")
-    public ActionHomeFragmentToProductFragment2 setProduct(@Nullable Product Product) {
+    public ActionHomeFragmentToProductFragment setProduct(@Nullable Product Product) {
       this.arguments.put("Product", Product);
       return this;
     }
@@ -86,7 +86,7 @@ public class HomeFragmentDirections {
 
     @Override
     public int getActionId() {
-      return R.id.action_homeFragment_to_productFragment2;
+      return R.id.action_homeFragment_to_productFragment;
     }
 
     @SuppressWarnings("unchecked")
@@ -103,7 +103,7 @@ public class HomeFragmentDirections {
       if (object == null || getClass() != object.getClass()) {
           return false;
       }
-      ActionHomeFragmentToProductFragment2 that = (ActionHomeFragmentToProductFragment2) object;
+      ActionHomeFragmentToProductFragment that = (ActionHomeFragmentToProductFragment) object;
       if (arguments.containsKey("Product") != that.arguments.containsKey("Product")) {
         return false;
       }
@@ -126,7 +126,7 @@ public class HomeFragmentDirections {
 
     @Override
     public String toString() {
-      return "ActionHomeFragmentToProductFragment2(actionId=" + getActionId() + "){"
+      return "ActionHomeFragmentToProductFragment(actionId=" + getActionId() + "){"
           + "Product=" + getProduct()
           + "}";
     }

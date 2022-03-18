@@ -144,8 +144,8 @@ class UploadFragment : BaseFragment() {
             val editorder: TextInputEditText = view.findViewById(R.id.editname)
             builder.setTitle("Add Options")
             builder.setPositiveButton("ok", DialogInterface.OnClickListener { dialog, which ->
-                radio.setText("" + editorder.text.toString())
-                mapToggleButton["" + addToggleButton.childCount] = editorder.text.toString()
+                radio.setText("" + editorder.text.toString().trim())
+                mapToggleButton["" + addToggleButton.childCount] = editorder.text.toString().trim()
                 addToggleButton.addView(radio)
                 Log.e("addToggleButton", editorder.text.toString())
                 dialog.dismiss()

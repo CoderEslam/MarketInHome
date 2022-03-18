@@ -8,6 +8,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -138,6 +139,9 @@ public final class FragmentProductBinding implements ViewBinding {
   public final TextView quantity;
 
   @NonNull
+  public final RadioGroup radioGroup;
+
+  @NonNull
   public final LinearLayout rateNowContainer;
 
   @NonNull
@@ -219,14 +223,15 @@ public final class FragmentProductBinding implements ViewBinding {
       @NonNull TextView price, @NonNull TextView productName, @NonNull ProgressBar progressBar1,
       @NonNull ProgressBar progressBar2, @NonNull ProgressBar progressBar3,
       @NonNull ProgressBar progressBar4, @NonNull ProgressBar progressBar5,
-      @NonNull TextView quantity, @NonNull LinearLayout rateNowContainer,
-      @NonNull TextView ratingSeller, @NonNull ScrollView scrollView2, @NonNull ImageView share,
-      @NonNull TextView textView12, @NonNull TextView textView13, @NonNull TextView textView14,
-      @NonNull TextView textView15, @NonNull TextView textView16, @NonNull TextView textView4,
-      @NonNull TextView textView5, @NonNull TextView textView6, @NonNull TextView textView60,
-      @NonNull TextView textView7, @NonNull TextView trarmark, @NonNull TextView tvRate1,
-      @NonNull TextView tvRate2, @NonNull TextView tvRate3, @NonNull TextView tvRate4,
-      @NonNull TextView tvRate5, @NonNull TextView tvYourRatins, @NonNull RatingBar yourRate) {
+      @NonNull TextView quantity, @NonNull RadioGroup radioGroup,
+      @NonNull LinearLayout rateNowContainer, @NonNull TextView ratingSeller,
+      @NonNull ScrollView scrollView2, @NonNull ImageView share, @NonNull TextView textView12,
+      @NonNull TextView textView13, @NonNull TextView textView14, @NonNull TextView textView15,
+      @NonNull TextView textView16, @NonNull TextView textView4, @NonNull TextView textView5,
+      @NonNull TextView textView6, @NonNull TextView textView60, @NonNull TextView textView7,
+      @NonNull TextView trarmark, @NonNull TextView tvRate1, @NonNull TextView tvRate2,
+      @NonNull TextView tvRate3, @NonNull TextView tvRate4, @NonNull TextView tvRate5,
+      @NonNull TextView tvYourRatins, @NonNull RatingBar yourRate) {
     this.rootView = rootView;
     this.TotalRating = TotalRating;
     this.addToggalsLinearLayout = addToggalsLinearLayout;
@@ -264,6 +269,7 @@ public final class FragmentProductBinding implements ViewBinding {
     this.progressBar4 = progressBar4;
     this.progressBar5 = progressBar5;
     this.quantity = quantity;
+    this.radioGroup = radioGroup;
     this.rateNowContainer = rateNowContainer;
     this.ratingSeller = ratingSeller;
     this.scrollView2 = scrollView2;
@@ -531,6 +537,12 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.radioGroup;
+      RadioGroup radioGroup = ViewBindings.findChildViewById(rootView, id);
+      if (radioGroup == null) {
+        break missingId;
+      }
+
       id = R.id.rate_now_container;
       LinearLayout rateNowContainer = ViewBindings.findChildViewById(rootView, id);
       if (rateNowContainer == null) {
@@ -669,10 +681,10 @@ public final class FragmentProductBinding implements ViewBinding {
           constraintLayout4, constraintLayout7, constraintLayout8, description, fab, imageView3,
           imageView4, imageView5, imageView6, imageView7, imageView8, lastPrice, linearLayout5,
           linearLayout7, mins, pieChartView, plus, price, productName, progressBar1, progressBar2,
-          progressBar3, progressBar4, progressBar5, quantity, rateNowContainer, ratingSeller,
-          scrollView2, share, textView12, textView13, textView14, textView15, textView16, textView4,
-          textView5, textView6, textView60, textView7, trarmark, tvRate1, tvRate2, tvRate3, tvRate4,
-          tvRate5, tvYourRatins, yourRate);
+          progressBar3, progressBar4, progressBar5, quantity, radioGroup, rateNowContainer,
+          ratingSeller, scrollView2, share, textView12, textView13, textView14, textView15,
+          textView16, textView4, textView5, textView6, textView60, textView7, trarmark, tvRate1,
+          tvRate2, tvRate3, tvRate4, tvRate5, tvYourRatins, yourRate);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

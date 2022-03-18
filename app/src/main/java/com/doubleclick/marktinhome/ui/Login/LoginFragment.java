@@ -59,7 +59,7 @@ public class LoginFragment extends BaseFragment {
         email = view.findViewById(R.id.email);
         password = view.findViewById(R.id.password);
         loadingAnimView = view.findViewById(R.id.loadingAnimView);
-        mainFragment = getActivity().findViewById(R.id.mainFragment);
+        mainFragment = getActivity().findViewById(R.id.mainLoginFragment);
 
         signup.setOnClickListener(v -> {
             StartFragment(mainFragment.getId(), new RegisterFragment());

@@ -84,7 +84,7 @@ public class RegisterFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register, container, false);
-        mainFragment = getActivity().findViewById(R.id.mainFragment);
+        mainFragment = getActivity().findViewById(R.id.mainLoginFragment);
         ihaveaccount = view.findViewById(R.id.ihaveaccount);
         edt_user_name = view.findViewById(R.id.edt_user_name);
         email = view.findViewById(R.id.email);

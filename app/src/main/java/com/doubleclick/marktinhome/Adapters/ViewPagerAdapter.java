@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.doubleclick.marktinhome.MainFragment;
+import com.doubleclick.marktinhome.MainLoginFragment;
 import com.doubleclick.marktinhome.ui.Splash.Splash1Fragment;
 import com.doubleclick.marktinhome.ui.Splash.Splash2Fragment;
 import com.doubleclick.marktinhome.ui.Splash.Splash3Fragment;
@@ -30,7 +30,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 return  new Splash3Fragment();
             case 3:
-                return  new MainFragment();
+                return  new MainLoginFragment();
         }
         return null;
     }

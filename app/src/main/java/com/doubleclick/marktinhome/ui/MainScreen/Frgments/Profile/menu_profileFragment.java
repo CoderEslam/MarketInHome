@@ -30,6 +30,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -43,7 +44,7 @@ public class menu_profileFragment extends BaseFragment {
     private ImageView editAddress, editPhone, editname;
     private AlertDialog.Builder builder;
     private ImageView fab;
-    private ConstraintLayout AddProduct, AddAdv, AddTradmark, recentOrder, chat,joinUs;
+    private ConstraintLayout AddProduct, AddAdv, AddTradmark, recentOrder, chat, joinUs;
     private ConstraintLayout logout;
 
     public menu_profileFragment() {
@@ -119,6 +120,7 @@ public class menu_profileFragment extends BaseFragment {
         logout.setOnClickListener(v -> {
             mAuth.signOut();
             startActivity(new Intent(getContext(), MainActivity.class));
+            requireActivity().finish();
         });
         chat.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToAllUserFragment());

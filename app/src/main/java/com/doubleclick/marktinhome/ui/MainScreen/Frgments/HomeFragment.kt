@@ -5,11 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
@@ -22,12 +20,17 @@ import com.doubleclick.ViewModel.RecentSearchViewModel
 import com.doubleclick.ViewModel.TradmarkViewModel
 import com.doubleclick.ViewMore
 import com.doubleclick.marktinhome.Adapters.HomeAdapter
-import com.doubleclick.marktinhome.BaseApplication
+import com.doubleclick.marktinhome.BaseApplication.isNetworkConnected
 import com.doubleclick.marktinhome.BaseFragment
-import com.doubleclick.marktinhome.Model.*
+import com.doubleclick.marktinhome.Model.Constantes.PRODUCT
+import com.doubleclick.marktinhome.Model.HomeModel
+import com.doubleclick.marktinhome.Model.ParentCategory
+import com.doubleclick.marktinhome.Model.Product
+import com.doubleclick.marktinhome.Model.Trademark
 import com.doubleclick.marktinhome.R
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 
 class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewMore {
@@ -42,6 +45,7 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
     lateinit var animationView: LottieAnimationView
     lateinit var recentSearchViewModel: RecentSearchViewModel
     private var idProduct: String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,8 +106,34 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
         })
 
         if (idProduct != "") {
-            ShowToast(context, idProduct)
+            reference.child(PRODUCT).child(idProduct).addListenerForSingleValueEvent(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    try {
+                        if (isNetworkConnected()) {
+                            if (snapshot.exists()) {
+                                var product: Product? =  snapshot.getValue(Product::class.java)
+                                Log.e("ggggggggggggg", product.toString())
+                                findNavController().navigate(
+                                    HomeFragmentDirections.actionHomeFragmentToProductFragment(
+                                        product
+                                    )
+                                )
+                            }
+                        } else {
+                            ShowToast(context, "No Internet Connection")
+                        }
+                    } catch (e: Exception) {
+
+                    }
+                }
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+
         }
+
 
         return view;
     }
@@ -120,7 +150,7 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
 
     override fun onItemProduct(product: Product?) {
         findNavController().navigate(
-            HomeFragmentDirections.actionHomeFragmentToProductFragment2(
+            HomeFragmentDirections.actionHomeFragmentToProductFragment(
                 product
             )
         )
@@ -139,7 +169,11 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
     }
 
     override fun getViewMore(products: ArrayList<Product>) {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToViewMoreFragment(products.toTypedArray()))
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToViewMoreFragment(
+                products.toTypedArray()
+            )
+        )
     }
 }
 
