@@ -476,8 +476,10 @@ com/doubleclick/marktinhome/Views/customnavigationdrawer/data/MenuItem.java
 com/doubleclick/marktinhome/Adapters/OrderAdapter.java
  com.doubleclick.marktinhome.Adapters.OrderAdapter
  com.doubleclick.marktinhome.Adapters.OrderAdapter$OrderViewHolder
-com/doubleclick/ViewHolder/ChatViewHolder.java
- com.doubleclick.ViewHolder.ChatViewHolder
+com/doubleclick/marktinhome/Repository/ChatReopsitory.java
+ com.doubleclick.marktinhome.Repository.ChatReopsitory
+ com.doubleclick.marktinhome.Repository.ChatReopsitory$1
+ com.doubleclick.marktinhome.Repository.ChatReopsitory$Chats
 com/doubleclick/marktinhome/Views/PhotoView/OnViewTapListener.java
  com.doubleclick.marktinhome.Views.PhotoView.OnViewTapListener
 com/doubleclick/marktinhome/ui/Splash/Splash4Fragment.java
@@ -627,9 +629,7 @@ com/doubleclick/marktinhome/Model/Chat.java
  com.doubleclick.marktinhome.Model.Chat
 com/doubleclick/ViewModel/ChatViewModel.java
  com.doubleclick.ViewModel.ChatViewModel
+com/doubleclick/ViewHolder/ChatViewHolder.java
+ com.doubleclick.ViewHolder.ChatViewHolder
 com/doubleclick/marktinhome/Adapters/ChatAdapter.java
  com.doubleclick.marktinhome.Adapters.ChatAdapter
-com/doubleclick/marktinhome/Repository/ChatReopsitory.java
- com.doubleclick.marktinhome.Repository.ChatReopsitory
- com.doubleclick.marktinhome.Repository.ChatReopsitory$1
- com.doubleclick.marktinhome.Repository.ChatReopsitory$Chats

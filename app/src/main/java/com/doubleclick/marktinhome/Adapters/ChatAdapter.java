@@ -1,5 +1,6 @@
 package com.doubleclick.marktinhome.Adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,10 @@ import com.doubleclick.marktinhome.Model.Chat;
 import com.doubleclick.marktinhome.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Objects;
 
 /**
@@ -43,6 +47,14 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
         holder.textMessage.setText(chatArrayList.get(position).getMessage());
+        if (chatArrayList.get(position).getDate()!=0){
+            @SuppressLint("SimpleDateFormat") DateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+            holder.textTime.setText(sdf.format(chatArrayList.get(position).getDate()));
+        }else {
+            holder.textTime.setVisibility(View.GONE);
+        }
+
+
     }
 
     @Override
