@@ -30,8 +30,8 @@ com/doubleclick/marktinhome/Model/Advertisement.java
  com.doubleclick.marktinhome.Model.Advertisement
 com/doubleclick/marktinhome/DataBindingTriggerClass.java
  com.doubleclick.marktinhome.DataBindingTriggerClass
-com/doubleclick/ViewModel/ProductViewModel.java
- com.doubleclick.ViewModel.ProductViewModel
+com/doubleclick/marktinhome/Notifications/MyFirebaseMessaging.java
+ com.doubleclick.marktinhome.Notifications.MyFirebaseMessaging
 com/doubleclick/marktinhome/ui/MainScreen/Frgments/ViewMoreFragmentArgs.java
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.ViewMoreFragmentArgs
  com.doubleclick.marktinhome.ui.MainScreen.Frgments.ViewMoreFragmentArgs$1
@@ -198,18 +198,8 @@ com/doubleclick/marktinhome/Views/PhotoView/OnPhotoTapListener.java
  com.doubleclick.marktinhome.Views.PhotoView.OnPhotoTapListener
 com/doubleclick/marktinhome/Model/ParentCategory.java
  com.doubleclick.marktinhome.Model.ParentCategory
-com/doubleclick/marktinhome/Repository/ProductRepository.java
- com.doubleclick.marktinhome.Repository.ProductRepository
- com.doubleclick.marktinhome.Repository.ProductRepository$1
- com.doubleclick.marktinhome.Repository.ProductRepository$10
- com.doubleclick.marktinhome.Repository.ProductRepository$2
- com.doubleclick.marktinhome.Repository.ProductRepository$3
- com.doubleclick.marktinhome.Repository.ProductRepository$4
- com.doubleclick.marktinhome.Repository.ProductRepository$5
- com.doubleclick.marktinhome.Repository.ProductRepository$6
- com.doubleclick.marktinhome.Repository.ProductRepository$7
- com.doubleclick.marktinhome.Repository.ProductRepository$8
- com.doubleclick.marktinhome.Repository.ProductRepository$9
+com/doubleclick/marktinhome/MainActivity.java
+ com.doubleclick.marktinhome.MainActivity
 com/doubleclick/marktinhome/Model/Constantes.java
  com.doubleclick.marktinhome.Model.Constantes
 com/doubleclick/Servies/NotificationReceiver.java
@@ -309,8 +299,8 @@ com/doubleclick/marktinhome/databinding/FragmentSplash3Binding.java
  com.doubleclick.marktinhome.databinding.FragmentSplash3Binding
 com/doubleclick/marktinhome/databinding/SliderImageLayoutBinding.java
  com.doubleclick.marktinhome.databinding.SliderImageLayoutBinding
-com/doubleclick/marktinhome/Notifications/MyFirebaseMessaging.java
- com.doubleclick.marktinhome.Notifications.MyFirebaseMessaging
+com/doubleclick/marktinhome/Adapters/SliderAdapter.java
+ com.doubleclick.marktinhome.Adapters.SliderAdapter
 com/doubleclick/marktinhome/databinding/LayoutSmallProductBinding.java
  com.doubleclick.marktinhome.databinding.LayoutSmallProductBinding
 com/doubleclick/marktinhome/Adapters/ProductAdapter.java
@@ -362,19 +352,18 @@ com/doubleclick/marktinhome/Adapters/NavAdapter.java
  com.doubleclick.marktinhome.Adapters.NavAdapter$onClickChild
 com/doubleclick/ViewHolder/ProductViewHolder.java
  com.doubleclick.ViewHolder.ProductViewHolder
-com/doubleclick/marktinhome/ui/Login/LoginFragment.java
- com.doubleclick.marktinhome.ui.Login.LoginFragment
- com.doubleclick.marktinhome.ui.Login.LoginFragment$1
+com/doubleclick/marktinhome/databinding/FragmentCartBinding.java
+ com.doubleclick.marktinhome.databinding.FragmentCartBinding
 com/doubleclick/ViewHolder/BannerSliderViewholder.java
  com.doubleclick.ViewHolder.BannerSliderViewholder
  com.doubleclick.ViewHolder.BannerSliderViewholder$1
  com.doubleclick.ViewHolder.BannerSliderViewholder$2
  com.doubleclick.ViewHolder.BannerSliderViewholder$3
  com.doubleclick.ViewHolder.BannerSliderViewholder$4
-com/doubleclick/marktinhome/ui/MainScreen/MainScreenActivity.java
- com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity
- com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity$1
- com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity$2
+com/doubleclick/marktinhome/ui/MainScreen/Frgments/RecentOrderFragmentDirections.java
+ com.doubleclick.marktinhome.ui.MainScreen.Frgments.RecentOrderFragmentDirections
+ com.doubleclick.marktinhome.ui.MainScreen.Frgments.RecentOrderFragmentDirections$1
+ com.doubleclick.marktinhome.ui.MainScreen.Frgments.RecentOrderFragmentDirections$ActionRecentOrderFragmentToProductFragment
 com/doubleclick/marktinhome/BaseFragment.java
  com.doubleclick.marktinhome.BaseFragment
  com.doubleclick.marktinhome.BaseFragment$1
@@ -478,15 +467,14 @@ com/doubleclick/marktinhome/Adapters/ChildAdapter.java
  com.doubleclick.marktinhome.Adapters.ChildAdapter$1
  com.doubleclick.marktinhome.Adapters.ChildAdapter$ChildViewHolder
  com.doubleclick.marktinhome.Adapters.ChildAdapter$OnChild
-com/doubleclick/marktinhome/MainActivity.java
- com.doubleclick.marktinhome.MainActivity
+com/doubleclick/marktinhome/ui/MainScreen/Frgments/FilterParentFragmentDirections.java
+ com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentDirections
+ com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentDirections$1
+ com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentDirections$ActionFilterParentFragmentToProductFragment
 com/doubleclick/ViewHolder/RecentResearchViewHolder.java
  com.doubleclick.ViewHolder.RecentResearchViewHolder
-com/doubleclick/marktinhome/ui/Login/RegisterFragment.java
- com.doubleclick.marktinhome.ui.Login.RegisterFragment
- com.doubleclick.marktinhome.ui.Login.RegisterFragment$1
- com.doubleclick.marktinhome.ui.Login.RegisterFragment$1$1
- com.doubleclick.marktinhome.ui.Login.RegisterFragment$2
+com/doubleclick/marktinhome/databinding/FragmentProductBinding.java
+ com.doubleclick.marktinhome.databinding.FragmentProductBinding
 com/doubleclick/marktinhome/databinding/FragmentTrademarkBinding.java
  com.doubleclick.marktinhome.databinding.FragmentTrademarkBinding
 com/doubleclick/marktinhome/databinding/ChildLayoutBinding.java
@@ -503,17 +491,29 @@ com/doubleclick/marktinhome/ui/MainScreen/Chat/AllUserFragmentDirections.java
  com.doubleclick.marktinhome.ui.MainScreen.Chat.AllUserFragmentDirections
  com.doubleclick.marktinhome.ui.MainScreen.Chat.AllUserFragmentDirections$1
  com.doubleclick.marktinhome.ui.MainScreen.Chat.AllUserFragmentDirections$ActionAllUserFragmentToConnctUsFragment
-com/doubleclick/marktinhome/ui/MainScreen/Frgments/FilterParentFragmentDirections.java
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentDirections
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentDirections$1
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.FilterParentFragmentDirections$ActionFilterParentFragmentToProductFragment
-com/doubleclick/marktinhome/Adapters/SliderAdapter.java
- com.doubleclick.marktinhome.Adapters.SliderAdapter
-com/doubleclick/marktinhome/ui/MainScreen/Frgments/RecentOrderFragmentDirections.java
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.RecentOrderFragmentDirections
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.RecentOrderFragmentDirections$1
- com.doubleclick.marktinhome.ui.MainScreen.Frgments.RecentOrderFragmentDirections$ActionRecentOrderFragmentToProductFragment
-com/doubleclick/marktinhome/databinding/FragmentCartBinding.java
- com.doubleclick.marktinhome.databinding.FragmentCartBinding
-com/doubleclick/marktinhome/databinding/FragmentProductBinding.java
- com.doubleclick.marktinhome.databinding.FragmentProductBinding
+com/doubleclick/marktinhome/ui/Login/RegisterFragment.java
+ com.doubleclick.marktinhome.ui.Login.RegisterFragment
+ com.doubleclick.marktinhome.ui.Login.RegisterFragment$1
+ com.doubleclick.marktinhome.ui.Login.RegisterFragment$1$1
+ com.doubleclick.marktinhome.ui.Login.RegisterFragment$2
+com/doubleclick/marktinhome/ui/Login/LoginFragment.java
+ com.doubleclick.marktinhome.ui.Login.LoginFragment
+ com.doubleclick.marktinhome.ui.Login.LoginFragment$1
+com/doubleclick/marktinhome/ui/MainScreen/MainScreenActivity.java
+ com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity
+ com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity$1
+ com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity$2
+com/doubleclick/marktinhome/Repository/ProductRepository.java
+ com.doubleclick.marktinhome.Repository.ProductRepository
+ com.doubleclick.marktinhome.Repository.ProductRepository$1
+ com.doubleclick.marktinhome.Repository.ProductRepository$10
+ com.doubleclick.marktinhome.Repository.ProductRepository$2
+ com.doubleclick.marktinhome.Repository.ProductRepository$3
+ com.doubleclick.marktinhome.Repository.ProductRepository$4
+ com.doubleclick.marktinhome.Repository.ProductRepository$5
+ com.doubleclick.marktinhome.Repository.ProductRepository$6
+ com.doubleclick.marktinhome.Repository.ProductRepository$7
+ com.doubleclick.marktinhome.Repository.ProductRepository$8
+ com.doubleclick.marktinhome.Repository.ProductRepository$9
+com/doubleclick/ViewModel/ProductViewModel.java
+ com.doubleclick.ViewModel.ProductViewModel

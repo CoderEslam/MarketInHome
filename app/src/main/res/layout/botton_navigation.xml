@@ -35,13 +35,19 @@
                 android:layout_height="0dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/bg_edit"
                 android:iconifiedByDefault="false"
                 android:padding="5dp"
                 android:queryHint="@string/search_here"
+                app:defaultQueryHint="@string/type_here"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/myImage"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/openDrawer"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:queryHint="@string/search_here"
+                app:searchIcon="@drawable/search" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/myImage"

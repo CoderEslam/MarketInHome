@@ -222,7 +222,7 @@ public class ProductRepository extends BaseRepository {
 
 
     public void getQuery(String query) {
-        reference.child(PRODUCT).orderByChild("productName").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        reference.child(PRODUCT).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
