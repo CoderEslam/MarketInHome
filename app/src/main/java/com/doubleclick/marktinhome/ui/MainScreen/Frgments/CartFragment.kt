@@ -60,7 +60,6 @@ class CartFragment : BaseFragment(), OnCartLisnter {
         cartRecycler = view.findViewById(R.id.cartRecycler)
         Continue = view.findViewById(R.id.Continue)
         totalPrice = view.findViewById(R.id.totalPrice)
-        MyOrder = view.findViewById(R.id.MyOrder);
 
         cartViewModel.CartLiveData().observe(viewLifecycleOwner) { carts: ArrayList<Cart> ->
             if (carts.size != 0) {
@@ -80,12 +79,6 @@ class CartFragment : BaseFragment(), OnCartLisnter {
 
             }
 
-        }
-
-
-
-        MyOrder.setOnClickListener {
-            findNavController().navigate(CartFragmentDirections.actionMenuCartToOrderSelllerFragment())
         }
 
         return view

@@ -34,16 +34,19 @@ public class TradmarkRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (isNetworkConnected() && task.getResult().exists()) {
-                        DataSnapshot snapshot = task.getResult();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Trademark tradmark = dataSnapshot.getValue(Trademark.class);
-                            tradmarks.add(tradmark);
+                    if (isNetworkConnected()){
+                        if (task.getResult().exists()) {
+                            DataSnapshot snapshot = task.getResult();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Trademark tradmark = dataSnapshot.getValue(Trademark.class);
+                                tradmarks.add(tradmark);
+                            }
+                            tradmarkinterface.AllTradmark(tradmarks);
                         }
-                        tradmarkinterface.AllTradmark(tradmarks);
+                    }else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
                     Log.e("Exception", e.getMessage());
                 }
 

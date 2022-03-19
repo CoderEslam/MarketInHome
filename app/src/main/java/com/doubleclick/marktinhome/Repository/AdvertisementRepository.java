@@ -32,15 +32,18 @@ public class AdvertisementRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (isNetworkConnected() && task.getResult().exists()) {
-                        for (DataSnapshot snapshot : task.getResult().getChildren()) {
-                            Advertisement advertisement = snapshot.getValue(Advertisement.class);
-                            advertisements.add(advertisement);
+                    if (isNetworkConnected()){
+                        if (task.getResult().exists()) {
+                            for (DataSnapshot snapshot : task.getResult().getChildren()) {
+                                Advertisement advertisement = snapshot.getValue(Advertisement.class);
+                                advertisements.add(advertisement);
+                            }
+                            adv.AllAdvertisement(advertisements);
                         }
-                        adv.AllAdvertisement(advertisements);
+                    }else {
+                        ShowToast("No Internet Connection");
                     }
                 } catch (Exception e) {
-                    ShowToast("No Internet Connection");
                     Log.e("Exception", e.getMessage());
                 }
             }

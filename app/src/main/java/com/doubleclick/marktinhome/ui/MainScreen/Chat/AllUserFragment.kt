@@ -41,6 +41,13 @@ class AllUserFragment : BaseFragment(), UserInter {
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java];
         userViewModel.getChatList()
         userViewModel.chatUser.observe(viewLifecycleOwner, Observer {
+            if (it.size == 1) {
+                findNavController().navigate(
+                    AllUserFragmentDirections.actionAllUserFragmentToConnctUsFragment(
+                        it[0]
+                    )
+                )
+            }
             var AllUserChatListAdapter = AllUserChatListAdapter(it, this);
             allUser.adapter = AllUserChatListAdapter
         })

@@ -3,6 +3,7 @@ package com.doubleclick.marktinhome.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -58,7 +59,7 @@ public class TrademarkAdapter extends RecyclerView.Adapter<TrademarkAdapter.Trad
 
     public class TrademarkViewHolder extends RecyclerView.ViewHolder {
 
-        private CircleImageView imageTrademark;
+        private ImageView imageTrademark;
         private TextView name;
 
         public TrademarkViewHolder(@NonNull View itemView) {

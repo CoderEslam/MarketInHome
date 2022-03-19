@@ -2645,6 +2645,7 @@ drawable c1
 drawable c2
 drawable c3
 drawable camera
+drawable chat
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2757,6 +2758,8 @@ drawable search
 drawable send
 drawable share
 drawable shopping_cart
+drawable small_arrow_left
+drawable small_arrow_right
 drawable test_custom_background
 drawable test_level_drawable
 drawable text_message_left
@@ -2783,8 +2786,6 @@ id FilterRecycler
 id FilterRecyclerView
 id META
 id MainRecyceler
-id MyOrder
-id MyTrademark
 id NO_DEBUG
 id NewUser
 id PriceOrder
@@ -2848,7 +2849,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
-id action_connctUsFragment_to_allUserFragment
+id action_connctUsFragment_to_menu_profile
 id action_container
 id action_context_bar
 id action_divider
@@ -2861,13 +2862,11 @@ id action_homeFragment_to_trademarkFragment
 id action_image
 id action_menu_Cart_to_addressFragment
 id action_menu_Cart_to_menu_profile
-id action_menu_Cart_to_orderSelllerFragment
 id action_menu_divider
 id action_menu_presenter
 id action_menu_profile_to_allUserFragment
 id action_menu_profile_to_joinUsFragment
 id action_menu_profile_to_recentOrderFragment
-id action_menu_store_to_menu_Cart
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
@@ -2900,8 +2899,6 @@ id animationView
 id anotherPhone
 id antiClockwise
 id anticipate
-id appBarRL
-id appBarTitleTV
 id arc
 id arro_imageview
 id arrow
@@ -2912,8 +2909,6 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id automatic
-id backgroundCV
-id backgroundIV
 id banner_sliderImageView
 id banner_slier_view_pager
 id barrier
@@ -2944,6 +2939,9 @@ id cancel_action
 id cancel_button
 id cardView
 id cardView11
+id cardView2
+id cardView3
+id cardView4
 id carryVelocity
 id cartRate
 id cartRecycler
@@ -2992,8 +2990,6 @@ id constraintLayout7
 id constraintLayout8
 id constraintLayout9
 id container
-id containerCV
-id containerLL
 id content
 id contentPanel
 id contiguous
@@ -3078,7 +3074,6 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
-id frameLayout
 id frost
 id ghost_view
 id ghost_view_holder
@@ -3201,13 +3196,9 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
-id menuIV
-id menuLL
-id menuSV
 id menu_Cart
 id menu_profile
 id menu_recycler_view
-id menu_store
 id message
 id middle
 id mini
@@ -3243,7 +3234,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id myAdv
 id myImage
 id myLocation
 id myRecentOrder
@@ -3278,9 +3268,7 @@ id onAttachStateChangeListener
 id onDateChanged
 id onInterceptTouchReturnSwipe
 id openDrawer
-id order
 id orderImage
-id orderSelllerFragment
 id outline
 id outward
 id overshoot
@@ -3336,11 +3324,8 @@ id right
 id rightToLeft
 id right_icon
 id right_side
-id rootLayout
-id rootRL
 id rounded
 id row_index_key
-id rr
 id rtl
 id satellite
 id save_non_transition_alpha
@@ -3468,7 +3453,6 @@ id textView5
 id textView6
 id textView60
 id textView7
-id textView8
 id textView9
 id textWatcher
 id text_input_end_icon
@@ -3484,11 +3468,8 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
-id tintView
 id title
 id titleDividerNoCustom
-id titleTV
-id titleTV1
 id title_template
 id toggle
 id toolbar
@@ -3497,7 +3478,6 @@ id topPanel
 id topParents
 id top_left
 id top_right
-id topdealsRecycler
 id totalPrice
 id touch_outside
 id trademark
@@ -3522,11 +3502,8 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id upload
 id useLogo
 id userName
-id user_profile_image
-id user_profile_name
 id username
 id vertical_only
 id view
@@ -3637,14 +3614,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_address
-layout activity_advertisement
 layout activity_comments
 layout activity_filter
 layout activity_main
 layout activity_main_screen
 layout activity_product
-layout activity_trademark
 layout add_toggal
 layout all_tradmark
 layout botton_navigation
@@ -3681,10 +3655,7 @@ layout fragment_home
 layout fragment_join_us
 layout fragment_log_in
 layout fragment_main_login
-layout fragment_menu__cart
-layout fragment_menu_list
 layout fragment_menu_profile
-layout fragment_menu_store
 layout fragment_product
 layout fragment_recent_order
 layout fragment_register
@@ -3708,9 +3679,7 @@ layout layout_product
 layout layout_recent_order
 layout layout_small_product
 layout layout_top_deals
-layout layout_upload
 layout left_chat
-layout list_group
 layout list_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3730,7 +3699,6 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
-layout menu_row_item
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -3760,7 +3728,6 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
-layout nav_header_main
 layout notification_action
 layout notification_action_tombstone
 layout notification_collapsed
@@ -3803,12 +3770,9 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
-layout top_deal_layout
-layout top_deals
 layout tradmark_layout
 layout user_chat_layout
 layout v_product_recyclerview
-layout widget_navigation_drawer
 menu add_item
 menu example_menu
 menu example_menu2

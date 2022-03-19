@@ -59,12 +59,10 @@ public class UserRepository extends BaseRepository {
         reference.child(CHAT_LIST).child(myId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.e("chatList",myId);
                 try {
                     if (isNetworkConnected()) {
                         if (dataSnapshot.exists()) {
                             userArrayList.clear();
-//                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 ChatList chatList = dataSnapshot.getValue(ChatList.class);
                                 Log.e("snapshot",chatList.toString());
                                 reference.child(USER).child(chatList.getId()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -79,8 +77,6 @@ public class UserRepository extends BaseRepository {
                                         }
                                     }
                                 });
-//                            }
-
                         }
                     } else {
                         ShowToast("No Internet Connection");
@@ -89,7 +85,6 @@ public class UserRepository extends BaseRepository {
                     Log.e("Exception", e.getMessage());
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

@@ -44,15 +44,40 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/banner_slier_view_pager"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:padding="15dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    android:layout_height="match_parent">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/banner_slier_view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:padding="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@+id/banner_slier_view_pager"
+                        app:layout_constraintStart_toStartOf="@+id/banner_slier_view_pager"
+                        app:layout_constraintTop_toBottomOf="@+id/banner_slier_view_pager">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/small_arrow_left" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/small_arrow_right" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -248,27 +273,30 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                     <HorizontalScrollView
-                        android:orientation="horizontal"
                         android:id="@+id/addToggalsScrollView"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
+                        android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="@+id/description"
                         app:layout_constraintStart_toStartOf="@+id/description"
                         app:layout_constraintTop_toBottomOf="@+id/description">
+
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:id="@+id/addToggalsLinearLayout"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
                             <RadioGroup
-                                android:orientation="horizontal"
                                 android:id="@+id/radioGroup"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
 
                             </RadioGroup>
 
@@ -343,9 +371,9 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/linearLayout7"
-                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:visibility="gone"
                             app:layout_constraintEnd_toEndOf="@+id/TotalRating"
                             app:layout_constraintStart_toStartOf="@+id/TotalRating"
                             app:layout_constraintTop_toBottomOf="@+id/TotalRating">

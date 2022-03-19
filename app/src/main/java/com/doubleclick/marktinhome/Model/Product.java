@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import kotlinx.android.parcel.Parcelize;
  * Created By Eslam Ghazy on 3/1/2022
  */
 @Parcelize
-public class Product implements  Comparable, Parcelable {
+public class Product implements Comparable, Parcelable {
 
     private String productId;
     private double price;
@@ -311,4 +312,20 @@ public class Product implements  Comparable, Parcelable {
         dest.writeString(Toggals);
         dest.writeFloat(ratingSeller);
     }
+
+
+    public static Comparator<Product> comparatorDiscount = new Comparator<Product>() {
+        @Override
+        public int compare(Product o1, Product o2) {
+            return o1.discount - o2.discount;
+        }
+    };
+
+    public static Comparator<Product> comparatorRate = new Comparator<Product>() {
+        @Override
+        public int compare(Product o1, Product o2) {
+            return o1.TotalRating - o2.TotalRating;
+        }
+    };
+
 }

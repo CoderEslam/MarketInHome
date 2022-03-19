@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -57,7 +58,7 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
     }
 
     public class TopViewHilder extends RecyclerView.ViewHolder {
-        private CircleImageView circleImageView;
+        private ImageView circleImageView;
         private TextView listTitle;
 
         public TopViewHilder(@NonNull View itemView) {

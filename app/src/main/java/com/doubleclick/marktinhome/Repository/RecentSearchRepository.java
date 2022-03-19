@@ -30,7 +30,6 @@ import java.util.List;
 public class RecentSearchRepository extends BaseRepository {
 
     private RecentSearchInterface recentSearchInterface;
-    private String[] wordsSearch = new String[]{};
     private String[] wordsSearchList = new String[]{};
     private List<String> LastSearchList = new ArrayList<>();
     private ArrayList<Product> productArrayList = new ArrayList<>();

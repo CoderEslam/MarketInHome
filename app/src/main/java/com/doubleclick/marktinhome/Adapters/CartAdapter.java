@@ -82,7 +82,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder {
-        private CircleImageView imageCart;
+        private ImageView imageCart;
         private TextView CartName, price, quantity;
         private ImageView add, mins, delete;
 

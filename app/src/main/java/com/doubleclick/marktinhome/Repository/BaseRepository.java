@@ -25,7 +25,7 @@ public class BaseRepository {
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser() != null) {
             myId = mAuth.getCurrentUser().getUid().toString();
-            reference.keepSynced(true);
+            reference.keepSynced(false);
         }
     }
 

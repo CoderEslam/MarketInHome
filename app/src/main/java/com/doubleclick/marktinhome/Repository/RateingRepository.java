@@ -34,10 +34,14 @@ public class RateingRepository extends BaseRepository {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 try {
-                    if (isNetworkConnected() && task.isComplete() && task.getResult().exists()) {
-                        DataSnapshot dataSnapshot = task.getResult();
-                        Rate rate = dataSnapshot.getValue(Rate.class);
-                        rateing.MyRate(rate);
+                    if (isNetworkConnected()) {
+                        if (task.getResult().exists()) {
+                            DataSnapshot dataSnapshot = task.getResult();
+                            Rate rate = dataSnapshot.getValue(Rate.class);
+                            rateing.MyRate(rate);
+                        }
+                    } else {
+                        ShowToast("No Internet connection");
                     }
                 } catch (Exception e) {
                     Log.e("Exception", e.getMessage());

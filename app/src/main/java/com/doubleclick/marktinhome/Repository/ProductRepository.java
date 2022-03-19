@@ -5,6 +5,7 @@ import static com.doubleclick.marktinhome.BaseApplication.isNetworkConnected;
 import static com.doubleclick.marktinhome.Model.Constantes.CHILDREN;
 import static com.doubleclick.marktinhome.Model.Constantes.PARENTS;
 import static com.doubleclick.marktinhome.Model.Constantes.PRODUCT;
+import static com.doubleclick.marktinhome.Model.Product.comparatorDiscount;
 
 import android.util.Log;
 import android.widget.Toast;
@@ -44,13 +45,12 @@ public class ProductRepository extends BaseRepository {
     private ArrayList<Product> productsTopDeals = new ArrayList<>();
     private ArrayList<ParentCategory> parentCategories = new ArrayList<>();
     private ArrayList<ChildCategory> childCategories = new ArrayList<>();
-    private ArrayList<Product> recentSearchProduct = new ArrayList<>();
-    private static ArrayList<ArrayList<ArrayList<Product>>> arrayListOfArrayLists = new ArrayList<>();
+//    private static ArrayList<ArrayList<ArrayList<Product>>> arrayListOfArrayLists = new ArrayList<>();
     private Products product;
-
     public ProductRepository(Products product) {
         this.product = product;
     }
+
 
     // to get All products from Firebase
     public void getProduct() {
@@ -201,7 +201,7 @@ public class ProductRepository extends BaseRepository {
 
 
     //  لم تستخدم بعد
-    private void Rearrange() {
+    /*private void Rearrange() {
         for (int i = 0; i < parentCategories.size(); i++) {
             ArrayList<ArrayList<Product>> arrayListArrayList = new ArrayList<>();
             for (int j = 0; j < childCategories.size(); j++) {
@@ -218,7 +218,7 @@ public class ProductRepository extends BaseRepository {
             arrayListOfArrayLists.add(arrayListArrayList);
         }
         product.product(arrayListOfArrayLists);
-    }
+    }*/
 
 
     public void getQuery(String query) {
@@ -332,6 +332,10 @@ public class ProductRepository extends BaseRepository {
 
     // to get Top Deals
     public void TopDeals() {
+
+//        Collections.sort(products,comparatorDiscount);
+//        product.getProductTopDeals(products);
+
         reference.child(PRODUCT).orderByChild("discount").limitToFirst(20).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
