@@ -57,10 +57,9 @@ public class ProductViewModel extends ViewModel implements Products {
 
     public void getSearch(String search) {
         if (isNetworkConnected()) {
-            productRepository.getQuery(search);
+            productRepository.getQuery(search.trim());
         }
     }
-
 
 
     public void getSearchByChild(String ChildId) {
@@ -130,7 +129,6 @@ public class ProductViewModel extends ViewModel implements Products {
     public LiveData<ArrayList<Product>> ProductWithTrademarkLiveDate() {
         return ProductWithTrademark;
     }
-
 
 
     @Override

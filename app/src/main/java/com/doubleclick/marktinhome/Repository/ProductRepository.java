@@ -45,8 +45,9 @@ public class ProductRepository extends BaseRepository {
     private ArrayList<Product> productsTopDeals = new ArrayList<>();
     private ArrayList<ParentCategory> parentCategories = new ArrayList<>();
     private ArrayList<ChildCategory> childCategories = new ArrayList<>();
-//    private static ArrayList<ArrayList<ArrayList<Product>>> arrayListOfArrayLists = new ArrayList<>();
+    //    private static ArrayList<ArrayList<ArrayList<Product>>> arrayListOfArrayLists = new ArrayList<>();
     private Products product;
+
     public ProductRepository(Products product) {
         this.product = product;
     }
@@ -222,6 +223,21 @@ public class ProductRepository extends BaseRepository {
 
 
     public void getQuery(String query) {
+//        try {
+//            if (isNetworkConnected()) {
+//                for (Product product : products) {
+//                    if (Objects.requireNonNull(product).getProductName().contains(query) || product.getTradeMark().contains(query) || product.getChildCategoryName().contains(query) || product.getParentCategoryName().contains(query) || product.getKeywords().contains(query)) {
+//                        QueryProducts.add(product);
+//                    }
+//                }
+//                product.getQueryProducts(QueryProducts);
+//            } else {
+//                ShowToast("No Internet Connection");
+//            }
+//        } catch (Exception e) {
+//            Log.e("ExceptiongetQuery", e.getMessage());
+//        }
+
         reference.child(PRODUCT).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
