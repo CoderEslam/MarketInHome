@@ -503,6 +503,8 @@ com/doubleclick/marktinhome/ui/MainScreen/MainScreenActivity.java
  com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity
  com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity$1
  com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity$2
+com/doubleclick/marktinhome/Model/ClassificationPC.java
+ com.doubleclick.marktinhome.Model.ClassificationPC
 com/doubleclick/marktinhome/Repository/ProductRepository.java
  com.doubleclick.marktinhome.Repository.ProductRepository
  com.doubleclick.marktinhome.Repository.ProductRepository$1
@@ -516,7 +518,5 @@ com/doubleclick/marktinhome/Repository/ProductRepository.java
  com.doubleclick.marktinhome.Repository.ProductRepository$7
  com.doubleclick.marktinhome.Repository.ProductRepository$8
  com.doubleclick.marktinhome.Repository.ProductRepository$9
-com/doubleclick/marktinhome/Model/ClassificationPC.java
- com.doubleclick.marktinhome.Model.ClassificationPC
 com/doubleclick/ViewModel/ProductViewModel.java
  com.doubleclick.ViewModel.ProductViewModel
