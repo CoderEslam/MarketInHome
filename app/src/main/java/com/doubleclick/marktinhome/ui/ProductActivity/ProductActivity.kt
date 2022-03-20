@@ -227,7 +227,7 @@ class productActivity : AppCompatActivity() {
             action = Intent.ACTION_SEND
             putExtra(
                 Intent.EXTRA_TEXT,
-                "https://www.market.doublethink.com/" + product!!.productId
+                "https://www.market.doubleclick.com/" + product!!.productId
             )
             type = "text/plain"
         }

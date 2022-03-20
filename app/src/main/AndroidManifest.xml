@@ -30,18 +30,6 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.doubleclick.Address.AddressActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Trademark.TrademarkActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.Advertisement.AdvertisementActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Seller.SellerActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainScreen.MainScreenActivity"
             android:exported="true">
 
@@ -75,13 +63,11 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="www.market.doublethink.com"
+                    android:host="www.market.doubleclick.com"
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.Add.AddActivity"
-            android:exported="false" />
+
 
         <meta-data
             android:name="preloaded_fonts"

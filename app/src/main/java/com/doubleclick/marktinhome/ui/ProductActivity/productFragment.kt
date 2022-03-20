@@ -273,7 +273,7 @@ class productFragment : BaseFragment() {
             action = Intent.ACTION_SEND
             putExtra(
                 Intent.EXTRA_TEXT,
-                "https://www.market.doublethink.com/" + product.product!!.productId
+                "https://www.market.doubleclick.com/" + product.product!!.productId
             )
             type = "text/plain"
         }
