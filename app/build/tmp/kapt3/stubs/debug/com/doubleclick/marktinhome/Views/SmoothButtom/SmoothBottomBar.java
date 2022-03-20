@@ -74,7 +74,6 @@ public final class SmoothBottomBar extends android.view.View {
     private static final int DEFAULT_BAR_CORNERS = 3;
     private static final int OPAQUE = 255;
     private static final int TRANSPARENT = 0;
-    private java.util.HashMap _$_findViewCache;
     
     @kotlin.jvm.JvmOverloads()
     public SmoothBottomBar(@org.jetbrains.annotations.NotNull()

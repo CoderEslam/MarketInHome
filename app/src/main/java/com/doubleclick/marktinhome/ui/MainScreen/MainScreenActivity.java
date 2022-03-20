@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.doubleclick.ViewModel.ProductViewModel;
@@ -28,6 +29,7 @@ import com.doubleclick.ViewModel.RecentSearchViewModel;
 import com.doubleclick.ViewModel.UserViewModel;
 import com.doubleclick.marktinhome.Adapters.NavAdapter;
 import com.doubleclick.marktinhome.Model.ChildCategory;
+import com.doubleclick.marktinhome.Model.ClassificationPC;
 import com.doubleclick.marktinhome.Model.User;
 import com.doubleclick.marktinhome.R;
 import com.doubleclick.marktinhome.Repository.Sending;
@@ -153,6 +155,11 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         intent.putExtra("id", childCategory.getPushId());
         intent.putExtra("type", "childId");
         startActivity(intent);
+    }
+
+    @Override
+    public void onClickedNavParent(ClassificationPC classificationPC) {
+        Toast.makeText(this, "" + classificationPC.getName(), Toast.LENGTH_SHORT).show();
     }
 
 }

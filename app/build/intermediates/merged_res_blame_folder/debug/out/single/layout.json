@@ -84,6 +84,10 @@
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\activity_filter.xml"
     },
     {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_parent.xml",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\activity_parent.xml"
+    },
+    {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_menu__cart.xml",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\fragment_menu__cart.xml"
     },
@@ -330,6 +334,10 @@
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_adv.xml",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\item_adv.xml"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_product_with_view_pager.xml",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\layout_product_with_view_pager.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layaut_cart.xml",

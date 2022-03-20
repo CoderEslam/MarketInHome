@@ -8,7 +8,6 @@ public final class LiquidPager extends androidx.viewpager.widget.ViewPager imple
     private com.doubleclick.marktinhome.Views.liquid_swipe.animation.RightEdgeController rightEdgeController;
     private boolean inputBlocked = false;
     private int buttonDrawableId = com.doubleclick.marktinhome.R.drawable.ic_button;
-    private java.util.HashMap _$_findViewCache;
     
     public LiquidPager(@org.jetbrains.annotations.NotNull()
     android.content.Context context) {

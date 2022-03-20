@@ -9,12 +9,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
-import kotlinx.android.parcel.Parcelize;
-
 /**
  * Created By Eslam Ghazy on 3/1/2022
  */
-@Parcelize
 public class Product implements Comparable, Parcelable {
 
     private String productId;

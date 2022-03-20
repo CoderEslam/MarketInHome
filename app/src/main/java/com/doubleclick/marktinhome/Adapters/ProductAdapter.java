@@ -1,12 +1,11 @@
 package com.doubleclick.marktinhome.Adapters;
 
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,7 +38,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ProductViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.g_v_layout, parent, false));
+        return new ProductViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_product_with_view_pager, parent, false));
     }
 
     @Override
@@ -48,8 +47,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.description.setText(products.get(position).getDescription());
         holder.productPrice.setText(String.format("%s", products.get(position).getPrice()));
         holder.productLastPrice.setText(String.format("%s", products.get(position).getLastPrice()));
+        holder.ratingBar.setRating(products.get(position).getRatingSeller());
         holder.trademark.setText(products.get(position).getTradeMark());
-        String list =  products.get(position).getImages();
+        String list = products.get(position).getImages();
         holder.setBannerSliderViewPager(list);
         holder.itemView.setOnClickListener(v -> {
             onProduct.onItemProduct(products.get(position));
@@ -70,6 +70,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public TextView productLastPrice;
         public TextView trademark;
         private int currentPage;
+        private RatingBar ratingBar;
         private Timer timer;
         private final long DELAY_TIME = 2000;
         private final long PERIOD_TIME = 2000;
@@ -82,6 +83,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             productPrice = itemView.findViewById(R.id.productPrice);
             productLastPrice = itemView.findViewById(R.id.productLastPrice);
             trademark = itemView.findViewById(R.id.trademark);
+            ratingBar = itemView.findViewById(R.id.ratingBar);
         }
 
         public void setBannerSliderViewPager(String list) {
@@ -92,7 +94,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             banner_slier_view_pager.setClipToPadding(false);
             banner_slier_view_pager.setPageMargin(20);
             banner_slier_view_pager.setCurrentItem(currentPage);
-            List<String> l = Arrays.asList(list.trim().replace("[","").replace("]","").replace(" ","").split(","));
+            List<String> l = Arrays.asList(list.trim().replace("[", "").replace("]", "").replace(" ", "").split(","));
             StartbannerSlideShow(l);
             //if banner Touch this mathod is excut
             banner_slier_view_pager.setOnTouchListener(new View.OnTouchListener() {

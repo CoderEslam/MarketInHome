@@ -13,7 +13,6 @@ public final class HomeFragment extends com.doubleclick.marktinhome.BaseFragment
     public com.airbnb.lottie.LottieAnimationView animationView;
     public com.doubleclick.ViewModel.RecentSearchViewModel recentSearchViewModel;
     private java.lang.String idProduct = "";
-    private java.util.HashMap _$_findViewCache;
     
     public HomeFragment() {
         super();

@@ -6,18 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.doubleclick.OnItem;
 import com.doubleclick.marktinhome.Model.ParentCategory;
 import com.doubleclick.marktinhome.R;
-
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created By Eslam Ghazy on 3/5/2022

@@ -87,6 +87,7 @@
 
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,6 +126,17 @@
                 app:layout_constraintEnd_toStartOf="@+id/productPrice"
                 app:layout_constraintStart_toStartOf="@+id/productLastPrice"
                 app:layout_constraintTop_toTopOf="@+id/productLastPrice" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/trademark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productName" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

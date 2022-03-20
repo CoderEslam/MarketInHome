@@ -3,7 +3,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
+//    id 'kotlin-android-extensions'
 //    id "androidx.navigation.safeargs.kotlin" غلط
     id("androidx.navigation.safeargs") // دي صح
     // for Java
@@ -68,8 +68,9 @@ dependencies {
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
 //    implementation 'com.google.firebase:firebase-messaging:20.2.4'
     implementation "androidx.multidex:multidex:2.0.1"
 

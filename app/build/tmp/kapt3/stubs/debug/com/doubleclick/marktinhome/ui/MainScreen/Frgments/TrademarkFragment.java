@@ -8,7 +8,6 @@ public final class TrademarkFragment extends com.doubleclick.marktinhome.BaseFra
     public com.doubleclick.ViewModel.ProductViewModel productViewModel;
     private final androidx.navigation.NavArgsLazy trademark$delegate = null;
     public com.airbnb.lottie.LottieAnimationView animationView;
-    private java.util.HashMap _$_findViewCache;
     
     public TrademarkFragment() {
         super();

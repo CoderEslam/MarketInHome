@@ -3279,6 +3279,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id parents
 id password
 id password_toggle
 id path
@@ -3618,6 +3619,7 @@ layout activity_comments
 layout activity_filter
 layout activity_main
 layout activity_main_screen
+layout activity_parent
 layout activity_product
 layout add_toggal
 layout all_tradmark
@@ -3665,7 +3667,6 @@ layout fragment_splash3
 layout fragment_splash4
 layout fragment_trademark
 layout fragment_viewmore
-layout g_v_layout
 layout h_top_recyclerview
 layout h_treademark_recyclerview
 layout images
@@ -3676,6 +3677,7 @@ layout layout_categories
 layout layout_chat
 layout layout_edit
 layout layout_product
+layout layout_product_with_view_pager
 layout layout_recent_order
 layout layout_small_product
 layout layout_top_deals

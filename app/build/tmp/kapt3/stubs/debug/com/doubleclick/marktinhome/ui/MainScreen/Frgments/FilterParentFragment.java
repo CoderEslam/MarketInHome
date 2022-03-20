@@ -7,7 +7,6 @@ public final class FilterParentFragment extends androidx.fragment.app.Fragment i
     public androidx.recyclerview.widget.RecyclerView FilterParent;
     private final androidx.navigation.NavArgsLazy filterParentFragmentArgs$delegate = null;
     public com.doubleclick.ViewModel.ProductViewModel productViewModel;
-    private java.util.HashMap _$_findViewCache;
     
     public FilterParentFragment() {
         super();

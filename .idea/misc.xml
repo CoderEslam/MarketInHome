@@ -61,6 +61,7 @@
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_filter.xml" value="0.17760416666666667" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_main_screen.xml" value="0.22" />
+        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_parent.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_product.xml" value="0.2" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_product2.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_seller.xml" value="0.19166666666666668" />
@@ -109,7 +110,7 @@
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/fragment_trademark.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/fragment_upload.xml" value="0.25" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/fragment_viewmore.xml" value="0.2604166666666667" />
-        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/g_v_layout.xml" value="0.25" />
+        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/g_v_layout.xml" value="0.33" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/h_top_recyclerview.xml" value="0.25" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/h_treademark_recyclerview.xml" value="0.25" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/images.xml" value="0.22" />
@@ -121,7 +122,7 @@
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/layout_edit.xml" value="0.25" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/layout_product.xml" value="0.2" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/layout_recent_order.xml" value="0.22" />
-        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/layout_small_product.xml" value="0.25" />
+        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/layout_small_product.xml" value="0.33" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/layout_top_deals.xml" value="0.22" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/layout_upload.xml" value="0.22" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/laypot_cart.xml" value="0.33" />

@@ -192,10 +192,6 @@
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\drawable\\e.png"
     },
     {
-        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_g_v_layout.xml.flat",
-        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\g_v_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_images.xml.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\images.xml"
     },
@@ -282,6 +278,10 @@
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_button.png.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_button.png"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_layout_product_with_view_pager.xml.flat",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\layout_product_with_view_pager.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\font_alegreya_sc_italic.xml.flat",
@@ -486,6 +486,10 @@
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_address.xml.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\fragment_address.xml"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_parent.xml.flat",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\activity_parent.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_forget.xml.flat",

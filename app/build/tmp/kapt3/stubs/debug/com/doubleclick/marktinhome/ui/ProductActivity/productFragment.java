@@ -26,7 +26,6 @@ public final class productFragment extends com.doubleclick.marktinhome.BaseFragm
     public android.widget.TextView comments;
     public android.widget.RadioGroup radioGroup;
     private final androidx.navigation.NavArgsLazy product$delegate = null;
-    private java.util.HashMap _$_findViewCache;
     
     public productFragment() {
         super();

@@ -37,6 +37,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.MarktInHome" >
         <activity
+            android:name="com.doubleclick.marktinhome.ui.ParentActivity"
+            android:exported="false" />
+        <activity
             android:name="com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsActivity"
             android:exported="false" />
         <activity
@@ -50,18 +53,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name="com.doubleclick.Address.AddressActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.doubleclick.marktinhome.ui.Trademark.TrademarkActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.doubleclick.marktinhome.ui.Advertisement.AdvertisementActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.doubleclick.marktinhome.Seller.SellerActivity"
-            android:exported="false" />
         <activity
             android:name="com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity"
             android:exported="true" >
@@ -96,13 +87,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="www.market.doublethink.com"
+                    android:host="www.market.doubleclick.com"
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.doubleclick.marktinhome.ui.Add.AddActivity"
-            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

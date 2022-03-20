@@ -10,7 +10,6 @@ public final class FilterActivity extends androidx.appcompat.app.AppCompatActivi
     private java.lang.String id = "";
     @org.jetbrains.annotations.NotNull()
     private java.lang.String type = "";
-    private java.util.HashMap _$_findViewCache;
     
     public FilterActivity() {
         super();

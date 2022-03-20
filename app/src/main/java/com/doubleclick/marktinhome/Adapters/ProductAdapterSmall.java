@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,7 +31,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmall.ProductViewHolder> {
 
-    List<Product> products ;
+    List<Product> products;
     private OnProduct onProduct;
 
     public ProductAdapterSmall(ArrayList<Product> products, OnProduct onProductItemListener) {
@@ -57,6 +58,7 @@ public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmal
         holder.productPrice.setText(String.format("%s", products.get(position).getPrice()));
         holder.productLastPrice.setText(String.format("%s", products.get(position).getLastPrice()));
         holder.trademark.setText(products.get(position).getTradeMark());
+        holder.ratingBar.setRating(products.get(position).getRatingSeller());
         Log.e("getOnlyImage", products.get(position).getOnlyImage().trim());
         Glide.with(holder.itemView.getContext()).load(products.get(position).getOnlyImage().trim()).into(holder.imageProduct);
 
@@ -78,6 +80,7 @@ public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmal
         public TextView productPrice;
         public TextView productLastPrice;
         public TextView trademark;
+        public RatingBar ratingBar;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +90,7 @@ public class ProductAdapterSmall extends RecyclerView.Adapter<ProductAdapterSmal
             productPrice = itemView.findViewById(R.id.productPrice);
             productLastPrice = itemView.findViewById(R.id.productLastPrice);
             trademark = itemView.findViewById(R.id.trademark);
+            ratingBar = itemView.findViewById(R.id.ratingBar);
         }
     }
 }
