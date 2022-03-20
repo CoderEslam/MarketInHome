@@ -1,29 +1,20 @@
 package com.doubleclick.marktinhome.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created By Eslam Ghazy on 3/6/2022
  */
-public class ClassificationPC {
+public class ClassificationPC implements Serializable {
 
 
-    public ClassificationPC(ArrayList<ChildCategory> childCategory, String name) {
-        this.childCategory = childCategory;
-        this.name = name;
-    }
-
-    public ClassificationPC(ArrayList<ChildCategory> childCategory, String name, String image) {
-        this.childCategory = childCategory;
-        this.name = name;
-        this.image = image;
-    }
-
-    public ClassificationPC(ArrayList<ChildCategory> childCategory, String name, String image, boolean isExpendable) {
+    public ClassificationPC(ArrayList<ChildCategory> childCategory, String name, String image, boolean isExpendable, String PushId) {
         this.childCategory = childCategory;
         this.name = name;
         this.image = image;
         this.isExpendable = isExpendable;
+        this.ParentPushId = PushId;
     }
 
     public String getName() {
@@ -44,6 +35,16 @@ public class ClassificationPC {
 
     private ArrayList<ChildCategory> childCategory;
     private String name;
+
+    public String getParentPushId() {
+        return ParentPushId;
+    }
+
+    public void setParentPushId(String parentPushId) {
+        ParentPushId = parentPushId;
+    }
+
+    private String ParentPushId;
 
     public String getImage() {
         return image;

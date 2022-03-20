@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarktInHome" >
         <activity
-            android:name=".ui.ParentActivity"
+            android:name=".ui.MainScreen.ParentActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainScreen.Comments.CommentsActivity"

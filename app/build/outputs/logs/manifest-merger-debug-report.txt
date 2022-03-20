@@ -255,12 +255,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\es
 		ADDED from C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:17:9-49
 	android:name
 		ADDED from C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:11:9-40
-activity#com.doubleclick.marktinhome.ui.ParentActivity
+activity#com.doubleclick.marktinhome.ui.MainScreen.ParentActivity
 ADDED from C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported
 		ADDED from C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:19:13-46
+		ADDED from C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:19:13-57
 activity#com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsActivity
 ADDED from C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported

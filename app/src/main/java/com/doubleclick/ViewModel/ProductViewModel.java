@@ -4,6 +4,7 @@ import static com.doubleclick.marktinhome.BaseApplication.isNetworkConnected;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -38,6 +39,7 @@ public class ProductViewModel extends ViewModel implements Products {
     private MutableLiveData<ArrayList<Product>> mutableLiveDataTopDeals = new MutableLiveData<>();
     private MutableLiveData<ArrayList<Product>> mutableLiveDataidProcuct = new MutableLiveData<>();
     private MutableLiveData<ArrayList<ClassificationPC>> classificationPC = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<Product>> mutableLiveDataClassifaictionByParent = new MutableLiveData<>();
     private ProductRepository productRepository = new ProductRepository(this);
 
     public ProductViewModel() {
@@ -89,6 +91,10 @@ public class ProductViewModel extends ViewModel implements Products {
         productRepository.TopDeals();
     }
 
+    public void getClassificationByParent(String parentId) {
+        productRepository.ClassificationProductByParents(parentId);
+    }
+
     public LiveData<ArrayList<Product>> getTopDealsLiveData() {
         return mutableLiveDataTopDeals;
     }
@@ -100,6 +106,10 @@ public class ProductViewModel extends ViewModel implements Products {
 
     public LiveData<ArrayList<ArrayList<ArrayList<Product>>>> getArranged() {
         return mutableLiveData;
+    }
+
+    public LiveData<ArrayList<Product>> getClassificationByParentLiveData() {
+        return mutableLiveDataClassifaictionByParent;
     }
 
     public LiveData<ArrayList<ParentCategory>> getParent() {
@@ -195,4 +205,8 @@ public class ProductViewModel extends ViewModel implements Products {
     }
 
 
+    @Override
+    public void getClassificationProductByParent(@NonNull ArrayList<Product> products) {
+        mutableLiveDataClassifaictionByParent.setValue(products);
+    }
 }

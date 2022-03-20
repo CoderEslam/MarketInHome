@@ -5,6 +5,7 @@ import com.doubleclick.marktinhome.Model.ClassificationPC
 import com.doubleclick.marktinhome.Model.ParentCategory
 import com.doubleclick.marktinhome.Model.Product
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Created By Eslam Ghazy on 3/3/2022
@@ -24,7 +25,7 @@ interface Products {
     fun getProductById(productById: ArrayList<Product?>?)
 //    fun getLastSearchProduct(LastSearchproduct: ArrayList<Product?>?)
     fun getClassificationPC(Product: ArrayList<ClassificationPC?>?)
-
+    fun getClassificationProductByParent(products:ArrayList<Product>)
 
 
 }

@@ -12,6 +12,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -159,7 +160,9 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
 
     @Override
     public void onClickedNavParent(ClassificationPC classificationPC) {
-        Toast.makeText(this, "" + classificationPC.getName(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainScreenActivity.this, ParentActivity.class);
+        intent.putExtra("classificationPC", classificationPC);
+        startActivity(intent);
     }
 
 }
