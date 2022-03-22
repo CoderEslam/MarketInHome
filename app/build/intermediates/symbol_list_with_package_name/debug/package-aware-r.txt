@@ -3299,6 +3299,7 @@ id productFragment
 id productLastPrice
 id productName
 id productPrice
+id products
 id progressBar1
 id progressBar2
 id progressBar3

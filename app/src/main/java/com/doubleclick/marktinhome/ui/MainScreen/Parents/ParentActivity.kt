@@ -33,7 +33,7 @@ class ParentActivity : AppCompatActivity(), OnProduct {
     private lateinit var timer: Timer
     private val DELAY_TIME: Long = 2000
     private val PERIOD_TIME: Long = 2000
-    lateinit var viewPagerParentAdapter:ViewPagerParentAdapter
+    lateinit var viewPagerParentAdapter: ViewPagerParentAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityParentBinding.inflate(layoutInflater)
@@ -115,15 +115,9 @@ class ParentActivity : AppCompatActivity(), OnProduct {
 
     private fun setupPagerFragment() {
         viewPagerParentAdapter = ViewPagerParentAdapter(supportFragmentManager, ViewPagerAdapter.POSITION_UNCHANGED)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
-        viewPagerParentAdapter.addFragment(PagerFragment(), classificationPC.name)
+        for (i in 0 until classificationPC.childCategory.size) {
+            viewPagerParentAdapter.addFragment(PagerFragment(classificationPC.childCategory.get(i).pushId), classificationPC.childCategory[i].name)
+        }
         binding.viewPagerParent.adapter = viewPagerParentAdapter
         binding.tabLayoutParent.setupWithViewPager(binding.viewPagerParent)
     }

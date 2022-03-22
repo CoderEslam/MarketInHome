@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_edit.xml",
-        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\layout_edit.xml"
-    },
-    {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_recent_order.xml",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\layout_recent_order.xml"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_edit.xml",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\layout_edit.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_child.xml",

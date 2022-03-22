@@ -8,24 +8,24 @@
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_button.png"
     },
     {
-        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_icon_google.png.flat",
-        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_icon_google.png"
-    },
-    {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_map.xml.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\map.xml"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_icon_google.png.flat",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_icon_google.png"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable_fram_blue.xml.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\drawable\\fram_blue.xml"
     },
     {
-        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_trademark.xml.flat",
-        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\fragment_trademark.xml"
-    },
-    {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\menu_menu_bottom.xml.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\menu\\menu_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_trademark.xml.flat",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\fragment_trademark.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_icon_google.png.flat",
@@ -40,20 +40,20 @@
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\layout_chat.xml"
     },
     {
-        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable__dot_white.xml.flat",
-        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\drawable\\_dot_white.xml"
-    },
-    {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main_screen.xml.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\activity_main_screen.xml"
     },
     {
-        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_left_chat.xml.flat",
-        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\left_chat.xml"
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable__dot_white.xml.flat",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\drawable\\_dot_white.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_slider_image_layout.xml.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\slider_image_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_left_chat.xml.flat",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\left_chat.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable_email.xml.flat",

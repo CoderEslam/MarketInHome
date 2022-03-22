@@ -53,7 +53,6 @@ public class ProductRepository extends BaseRepository {
         this.product = product;
     }
 
-
     // to get All products from Firebase
     public void getProduct() {
         reference.child(PRODUCT)/*.orderByChild("TotalRating")*/.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -82,11 +81,9 @@ public class ProductRepository extends BaseRepository {
                 } catch (Exception e) {
                     Log.e("ExceptiongetProduct", e.getMessage());
                 }
-
             }
         });
 //        Rearrange();
-
     }
 
 
@@ -116,10 +113,8 @@ public class ProductRepository extends BaseRepository {
                 } catch (Exception e) {
                     Log.e("ExceptiongetParents", e.getMessage());
                 }
-
             }
         });
-
     }
 
 
@@ -148,7 +143,6 @@ public class ProductRepository extends BaseRepository {
                 } catch (Exception e) {
                     Log.e("ExceptiongetChild", e.getMessage());
                 }
-
             }
         });
 
@@ -180,7 +174,6 @@ public class ProductRepository extends BaseRepository {
                 } catch (Exception e) {
                     Log.e("ExceptiongetChildren", e.getMessage());
                 }
-
             }
         });
 
@@ -260,7 +253,6 @@ public class ProductRepository extends BaseRepository {
                 } catch (Exception e) {
                     Log.e("ExceptiongetQuery", e.getMessage());
                 }
-
             }
         });
     }
@@ -286,11 +278,9 @@ public class ProductRepository extends BaseRepository {
                     } else {
                         ShowToast("No Internet Connection");
                     }
-
                 } catch (Exception e) {
                     Log.e("ExceptionFilterByParent", e.getMessage());
                 }
-
             }
         });
     }
@@ -315,11 +305,9 @@ public class ProductRepository extends BaseRepository {
                     } else {
                         ShowToast("No Internet Connection");
                     }
-
                 } catch (Exception e) {
                     Log.e("ExceptionSearchByChild", e.getMessage());
                 }
-
             }
         });
     }
@@ -346,7 +334,6 @@ public class ProductRepository extends BaseRepository {
                 } catch (Exception e) {
                     Log.e("ExceptionProductTramark", e.getMessage());
                 }
-
             }
         });
     }
@@ -402,7 +389,6 @@ public class ProductRepository extends BaseRepository {
                 }
             }
         });
-
     }
 
 }
