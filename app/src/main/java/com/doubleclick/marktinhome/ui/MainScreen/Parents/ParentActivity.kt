@@ -23,8 +23,8 @@ import com.doubleclick.marktinhome.ui.Filter.FilterActivity
 import com.doubleclick.marktinhome.ui.ProductActivity.productActivity
 import java.util.*
 
-class ParentActivity : AppCompatActivity(), OnProduct {
 
+class ParentActivity : AppCompatActivity(), OnProduct {
 
     lateinit var binding: ActivityParentBinding
     lateinit var classificationPC: ClassificationPC
@@ -85,7 +85,6 @@ class ParentActivity : AppCompatActivity(), OnProduct {
         StartbannerSlideShow(list)
         binding.viewPager.setOnTouchListener(OnTouchListener { v, event ->
             StopBannerSlideShow()
-            //
             if (event.action == MotionEvent.ACTION_UP) {
                 StartbannerSlideShow(list)
             }
@@ -114,9 +113,13 @@ class ParentActivity : AppCompatActivity(), OnProduct {
     }
 
     private fun setupPagerFragment() {
-        viewPagerParentAdapter = ViewPagerParentAdapter(supportFragmentManager, ViewPagerAdapter.POSITION_UNCHANGED)
+        viewPagerParentAdapter =
+            ViewPagerParentAdapter(supportFragmentManager, ViewPagerAdapter.POSITION_UNCHANGED)
         for (i in 0 until classificationPC.childCategory.size) {
-            viewPagerParentAdapter.addFragment(PagerFragment(classificationPC.childCategory.get(i).pushId), classificationPC.childCategory[i].name)
+            viewPagerParentAdapter.addFragment(
+                PagerFragment(classificationPC.childCategory.get(i).pushId),
+                classificationPC.childCategory[i].name
+            )
         }
         binding.viewPagerParent.adapter = viewPagerParentAdapter
         binding.tabLayoutParent.setupWithViewPager(binding.viewPagerParent)
