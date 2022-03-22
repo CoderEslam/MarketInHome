@@ -7,18 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.appcompat.widget.AppCompatToggleButton
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager.widget.ViewPager
 import com.doubleclick.ViewModel.RateViewModel
-import com.doubleclick.marktinhome.Adapters.ProductSliderAdapter
+import com.doubleclick.marktinhome.Adapters.ImageProductSliderAdapter
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Constantes.*
 import com.doubleclick.marktinhome.R
-import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
@@ -196,7 +194,8 @@ class productFragment : BaseFragment() {
                     map["ProductId"] = product.product!!.productId;
                     map["BuyerId"] = myId;
                     map["SellerId"] = product.product!!.adminId;
-                    map["TotalPrice"] = (qNumber.toDouble() * product.product!!.price.toDouble()).toLong();
+                    map["TotalPrice"] =
+                        (qNumber.toDouble() * product.product!!.price.toDouble()).toLong();
                     map["Quantity"] = qNumber.toLong();
                     map["price"] = product.product!!.price.toLong();
                     map["images"] = product.product!!.images;
@@ -260,8 +259,9 @@ class productFragment : BaseFragment() {
     }
 
 
-    fun setBannerSliderViewPager(list: String?) {
-        val sliderAdapter = ProductSliderAdapter(list)
+    fun setBannerSliderViewPager(list: String) {
+        val l: List<String> = list.replace("[", "").replace("]", "").replace(" ", "").split(",")
+        val sliderAdapter = ImageProductSliderAdapter(l)
         banner_slier_view_pager.adapter = sliderAdapter
         banner_slier_view_pager.clipToPadding = false
         banner_slier_view_pager.pageMargin = 20

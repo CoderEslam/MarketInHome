@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.doubleclick.marktinhome.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -27,7 +26,10 @@ public final class EachItemBinding implements ViewBinding {
   public final ImageView arroImageview;
 
   @NonNull
-  public final CircleImageView imageParent;
+  public final CardView cardView;
+
+  @NonNull
+  public final ImageView imageParent;
 
   @NonNull
   public final ConstraintLayout linearLayout;
@@ -39,10 +41,12 @@ public final class EachItemBinding implements ViewBinding {
   public final TextView name;
 
   private EachItemBinding(@NonNull CardView rootView, @NonNull ImageView arroImageview,
-      @NonNull CircleImageView imageParent, @NonNull ConstraintLayout linearLayout,
-      @NonNull RecyclerView listItem, @NonNull TextView name) {
+      @NonNull CardView cardView, @NonNull ImageView imageParent,
+      @NonNull ConstraintLayout linearLayout, @NonNull RecyclerView listItem,
+      @NonNull TextView name) {
     this.rootView = rootView;
     this.arroImageview = arroImageview;
+    this.cardView = cardView;
     this.imageParent = imageParent;
     this.linearLayout = linearLayout;
     this.listItem = listItem;
@@ -82,8 +86,14 @@ public final class EachItemBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cardView;
+      CardView cardView = ViewBindings.findChildViewById(rootView, id);
+      if (cardView == null) {
+        break missingId;
+      }
+
       id = R.id.imageParent;
-      CircleImageView imageParent = ViewBindings.findChildViewById(rootView, id);
+      ImageView imageParent = ViewBindings.findChildViewById(rootView, id);
       if (imageParent == null) {
         break missingId;
       }
@@ -106,8 +116,8 @@ public final class EachItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new EachItemBinding((CardView) rootView, arroImageview, imageParent, linearLayout,
-          listItem, name);
+      return new EachItemBinding((CardView) rootView, arroImageview, cardView, imageParent,
+          linearLayout, listItem, name);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

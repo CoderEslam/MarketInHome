@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.airbnb.lottie.LottieAnimationView;
@@ -18,7 +18,7 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final SwipeRefreshLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final RecyclerView MainRecyceler;
@@ -26,21 +26,16 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final LottieAnimationView animationView;
 
-  @NonNull
-  public final SwipeRefreshLayout refrashLayout;
-
-  private FragmentHomeBinding(@NonNull SwipeRefreshLayout rootView,
-      @NonNull RecyclerView MainRecyceler, @NonNull LottieAnimationView animationView,
-      @NonNull SwipeRefreshLayout refrashLayout) {
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull RecyclerView MainRecyceler, @NonNull LottieAnimationView animationView) {
     this.rootView = rootView;
     this.MainRecyceler = MainRecyceler;
     this.animationView = animationView;
-    this.refrashLayout = refrashLayout;
   }
 
   @Override
   @NonNull
-  public SwipeRefreshLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -77,10 +72,7 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      SwipeRefreshLayout refrashLayout = (SwipeRefreshLayout) rootView;
-
-      return new FragmentHomeBinding((SwipeRefreshLayout) rootView, MainRecyceler, animationView,
-          refrashLayout);
+      return new FragmentHomeBinding((ConstraintLayout) rootView, MainRecyceler, animationView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

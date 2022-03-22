@@ -186,22 +186,6 @@
         android:label="fragment_join_us"
         tools:layout="@layout/fragment_join_us" />
     <fragment
-        android:id="@+id/connctUsFragment"
-        android:name="com.doubleclick.marktinhome.ui.MainScreen.Chat.callUsFragment"
-        android:label="fragment_connct_us"
-        tools:layout="@layout/fragment_call_us">
-        <argument
-            android:name="user"
-            app:argType="com.doubleclick.marktinhome.Model.User" />
-        <action
-            android:id="@+id/action_connctUsFragment_to_menu_profile"
-            app:destination="@id/menu_profile"
-            app:enterAnim="@anim/lefttoright"
-            app:exitAnim="@anim/righttoleft"
-            app:popEnterAnim="@anim/lefttoright"
-            app:popExitAnim="@anim/righttoleft" />
-    </fragment>
-    <fragment
         android:id="@+id/commentsFragment"
         android:name="com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsFragment"
         android:label="fragment_comments"
@@ -227,17 +211,5 @@
             app:popEnterAnim="@anim/lefttoright"
             app:popExitAnim="@anim/righttoleft" />
     </fragment>
-    <fragment
-        android:id="@+id/allUserFragment"
-        android:name="com.doubleclick.marktinhome.ui.MainScreen.Chat.AllUserFragment"
-        android:label="fragment_all_user"
-        tools:layout="@layout/fragment_all_user">
-        <action
-            android:id="@+id/action_allUserFragment_to_connctUsFragment"
-            app:destination="@id/connctUsFragment"
-            app:enterAnim="@anim/lefttoright"
-            app:exitAnim="@anim/righttoleft"
-            app:popEnterAnim="@anim/lefttoright"
-            app:popExitAnim="@anim/righttoleft" />
-    </fragment>
+
 </navigation>

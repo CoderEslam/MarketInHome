@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.doubleclick.UserInter
 import com.doubleclick.ViewModel.UserViewModel
 import com.doubleclick.marktinhome.Adapters.AllUserChatListAdapter
@@ -23,7 +24,7 @@ class AllUserFragment : BaseFragment(), UserInter {
 
     lateinit var allUser: RecyclerView;
     lateinit var userViewModel: UserViewModel;
-
+    lateinit var animationView: LottieAnimationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -38,18 +39,23 @@ class AllUserFragment : BaseFragment(), UserInter {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_all_user, container, false)
         allUser = view.findViewById(R.id.allUser);
+        animationView = view.findViewById(R.id.animationView);
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java];
         userViewModel.getChatList()
         userViewModel.chatUser.observe(viewLifecycleOwner, Observer {
-            if (it.size == 1) {
-                findNavController().navigate(
-                    AllUserFragmentDirections.actionAllUserFragmentToConnctUsFragment(
-                        it[0]
-                    )
-                )
+//            if (it.size == 1) {
+//                findNavController().navigate(
+//                    AllUserFragmentDirections.actionAllUserFragmentToCallUsFragment(it[0])
+//                )
+//            }
+            if (it.size != 0) {
+                animationView.visibility = View.GONE
+                var AllUserChatListAdapter = AllUserChatListAdapter(it, this);
+                allUser.adapter = AllUserChatListAdapter
+            } else {
+                animationView.visibility = View.VISIBLE
             }
-            var AllUserChatListAdapter = AllUserChatListAdapter(it, this);
-            allUser.adapter = AllUserChatListAdapter
+
         })
         makeChatList();
         return view;
@@ -61,9 +67,7 @@ class AllUserFragment : BaseFragment(), UserInter {
 
     override fun OnUserLisitner(user: User) {
         findNavController().navigate(
-            AllUserFragmentDirections.actionAllUserFragmentToConnctUsFragment(
-                user
-            )
+            AllUserFragmentDirections.actionAllUserFragmentToCallUsFragment(user)
         )
     }
 

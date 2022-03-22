@@ -45,7 +45,6 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
     lateinit var animationView: LottieAnimationView
     lateinit var recentSearchViewModel: RecentSearchViewModel
     private var idProduct: String = ""
-    private lateinit var refrashLayout: SwipeRefreshLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +62,6 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
         var view = inflater.inflate(R.layout.fragment_home, container, false)
         MainRecyceler = view.findViewById(R.id.MainRecyceler)
         animationView = view.findViewById(R.id.animationView);
-        refrashLayout = view.findViewById(R.id.refrashLayout);
         homeModels = ArrayList()
         productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         advertisementViewModel = ViewModelProvider(this)[AdvertisementViewModel::class.java];
@@ -100,15 +98,6 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
 
         }
         loadHomePage()
-        refrashLayout.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener {
-            refrashLayout.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
-            Handler().postDelayed(Runnable {
-                refrashLayout.isRefreshing = false
-                homeModels.clear()
-                loadHomePage()
-            },4000)
-        })
-
         return view;
     }
 

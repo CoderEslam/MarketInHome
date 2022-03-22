@@ -2841,7 +2841,7 @@ id actionDownUp
 id actionUp
 id action_ViewMoreFragment_to_productFragment
 id action_addressFragment_to_homeFragment
-id action_allUserFragment_to_connctUsFragment
+id action_allUserFragment_to_callUsFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -2849,7 +2849,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
-id action_connctUsFragment_to_menu_profile
+id action_callUsFragment_to_allUserFragment
 id action_container
 id action_context_bar
 id action_divider
@@ -2899,6 +2899,7 @@ id animationView
 id anotherPhone
 id antiClockwise
 id anticipate
+id app_bar
 id arc
 id arro_imageview
 id arrow
@@ -2934,6 +2935,7 @@ id btn_reset
 id buttonPanel
 id cache_measures
 id callMeasure
+id callUsFragment
 id cancel
 id cancel_action
 id cancel_button
@@ -2953,6 +2955,7 @@ id chain2
 id chains
 id chat
 id chatRecycler
+id chat_nav
 id checkbox
 id checked
 id chip
@@ -2976,7 +2979,6 @@ id commentsRecycler
 id compress
 id confirmFinalOrderBtn
 id confirm_button
-id connctUsFragment
 id constraint
 id constraintLayout
 id constraintLayout10
@@ -3279,7 +3281,6 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
-id parents
 id password
 id password_toggle
 id path
@@ -3318,7 +3319,6 @@ id recentOrder
 id recentOrderFragment
 id recentSearch
 id rectangles
-id refrashLayout
 id restart
 id reverse
 id reverseSawtooth
@@ -3404,6 +3404,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id tabMode
+id tab_layout_parent
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3475,6 +3476,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
+id toolbar_Collapsinglayout
 id top
 id topPanel
 id topParents
@@ -3509,7 +3511,9 @@ id userName
 id username
 id vertical_only
 id view
+id viewPager
 id view_offset_helper
+id view_pager_Parent
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -3616,6 +3620,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_chat
 layout activity_comments
 layout activity_filter
 layout activity_main
@@ -3629,6 +3634,7 @@ layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout child_layout
 layout comments_layout
+layout content_scrolling
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3659,6 +3665,7 @@ layout fragment_join_us
 layout fragment_log_in
 layout fragment_main_login
 layout fragment_menu_profile
+layout fragment_pager
 layout fragment_product
 layout fragment_recent_order
 layout fragment_register
@@ -3782,10 +3789,12 @@ menu example_menu2
 menu menu_bottom
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation chat_nav
 navigation nav_graph
 plurals mtrl_badge_content_description
 raw loading
 raw loading2
+raw loading_new
 raw online_shopping
 raw shopping
 raw shopping_cart
@@ -3858,6 +3867,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string confirm
+string content
 string create_by_x_team
 string customer_location
 string customer_name
@@ -4523,6 +4533,8 @@ style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
+style Theme_Collapsing_AppBarOverlay
+style Theme_Collapsing_PopupOverlay
 style Theme_Design
 style Theme_Design_BottomSheetDialog
 style Theme_Design_Light
@@ -4530,6 +4542,7 @@ style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
 style Theme_MarktInHome
+style Theme_MarktInHome_NoActionBar
 style Theme_Material3_Dark
 style Theme_Material3_Dark_BottomSheetDialog
 style Theme_Material3_Dark_Dialog

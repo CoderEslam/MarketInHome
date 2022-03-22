@@ -72,7 +72,6 @@ public class BannerSliderViewholder extends RecyclerView.ViewHolder {
         });
     }
 
-
     // this resbonsable to loop slider
     private void StartbannerSlideShow(final List<Advertisement> advertisementList) {
         final Handler handler = new Handler();

@@ -25,7 +25,6 @@ interface Products {
     fun getProductById(productById: ArrayList<Product?>?)
 //    fun getLastSearchProduct(LastSearchproduct: ArrayList<Product?>?)
     fun getClassificationPC(Product: ArrayList<ClassificationPC?>?)
-    fun getClassificationProductByParent(products:ArrayList<Product>)
 
 
 }

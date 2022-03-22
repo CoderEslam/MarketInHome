@@ -19,6 +19,7 @@ import com.doubleclick.ViewModel.UserViewModel;
 import com.doubleclick.marktinhome.BaseFragment;
 import com.doubleclick.marktinhome.MainActivity;
 import com.doubleclick.marktinhome.R;
+import com.doubleclick.marktinhome.ui.MainScreen.Chat.ChatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.HashMap;
@@ -87,13 +88,13 @@ public class menu_profileFragment extends BaseFragment {
             openImage("", USER, "");
         });
         editAddress.setOnClickListener(v -> {
-            ShowEdite("address");
+            ShowEdit("address");
         });
         editPhone.setOnClickListener(v -> {
-            ShowEdite("phone");
+            ShowEdit("phone");
         });
         editname.setOnClickListener(v -> {
-            ShowEdite("name");
+            ShowEdit("name");
         });
         logout.setOnClickListener(v -> {
             mAuth.signOut();
@@ -101,7 +102,9 @@ public class menu_profileFragment extends BaseFragment {
             requireActivity().finish();
         });
         chat.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToAllUserFragment());
+            Intent intent = new Intent(getContext(), ChatActivity.class);
+            startActivity(intent);
+//            Navigation.findNavController(v).navigate(menu_profileFragmentDirections.actionMenuProfileToAllUserFragment());
         });
 
         joinUs.setOnClickListener(v -> {
@@ -114,7 +117,7 @@ public class menu_profileFragment extends BaseFragment {
         return view;
     }
 
-    private void ShowEdite(String type) {
+    private void ShowEdit(String type) {
         builder = new AlertDialog.Builder(getContext());
         View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_edit, null, false);
         TextView ok = view.findViewById(R.id.ok);

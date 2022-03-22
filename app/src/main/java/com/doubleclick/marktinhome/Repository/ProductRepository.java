@@ -44,7 +44,6 @@ public class ProductRepository extends BaseRepository {
     private ArrayList<Product> QueryProductsByChild = new ArrayList<>();
     private ArrayList<Product> productWithTrademark = new ArrayList<>();
     private ArrayList<Product> productsTopDeals = new ArrayList<>();
-    private ArrayList<Product> classificationByPerants = new ArrayList<>();
     private ArrayList<ParentCategory> parentCategories = new ArrayList<>();
     private ArrayList<ChildCategory> childCategories = new ArrayList<>();
     //    private static ArrayList<ArrayList<ArrayList<Product>>> arrayListOfArrayLists = new ArrayList<>();
@@ -404,33 +403,6 @@ public class ProductRepository extends BaseRepository {
             }
         });
 
-    }
-
-    public void ClassificationProductByParents(String parentId) {
-        reference.child(PRODUCT).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                try {
-                    if (isNetworkConnected()) {
-                        if (task.getResult().exists()) {
-                            DataSnapshot snapshot = task.getResult();
-                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                Product product = dataSnapshot.getValue(Product.class);
-                                assert product != null;
-                                if (product.getParentCategoryId().equals(parentId)) {
-                                    classificationByPerants.add(product);
-                                }
-                            }
-                            product.getClassificationProductByParent(classificationByPerants);
-                        }
-                    } else {
-                        ShowToast("No internet connection");
-                    }
-                } catch (Exception e) {
-
-                }
-            }
-        });
     }
 
 }

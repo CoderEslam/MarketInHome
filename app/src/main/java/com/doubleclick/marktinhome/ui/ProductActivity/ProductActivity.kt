@@ -2,19 +2,16 @@ package com.doubleclick.marktinhome.ui.ProductActivity
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.appcompat.widget.AppCompatToggleButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.doubleclick.ViewModel.RateViewModel
-import com.doubleclick.marktinhome.Adapters.ProductSliderAdapter
+import com.doubleclick.marktinhome.Adapters.ImageProductSliderAdapter
 import com.doubleclick.marktinhome.BaseApplication.ShowToast
-import com.doubleclick.marktinhome.BaseApplication.context
 import com.doubleclick.marktinhome.Model.Constantes
 import com.doubleclick.marktinhome.Model.Product
 import com.doubleclick.marktinhome.R
@@ -25,8 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
 import lecho.lib.hellocharts.view.PieChartView
-import java.util.ArrayList
-import java.util.HashMap
+import java.util.*
 
 class productActivity : AppCompatActivity() {
 
@@ -214,8 +210,9 @@ class productActivity : AppCompatActivity() {
     }
 
 
-    fun setBannerSliderViewPager(list: String?) {
-        val sliderAdapter = ProductSliderAdapter(list)
+    fun setBannerSliderViewPager(list: String) {
+        var mutableList: List<String> = list.replace("[", "").replace("]", "").replace(" ", "").split(",")
+        val sliderAdapter = ImageProductSliderAdapter(mutableList)
         banner_slier_view_pager.adapter = sliderAdapter
         banner_slier_view_pager.clipToPadding = false
         banner_slier_view_pager.pageMargin = 20

@@ -32,10 +32,12 @@ public class Sending extends BaseRepository {
             public void onChanged(RecentSearch recentSearch) {
                 allSearch = recentSearch.getRecentSearch();
                 if (!allSearch.contains(query)) {
-                    allSearch = allSearch + "," + query;
-                    HashMap<String, Object> map = new HashMap<>();
-                    map.put("recentSearch", allSearch);
-                    reference.child(RECENTSEARCH).child(myId).updateChildren(map);
+                    if(!query.contains("https://com.doubleclick.marktinhome/")){
+                        allSearch = allSearch + "," + query;
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("recentSearch", allSearch);
+                        reference.child(RECENTSEARCH).child(myId).updateChildren(map);
+                    }
                 }
             }
         });

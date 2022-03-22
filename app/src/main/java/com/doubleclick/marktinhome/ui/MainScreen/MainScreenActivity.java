@@ -1,6 +1,10 @@
 package com.doubleclick.marktinhome.ui.MainScreen;
 
 
+import static com.doubleclick.marktinhome.BaseFragment.myId;
+import static com.doubleclick.marktinhome.Model.Constantes.USER;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SearchView;
@@ -12,17 +16,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.doubleclick.ViewModel.ProductViewModel;
@@ -36,10 +35,15 @@ import com.doubleclick.marktinhome.R;
 import com.doubleclick.marktinhome.Repository.Sending;
 import com.doubleclick.marktinhome.Views.SmoothButtom.SmoothBottomBar;
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity;
-import com.doubleclick.marktinhome.ui.MainScreen.Frgments.RecentOrderFragment;
-import com.doubleclick.marktinhome.ui.ProductActivity.productFragment;
+import com.doubleclick.marktinhome.ui.MainScreen.Parents.ParentActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
+
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -87,6 +91,7 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.menu_Cart,/* R.id.menu_list, */R.id.homeFragment, R.id.menu_profile).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         setupSmoothBottomMenu();
+        updateToken();
         productViewModel = new ViewModelProvider(this).get(ProductViewModel.class);
         productViewModel.getClassificationPC().observe(this, classificationPCS -> {
             NavAdapter catecoriesAdapter = new NavAdapter(classificationPCS, this);
@@ -163,6 +168,17 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         Intent intent = new Intent(MainScreenActivity.this, ParentActivity.class);
         intent.putExtra("classificationPC", classificationPC);
         startActivity(intent);
+    }
+
+    public void updateToken() {
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                HashMap<String, Object> map = new HashMap<>();
+                map.put("token", task.getResult());
+                FirebaseDatabase.getInstance().getReference().child(USER).child(myId).updateChildren(map);
+            }
+        });
     }
 
 }

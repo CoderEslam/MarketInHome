@@ -39,7 +39,6 @@ public class ProductViewModel extends ViewModel implements Products {
     private MutableLiveData<ArrayList<Product>> mutableLiveDataTopDeals = new MutableLiveData<>();
     private MutableLiveData<ArrayList<Product>> mutableLiveDataidProcuct = new MutableLiveData<>();
     private MutableLiveData<ArrayList<ClassificationPC>> classificationPC = new MutableLiveData<>();
-    private MutableLiveData<ArrayList<Product>> mutableLiveDataClassifaictionByParent = new MutableLiveData<>();
     private ProductRepository productRepository = new ProductRepository(this);
 
     public ProductViewModel() {
@@ -91,10 +90,6 @@ public class ProductViewModel extends ViewModel implements Products {
         productRepository.TopDeals();
     }
 
-    public void getClassificationByParent(String parentId) {
-        productRepository.ClassificationProductByParents(parentId);
-    }
-
     public LiveData<ArrayList<Product>> getTopDealsLiveData() {
         return mutableLiveDataTopDeals;
     }
@@ -108,9 +103,7 @@ public class ProductViewModel extends ViewModel implements Products {
         return mutableLiveData;
     }
 
-    public LiveData<ArrayList<Product>> getClassificationByParentLiveData() {
-        return mutableLiveDataClassifaictionByParent;
-    }
+
 
     public LiveData<ArrayList<ParentCategory>> getParent() {
         return parentCategory;
@@ -205,8 +198,4 @@ public class ProductViewModel extends ViewModel implements Products {
     }
 
 
-    @Override
-    public void getClassificationProductByParent(@NonNull ArrayList<Product> products) {
-        mutableLiveDataClassifaictionByParent.setValue(products);
-    }
 }

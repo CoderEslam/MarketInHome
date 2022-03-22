@@ -24,12 +24,13 @@ import java.util.List;
 /**
  * Created By Eslam Ghazy on 3/15/2022
  */
-public class ProductSliderAdapter extends PagerAdapter {
+public class ImageProductSliderAdapter extends PagerAdapter {
 
     private List<String> list = new ArrayList<>();
 
-    public ProductSliderAdapter(String list) {
-        this.list = Arrays.asList(list.trim().replace("[","").replace("]","").replace(" ","").split(","));
+    public ImageProductSliderAdapter(List<String> list) {
+//        Arrays.asList(list.trim().replace("[", "").replace("]", "").replace(" ", "").split(","));
+        this.list = list;
     }
 
     @Override

@@ -37,7 +37,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.MarktInHome" >
         <activity
-            android:name="com.doubleclick.marktinhome.ui.MainScreen.ParentActivity"
+            android:name="com.doubleclick.marktinhome.ui.MainScreen.Chat.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.doubleclick.marktinhome.ui.MainScreen.Parents.ParentActivity"
             android:exported="false" />
         <activity
             android:name="com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsActivity"

@@ -82,7 +82,7 @@ public class NavAdapter extends RecyclerView.Adapter<NavAdapter.NavViewHolder> i
         private TextView name;
         private ImageView mArrowImage;
         private RecyclerView nestedRecyclerView;
-        public CircleImageView imageParent;
+        public ImageView imageParent;
 
         public NavViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -50,7 +50,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.ratingBar.setRating(products.get(position).getRatingSeller());
         holder.trademark.setText(products.get(position).getTradeMark());
         String list = products.get(position).getImages();
-        holder.setBannerSliderViewPager(list);
+        List<String> l = Arrays.asList(list.trim().replace("[", "").replace("]", "").replace(" ", "").split(","));
+        holder.setBannerSliderViewPager(l);
         holder.itemView.setOnClickListener(v -> {
             onProduct.onItemProduct(products.get(position));
         });
@@ -86,23 +87,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             ratingBar = itemView.findViewById(R.id.ratingBar);
         }
 
-        public void setBannerSliderViewPager(String list) {
+        public void setBannerSliderViewPager(List<String> list) {
             currentPage = 2;
             //////////////////////////////////////////////////////////////////
-            ProductSliderAdapter sliderAdapter = new ProductSliderAdapter(list);
+            ImageProductSliderAdapter sliderAdapter = new ImageProductSliderAdapter(list);
             banner_slier_view_pager.setAdapter(sliderAdapter);
             banner_slier_view_pager.setClipToPadding(false);
             banner_slier_view_pager.setPageMargin(20);
             banner_slier_view_pager.setCurrentItem(currentPage);
-            List<String> l = Arrays.asList(list.trim().replace("[", "").replace("]", "").replace(" ", "").split(","));
-            StartbannerSlideShow(l);
+
+            StartbannerSlideShow(list);
             //if banner Touch this mathod is excut
             banner_slier_view_pager.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     StopBannerSlideShow();
                     if (event.getAction() == MotionEvent.ACTION_UP) {
-                        StartbannerSlideShow(l);
+                        StartbannerSlideShow(list);
                     }
                     return false;
                 }

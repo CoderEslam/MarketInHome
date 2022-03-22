@@ -60,7 +60,7 @@ public class BaseFragment extends Fragment {
     public FirebaseAuth mAuth;
     public FirebaseUser currentUser;
     public DatabaseReference reference;
-    public String myId;
+    public static String myId;
     private StorageReference storageReference;
     private static final int IMAGE_REQUEST = 1;
     public static Uri imageUri;
@@ -80,6 +80,7 @@ public class BaseFragment extends Fragment {
         if (currentUser != null) {
             apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService.class);
             myId = mAuth.getCurrentUser().getUid().toString();
+            reference.keepSynced(false);
         }
     }
 
