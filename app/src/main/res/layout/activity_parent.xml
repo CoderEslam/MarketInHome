@@ -71,7 +71,6 @@
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="@color/green"
                 app:tabTextColor="@color/black" />
-
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/view_pager_Parent"
                 android:layout_width="match_parent"

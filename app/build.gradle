@@ -86,7 +86,15 @@ dependencies {
 
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
 
+    implementation 'com.github.castorflex.smoothprogressbar:library:1.1.0'
 
 
+    implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+
+    //Optional: see how to use the utility.
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
+
+    // PayPal
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
 
 }

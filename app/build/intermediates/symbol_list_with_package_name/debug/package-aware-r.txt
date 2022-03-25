@@ -1030,6 +1030,22 @@ attr snackbarButtonStyle
 attr snackbarStyle
 attr snackbarTextViewStyle
 attr spanCount
+attr spbStyle
+attr spb_background
+attr spb_color
+attr spb_colors
+attr spb_generate_background_with_colors
+attr spb_gradients
+attr spb_interpolator
+attr spb_mirror_mode
+attr spb_progressiveStart_activated
+attr spb_progressiveStart_speed
+attr spb_progressiveStop_speed
+attr spb_reversed
+attr spb_sections_count
+attr spb_speed
+attr spb_stroke_separator_length
+attr spb_stroke_width
 attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
@@ -1061,6 +1077,35 @@ attr state_lifted
 attr statusBarBackground
 attr statusBarForeground
 attr statusBarScrim
+attr stl_clickable
+attr stl_customTabTextLayoutId
+attr stl_customTabTextViewId
+attr stl_defaultTabBackground
+attr stl_defaultTabTextAllCaps
+attr stl_defaultTabTextColor
+attr stl_defaultTabTextHorizontalPadding
+attr stl_defaultTabTextMinWidth
+attr stl_defaultTabTextSize
+attr stl_distributeEvenly
+attr stl_dividerColor
+attr stl_dividerColors
+attr stl_dividerThickness
+attr stl_drawDecorationAfterTab
+attr stl_indicatorAlwaysInCenter
+attr stl_indicatorColor
+attr stl_indicatorColors
+attr stl_indicatorCornerRadius
+attr stl_indicatorGravity
+attr stl_indicatorInFront
+attr stl_indicatorInterpolation
+attr stl_indicatorThickness
+attr stl_indicatorWidth
+attr stl_indicatorWithoutPadding
+attr stl_overlineColor
+attr stl_overlineThickness
+attr stl_titleOffset
+attr stl_underlineColor
+attr stl_underlineThickness
 attr strokeColor
 attr strokeWidth
 attr subMenuArrow
@@ -1309,6 +1354,9 @@ bool m3_sys_typescale_title_large_text_all_caps
 bool m3_sys_typescale_title_medium_text_all_caps
 bool m3_sys_typescale_title_small_text_all_caps
 bool mtrl_btn_textappearance_all_caps
+bool spb_default_mirror_mode
+bool spb_default_progressiveStart_activated
+bool spb_default_reversed
 color Black
 color H
 color White
@@ -1922,6 +1970,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color spb_default_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -2510,6 +2559,8 @@ dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen padding_left
 dimen sliding_pane_detail_pane_width
+dimen spb_default_stroke_separator_length
+dimen spb_default_stroke_width
 dimen speech_bubble_corners
 dimen speech_bubble_corners_plus_tail
 dimen speech_bubble_spacing
@@ -2646,6 +2697,14 @@ drawable c2
 drawable c3
 drawable camera
 drawable chat
+drawable cio_card_io_logo
+drawable cio_ic_amex
+drawable cio_ic_discover
+drawable cio_ic_jcb
+drawable cio_ic_mastercard
+drawable cio_ic_paypal_monogram
+drawable cio_ic_visa
+drawable cio_paypal_logo
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2909,6 +2968,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id auto_center
 id automatic
 id banner_sliderImageView
 id banner_slier_view_pager
@@ -3136,10 +3196,6 @@ id info
 id invisible
 id inward
 id italic
-id item1
-id item2
-id item3
-id item4
 id itemImage
 id itemName
 id item_touch_helper_previous_elevation
@@ -3373,6 +3429,7 @@ id skipped
 id slide
 id sliding_pane_detail_container
 id sliding_pane_layout
+id smart
 id snackbar_action
 id snackbar_text
 id snap
@@ -3380,6 +3437,10 @@ id snapMargins
 id software
 id south
 id spacer
+id spb_interpolator_accelerate
+id spb_interpolator_acceleratedecelerate
+id spb_interpolator_decelerate
+id spb_interpolator_linear
 id special_effects_controller_view_tag
 id spline
 id split_action_bar
@@ -3581,6 +3642,8 @@ integer mtrl_view_gone
 integer mtrl_view_invisible
 integer mtrl_view_visible
 integer show_password_duration
+integer spb_default_interpolator
+integer spb_default_sections_count
 integer status_bar_notification_info_maxnum
 interpolator btn_checkbox_checked_mtrl_animation_interpolator_0
 interpolator btn_checkbox_checked_mtrl_animation_interpolator_1
@@ -3785,8 +3848,6 @@ layout tradmark_layout
 layout user_chat_layout
 layout v_product_recyclerview
 menu add_item
-menu example_menu
-menu example_menu2
 menu menu_bottom
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -3875,6 +3936,7 @@ string customer_name
 string customer_phone
 string custommer_address
 string default_web_client_id
+string define_smoothprogressbar
 string description
 string easy_to_hundel
 string edit_on_order
@@ -3902,6 +3964,15 @@ string icon_content_description
 string item_view_role_description
 string join_us
 string keywords
+string library_smoothprogressbar_author
+string library_smoothprogressbar_authorWebsite
+string library_smoothprogressbar_isOpenSource
+string library_smoothprogressbar_libraryDescription
+string library_smoothprogressbar_libraryName
+string library_smoothprogressbar_libraryVersion
+string library_smoothprogressbar_libraryWebsite
+string library_smoothprogressbar_licenseId
+string library_smoothprogressbar_repositoryLink
 string log_in
 string logout
 string m3_ref_typeface_brand_display_regular
@@ -4018,6 +4089,7 @@ string search_here
 string search_menu_title
 string sign_in
 string sign_up
+string spb_default_speed
 string status_bar_notification_info_overflow
 string top_deals
 string totalPrice
@@ -4360,6 +4432,7 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style SPB
 style ShapeAppearance_Material3_LargeComponent
 style ShapeAppearance_Material3_MediumComponent
 style ShapeAppearance_Material3_NavigationBarView_ActiveIndicator
@@ -4392,6 +4465,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
 style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
+style SmoothProgressBar
 style StyleEdtInput
 style StyleInputLayout
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
@@ -4617,6 +4691,7 @@ style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
+style Theme_SmoothProgressBarDefaults
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -5206,6 +5281,7 @@ styleable ShapeableImageView contentPadding contentPaddingBottom contentPaddingE
 styleable SignInButton buttonSize colorScheme scopeUris
 styleable Slider android_enabled android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius thumbStrokeColor thumbStrokeWidth tickColor tickColorActive tickColorInactive tickVisible trackColor trackColorActive trackColorInactive trackHeight
 styleable SmoothBottomBar activeItem backgroundColor cornerRadius corners duration iconMargin iconSize iconTint iconTintActive indicatorColor indicatorRadius itemFontFamily itemPadding menu sideMargins textColor textSize
+styleable SmoothProgressBar spbStyle spb_background spb_color spb_colors spb_generate_background_with_colors spb_gradients spb_interpolator spb_mirror_mode spb_progressiveStart_activated spb_progressiveStart_speed spb_progressiveStop_speed spb_reversed spb_sections_count spb_speed spb_stroke_separator_length spb_stroke_width
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
@@ -5236,6 +5312,7 @@ styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable include constraintSet
+styleable stl_SmartTabLayout stl_clickable stl_customTabTextLayoutId stl_customTabTextViewId stl_defaultTabBackground stl_defaultTabTextAllCaps stl_defaultTabTextColor stl_defaultTabTextHorizontalPadding stl_defaultTabTextMinWidth stl_defaultTabTextSize stl_distributeEvenly stl_dividerColor stl_dividerColors stl_dividerThickness stl_drawDecorationAfterTab stl_indicatorAlwaysInCenter stl_indicatorColor stl_indicatorColors stl_indicatorCornerRadius stl_indicatorGravity stl_indicatorInFront stl_indicatorInterpolation stl_indicatorThickness stl_indicatorWidth stl_indicatorWithoutPadding stl_overlineColor stl_overlineThickness stl_titleOffset stl_underlineColor stl_underlineThickness
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

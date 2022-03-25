@@ -2,10 +2,10 @@ package com.doubleclick.marktinhome.ui.MainScreen.Address
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,9 +13,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
+import com.doubleclick.ConfigPay.ConfigPay.PAYPAL_CLINT_ID
 import com.doubleclick.ViewModel.CartViewModel
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Cart
@@ -29,13 +28,14 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputEditText
-import com.google.firebase.auth.FirebaseAuth
+import com.paypal.android.sdk.payments.PayPalConfiguration
+import com.paypal.android.sdk.payments.PayPalPayment
+import com.paypal.android.sdk.payments.PayPalService
+import com.paypal.android.sdk.payments.PaymentActivity
 import de.hdodenhof.circleimageview.CircleImageView
+import java.math.BigDecimal
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 
 class AddressFragment : BaseFragment(), OnMapReadyCallback {
@@ -56,6 +56,9 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
     var uri: String? = null
     lateinit var myLocation: SwitchCompat
 
+    private val config =
+        PayPalConfiguration().environment(PayPalConfiguration.ENVIRONMENT_NO_NETWORK)
+            .clientId(PAYPAL_CLINT_ID)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,7 +84,8 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
         locationManager =
             requireActivity().getSystemService(Context.LOCATION_SERVICE) as LocationManager
         client = LocationServices.getFusedLocationProviderClient(requireContext())
-        supportMapFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+        supportMapFragment =
+            requireActivity().supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         confirmFinalOrderBtn.setOnClickListener {
             confirmOrder(
                 name.text.toString(),
@@ -89,6 +93,8 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
                 anotherPhone.text.toString(),
                 address.text.toString()
             )
+            // TODO Pay by PayPal
+//            onBuyPressed();
         }
 
         cartViewModel.CartLiveData().observe(viewLifecycleOwner) { carts: ArrayList<Cart> ->
@@ -159,8 +165,8 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
             task.addOnSuccessListener { location ->
                 if (location != null) {
 //                    supportMapFragment!!.getMapAsync {
-                        val latLng = LatLng(location.latitude, location.longitude)
-                        uri = "[" + location.latitude + "," + location.longitude + "]"
+                    val latLng = LatLng(location.latitude, location.longitude)
+                    uri = "[" + location.latitude + "," + location.longitude + "]"
 //                    }
                 } else {
                     Toast.makeText(requireContext(), "Open your location", Toast.LENGTH_SHORT)
@@ -177,5 +183,24 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
         mLocationRequest!!.fastestInterval = 1000
         mLocationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
+
+    fun onBuyPressed() {
+
+        // PAYMENT_INTENT_SALE will cause the payment to complete immediately.
+        // Change PAYMENT_INTENT_SALE to
+        //   - PAYMENT_INTENT_AUTHORIZE to only authorize payment and capture funds later.
+        //   - PAYMENT_INTENT_ORDER to create a payment for authorization and capture
+        //     later via calls from your server.
+
+//        PayPalPayment payment = new PayPalPayment(new BigDecimal("100.75"), "USD", "Frankenstein", PayPalPayment.PAYMENT_INTENT_SALE);
+        val payment =
+            PayPalPayment(BigDecimal(100), "USD", "Total Price", PayPalPayment.PAYMENT_INTENT_SALE)
+        val intent = Intent(context, PaymentActivity::class.java)
+        // send the same configuration for restart resiliency
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config)
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment)
+        startActivityForResult(intent, 0)
+    }
+
 
 }

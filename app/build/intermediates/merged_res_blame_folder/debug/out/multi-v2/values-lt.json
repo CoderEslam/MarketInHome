@@ -55,6 +55,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\cccbf558de4d7bd89e7eb846b2568d12\\transformed\\core-1.9.0-alpha02\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "111",
+                        "startColumns": "4",
+                        "startOffsets": "10258",
+                        "endColumns": "100",
+                        "endOffsets": "10354"
+                    }
+                },
+                {
                     "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\88ab60c4b952d50f98b9db457bb67259\\transformed\\jetified-play-services-base-18.0.1\\res\\values-lt\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -88,23 +105,6 @@
                         "endLines": "7,35,36,37,38,57,58,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,109",
                         "endColumns": "12,82,95,117,83,65,98,77,64,109,71,58,73,60,53,123,60,61,53,77,133,87,83,110,78,83,96,66,65,74,78,87,75,77,72,76,86,80,89,91,71,80,91,54,65,84,86,61,63,62,110,114,100,113,81",
                         "endOffsets": "375,3227,3323,3441,3525,5857,5956,6110,6175,6285,6357,6416,6490,6551,6605,6729,6790,6852,6906,6984,7118,7206,7290,7401,7480,7564,7661,7728,7794,7869,7948,8036,8112,8190,8263,8340,8427,8508,8598,8690,8762,8843,8935,8990,9056,9141,9228,9290,9354,9417,9528,9643,9744,9858,10169"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\a772c6bc2f04fbfc4111c5786982d56f\\transformed\\core-1.9.0-alpha01\\res\\values-lt\\values-lt.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "111",
-                        "startColumns": "4",
-                        "startOffsets": "10258",
-                        "endColumns": "100",
-                        "endOffsets": "10354"
                     }
                 },
                 {
