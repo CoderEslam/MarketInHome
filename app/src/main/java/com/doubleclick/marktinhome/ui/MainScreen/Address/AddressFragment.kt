@@ -1,11 +1,16 @@
 package com.doubleclick.marktinhome.ui.MainScreen.Address
 
 import android.Manifest
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +21,7 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.doubleclick.ConfigPay.ConfigPay.PAYPAL_CLINT_ID
 import com.doubleclick.ViewModel.CartViewModel
+import com.doubleclick.marktinhome.BaseApplication
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Cart
 import com.doubleclick.marktinhome.Model.Constantes.CART
@@ -103,9 +109,35 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
                 this.carts = carts;
             }
         }
-
         myLocation.setOnClickListener {
-            getMyLocation()
+            val lm = requireActivity().getSystemService(Context.LOCATION_SERVICE) as LocationManager
+            var gps_enabled = false
+            var network_enabled = false
+            try {
+                gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
+            } catch (ex: Exception) {
+                Log.e("ExceptionLocation",ex.message.toString())
+            }
+            try {
+                network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+            } catch (ex: Exception) {
+                Log.e("ExceptionLocation",ex.message.toString())
+            }
+            if (!gps_enabled && !network_enabled) {
+                // notify user
+                AlertDialog.Builder(requireContext())
+                    .setMessage("gps network not enabled")
+                    .setPositiveButton("open location settings",
+                        DialogInterface.OnClickListener { paramDialogInterface, paramInt ->
+                            requireContext().startActivity(
+                                Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+                            )
+                        })
+                    .setNegativeButton("Cancel", null)
+                    .show()
+            } else {
+                getMyLocation()
+            }
         }
 
         return view;
@@ -134,10 +166,14 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
             map["ToggleItem"] = carts[i].toggleItem
             if (myLocation.isChecked) {
                 if (!uri.toString().equals("")) {
-                    map["locationUri"] = uri!!
-                    sendNotifiaction(getContext(), carts[i].sellerId, carts[i].productName);
-                    reference.child(ORDERS).child(id).updateChildren(map)
-                    reference.child(CART).child(carts[i].id).removeValue()
+                    try {
+                        map["locationUri"] = uri!!
+                        sendNotifiaction(getContext(), carts[i].sellerId, carts[i].productName);
+                        reference.child(ORDERS).child(id).updateChildren(map)
+                        reference.child(CART).child(carts[i].id).removeValue()
+                    } catch (e: Exception) {
+
+                    }
                 } else {
                     Toast.makeText(requireContext(), "Open your location", Toast.LENGTH_SHORT)
                         .show()
