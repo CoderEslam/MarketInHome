@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager.widget.ViewPager
+import com.airbnb.lottie.LottieAnimationView
 import com.doubleclick.ViewModel.RateViewModel
 import com.doubleclick.marktinhome.Adapters.ImageProductSliderAdapter
 import com.doubleclick.marktinhome.BaseFragment
@@ -59,6 +60,7 @@ class productFragment : BaseFragment() {
     private var ToggleItem: String? = ""
     lateinit var comments: TextView;
     lateinit var radioGroup: RadioGroup
+    lateinit var animationView: LottieAnimationView
 
 
     private val product by navArgs<productFragmentArgs>()
@@ -80,6 +82,7 @@ class productFragment : BaseFragment() {
         var view = inflater.inflate(R.layout.fragment_product, container, false)
         rateViewModel = ViewModelProvider(this)[RateViewModel::class.java]
         fab = view.findViewById(R.id.fab)
+        animationView = view.findViewById(R.id.animationView);
         banner_slier_view_pager = view.findViewById(R.id.banner_slier_view_pager)
         productName = view.findViewById(R.id.productName)
         trarmark = view.findViewById(R.id.trarmark)
@@ -204,6 +207,7 @@ class productFragment : BaseFragment() {
                     map["id"] = id;
                     map["ToggleItem"] = ToggleItem!!
                     reference.child(CART).child(id).setValue(map);
+                    animationView.visibility = View.VISIBLE
                 }
             } else {
                 ShowToast(context, "you can't order less than one!");

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
+import com.airbnb.lottie.LottieAnimationView
 import com.doubleclick.ViewModel.RateViewModel
 import com.doubleclick.marktinhome.Adapters.ImageProductSliderAdapter
 import com.doubleclick.marktinhome.BaseApplication.ShowToast
@@ -48,6 +49,7 @@ class productActivity : AppCompatActivity() {
     lateinit var comments: TextView;
     lateinit var product: Product
     lateinit var radioGroup: RadioGroup
+    lateinit var animationView: LottieAnimationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +57,7 @@ class productActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product)
         rateViewModel = ViewModelProvider(this)[RateViewModel::class.java]
         fab = findViewById(R.id.fab)
+        animationView = findViewById(R.id.animationView);
         banner_slier_view_pager = findViewById(R.id.banner_slier_view_pager)
         productName = findViewById(R.id.productName)
         trarmark = findViewById(R.id.trarmark)
@@ -155,6 +158,8 @@ class productActivity : AppCompatActivity() {
                 map["id"] = id;
                 map["ToggleItem"] = ToggleItem!!
                 reference.child(Constantes.CART).child(id).setValue(map);
+                animationView.visibility = View.VISIBLE
+
             } else {
                 ShowToast("you can't order less than one!");
             }
@@ -211,7 +216,8 @@ class productActivity : AppCompatActivity() {
 
 
     fun setBannerSliderViewPager(list: String) {
-        var mutableList: List<String> = list.replace("[", "").replace("]", "").replace(" ", "").split(",")
+        var mutableList: List<String> =
+            list.replace("[", "").replace("]", "").replace(" ", "").split(",")
         val sliderAdapter = ImageProductSliderAdapter(mutableList)
         banner_slier_view_pager.adapter = sliderAdapter
         banner_slier_view_pager.clipToPadding = false
