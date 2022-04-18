@@ -2,10 +2,14 @@ package com.doubleclick.marktinhome.ui.ProductActivity
 
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.View
+import android.webkit.WebView
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
@@ -50,6 +54,7 @@ class productActivity : AppCompatActivity() {
     lateinit var product: Product
     lateinit var radioGroup: RadioGroup
     lateinit var animationView: LottieAnimationView
+    lateinit var webView: WebView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +62,7 @@ class productActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product)
         rateViewModel = ViewModelProvider(this)[RateViewModel::class.java]
         fab = findViewById(R.id.fab)
+        webView = findViewById(R.id.webView);
         animationView = findViewById(R.id.animationView);
         banner_slier_view_pager = findViewById(R.id.banner_slier_view_pager)
         productName = findViewById(R.id.productName)
@@ -76,13 +82,24 @@ class productActivity : AppCompatActivity() {
         ratingSeller = findViewById(R.id.ratingSeller)
         pieChartView = findViewById(R.id.pieChartView);
         product = intent.getParcelableExtra("product")!!
-        productName.text = product!!.productName
-        trarmark.text = product!!.tradeMark
-        price.text = product!!.price.toString()
-        lastPrice.text = product!!.lastPrice.toString()
-        description.text = product!!.description
+        productName.text = product.productName
+        trarmark.text = product.tradeMark
+        price.text = product.price.toString()
+        lastPrice.text = product.lastPrice.toString()
+        if (product.description.contains("<")) {
+            description.visibility = View.GONE
+            webView.loadDataWithBaseURL(
+                null,
+                product.description,
+                "text/html",
+                "utf-8",
+                null
+            );
+        } else {
+            description.text = product.description
+        }
         var spliter =
-            product!!.toggals.toString().replace("[", "").replace("]", "").replace(" ", "")
+            product.toggals.toString().replace("[", "").replace("]", "").replace(" ", "")
                 .split(",")
         for (i in 0 until spliter.size) {
             var togal = RadioButton(this)
@@ -92,9 +109,9 @@ class productActivity : AppCompatActivity() {
             }
             radioGroup.addView(togal)
         }
-        ratingSeller.text = product!!.ratingSeller.toInt().toString()
-        setBannerSliderViewPager(product!!.images)
-        rateViewModel.getMyRate(myId, product!!.productId)
+        ratingSeller.text = product.ratingSeller.toInt().toString()
+        setBannerSliderViewPager(product.images)
+        rateViewModel.getMyRate(myId, product.productId)
         rateViewModel.myRateing.observe(this, Observer {
             if (it != null) {
                 yourRate.rating = it.rate.toFloat();
@@ -107,12 +124,12 @@ class productActivity : AppCompatActivity() {
             TotalRating.text = it.size.toString() + " ratings"
             val map: HashMap<String, Any> = HashMap();
             map["TotalRating"] = (it.size);
-            reference.child(Constantes.PRODUCT).child(product!!.productId).updateChildren(map);
+            reference.child(Constantes.PRODUCT).child(product.productId).updateChildren(map);
             var r1 = 0f;
             var r2 = 0f;
             var r3 = 0f;
             var r4 = 0f;
-            var r5 = 0f
+            var r5 = 0f;
             val list: MutableList<SliceValue> = ArrayList();
             for (i in it) {
                 if (0.0 < i.rate.toFloat() && i.rate.toFloat() <= 1.0) {

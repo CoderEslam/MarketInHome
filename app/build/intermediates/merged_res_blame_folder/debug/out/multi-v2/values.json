@@ -23,23 +23,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\9bfa6dbfb6d14c3a98ad43b22d19f128\\transformed\\jetified-circleimageview-2.2.0\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "313",
-                        "endOffsets": "364"
-                    },
-                    "to": {
-                        "startLines": "9398",
-                        "startColumns": "4",
-                        "startOffsets": "621987",
-                        "endColumns": "313",
-                        "endOffsets": "622296"
-                    }
-                },
-                {
                     "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\f64f082e42235e775387eeec1d4fd56b\\transformed\\jetified-play-services-basement-18.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,7",
@@ -291,6 +274,23 @@
                         "endLines": "55,641,642,643,644,978,979,980,1967,4960,4963,4966,9212",
                         "endColumns": "51,60,61,61,63,58,56,53,12,12,12,12,24",
                         "endOffsets": "5398,35529,35591,35653,35717,58800,58857,58911,132537,340498,340624,340752,612906"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\7ca4ac4e525202f8248448b2b03bc6c7\\transformed\\jetified-glide-4.8.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    },
+                    "to": {
+                        "startLines": "1538",
+                        "startColumns": "4",
+                        "startOffsets": "95941",
+                        "endColumns": "57",
+                        "endOffsets": "95994"
                     }
                 },
                 {
@@ -734,23 +734,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\eaafe8e11b77cae6fbf44ca2970c0de2\\transformed\\jetified-glide-4.8.0\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "57",
-                        "endOffsets": "108"
-                    },
-                    "to": {
-                        "startLines": "1538",
-                        "startColumns": "4",
-                        "startOffsets": "95941",
-                        "endColumns": "57",
-                        "endOffsets": "95994"
-                    }
-                },
-                {
                     "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\5bf3b524c1691fcfa63d0ffbfd12e987\\transformed\\transition-1.4.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
@@ -818,6 +801,23 @@
                         "startOffsets": "111579",
                         "endColumns": "81",
                         "endOffsets": "111656"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\eslam\\.gradle\\caches\\transforms-3\\e95890acdf03f30f973a614d5e124418\\transformed\\jetified-circleimageview-2.2.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "313",
+                        "endOffsets": "364"
+                    },
+                    "to": {
+                        "startLines": "9398",
+                        "startColumns": "4",
+                        "startOffsets": "621987",
+                        "endColumns": "313",
+                        "endOffsets": "622296"
                     }
                 }
             ]

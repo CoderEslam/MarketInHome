@@ -3221,6 +3221,7 @@ int id linear_layout 0x7f0a0185
 int id listMode 0x7f0a0186
 int id listTitle 0x7f0a0187
 int id list_item 0x7f0a0188
+int id lldescription 0x7f0a0302
 int id loadingAnimView 0x7f0a0189
 int id locale 0x7f0a018a
 int id login 0x7f0a018b
@@ -3582,6 +3583,7 @@ int id view_tree_view_model_store_owner 0x7f0a02e6
 int id viewmore 0x7f0a02e7
 int id visible 0x7f0a02e8
 int id visible_removing_fragment_view_tag 0x7f0a02e9
+int id webView 0x7f0a0303
 int id west 0x7f0a02ea
 int id wide 0x7f0a02eb
 int id withText 0x7f0a02ec
@@ -3853,6 +3855,7 @@ int mipmap ic_launcher_round 0x7f0f0001
 int navigation chat_nav 0x7f100000
 int navigation nav_graph 0x7f100001
 int plurals mtrl_badge_content_description 0x7f110000
+int raw cart 0x7f120006
 int raw loading 0x7f120000
 int raw loading2 0x7f120001
 int raw loading_new 0x7f120002

@@ -3222,6 +3222,7 @@ id linear_layout
 id listMode
 id listTitle
 id list_item
+id lldescription
 id loadingAnimView
 id locale
 id login
@@ -3583,6 +3584,7 @@ id view_tree_view_model_store_owner
 id viewmore
 id visible
 id visible_removing_fragment_view_tag
+id webView
 id west
 id wide
 id withText
@@ -3854,6 +3856,7 @@ mipmap ic_launcher_round
 navigation chat_nav
 navigation nav_graph
 plurals mtrl_badge_content_description
+raw cart
 raw loading
 raw loading2
 raw loading_new

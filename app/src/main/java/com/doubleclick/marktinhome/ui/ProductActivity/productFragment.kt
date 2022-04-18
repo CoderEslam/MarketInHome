@@ -2,11 +2,15 @@ package com.doubleclick.marktinhome.ui.ProductActivity
 
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.*
+import androidx.core.text.HtmlCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -61,6 +65,7 @@ class productFragment : BaseFragment() {
     lateinit var comments: TextView;
     lateinit var radioGroup: RadioGroup
     lateinit var animationView: LottieAnimationView
+    lateinit var webView: WebView
 
 
     private val product by navArgs<productFragmentArgs>()
@@ -82,6 +87,7 @@ class productFragment : BaseFragment() {
         var view = inflater.inflate(R.layout.fragment_product, container, false)
         rateViewModel = ViewModelProvider(this)[RateViewModel::class.java]
         fab = view.findViewById(R.id.fab)
+        webView = view.findViewById(R.id.webView)
         animationView = view.findViewById(R.id.animationView);
         banner_slier_view_pager = view.findViewById(R.id.banner_slier_view_pager)
         productName = view.findViewById(R.id.productName)
@@ -114,7 +120,19 @@ class productFragment : BaseFragment() {
         trarmark.text = product.product!!.tradeMark
         price.text = product.product!!.price.toString()
         lastPrice.text = product.product!!.lastPrice.toString()
-        description.text = product.product!!.description
+        if (product.product!!.description.contains("<")) {
+            description.visibility = View.GONE
+            webView.loadDataWithBaseURL(
+                null,
+                product.product!!.description,
+                "text/html",
+                "utf-8",
+                null
+            );
+        } else {
+            description.text = product.product!!.description
+        }
+
         var spliter = product!!.product!!.toggals.toString().replace("[", "").replace("]", "")
             .replace(" ", "").split(",")
         for (i in 0 until spliter.size) {

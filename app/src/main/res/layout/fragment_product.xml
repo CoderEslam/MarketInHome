@@ -7,10 +7,10 @@
     android:background="@color/white">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:visibility="gone"
         android:id="@+id/animationView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -227,21 +227,47 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:src="@drawable/share"
-                        app:layout_constraintStart_toStartOf="@+id/description"
+                        app:layout_constraintStart_toStartOf="@+id/lldescription"
                         app:layout_constraintTop_toBottomOf="@+id/addToggalsScrollView" />
 
 
-                    <TextView
-                        android:id="@+id/description"
+                    <LinearLayout
+                        android:id="@+id/lldescription"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="300dp"
                         android:layout_marginStart="8dp"
+                        android:orientation="vertical"
                         android:text="@string/description"
                         android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/description"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <WebView
+                                    android:id="@+id/webView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1000dp" />
+                            </LinearLayout>
+
+
+                        </androidx.core.widget.NestedScrollView>
+
+                    </LinearLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayout8"
@@ -295,9 +321,9 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
                         android:orientation="horizontal"
-                        app:layout_constraintEnd_toEndOf="@+id/description"
-                        app:layout_constraintStart_toStartOf="@+id/description"
-                        app:layout_constraintTop_toBottomOf="@+id/description">
+                        app:layout_constraintEnd_toEndOf="@+id/lldescription"
+                        app:layout_constraintStart_toStartOf="@+id/lldescription"
+                        app:layout_constraintTop_toBottomOf="@+id/lldescription">
 
                         <LinearLayout
                             android:id="@+id/addToggalsLinearLayout"
@@ -322,7 +348,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/description"
+                        app:layout_constraintStart_toStartOf="@+id/lldescription"
                         app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
 
                         <TextView
