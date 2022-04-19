@@ -117,10 +117,16 @@ public final class FragmentProductBinding implements ViewBinding {
   public final ImageView mins;
 
   @NonNull
+  public final ImageView minsone;
+
+  @NonNull
   public final PieChartView pieChartView;
 
   @NonNull
   public final ImageView plus;
+
+  @NonNull
+  public final ImageView plusone;
 
   @NonNull
   public final TextView price;
@@ -231,9 +237,9 @@ public final class FragmentProductBinding implements ViewBinding {
       @NonNull ImageView imageView4, @NonNull ImageView imageView5, @NonNull ImageView imageView6,
       @NonNull ImageView imageView7, @NonNull ImageView imageView8, @NonNull TextView lastPrice,
       @NonNull LinearLayout linearLayout5, @NonNull ConstraintLayout linearLayout7,
-      @NonNull LinearLayout lldescription, @NonNull ImageView mins,
-      @NonNull PieChartView pieChartView, @NonNull ImageView plus, @NonNull TextView price,
-      @NonNull TextView productName, @NonNull ProgressBar progressBar1,
+      @NonNull LinearLayout lldescription, @NonNull ImageView mins, @NonNull ImageView minsone,
+      @NonNull PieChartView pieChartView, @NonNull ImageView plus, @NonNull ImageView plusone,
+      @NonNull TextView price, @NonNull TextView productName, @NonNull ProgressBar progressBar1,
       @NonNull ProgressBar progressBar2, @NonNull ProgressBar progressBar3,
       @NonNull ProgressBar progressBar4, @NonNull ProgressBar progressBar5,
       @NonNull TextView quantity, @NonNull RadioGroup radioGroup,
@@ -274,8 +280,10 @@ public final class FragmentProductBinding implements ViewBinding {
     this.linearLayout7 = linearLayout7;
     this.lldescription = lldescription;
     this.mins = mins;
+    this.minsone = minsone;
     this.pieChartView = pieChartView;
     this.plus = plus;
+    this.plusone = plusone;
     this.price = price;
     this.productName = productName;
     this.progressBar1 = progressBar1;
@@ -505,6 +513,12 @@ public final class FragmentProductBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.minsone;
+      ImageView minsone = ViewBindings.findChildViewById(rootView, id);
+      if (minsone == null) {
+        break missingId;
+      }
+
       id = R.id.pieChartView;
       PieChartView pieChartView = ViewBindings.findChildViewById(rootView, id);
       if (pieChartView == null) {
@@ -514,6 +528,12 @@ public final class FragmentProductBinding implements ViewBinding {
       id = R.id.plus;
       ImageView plus = ViewBindings.findChildViewById(rootView, id);
       if (plus == null) {
+        break missingId;
+      }
+
+      id = R.id.plusone;
+      ImageView plusone = ViewBindings.findChildViewById(rootView, id);
+      if (plusone == null) {
         break missingId;
       }
 
@@ -714,12 +734,12 @@ public final class FragmentProductBinding implements ViewBinding {
           cardView, cardView11, comments, constraintLayout, constraintLayout11, constraintLayout2,
           constraintLayout3, constraintLayout4, constraintLayout7, constraintLayout8, description,
           fab, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, lastPrice,
-          linearLayout5, linearLayout7, lldescription, mins, pieChartView, plus, price, productName,
-          progressBar1, progressBar2, progressBar3, progressBar4, progressBar5, quantity,
-          radioGroup, rateNowContainer, ratingSeller, scrollView2, share, textView12, textView13,
-          textView14, textView15, textView16, textView4, textView5, textView6, textView60,
-          textView7, trarmark, tvRate1, tvRate2, tvRate3, tvRate4, tvRate5, tvYourRatins, webView,
-          yourRate);
+          linearLayout5, linearLayout7, lldescription, mins, minsone, pieChartView, plus, plusone,
+          price, productName, progressBar1, progressBar2, progressBar3, progressBar4, progressBar5,
+          quantity, radioGroup, rateNowContainer, ratingSeller, scrollView2, share, textView12,
+          textView13, textView14, textView15, textView16, textView4, textView5, textView6,
+          textView60, textView7, trarmark, tvRate1, tvRate2, tvRate3, tvRate4, tvRate5,
+          tvYourRatins, webView, yourRate);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2,9 +2,6 @@ package com.doubleclick.ViewModel;
 
 import static com.doubleclick.marktinhome.BaseApplication.isNetworkConnected;
 
-import android.util.Log;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -15,11 +12,9 @@ import com.doubleclick.marktinhome.Model.ChildCategory;
 import com.doubleclick.marktinhome.Model.ClassificationPC;
 import com.doubleclick.marktinhome.Model.ParentCategory;
 import com.doubleclick.marktinhome.Model.Product;
-import com.doubleclick.marktinhome.Model.RecentSearch;
-import com.doubleclick.marktinhome.Repository.ProductRepository;
+import com.doubleclick.Repository.ProductRepository;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created By Eslam Ghazy on 3/2/2022

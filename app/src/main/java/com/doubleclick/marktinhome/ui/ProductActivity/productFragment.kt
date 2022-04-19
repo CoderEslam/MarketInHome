@@ -66,6 +66,8 @@ class productFragment : BaseFragment() {
     lateinit var radioGroup: RadioGroup
     lateinit var animationView: LottieAnimationView
     lateinit var webView: WebView
+    lateinit var minsone:ImageView
+    lateinit var plusone:ImageView
 
 
     private val product by navArgs<productFragmentArgs>()
@@ -96,6 +98,9 @@ class productFragment : BaseFragment() {
         lastPrice = view.findViewById(R.id.lastPrice)
         description = view.findViewById(R.id.description)
         TotalRating = view.findViewById(R.id.TotalRating)
+        minsone = view.findViewById(R.id.minsone);
+        plusone = view.findViewById(R.id.plusone);
+
 //        tvRate1 = view.findViewById(R.id.tvRate1)
 //        tvRate2 = view.findViewById(R.id.tvRate2)
 //        tvRate3 = view.findViewById(R.id.tvRate3)
@@ -133,7 +138,7 @@ class productFragment : BaseFragment() {
             description.text = product.product!!.description
         }
 
-        var spliter = product!!.product!!.toggals.toString().replace("[", "").replace("]", "")
+        val spliter = product.product!!.toggals.toString().replace("[", "").replace("]", "")
             .replace(" ", "").split(",")
         for (i in 0 until spliter.size) {
             var togal = RadioButton(requireContext())

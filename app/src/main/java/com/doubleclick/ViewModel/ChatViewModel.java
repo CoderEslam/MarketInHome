@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.doubleclick.marktinhome.Model.Chat;
-import com.doubleclick.marktinhome.Repository.ChatReopsitory;
+import com.doubleclick.Repository.ChatReopsitory;
 
 import java.util.ArrayList;
 

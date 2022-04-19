@@ -9,4 +9,5 @@
     <dimen name="speech_bubble_spacing">5dp</dimen>
     <dimen name="speech_bubble_tail">25dp</dimen>
     <dimen name="padding_left">20dp</dimen>
+    <dimen name="margin5">5dp</dimen>
 </resources>

@@ -2308,6 +2308,7 @@ dimen m3_sys_typescale_title_small_letter_spacing
 dimen m3_sys_typescale_title_small_text_size
 dimen m3_timepicker_display_stroke_width
 dimen m3_timepicker_window_elevation
+dimen margin5
 dimen material_bottom_sheet_max_width
 dimen material_clock_display_padding
 dimen material_clock_face_margin_top
@@ -2739,6 +2740,7 @@ drawable filter_list
 drawable fram_blue
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable group
 drawable group645
 drawable group861
 drawable group934
@@ -2813,6 +2815,7 @@ drawable parson
 drawable password
 drawable path1306
 drawable person
+drawable refresh
 drawable search
 drawable send
 drawable share
@@ -2925,6 +2928,7 @@ id action_menu_divider
 id action_menu_presenter
 id action_menu_profile_to_allUserFragment
 id action_menu_profile_to_joinUsFragment
+id action_menu_profile_to_menu_group
 id action_menu_profile_to_recentOrderFragment
 id action_mode_bar
 id action_mode_bar_stub
@@ -3004,6 +3008,7 @@ id cardView11
 id cardView2
 id cardView3
 id cardView4
+id cardView5
 id carryVelocity
 id cartRate
 id cartRecycler
@@ -3256,12 +3261,14 @@ id material_timepicker_view
 id material_value_index
 id media_actions
 id menu_Cart
+id menu_group
 id menu_profile
 id menu_recycler_view
 id message
 id middle
 id mini
 id mins
+id minsone
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3349,6 +3356,7 @@ id phone
 id pieChartView
 id pin
 id plus
+id plusone
 id position
 id postLayout
 id price
@@ -3377,6 +3385,7 @@ id recentOrder
 id recentOrderFragment
 id recentSearch
 id rectangles
+id refresh
 id restart
 id reverse
 id reverseSawtooth
@@ -3726,6 +3735,7 @@ layout fragment_cart
 layout fragment_comments
 layout fragment_filter_parent
 layout fragment_forget
+layout fragment_groups
 layout fragment_home
 layout fragment_join_us
 layout fragment_log_in
@@ -3750,7 +3760,6 @@ layout layaut_cart
 layout layout_categories
 layout layout_chat
 layout layout_edit
-layout layout_product
 layout layout_product_with_view_pager
 layout layout_recent_order
 layout layout_small_product
@@ -3851,6 +3860,7 @@ layout user_chat_layout
 layout v_product_recyclerview
 menu add_item
 menu menu_bottom
+menu refrash
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation chat_nav
@@ -4024,7 +4034,7 @@ string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string menu_Cart
-string menu_list
+string menu_group
 string menu_profile
 string menu_store
 string mtrl_badge_numberless_content_description
@@ -4087,6 +4097,7 @@ string project_id
 string put_you_rate
 string quantity
 string recent_search
+string refresh
 string search
 string search_here
 string search_menu_title

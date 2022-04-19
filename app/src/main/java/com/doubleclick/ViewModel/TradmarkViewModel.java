@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.doubleclick.Tradmarkinterface;
 import com.doubleclick.marktinhome.Model.Trademark;
-import com.doubleclick.marktinhome.Repository.TradmarkRepository;
+import com.doubleclick.Repository.TradmarkRepository;
 
 import java.util.ArrayList;
 import java.util.List;

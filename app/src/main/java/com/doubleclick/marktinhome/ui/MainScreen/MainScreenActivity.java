@@ -25,14 +25,13 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.doubleclick.ViewModel.ProductViewModel;
-import com.doubleclick.ViewModel.RecentSearchViewModel;
 import com.doubleclick.ViewModel.UserViewModel;
 import com.doubleclick.marktinhome.Adapters.NavAdapter;
 import com.doubleclick.marktinhome.Model.ChildCategory;
 import com.doubleclick.marktinhome.Model.ClassificationPC;
 import com.doubleclick.marktinhome.Model.User;
 import com.doubleclick.marktinhome.R;
-import com.doubleclick.marktinhome.Repository.Sending;
+import com.doubleclick.Repository.UpdateRecentSearch;
 import com.doubleclick.marktinhome.Views.SmoothButtom.SmoothBottomBar;
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity;
 import com.doubleclick.marktinhome.ui.MainScreen.Parents.ParentActivity;
@@ -59,15 +58,13 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
     private UserViewModel userViewModel;
     private CircleImageView myImage;
     private View main_fragment;
-    private RecentSearchViewModel recentSearchViewModel;
     private String ProductId;
-
+    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-        recentSearchViewModel = new ViewModelProvider(this).get(RecentSearchViewModel.class);
         ProductId = getIntent().getStringExtra("ProductId");
         main_fragment = findViewById(R.id.main_fragment);
         navController = Navigation.findNavController(this, main_fragment.getId());
@@ -88,10 +85,10 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         });
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.menu_Cart,/* R.id.menu_list, */R.id.homeFragment, R.id.menu_profile).build();
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.menu_Cart, R.id.menu_group, R.id.homeFragment, R.id.menu_profile).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         setupSmoothBottomMenu();
-        updateToken();
+//        updateToken();
         productViewModel = new ViewModelProvider(this).get(ProductViewModel.class);
         productViewModel.getClassificationPC().observe(this, classificationPCS -> {
             NavAdapter catecoriesAdapter = new NavAdapter(classificationPCS, this);
@@ -113,7 +110,8 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
                     intent.putExtra("type", "ProductId");
                     startActivity(intent);
                 } else {
-                    Sending.Check(query, MainScreenActivity.this, MainScreenActivity.this);
+                    // to UpdateRecentSearch
+//                    UpdateRecentSearch.Check(query, MainScreenActivity.this, MainScreenActivity.this);
                     Intent intent = new Intent(MainScreenActivity.this, FilterActivity.class);
                     intent.putExtra("id", query.trim());
                     intent.putExtra("type", "search");
@@ -144,7 +142,6 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         } catch (NullPointerException e) {
 
         }
-
     }
 
 
@@ -154,6 +151,23 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
         Menu menu = popupMenu.getMenu();
         bottomBar.setupWithNavController(menu, navController);
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.refrash,menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//        if (id==R.id.refresh){
+//            Intent intent = getIntent();
+//            finish();
+//            startActivity(intent);
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public void onClickedNavChild(ChildCategory childCategory) {
@@ -180,5 +194,6 @@ public class MainScreenActivity extends AppCompatActivity implements NavAdapter.
             }
         });
     }
+
 
 }

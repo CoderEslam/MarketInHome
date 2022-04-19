@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.doubleclick.UserInter;
 import com.doubleclick.marktinhome.Model.User;
-import com.doubleclick.marktinhome.Repository.UserRepository;
+import com.doubleclick.Repository.UserRepository;
 
 import java.util.ArrayList;
 

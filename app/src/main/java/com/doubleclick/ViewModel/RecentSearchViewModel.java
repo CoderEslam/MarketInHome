@@ -9,10 +9,9 @@ import androidx.lifecycle.ViewModel;
 import com.doubleclick.RecentSearchInterface;
 import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.Model.RecentSearch;
-import com.doubleclick.marktinhome.Repository.RecentSearchRepository;
+import com.doubleclick.Repository.RecentSearchRepository;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created By Eslam Ghazy on 3/11/2022
@@ -24,8 +23,9 @@ public class RecentSearchViewModel extends ViewModel implements RecentSearchInte
     RecentSearchRepository recentSearchRepository = new RecentSearchRepository(this);
 
     public RecentSearchViewModel() {
-        recentSearchRepository.getLastSearchOneTime();
-        recentSearchRepository.getRecentSearch();
+        //to get last search
+//        recentSearchRepository.getLastSearchOneTime();
+//        recentSearchRepository.getRecentSearch();
     }
 
     public LiveData<ArrayList<Product>> getLastSearchListLiveDataOneTime() {

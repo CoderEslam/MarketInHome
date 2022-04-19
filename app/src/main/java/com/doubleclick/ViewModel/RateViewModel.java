@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.doubleclick.Rateing;
 import com.doubleclick.marktinhome.Model.Rate;
-import com.doubleclick.marktinhome.Repository.RateingRepository;
+import com.doubleclick.Repository.RateingRepository;
 
 import java.util.ArrayList;
 

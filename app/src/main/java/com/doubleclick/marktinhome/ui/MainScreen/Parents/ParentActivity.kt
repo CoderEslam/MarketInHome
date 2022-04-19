@@ -17,7 +17,7 @@ import com.doubleclick.marktinhome.Adapters.ViewPagerAdapter
 import com.doubleclick.marktinhome.Adapters.ViewPagerParentAdapter
 import com.doubleclick.marktinhome.Model.ClassificationPC
 import com.doubleclick.marktinhome.Model.Product
-import com.doubleclick.marktinhome.Repository.Sending
+import com.doubleclick.Repository.UpdateRecentSearch
 import com.doubleclick.marktinhome.databinding.ActivityParentBinding
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity
 import com.doubleclick.marktinhome.ui.ProductActivity.productActivity
@@ -55,7 +55,8 @@ class ParentActivity : AppCompatActivity(), OnProduct {
 
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                Sending.Check(query, this@ParentActivity, this@ParentActivity)
+                // to update UpdateRecentSearch
+//                UpdateRecentSearch.Check(query, this@ParentActivity, this@ParentActivity)
                 val intent = Intent(this@ParentActivity, FilterActivity::class.java)
                 intent.putExtra("id", query.trim())
                 intent.putExtra("type", "search")

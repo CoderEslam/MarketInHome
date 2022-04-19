@@ -2,14 +2,11 @@ package com.doubleclick.marktinhome.ui.ProductActivity
 
 import android.content.Intent
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.view.View
 import android.webkit.WebView
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.HtmlCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
@@ -20,8 +17,8 @@ import com.doubleclick.marktinhome.BaseApplication.ShowToast
 import com.doubleclick.marktinhome.Model.Constantes
 import com.doubleclick.marktinhome.Model.Product
 import com.doubleclick.marktinhome.R
-import com.doubleclick.marktinhome.Repository.BaseRepository.myId
-import com.doubleclick.marktinhome.Repository.BaseRepository.reference
+import com.doubleclick.Repository.BaseRepository.myId
+import com.doubleclick.Repository.BaseRepository.reference
 import com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import lecho.lib.hellocharts.model.PieChartData

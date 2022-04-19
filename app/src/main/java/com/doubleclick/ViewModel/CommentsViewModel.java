@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.doubleclick.CommentsInterface;
 import com.doubleclick.marktinhome.Model.Comments;
-import com.doubleclick.marktinhome.Repository.CommentsRepository;
+import com.doubleclick.Repository.CommentsRepository;
 
 import java.util.ArrayList;
 

@@ -25,15 +25,20 @@ public final class LayoutCategoriesBinding implements ViewBinding {
   public final CardView cardView3;
 
   @NonNull
+  public final CardView cardView5;
+
+  @NonNull
   public final ImageView circleImageView;
 
   @NonNull
   public final TextView listTitle;
 
   private LayoutCategoriesBinding(@NonNull ConstraintLayout rootView, @NonNull CardView cardView3,
-      @NonNull ImageView circleImageView, @NonNull TextView listTitle) {
+      @NonNull CardView cardView5, @NonNull ImageView circleImageView,
+      @NonNull TextView listTitle) {
     this.rootView = rootView;
     this.cardView3 = cardView3;
+    this.cardView5 = cardView5;
     this.circleImageView = circleImageView;
     this.listTitle = listTitle;
   }
@@ -71,6 +76,12 @@ public final class LayoutCategoriesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cardView5;
+      CardView cardView5 = ViewBindings.findChildViewById(rootView, id);
+      if (cardView5 == null) {
+        break missingId;
+      }
+
       id = R.id.circleImageView;
       ImageView circleImageView = ViewBindings.findChildViewById(rootView, id);
       if (circleImageView == null) {
@@ -83,8 +94,8 @@ public final class LayoutCategoriesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LayoutCategoriesBinding((ConstraintLayout) rootView, cardView3, circleImageView,
-          listTitle);
+      return new LayoutCategoriesBinding((ConstraintLayout) rootView, cardView3, cardView5,
+          circleImageView, listTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

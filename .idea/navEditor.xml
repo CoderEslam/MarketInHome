@@ -162,27 +162,6 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="allUserFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="358" />
-                            <option name="y" value="1204" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_allUserFragment_to_connctUsFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="commentsFragment">
                     <value>
                       <LayoutPositions>
@@ -191,27 +170,6 @@
                             <option name="x" value="1159" />
                             <option name="y" value="-365" />
                           </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="connctUsFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="781" />
-                            <option name="y" value="1192" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_connctUsFragment_to_allUserFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -311,12 +269,19 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_menu_Cart_to_orderSelllerFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="menu_group">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1345" />
+                            <option name="y" value="342" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -348,39 +313,6 @@
                               </value>
                             </entry>
                           </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="menu_store">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-482" />
-                            <option name="y" value="486" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_menu_store_to_menu_Cart">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="orderSelllerFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="616" />
-                            <option name="y" value="5" />
-                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

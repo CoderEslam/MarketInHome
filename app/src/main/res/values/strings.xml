@@ -2,7 +2,7 @@
     <string name="app_name">MarktInHome</string>
     <string name="ellipsis">&#8230;</string>
     <string name="menu_Cart">Cart</string>
-    <string name="menu_list">List</string>
+    <string name="menu_group">Group</string>
     <string name="menu_store">Home</string>
     <string name="menu_profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -87,4 +87,5 @@
       and landed jobs at tech giants. Our vision is to build a gigantic network of
       geeks and we are only a fraction of it yet.
   </string>
+    <string name="refresh">Refresh</string>
 </resources>

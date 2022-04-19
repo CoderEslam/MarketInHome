@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.doubleclick.Adv;
 import com.doubleclick.marktinhome.Model.Advertisement;
-import com.doubleclick.marktinhome.Repository.AdvertisementRepository;
+import com.doubleclick.Repository.AdvertisementRepository;
 
 import java.util.ArrayList;
 

@@ -169,11 +169,12 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
                 homeModels.add(HomeModel(it, HomeModel.Trademarks, this))
             }
         });
-        recentSearchViewModel.lastSearchListLiveDataOneTime.observe(viewLifecycleOwner, Observer {
-            if (it.size != 0) {
-                homeModels.add(HomeModel(HomeModel.RecentSearch, it, this, this, 0))
-            }
-        })
+        // to get last Recent Search
+//        recentSearchViewModel.lastSearchListLiveDataOneTime.observe(viewLifecycleOwner, Observer {
+//            if (it.size != 0) {
+//                homeModels.add(HomeModel(HomeModel.RecentSearch, it, this, this, 0))
+//            }
+//        })
     }
 }
 

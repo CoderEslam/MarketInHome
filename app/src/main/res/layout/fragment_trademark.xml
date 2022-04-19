@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/layout_product" />
+        tools:listitem="@layout/layout_small_product" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:visibility="gone"
