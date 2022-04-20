@@ -216,7 +216,7 @@
     </fragment>
     <fragment
         android:id="@+id/menu_group"
-        android:name="com.doubleclick.marktinhome.ui.MainScreen.GroupsFragment"
+        android:name="com.doubleclick.marktinhome.ui.MainScreen.Groups.GroupsFragment"
         android:label="fragment_groups"
         tools:layout="@layout/fragment_groups" />
 

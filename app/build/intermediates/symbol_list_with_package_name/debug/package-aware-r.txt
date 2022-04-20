@@ -2846,6 +2846,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id CartName
+id ConstraintLayoutimage_name
 id Continue
 id CustomerLocation
 id FUNCTION
@@ -3056,7 +3057,6 @@ id constraint
 id constraintLayout
 id constraintLayout10
 id constraintLayout11
-id constraintLayout12
 id constraintLayout2
 id constraintLayout3
 id constraintLayout4
@@ -3088,6 +3088,7 @@ id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
 id delete
+id deleteOption
 id deltaRelative
 id dependency_ordering
 id description
@@ -3120,6 +3121,7 @@ id easeOut
 id east
 id edit
 id editAddress
+id editOption
 id editPhone
 id editProduct
 id edit_query
@@ -3227,7 +3229,6 @@ id leftToRight
 id legacy
 id light
 id likeButton
-id likeButtonTwo
 id like_img
 id like_text
 id line1
@@ -3413,6 +3414,7 @@ id rounded
 id row_index_key
 id rtl
 id satellite
+id saveOption
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3715,6 +3717,7 @@ layout abc_tooltip
 layout activity_chat
 layout activity_comments
 layout activity_filter
+layout activity_groups
 layout activity_main
 layout activity_main_screen
 layout activity_parent
@@ -3879,6 +3882,7 @@ layout user_chat_layout
 layout v_product_recyclerview
 menu add_item
 menu menu_bottom
+menu option_group
 menu refrash
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -3961,7 +3965,6 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string confirm
-string content
 string create_by_x_team
 string customer_location
 string customer_name
@@ -3969,8 +3972,10 @@ string customer_phone
 string custommer_address
 string default_web_client_id
 string define_smoothprogressbar
+string delete
 string description
 string easy_to_hundel
+string edit
 string edit_on_order
 string edit_on_product
 string ellipsis
@@ -4117,6 +4122,7 @@ string put_you_rate
 string quantity
 string recent_search
 string refresh
+string save
 string search
 string search_here
 string search_menu_title
@@ -4124,6 +4130,7 @@ string sign_in
 string sign_up
 string spb_default_speed
 string status_bar_notification_info_overflow
+string thanks
 string top_deals
 string totalPrice
 string trademark

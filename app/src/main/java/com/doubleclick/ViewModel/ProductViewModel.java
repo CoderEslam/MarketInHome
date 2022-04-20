@@ -99,7 +99,6 @@ public class ProductViewModel extends ViewModel implements Products {
     }
 
 
-
     public LiveData<ArrayList<ParentCategory>> getParent() {
         return parentCategory;
     }

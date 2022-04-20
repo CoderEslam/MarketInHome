@@ -1,6 +1,8 @@
 package com.doubleclick.marktinhome.ui.MainScreen.Frgments
 
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +31,7 @@ import com.doubleclick.marktinhome.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import java.util.*
 
 
 class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewMore {
@@ -43,6 +46,7 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
     lateinit var animationView: LottieAnimationView
     lateinit var recentSearchViewModel: RecentSearchViewModel
     private var idProduct: String = ""
+    private lateinit var timer: Timer;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,6 +100,8 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
 
         }
         loadHomePage()
+        // Todo  restart app when no internet connection
+        ReloadData()
         return view;
     }
 
@@ -144,27 +150,34 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
                 homeAdapter = HomeAdapter(homeModels);
                 MainRecyceler.adapter = homeAdapter
                 animationView.visibility = View.GONE
+                timer.cancel()
             } else {
                 animationView.visibility = View.VISIBLE
             }
         });
         advertisementViewModel.allAdv.observe(viewLifecycleOwner, Observer {
             homeModels.add(1, HomeModel(it, HomeModel.Advertisement))
+            timer.cancel()
+
         });
-        productViewModel.product
-            .observe(viewLifecycleOwner, Observer { products: ArrayList<Product?>? ->
+        productViewModel.product.observe(
+            viewLifecycleOwner,
+            Observer { products: ArrayList<Product?>? ->
                 if (products!!.size != 0) {
                     homeModels.add(HomeModel(products, HomeModel.Products, this))
+                    timer.cancel()
                 }
             });
         productViewModel.topDealsLiveData.observe(viewLifecycleOwner, Observer {
             if (it.size != 0) {
                 homeModels.add(HomeModel(it, HomeModel.TopDeal, this, this));
+                timer.cancel()
             }
         })
         trademarkViewModel.allMark.observe(viewLifecycleOwner, Observer {
             if (it.size != 0) {
                 homeModels.add(HomeModel(it, HomeModel.Trademarks, this))
+                timer.cancel()
             }
         });
         // to get last Recent Search
@@ -173,6 +186,29 @@ class HomeFragment : BaseFragment(), OnItem, OnProduct, Tradmarkinterface, ViewM
 //                homeModels.add(HomeModel(HomeModel.RecentSearch, it, this, this, 0))
 //            }
 //        })
+
     }
+
+    private fun ReloadData() {
+        timer = Timer();
+        val handler = Handler()
+        var runnable = Runnable {
+            try {
+                loadHomePage();
+                val intent = requireActivity().intent
+                requireActivity().finish()
+                startActivity(intent)
+            } catch (e: Exception) {
+                Log.e("ExceptionHomeFrg", e.message.toString());
+            }
+
+        }
+        timer.schedule(object : TimerTask() {
+            override fun run() {
+                handler.post(runnable)
+            }
+        }, 2000, 2000)
+    }
+
 }
 

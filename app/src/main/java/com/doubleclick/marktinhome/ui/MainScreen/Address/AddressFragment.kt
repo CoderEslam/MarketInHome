@@ -19,6 +19,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.doubleclick.ConfigPay.ConfigPay.PAYPAL_CLINT_ID
 import com.doubleclick.ViewModel.CartViewModel
 import com.doubleclick.marktinhome.BaseApplication
@@ -99,6 +100,8 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
                 anotherPhone.text.toString(),
                 address.text.toString()
             )
+            // todo Toast
+            Toast.makeText(context, ""+resources.getString(R.string.thanks), Toast.LENGTH_LONG).show()
             // TODO Pay by PayPal
 //            onBuyPressed();
         }
@@ -116,12 +119,12 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
             try {
                 gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
             } catch (ex: Exception) {
-                Log.e("ExceptionLocation",ex.message.toString())
+                Log.e("ExceptionLocation", ex.message.toString())
             }
             try {
                 network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
             } catch (ex: Exception) {
-                Log.e("ExceptionLocation",ex.message.toString())
+                Log.e("ExceptionLocation", ex.message.toString())
             }
             if (!gps_enabled && !network_enabled) {
                 // notify user
@@ -182,6 +185,7 @@ class AddressFragment : BaseFragment(), OnMapReadyCallback {
                 sendNotifiaction(getContext(), carts[i].sellerId, carts[i].productName);
                 reference.child(ORDERS).child(id).updateChildren(map)
                 reference.child(CART).child(carts[i].id).removeValue()
+                findNavController().navigate(AddressFragmentDirections.actionAddressFragmentToHomeFragment());
             }
 
 

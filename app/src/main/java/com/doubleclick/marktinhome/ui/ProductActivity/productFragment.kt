@@ -3,6 +3,7 @@ package com.doubleclick.marktinhome.ui.ProductActivity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,8 +64,8 @@ class productFragment : BaseFragment() {
     lateinit var radioGroup: RadioGroup
     lateinit var animationView: LottieAnimationView
     lateinit var webView: WebView
-    lateinit var minsone:ImageView
-    lateinit var plusone:ImageView
+    lateinit var minsone: ImageView
+    lateinit var plusone: ImageView
 
 
     private val product by navArgs<productFragmentArgs>()
@@ -228,6 +229,7 @@ class productFragment : BaseFragment() {
                     map["ToggleItem"] = ToggleItem!!
                     reference.child(CART).child(id).setValue(map);
                     animationView.visibility = View.VISIBLE
+                    FinishAnimationView()
                 }
             } else {
                 ShowToast(context, "you can't order less than one!");
@@ -303,6 +305,19 @@ class productFragment : BaseFragment() {
         }
         val shareIntent = Intent.createChooser(sendIntent, null)
         startActivity(shareIntent)
+    }
+
+    fun FinishAnimationView() {
+        val timer = Timer();
+        val handler = Handler();
+        var run = Runnable {
+            animationView.visibility = View.GONE
+        };
+        timer.schedule(object : TimerTask() {
+            override fun run() {
+                handler.post(run)
+            }
+        }, 2000, 2000)
     }
 
 }

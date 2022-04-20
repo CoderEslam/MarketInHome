@@ -1,10 +1,16 @@
 package com.doubleclick.marktinhome.Adapters;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.doubleclick.marktinhome.R;
@@ -32,14 +38,46 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.GroupViewH
     @Override
     public void onBindViewHolder(@NonNull GroupsAdapter.GroupViewHolder holder, int position) {
 
+
+        holder.option.setOnClickListener(v -> {
+            PopupMenu popupMenu = new PopupMenu(holder.itemView.getContext(), v);
+            popupMenu.getMenuInflater().inflate(R.menu.option_group, popupMenu.getMenu());
+            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    int id = item.getItemId();
+                    if (id == R.id.deleteOption) {
+                        Toast.makeText(holder.itemView.getContext(), "ddddd", Toast.LENGTH_SHORT).show();
+                    }
+                    if (id == R.id.editOption) {
+                        Toast.makeText(holder.itemView.getContext(), "eeeee", Toast.LENGTH_SHORT).show();
+
+                    }
+                    if (id == R.id.saveOption) {
+                        Toast.makeText(holder.itemView.getContext(), "ssssss", Toast.LENGTH_SHORT).show();
+
+                    }
+                    return true;
+                }
+            });
+            popupMenu.show();
+        });
     }
 
     public class GroupViewHolder extends RecyclerView.ViewHolder {
         private RecyclerView images;
+        private ConstraintLayout ConstraintLayoutimage_name;
+        private ImageView option;
+        private LinearLayout likeButton, comment, share;
 
         public GroupViewHolder(@NonNull View itemView) {
             super(itemView);
             images = itemView.findViewById(R.id.images);
+            ConstraintLayoutimage_name = itemView.findViewById(R.id.ConstraintLayoutimage_name);
+            option = itemView.findViewById(R.id.option);
+            likeButton = itemView.findViewById(R.id.likeButton);
+            comment = itemView.findViewById(R.id.comment);
+            share = itemView.findViewById(R.id.share);
             CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL);
             images.setLayoutManager(layoutManager);
             images.setHasFixedSize(true);

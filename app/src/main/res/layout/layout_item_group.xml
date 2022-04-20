@@ -7,7 +7,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout12"
+        android:id="@+id/ConstraintLayoutimage_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
         app:cardCornerRadius="@dimen/margin5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout12">
+        app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutimage_name">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/images"
@@ -70,6 +70,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
+        android:padding="@dimen/margin5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -78,7 +79,8 @@
         app:layout_constraintTop_toBottomOf="@+id/view2"
         tools:ignore="DisableBaselineAlignment">
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -91,7 +93,6 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone"
                 tools:ignore="ObsoleteLayoutParam,UseCompoundDrawables">
 
                 <ImageView
@@ -112,35 +113,7 @@
                     android:textSize="16sp"
                     tools:ignore="ContentDescription,HardcodedText" />
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/likeButtonTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:contentDescription="TODO"
-                    android:src="@drawable/ic_like"
-                    tools:ignore="ContentDescription,HardcodedText" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:text="Like"
-                    android:textColor="#1877F2"
-                    android:textSize="16sp"
-                    tools:ignore="ContentDescription,HardcodedText" />
-
-            </LinearLayout>
-
-
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/comment"

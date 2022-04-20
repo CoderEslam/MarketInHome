@@ -47,6 +47,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.MarktInHome" >
         <activity
+            android:name="com.doubleclick.marktinhome.ui.MainScreen.Groups.GroupsActivity"
+            android:exported="false" />
+        <activity
             android:name="com.doubleclick.marktinhome.ui.MainScreen.Chat.ChatActivity"
             android:exported="false" />
         <activity

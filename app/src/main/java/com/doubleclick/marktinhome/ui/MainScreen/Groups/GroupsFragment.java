@@ -1,4 +1,4 @@
-package com.doubleclick.marktinhome.ui.MainScreen;
+package com.doubleclick.marktinhome.ui.MainScreen.Groups;
 
 import android.os.Bundle;
 

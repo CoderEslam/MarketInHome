@@ -51,6 +51,7 @@ public class ProductRepository extends BaseRepository {
                     if (isNetworkConnected()) {
                         if (task.getResult().exists()) {
                             if (task.isComplete()) {
+                                products.clear();
                                 DataSnapshot snapshot = task.getResult();
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                     Product product = dataSnapshot.getValue(Product.class);
@@ -86,6 +87,7 @@ public class ProductRepository extends BaseRepository {
                         if (task.getResult().exists()) {
                             if (task.isComplete()) {
                                 DataSnapshot snapshot = task.getResult();
+                                parentCategories.clear();
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                     ParentCategory parentCategory = dataSnapshot.getValue(ParentCategory.class);
 //                                    HashMap<String, Object> map = new HashMap<>();
@@ -228,6 +230,7 @@ public class ProductRepository extends BaseRepository {
                     if (isNetworkConnected()) {
                         if (task.getResult().exists()) {
                             DataSnapshot snapshot = task.getResult();
+                            QueryProducts.clear();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Product product = dataSnapshot.getValue(Product.class);
                                 if (Objects.requireNonNull(product).getProductName().contains(query) || product.getTradeMark().contains(query) || product.getChildCategoryName().contains(query) || product.getParentCategoryName().contains(query) || product.getKeywords().contains(query)) {
@@ -255,6 +258,7 @@ public class ProductRepository extends BaseRepository {
                     if (isNetworkConnected()) {
                         if (task.getResult().exists()) {
                             DataSnapshot snapshot = task.getResult();
+                            QueryProductsByParents.clear();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Product product = dataSnapshot.getValue(Product.class);
                                 assert product != null;
@@ -282,6 +286,7 @@ public class ProductRepository extends BaseRepository {
                     if (isNetworkConnected()) {
                         if (task.getResult().exists()) {
                             DataSnapshot snapshot = task.getResult();
+                            QueryProductsByChild.clear();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Product product = dataSnapshot.getValue(Product.class);
                                 assert product != null;
@@ -309,6 +314,7 @@ public class ProductRepository extends BaseRepository {
                     if (isNetworkConnected()) {
                         if (task.getResult().exists()) {
                             DataSnapshot snapshot = task.getResult();
+                            productWithTrademark.clear();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Product product = dataSnapshot.getValue(Product.class);
                                 if (product.getTradeMark().equals(name)) {
@@ -340,6 +346,7 @@ public class ProductRepository extends BaseRepository {
                     if (isNetworkConnected()) {
                         if (task.getResult().exists()) {
                             DataSnapshot snapshot = task.getResult();
+                            productsTopDeals.clear();
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Product product = dataSnapshot.getValue(Product.class);
                                 productsTopDeals.add(product);

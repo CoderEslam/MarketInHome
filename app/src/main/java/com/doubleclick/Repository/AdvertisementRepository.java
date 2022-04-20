@@ -34,6 +34,7 @@ public class AdvertisementRepository extends BaseRepository {
                 try {
                     if (isNetworkConnected()){
                         if (task.getResult().exists()) {
+                            advertisements.clear();
                             for (DataSnapshot snapshot : task.getResult().getChildren()) {
                                 Advertisement advertisement = snapshot.getValue(Advertisement.class);
                                 advertisements.add(advertisement);

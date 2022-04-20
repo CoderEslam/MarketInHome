@@ -3,6 +3,7 @@ package com.doubleclick.marktinhome.ui.ProductActivity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.webkit.WebView
 import android.widget.*
@@ -21,6 +22,7 @@ import com.doubleclick.Repository.BaseRepository.myId
 import com.doubleclick.Repository.BaseRepository.reference
 import com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.paypal.android.sdk.v
 import lecho.lib.hellocharts.model.PieChartData
 import lecho.lib.hellocharts.model.SliceValue
 import lecho.lib.hellocharts.view.PieChartView
@@ -173,7 +175,7 @@ class productActivity : AppCompatActivity() {
                 map["ToggleItem"] = ToggleItem!!
                 reference.child(Constantes.CART).child(id).setValue(map);
                 animationView.visibility = View.VISIBLE
-
+                FinishAnimationView()
             } else {
                 ShowToast("you can't order less than one!");
             }
@@ -250,5 +252,18 @@ class productActivity : AppCompatActivity() {
         }
         val shareIntent = Intent.createChooser(sendIntent, null)
         startActivity(shareIntent)
+    }
+
+    fun FinishAnimationView() {
+        val timer = Timer();
+        val handler = Handler();
+        var run = Runnable {
+            animationView.visibility = View.GONE
+        };
+        timer.schedule(object : TimerTask() {
+            override fun run() {
+                handler.post(run)
+            }
+        }, 2000, 2000)
     }
 }

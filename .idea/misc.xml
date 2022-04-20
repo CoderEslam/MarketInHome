@@ -54,6 +54,7 @@
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/drawable/text_message_left.xml" value="0.209" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/drawable/text_message_right.xml" value="0.1995" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/drawable/textsms.xml" value="0.209" />
+        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/drawable/threedot.xml" value="0.2045" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/drawable/vd_pathmorph_drawer_arrow.xml" value="0.2078125" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/drawable/vd_pathmorph_drawer_hamburger.xml" value="0.2078125" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/font/.xml" value="0.290625" />
@@ -64,6 +65,7 @@
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_chat.xml" value="0.22" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_comments.xml" value="0.22" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_filter.xml" value="0.17760416666666667" />
+        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_groups.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_main_screen.xml" value="0.22" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/activity_parent.xml" value="0.25" />
@@ -162,7 +164,9 @@
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/v_product_recyclerview.xml" value="0.2" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/layout/widget_navigation_drawer.xml" value="0.2" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/menu/add_item.xml" value="0.2" />
+        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/menu/group_option.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/menu/menu_bottom.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/menu/option_group.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/eslam/AndroidStudioProjects/Eslam/MarktInHome/app/src/main/res/menu/refrash.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/eslam/AppData/Local/Temp/drawable-temp/fake_of_asl_pathmorph_drawer.xml" value="0.11" />
       </map>

@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarktInHome">
         <activity
+            android:name=".ui.MainScreen.Groups.GroupsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainScreen.Chat.ChatActivity"
             android:exported="false" />
         <activity
