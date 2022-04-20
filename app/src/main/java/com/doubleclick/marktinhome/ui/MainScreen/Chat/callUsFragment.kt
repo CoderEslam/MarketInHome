@@ -13,7 +13,6 @@ import com.doubleclick.ViewModel.ChatViewModel
 import com.doubleclick.marktinhome.Adapters.ChatAdapter
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Constantes.CHATS
-import com.doubleclick.marktinhome.Model.Constantes.CHAT_LIST
 import com.doubleclick.marktinhome.R
 import java.util.*
 import kotlin.collections.HashMap

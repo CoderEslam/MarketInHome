@@ -10,8 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.doubleclick.OnProduct;
-import com.doubleclick.RecentOrderInterface;
 import com.doubleclick.marktinhome.Model.RecentOrder;
 import com.doubleclick.marktinhome.R;
 

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -13,14 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.doubleclick.OnCartLisnter
 import com.doubleclick.ViewModel.CartViewModel
 import com.doubleclick.marktinhome.Adapters.CartAdapter
-import com.doubleclick.marktinhome.Adapters.CartAdapter.CartViewHolder
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Cart
 import com.doubleclick.marktinhome.Model.Constantes.CART
 import com.doubleclick.marktinhome.R
-import com.firebase.ui.database.FirebaseRecyclerAdapter
-import com.firebase.ui.database.FirebaseRecyclerOptions
-import de.hdodenhof.circleimageview.CircleImageView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

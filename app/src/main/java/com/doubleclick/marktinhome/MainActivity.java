@@ -1,13 +1,10 @@
 package com.doubleclick.marktinhome;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.doubleclick.marktinhome.Adapters.ViewPagerAdapter;
 import com.doubleclick.marktinhome.Views.liquid_swipe.LiquidPager;

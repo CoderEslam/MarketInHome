@@ -1,7 +1,6 @@
 package com.doubleclick.marktinhome.ui.MainScreen.Chat
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,6 @@ import com.doubleclick.UserInter
 import com.doubleclick.ViewModel.UserViewModel
 import com.doubleclick.marktinhome.Adapters.AllUserChatListAdapter
 import com.doubleclick.marktinhome.BaseFragment
-import com.doubleclick.marktinhome.Model.Constantes
 import com.doubleclick.marktinhome.Model.Constantes.CHAT_LIST
 import com.doubleclick.marktinhome.Model.User
 import com.doubleclick.marktinhome.R

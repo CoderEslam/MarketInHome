@@ -1,9 +1,7 @@
 package com.doubleclick.ViewHolder;
 
 import android.view.View;
-import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;

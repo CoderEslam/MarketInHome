@@ -17,7 +17,6 @@ import com.doubleclick.marktinhome.Adapters.ViewPagerAdapter
 import com.doubleclick.marktinhome.Adapters.ViewPagerParentAdapter
 import com.doubleclick.marktinhome.Model.ClassificationPC
 import com.doubleclick.marktinhome.Model.Product
-import com.doubleclick.Repository.UpdateRecentSearch
 import com.doubleclick.marktinhome.databinding.ActivityParentBinding
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity
 import com.doubleclick.marktinhome.ui.ProductActivity.productActivity

@@ -16,8 +16,6 @@ import com.doubleclick.marktinhome.R;
 
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 /**
  * Created By Eslam Ghazy on 3/8/2022
  */

@@ -31,7 +31,6 @@ import com.doubleclick.marktinhome.Model.ChildCategory;
 import com.doubleclick.marktinhome.Model.ClassificationPC;
 import com.doubleclick.marktinhome.Model.User;
 import com.doubleclick.marktinhome.R;
-import com.doubleclick.Repository.UpdateRecentSearch;
 import com.doubleclick.marktinhome.Views.SmoothButtom.SmoothBottomBar;
 import com.doubleclick.marktinhome.ui.Filter.FilterActivity;
 import com.doubleclick.marktinhome.ui.MainScreen.Parents.ParentActivity;

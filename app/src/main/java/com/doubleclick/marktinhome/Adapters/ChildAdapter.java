@@ -13,8 +13,6 @@ import com.bumptech.glide.Glide;
 import com.doubleclick.marktinhome.Model.ChildCategory;
 import com.doubleclick.marktinhome.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;

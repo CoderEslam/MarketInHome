@@ -1,21 +1,15 @@
 package com.doubleclick.marktinhome.ui.MainScreen.Frgments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.doubleclick.RecentOrderInterface
 import com.doubleclick.ViewModel.RecentOrderViewModel
-import com.doubleclick.marktinhome.Adapters.CartAdapter
 import com.doubleclick.marktinhome.Adapters.RecentOrderAdapter
 import com.doubleclick.marktinhome.BaseFragment
-import com.doubleclick.marktinhome.Model.Product
-import com.doubleclick.marktinhome.Model.RecentOrder
 import com.doubleclick.marktinhome.R
 
 

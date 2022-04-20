@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide;
 import com.doubleclick.OnProduct;
 import com.doubleclick.marktinhome.Model.Product;
 import com.doubleclick.marktinhome.R;
-import com.doubleclick.marktinhome.ui.MainScreen.Frgments.ViewMoreFragment;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -23,8 +22,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created By Eslam Ghazy on 3/10/2022

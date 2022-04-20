@@ -1,16 +1,13 @@
 package com.doubleclick.marktinhome.ui.MainScreen.Comments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RatingBar
-import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -24,7 +21,6 @@ import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Constantes.COMMENTS
 import com.doubleclick.marktinhome.Model.User
 import com.doubleclick.marktinhome.R
-import com.doubleclick.marktinhome.ui.ProductActivity.productFragmentArgs
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import de.hdodenhof.circleimageview.CircleImageView
 import java.util.*

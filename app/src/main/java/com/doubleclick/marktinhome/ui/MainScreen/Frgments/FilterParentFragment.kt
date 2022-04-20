@@ -10,14 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
-import com.doubleclick.OnItem
 import com.doubleclick.OnProduct
 import com.doubleclick.ViewModel.ProductViewModel
-import com.doubleclick.marktinhome.Adapters.HomeAdapter
 import com.doubleclick.marktinhome.Adapters.ProductAdapter
 import com.doubleclick.marktinhome.Model.Product
 import com.doubleclick.marktinhome.R
-import com.doubleclick.marktinhome.ui.ProductActivity.productFragmentArgs
 
 
 class FilterParentFragment : Fragment() , OnProduct {

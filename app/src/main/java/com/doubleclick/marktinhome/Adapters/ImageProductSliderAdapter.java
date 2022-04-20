@@ -1,24 +1,17 @@
 package com.doubleclick.marktinhome.Adapters;
 
-import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
-import com.doubleclick.marktinhome.Model.Advertisement;
 import com.doubleclick.marktinhome.R;
 import com.doubleclick.marktinhome.Views.PhotoView.PhotoView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

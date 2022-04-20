@@ -1,7 +1,6 @@
 package com.doubleclick.marktinhome.ui.MainScreen.Frgments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,6 @@ import com.doubleclick.marktinhome.Adapters.ProductAdapter
 import com.doubleclick.marktinhome.BaseFragment
 import com.doubleclick.marktinhome.Model.Product
 import com.doubleclick.marktinhome.R
-import com.doubleclick.marktinhome.ui.ProductActivity.productFragmentArgs
 
 
 class TrademarkFragment : BaseFragment(), OnProduct {

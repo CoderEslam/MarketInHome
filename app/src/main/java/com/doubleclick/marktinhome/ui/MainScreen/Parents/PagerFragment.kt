@@ -11,14 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.doubleclick.OnProduct
 import com.doubleclick.ViewModel.ProductViewModel
-import com.doubleclick.marktinhome.Adapters.NavAdapter
 import com.doubleclick.marktinhome.Adapters.ProductAdapter
 import com.doubleclick.marktinhome.BaseFragment
-import com.doubleclick.marktinhome.Model.ChildCategory
-import com.doubleclick.marktinhome.Model.ClassificationPC
 import com.doubleclick.marktinhome.Model.Product
 import com.doubleclick.marktinhome.R
-import com.doubleclick.marktinhome.ui.Filter.FilterActivity
 import com.doubleclick.marktinhome.ui.ProductActivity.productActivity
 
 

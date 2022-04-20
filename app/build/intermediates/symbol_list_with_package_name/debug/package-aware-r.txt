@@ -2673,6 +2673,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable account
 drawable add
 drawable add_circle
 drawable arrow_down
@@ -2754,15 +2755,18 @@ drawable ic_home_white_24dp
 drawable ic_icon_google
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
+drawable ic_like
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_message
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_path_1306
 drawable ic_person_outline_white_24dp
+drawable ic_share
 drawable ic_stars_black_cercil24dp
 drawable ic_store_white_24dp
 drawable icon_app
@@ -2827,6 +2831,7 @@ drawable test_level_drawable
 drawable text_message_left
 drawable text_message_right
 drawable textsms
+drawable threedot
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vd_pathmorph_drawer_arrow
@@ -3009,6 +3014,8 @@ id cardView2
 id cardView3
 id cardView4
 id cardView5
+id cardView6
+id cardView7
 id carryVelocity
 id cartRate
 id cartRecycler
@@ -3030,6 +3037,7 @@ id chip3
 id chip_group
 id chronometer
 id circleImageView
+id circleImageView2
 id circle_center
 id clear_text
 id clip_horizontal
@@ -3048,6 +3056,7 @@ id constraint
 id constraintLayout
 id constraintLayout10
 id constraintLayout11
+id constraintLayout12
 id constraintLayout2
 id constraintLayout3
 id constraintLayout4
@@ -3152,6 +3161,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id groupsRecycler
 id guideline
 id hamburger
 id hardware
@@ -3195,6 +3205,7 @@ id imageView7
 id imageView8
 id image_view_expanded
 id imagemark
+id images
 id immediateStop
 id included
 id info
@@ -3215,6 +3226,10 @@ id left
 id leftToRight
 id legacy
 id light
+id likeButton
+id likeButtonTwo
+id like_img
+id like_text
 id line1
 id line3
 id linear
@@ -3334,6 +3349,7 @@ id onAttachStateChangeListener
 id onDateChanged
 id onInterceptTouchReturnSwipe
 id openDrawer
+id option
 id orderImage
 id outline
 id outward
@@ -3583,6 +3599,7 @@ id userName
 id username
 id vertical_only
 id view
+id view2
 id viewPager
 id view_offset_helper
 id view_pager_Parent
@@ -3760,6 +3777,8 @@ layout layaut_cart
 layout layout_categories
 layout layout_chat
 layout layout_edit
+layout layout_images
+layout layout_item_group
 layout layout_product_with_view_pager
 layout layout_recent_order
 layout layout_small_product
