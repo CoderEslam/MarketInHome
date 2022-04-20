@@ -8,12 +8,12 @@
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_button.png"
     },
     {
-        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_map.xml.flat",
-        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\map.xml"
-    },
-    {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_icon_google.png.flat",
         "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_icon_google.png"
+    },
+    {
+        "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\layout_map.xml.flat",
+        "source": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\src\\main\\res\\layout\\map.xml"
     },
     {
         "merged": "C:\\Users\\eslam\\AndroidStudioProjects\\Eslam\\MarktInHome\\app\\build\\intermediates\\merged_res\\debug\\drawable_fram_blue.xml.flat",
