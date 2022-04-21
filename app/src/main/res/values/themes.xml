@@ -35,4 +35,8 @@
     <style name="Theme.Collapsing.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Collapsing.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.MarktInHome.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MarktInHome.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

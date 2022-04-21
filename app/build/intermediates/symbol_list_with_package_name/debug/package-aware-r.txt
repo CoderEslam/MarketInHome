@@ -480,6 +480,7 @@ attr elevation
 attr elevationOverlayAccentColor
 attr elevationOverlayColor
 attr elevationOverlayEnabled
+attr emailColor
 attr emojiCompatEnabled
 attr enableEdgeToEdge
 attr endIconCheckable
@@ -584,6 +585,7 @@ attr graph
 attr guidelineUseRtl
 attr haloColor
 attr haloRadius
+attr hashtagColor
 attr headerLayout
 attr height
 attr helperText
@@ -758,6 +760,7 @@ attr limitBoundsTo
 attr lineHeight
 attr lineSpacing
 attr linearProgressIndicatorStyle
+attr linkModes
 attr listChoiceBackgroundIndicator
 attr listChoiceIndicatorMultipleAnimated
 attr listChoiceIndicatorSingleAnimated
@@ -842,6 +845,7 @@ attr maxLines
 attr maxVelocity
 attr maxWidth
 attr measureWithLargestChild
+attr mentionColor
 attr menu
 attr menuGravity
 attr methodName
@@ -933,6 +937,7 @@ attr percentWidth
 attr percentX
 attr percentY
 attr perpendicularPath_percent
+attr phoneColor
 attr pivotAnchor
 attr placeholderActivityName
 attr placeholderText
@@ -1002,6 +1007,7 @@ attr secondaryMenuItemTextSize
 attr seekBarStyle
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
+attr selectedColor
 attr selectionRequired
 attr selectorSize
 attr setsTag
@@ -1300,8 +1306,10 @@ attr uiScrollGesturesDuringRotateOrZoom
 attr uiTiltGestures
 attr uiZoomControls
 attr uiZoomGestures
+attr underlineEnabled
 attr upDuration
 attr uri
+attr urlColor
 attr useCompatPadding
 attr useMaterialThemeColors
 attr useViewLifecycle
@@ -2073,6 +2081,7 @@ dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen app_bar_height
 dimen appcompat_dialog_background_inset
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
@@ -2139,6 +2148,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -2583,6 +2593,7 @@ dimen test_navigation_bar_item_min_width
 dimen test_navigation_bar_label_padding
 dimen test_navigation_bar_shadow_height
 dimen test_navigation_bar_text_size
+dimen text_margin
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -2686,6 +2697,7 @@ drawable avd_show_password
 drawable bg_edit
 drawable bg_image
 drawable bg_product_activity
+drawable border_button
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2694,6 +2706,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable btn_round
 drawable c1
 drawable c2
 drawable c3
@@ -2707,6 +2720,7 @@ drawable cio_ic_mastercard
 drawable cio_ic_paypal_monogram
 drawable cio_ic_visa
 drawable cio_paypal_logo
+drawable circle
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2746,16 +2760,20 @@ drawable group645
 drawable group861
 drawable group934
 drawable group983
+drawable group_cover
 drawable groups
 drawable ic_arrow_back_24
+drawable ic_back
 drawable ic_button
 drawable ic_clock_black_24dp
 drawable ic_dashboard_white_24dp
+drawable ic_history
 drawable ic_home_white_24dp
 drawable ic_icon_google
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
 drawable ic_like
+drawable ic_link
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -2942,6 +2960,7 @@ id action_mode_close_button
 id action_productFragment_to_commentsFragment
 id action_productFragment_to_homeFragment
 id action_recentOrderFragment_to_productFragment
+id action_settings
 id action_text
 id action_trademarkFragment_to_homeFragment
 id action_trademarkFragment_to_productFragment
@@ -2980,6 +2999,7 @@ id autoCompleteToEnd
 id autoCompleteToStart
 id auto_center
 id automatic
+id back
 id banner_sliderImageView
 id banner_slier_view_pager
 id barrier
@@ -2987,6 +3007,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
+id bio
 id blocking
 id bottom
 id bottomBar
@@ -3003,6 +3024,7 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_reset
 id buttonPanel
+id buttons
 id cache_measures
 id callMeasure
 id callUsFragment
@@ -3073,6 +3095,8 @@ id continuousVelocity
 id coordinator
 id cos
 id counterclockwise
+id cover
+id cover_layout
 id currentState
 id custom
 id customPanel
@@ -3097,6 +3121,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id details
 id dialog_button
 id dimensions
 id direct
@@ -3105,6 +3130,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id dp
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3167,6 +3193,7 @@ id groupsRecycler
 id guideline
 id hamburger
 id hardware
+id hashtag
 id header_title
 id hideable
 id home
@@ -3224,6 +3251,7 @@ id jumpToStart
 id labeled
 id lastPrice
 id layout
+id leave
 id left
 id leftToRight
 id legacy
@@ -3240,16 +3268,21 @@ id linearLayout3
 id linearLayout5
 id linearLayout7
 id linear_layout
+id link
+id link_layout
 id listMode
 id listTitle
 id list_item
 id lldescription
 id loadingAnimView
 id locale
+id location
+id location_layout
 id login
 id logout
 id lottie_layer_name
 id ltr
+id main
 id mainLoginFragment
 id main_fragment
 id map
@@ -3276,6 +3309,9 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
+id members
+id mention
+id menu
 id menu_Cart
 id menu_group
 id menu_profile
@@ -3291,6 +3327,7 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id more
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -3340,9 +3377,11 @@ id noState
 id none
 id normal
 id north
+id nothing
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id numbers
 id off
 id ok
 id on
@@ -3375,13 +3414,16 @@ id pin
 id plus
 id plusone
 id position
+id post
 id postLayout
+id posts
 id price
 id productFragment
 id productLastPrice
 id productName
 id productPrice
 id products
+id progressBar
 id progressBar1
 id progressBar2
 id progressBar3
@@ -3403,6 +3445,7 @@ id recentOrderFragment
 id recentSearch
 id rectangles
 id refresh
+id request
 id restart
 id reverse
 id reverseSawtooth
@@ -3568,6 +3611,7 @@ id toggle
 id toolbar
 id toolbar_Collapsinglayout
 id top
+id topName
 id topPanel
 id topParents
 id top_left
@@ -3596,9 +3640,11 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id url
 id useLogo
 id userName
 id username
+id verify
 id vertical_only
 id view
 id view2
@@ -3882,6 +3928,7 @@ layout user_chat_layout
 layout v_product_recyclerview
 menu add_item
 menu menu_bottom
+menu menu_groups
 menu option_group
 menu refrash
 mipmap ic_launcher
@@ -3926,6 +3973,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_settings
 string add
 string all_cartegories
 string androidx_startup
@@ -4001,6 +4049,7 @@ string icon_content_description
 string item_view_role_description
 string join_us
 string keywords
+string large_text
 string library_smoothprogressbar_author
 string library_smoothprogressbar_authorWebsite
 string library_smoothprogressbar_isOpenSource
@@ -4131,6 +4180,7 @@ string sign_up
 string spb_default_speed
 string status_bar_notification_info_overflow
 string thanks
+string title_activity_groups
 string top_deals
 string totalPrice
 string trademark
@@ -4657,7 +4707,9 @@ style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
 style Theme_MarktInHome
+style Theme_MarktInHome_AppBarOverlay
 style Theme_MarktInHome_NoActionBar
+style Theme_MarktInHome_PopupOverlay
 style Theme_Material3_Dark
 style Theme_Material3_Dark_BottomSheetDialog
 style Theme_Material3_Dark_Dialog
@@ -5324,6 +5376,7 @@ styleable SmoothBottomBar activeItem backgroundColor cornerRadius corners durati
 styleable SmoothProgressBar spbStyle spb_background spb_color spb_colors spb_generate_background_with_colors spb_gradients spb_interpolator spb_mirror_mode spb_progressiveStart_activated spb_progressiveStart_speed spb_progressiveStop_speed spb_reversed spb_sections_count spb_speed spb_stroke_separator_length spb_stroke_width
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth
+styleable SocialTextView android_text android_hint emailColor hashtagColor linkModes mentionColor phoneColor selectedColor underlineEnabled urlColor
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable SplitPairFilter primaryActivityName secondaryActivityAction secondaryActivityName
 styleable SplitPairRule clearTop finishPrimaryWithSecondary finishSecondaryWithPrimary splitLayoutDirection splitMinSmallestWidth splitMinWidth splitRatio

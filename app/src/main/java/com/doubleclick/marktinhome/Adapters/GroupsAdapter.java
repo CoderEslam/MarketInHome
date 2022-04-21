@@ -1,5 +1,6 @@
 package com.doubleclick.marktinhome.Adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.doubleclick.marktinhome.R;
 import com.doubleclick.marktinhome.Views.carousellayoutmanager.CarouselLayoutManager;
 import com.doubleclick.marktinhome.Views.carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.doubleclick.marktinhome.Views.carousellayoutmanager.CenterScrollListener;
+import com.doubleclick.marktinhome.ui.MainScreen.Groups.GroupsActivity;
 
 /**
  * Created By Eslam Ghazy on 4/20/2022
@@ -84,6 +86,10 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.GroupViewH
             images.addOnScrollListener(new CenterScrollListener());
             layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
             images.setAdapter(new ImagesGroupAdapter());
+
+            itemView.setOnClickListener(v -> {
+                itemView.getContext().startActivity(new Intent(itemView.getContext(), GroupsActivity.class));
+            });
 
         }
     }

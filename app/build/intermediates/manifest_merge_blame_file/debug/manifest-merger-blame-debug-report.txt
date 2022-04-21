@@ -66,7 +66,7 @@
 36-->[io.card:android-sdk:5.5.1] C:\Users\eslam\.gradle\caches\transforms-3\ffcb56ce066aad42aeb2db77c43a06ee\transformed\jetified-android-sdk-5.5.1\AndroidManifest.xml:17:9-33
 37
 38    <application
-38-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:10:5-94:19
+38-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:10:5-95:19
 39        android:name="com.doubleclick.marktinhome.BaseApplication"
 39-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:11:9-40
 40        android:allowBackup="true"
@@ -87,134 +87,134 @@
 48-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:17:9-49
 49        <activity
 49-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:18:9-20:40
-50            android:name="com.doubleclick.marktinhome.ui.MainScreen.Groups.GroupsActivity"
-50-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:19:13-64
+50            android:name="com.doubleclick.marktinhome.ui.MainScreen.Chat.ChatActivity"
+50-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:19:13-60
 51            android:exported="false" />
 51-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:20:13-37
 52        <activity
 52-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:21:9-23:40
-53            android:name="com.doubleclick.marktinhome.ui.MainScreen.Chat.ChatActivity"
-53-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:22:13-60
+53            android:name="com.doubleclick.marktinhome.ui.MainScreen.Parents.ParentActivity"
+53-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:22:13-65
 54            android:exported="false" />
 54-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:23:13-37
 55        <activity
 55-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:24:9-26:40
-56            android:name="com.doubleclick.marktinhome.ui.MainScreen.Parents.ParentActivity"
-56-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:25:13-65
+56            android:name="com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsActivity"
+56-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:25:13-68
 57            android:exported="false" />
 57-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:26:13-37
 58        <activity
 58-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:27:9-29:40
-59            android:name="com.doubleclick.marktinhome.ui.MainScreen.Comments.CommentsActivity"
-59-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:28:13-68
+59            android:name="com.doubleclick.marktinhome.ui.ProductActivity.productActivity"
+59-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:28:13-63
 60            android:exported="false" />
 60-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:29:13-37
 61        <activity
 61-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:30:9-32:40
-62            android:name="com.doubleclick.marktinhome.ui.ProductActivity.productActivity"
-62-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:31:13-63
+62            android:name="com.doubleclick.marktinhome.ui.Filter.FilterActivity"
+62-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:31:13-53
 63            android:exported="false" />
 63-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:32:13-37
-64        <activity
-64-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:33:9-35:40
-65            android:name="com.doubleclick.marktinhome.ui.Filter.FilterActivity"
-65-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:34:13-53
-66            android:exported="false" />
-66-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:35:13-37
-67
-68        <meta-data
-68-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:37:9-39:55
-69            android:name="com.google.android.geo.API_KEY"
-69-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:38:13-58
-70            android:value="@string/google_maps_key" />
-70-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:39:13-52
-71
-72        <activity
-72-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:41:9-59:20
-73            android:name="com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity"
-73-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:42:13-61
-74            android:exported="true" >
-74-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:43:13-36
-75
-76            <!-- <intent-filter> -->
-77            <!-- <action android:name="android.intent.action.MAIN" /> -->
-78            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-79            <!-- </intent-filter> -->
-80            <!-- <intent-filter> -->
-81            <!-- <action android:name="android.intent.action.VIEW" /> -->
-82            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-83            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
-84
-85
-86            <!-- <data -->
-87            <!-- android:host="www.market.doublethink.com" -->
-88            <!-- android:scheme="https" /> -->
-89            <!-- </intent-filter> -->
-90        </activity>
+64
+65        <meta-data
+65-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:34:9-36:55
+66            android:name="com.google.android.geo.API_KEY"
+66-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:35:13-58
+67            android:value="@string/google_maps_key" />
+67-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:36:13-52
+68
+69        <activity
+69-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:38:9-57:20
+70            android:name="com.doubleclick.marktinhome.ui.MainScreen.MainScreenActivity"
+70-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:39:13-61
+71            android:exported="true" >
+71-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:40:13-36
+72
+73            <!-- <intent-filter> -->
+74            <!-- <action android:name="android.intent.action.MAIN" /> -->
+75            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+76            <!-- </intent-filter> -->
+77            <!-- <intent-filter> -->
+78            <!-- <action android:name="android.intent.action.VIEW" /> -->
+79            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+80            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+81
+82
+83            <!-- <data -->
+84            <!-- android:host="www.market.doublethink.com" -->
+85            <!-- android:scheme="https" /> -->
+86            <!-- </intent-filter> -->
+87        </activity>
+88        <activity
+88-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:58:9-60:40
+89            android:name="com.doubleclick.marktinhome.ui.MainScreen.Groups.GroupsActivity"
+89-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:59:13-64
+90            android:exported="false" />
+90-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:60:13-37
 91        <activity
-91-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:60:9-78:20
+91-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:61:9-79:20
 92            android:name="com.doubleclick.marktinhome.MainActivity"
-92-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:61:13-41
+92-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:62:13-41
 93            android:exported="true" >
-93-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:62:13-36
+93-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:63:13-36
 94            <intent-filter>
-94-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:63:13-67:29
+94-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:64:13-68:29
 95                <action android:name="android.intent.action.MAIN" />
-95-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:64:17-69
-95-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:64:25-66
+95-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:65:17-69
+95-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:65:25-66
 96
 97                <category android:name="android.intent.category.LAUNCHER" />
-97-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:66:17-77
-97-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:66:27-74
+97-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:67:17-77
+97-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:67:27-74
 98            </intent-filter>
 99            <intent-filter>
-99-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:68:13-77:29
+99-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:69:13-78:29
 100                <action android:name="android.intent.action.VIEW" />
-100-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:69:17-69
-100-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:69:25-66
+100-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:70:17-69
+100-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:70:25-66
 101
 102                <category android:name="android.intent.category.DEFAULT" />
-102-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:17-76
-102-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:27-73
+102-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:17-76
+102-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:27-73
 103                <category android:name="android.intent.category.BROWSABLE" />
-103-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:17-78
-103-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:27-75
+103-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:73:17-78
+103-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:73:27-75
 104
 105                <data
-105-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:74:17-76:46
+105-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:75:17-77:46
 106                    android:host="www.market.doubleclick.com"
-106-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:75:21-62
+106-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:76:21-62
 107                    android:scheme="https" />
-107-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:76:21-43
+107-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:77:21-43
 108            </intent-filter>
 109        </activity>
 110
 111        <meta-data
-111-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:80:9-82:57
+111-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:81:9-83:57
 112            android:name="preloaded_fonts"
-112-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:81:13-43
+112-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:82:13-43
 113            android:resource="@array/preloaded_fonts" />
-113-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:82:13-54
+113-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:83:13-54
 114
 115        <service
-115-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:84:9-91:19
+115-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:85:9-92:19
 116            android:name="com.doubleclick.marktinhome.Notifications.MyFirebaseMessaging"
-116-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:85:13-62
+116-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:86:13-62
 117            android:enabled="true"
-117-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:86:13-35
+117-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:87:13-35
 118            android:exported="true" >
-118-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:87:13-36
+118-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:88:13-36
 119            <intent-filter>
-119-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:88:13-90:29
+119-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:89:13-91:29
 120                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-120-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:89:17-78
-120-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:89:25-75
+120-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:90:17-78
+120-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:90:25-75
 121            </intent-filter>
 122        </service>
 123
 124        <receiver android:name="com.doubleclick.Servies.NotificationReceiver" />
-124-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:93:9-81
-124-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:93:19-78
+124-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:94:9-81
+124-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:94:19-78
 125
 126        <activity
 126-->[com.karumi:dexter:6.2.3] C:\Users\eslam\.gradle\caches\transforms-3\e198e7c40f3526629f630ee778b2fa08\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:27:9-29:72
@@ -237,23 +237,23 @@
 135            <intent-filter>
 135-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\eslam\.gradle\caches\transforms-3\b0c0a77ea24f3728ebaca01ab22526ff\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
 136                <action android:name="android.intent.action.VIEW" />
-136-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:69:17-69
-136-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:69:25-66
+136-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:70:17-69
+136-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:70:25-66
 137
 138                <category android:name="android.intent.category.DEFAULT" />
-138-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:17-76
-138-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:27-73
+138-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:17-76
+138-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:27-73
 139                <category android:name="android.intent.category.BROWSABLE" />
-139-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:17-78
-139-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:27-75
+139-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:73:17-78
+139-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:73:27-75
 140
 141                <data
-141-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:74:17-76:46
+141-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:75:17-77:46
 142                    android:host="firebase.auth"
-142-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:75:21-62
+142-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:76:21-62
 143                    android:path="/"
 144                    android:scheme="genericidp" />
-144-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:76:21-43
+144-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:77:21-43
 145            </intent-filter>
 146        </activity>
 147        <activity
@@ -271,23 +271,23 @@
 153            <intent-filter>
 153-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\eslam\.gradle\caches\transforms-3\b0c0a77ea24f3728ebaca01ab22526ff\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
 154                <action android:name="android.intent.action.VIEW" />
-154-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:69:17-69
-154-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:69:25-66
+154-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:70:17-69
+154-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:70:25-66
 155
 156                <category android:name="android.intent.category.DEFAULT" />
-156-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:17-76
-156-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:27-73
+156-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:17-76
+156-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:27-73
 157                <category android:name="android.intent.category.BROWSABLE" />
-157-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:17-78
-157-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:27-75
+157-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:73:17-78
+157-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:73:27-75
 158
 159                <data
-159-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:74:17-76:46
+159-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:75:17-77:46
 160                    android:host="firebase.auth"
-160-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:75:21-62
+160-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:76:21-62
 161                    android:path="/"
 162                    android:scheme="recaptcha" />
-162-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:76:21-43
+162-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:77:21-43
 163            </intent-filter>
 164        </activity>
 165
@@ -306,8 +306,8 @@
 171-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\eslam\.gradle\caches\transforms-3\b0c0a77ea24f3728ebaca01ab22526ff\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
 172
 173                <category android:name="android.intent.category.DEFAULT" />
-173-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:17-76
-173-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:71:27-73
+173-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:17-76
+173-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:72:27-73
 174            </intent-filter>
 175        </service>
 176        <service
@@ -415,10 +415,10 @@
 233            android:exported="false" >
 233-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\eslam\.gradle\caches\transforms-3\09bc9c183a523cfbab7e62e9aa34002b\transformed\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:44:13-37
 234            <intent-filter android:priority="-500" >
-234-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:88:13-90:29
+234-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:89:13-91:29
 235                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-235-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:89:17-78
-235-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:89:25-75
+235-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:90:17-78
+235-->C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\AndroidManifest.xml:90:25-75
 236            </intent-filter>
 237        </service> <!-- Needs to be explicitly declared on P+ -->
 238        <uses-library

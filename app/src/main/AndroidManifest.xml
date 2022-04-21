@@ -16,9 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarktInHome">
         <activity
-            android:name=".ui.MainScreen.Groups.GroupsActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainScreen.Chat.ChatActivity"
             android:exported="false" />
         <activity
@@ -42,6 +39,7 @@
             android:name=".ui.MainScreen.MainScreenActivity"
             android:exported="true">
 
+
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
@@ -57,6 +55,9 @@
             <!-- android:scheme="https" /> -->
             <!-- </intent-filter> -->
         </activity>
+        <activity
+            android:name=".ui.MainScreen.Groups.GroupsActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
