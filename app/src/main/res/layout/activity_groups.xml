@@ -252,10 +252,10 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/buttons"
-                        android:layout_width="0dp"
-                        android:layout_height="35dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginRight="40dp"
@@ -263,65 +263,26 @@
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/numbers">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_marginEnd="8dp"
-                            android:layout_weight="1">
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/more"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
                             <Button
                                 android:id="@+id/edit"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:background="@drawable/btn_round"
                                 android:backgroundTint="#1877F2"
-                                android:stateListAnimator="@null"
-                                android:text="Edit Profile"
+                                android:text="@string/edit_profile"
                                 android:textAllCaps="false"
-                                android:textColor="#fff"
-                                android:textSize="16sp"
-                                tools:ignore="HardcodedText,UnusedAttribute" />
+                                android:textColor="#fff" />
 
-                            <Button
-                                android:id="@+id/request"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/btn_round"
-                                android:backgroundTint="#1877F2"
-                                android:stateListAnimator="@null"
-                                android:text="Join Request"
-                                android:textAllCaps="false"
-                                android:textColor="#fff"
-                                android:textSize="16sp"
-                                android:visibility="gone"
-                                tools:ignore="HardcodedText,UnusedAttribute" />
-
-                            <Button
-                                android:id="@+id/cancel"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/border_button"
-                                android:stateListAnimator="@null"
-                                android:text="Cancel Request"
-                                android:textAllCaps="false"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:visibility="gone"
-                                tools:ignore="HardcodedText,UnusedAttribute" />
-
-                            <Button
-                                android:id="@+id/leave"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/border_button"
-                                android:stateListAnimator="@null"
-                                android:text="Leave"
-                                android:textAllCaps="false"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:visibility="gone"
-                                tools:ignore="HardcodedText,UnusedAttribute" />
-                        </RelativeLayout>
+                        </LinearLayout>
 
                         <ImageView
                             android:id="@+id/more"
@@ -332,9 +293,12 @@
                             android:contentDescription="TODO"
                             android:padding="8dp"
                             android:src="@drawable/add"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
                             tools:ignore="ContentDescription,HardcodedText,UnusedAttribute" />
 
-                    </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <LinearLayout
                         android:id="@+id/details"
@@ -364,6 +328,7 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:text="@string/creator"
                                 android:id="@+id/username"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -404,6 +369,7 @@
                                 android:focusable="true"
                                 android:gravity="center_horizontal"
                                 android:maxLines="1"
+                                android:text="@string/history"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
@@ -433,6 +399,7 @@
                                 android:ellipsize="end"
                                 android:gravity="center_horizontal"
                                 android:maxLines="1"
+                                android:text="eslamghazy@gmail.com"
                                 android:textAlignment="center"
                                 android:textSize="14sp"
                                 app:emailColor="#1877F2"
