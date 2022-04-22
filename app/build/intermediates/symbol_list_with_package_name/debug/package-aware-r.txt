@@ -3251,7 +3251,6 @@ id jumpToStart
 id labeled
 id lastPrice
 id layout
-id leave
 id left
 id leftToRight
 id legacy
@@ -3445,7 +3444,6 @@ id recentOrderFragment
 id recentSearch
 id rectangles
 id refresh
-id request
 id restart
 id reverse
 id reverseSawtooth
@@ -4014,6 +4012,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string confirm
 string create_by_x_team
+string creator
 string customer_location
 string customer_name
 string customer_phone
@@ -4026,6 +4025,7 @@ string easy_to_hundel
 string edit
 string edit_on_order
 string edit_on_product
+string edit_profile
 string ellipsis
 string email
 string error_icon_content_description
@@ -4044,6 +4044,7 @@ string google_maps_key
 string google_storage_bucket
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string history
 string i_have_already_account
 string icon_content_description
 string item_view_role_description

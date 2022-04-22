@@ -3250,7 +3250,6 @@ int id jumpToStart 0x7f0a0185
 int id labeled 0x7f0a0186
 int id lastPrice 0x7f0a0187
 int id layout 0x7f0a0188
-int id leave 0x7f0a0189
 int id left 0x7f0a018a
 int id leftToRight 0x7f0a018b
 int id legacy 0x7f0a018c
@@ -3444,7 +3443,6 @@ int id recentOrderFragment 0x7f0a0247
 int id recentSearch 0x7f0a0248
 int id rectangles 0x7f0a0249
 int id refresh 0x7f0a024a
-int id request 0x7f0a024b
 int id restart 0x7f0a024c
 int id reverse 0x7f0a024d
 int id reverseSawtooth 0x7f0a024e
@@ -4013,6 +4011,7 @@ int string common_signin_button_text 0x7f130043
 int string common_signin_button_text_long 0x7f130044
 int string confirm 0x7f130045
 int string create_by_x_team 0x7f130046
+int string creator 0x7f1300fb
 int string customer_location 0x7f130047
 int string customer_name 0x7f130048
 int string customer_phone 0x7f130049
@@ -4025,6 +4024,7 @@ int string easy_to_hundel 0x7f13004f
 int string edit 0x7f130050
 int string edit_on_order 0x7f130051
 int string edit_on_product 0x7f130052
+int string edit_profile 0x7f1300fc
 int string ellipsis 0x7f130053
 int string email 0x7f130054
 int string error_icon_content_description 0x7f130055
@@ -4043,6 +4043,7 @@ int string google_maps_key 0x7f130061
 int string google_storage_bucket 0x7f130062
 int string hello_blank_fragment 0x7f130063
 int string hide_bottom_view_on_scroll_behavior 0x7f130064
+int string history 0x7f1300fd
 int string i_have_already_account 0x7f130065
 int string icon_content_description 0x7f130066
 int string item_view_role_description 0x7f130067

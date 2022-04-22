@@ -17,8 +17,8 @@
         <attr name="textSize" format="dimension" />
         <attr name="iconSize" format="dimension" />
         <attr name="iconMargin" format="dimension" />
-        <attr name="iconTint" format="color"/>
-        <attr name="iconTintActive" format="color"/>
+        <attr name="iconTint" format="color" />
+        <attr name="iconTintActive" format="color" />
         <attr name="cornerRadius" format="dimension" />
         <attr name="activeItem" format="integer" />
         <attr name="duration" format="integer" />
@@ -37,15 +37,15 @@
     <declare-styleable name="SNavigationDrawer">
         <attr name="appbarColor" format="color" />
         <attr name="appbarTitleTextColor" format="color" />
-        <attr name="appbarTitleTextSize" format="dimension"/>
+        <attr name="appbarTitleTextSize" format="dimension" />
         <attr name="HamMenuIconTintColor" format="color" />
         <attr name="HamMenuIconSize" format="dimension" />
         <attr name="HamMenuItemSemiTransparentColor" format="color" />
         <attr name="navigationDrawerBackgroundColor" format="color" />
         <attr name="primaryMenuItemTextColor" format="color" />
         <attr name="secondaryMenuItemTextColor" format="color" />
-        <attr name="primaryMenuItemTextSize" format="dimension"/>
-        <attr name="secondaryMenuItemTextSize" format="dimension"/>
+        <attr name="primaryMenuItemTextSize" format="dimension" />
+        <attr name="secondaryMenuItemTextSize" format="dimension" />
     </declare-styleable>
 
     <!-- Reference to a style for the menu drawer. -->
@@ -67,29 +67,29 @@
         <attr name="edMaxAnimationDuration" format="integer" />
 
         <!-- The position of the drawer -->
-        <attr name="edPosition" format="integer"/>
+        <attr name="edPosition" format="integer" />
     </declare-styleable>
 
 
     <attr name="linkModes">
-        <flag name="hashtag" value="1"/>
-        <flag name="mention" value="2"/>
-        <flag name="phone" value="4"/>
-        <flag name="email" value="8"/>
-        <flag name="url" value="16"/>
+        <flag name="hashtag" value="1" />
+        <flag name="mention" value="2" />
+        <flag name="phone" value="4" />
+        <flag name="email" value="8" />
+        <flag name="url" value="16" />
     </attr>
 
     <declare-styleable name="SocialTextView">
-        <attr name="android:text"/>
-        <attr name="android:hint"/>
-        <attr name="underlineEnabled" format="boolean"/>
-        <attr name="hashtagColor" format="color"/>
-        <attr name="mentionColor" format="color"/>
-        <attr name="phoneColor" format="color"/>
-        <attr name="emailColor" format="color"/>
-        <attr name="urlColor" format="color"/>
-        <attr name="selectedColor" format="color"/>
-        <attr name="linkModes"/>
+        <attr name="android:text" />
+        <attr name="android:hint" />
+        <attr name="underlineEnabled" format="boolean" />
+        <attr name="hashtagColor" format="color" />
+        <attr name="mentionColor" format="color" />
+        <attr name="phoneColor" format="color" />
+        <attr name="emailColor" format="color" />
+        <attr name="urlColor" format="color" />
+        <attr name="selectedColor" format="color" />
+        <attr name="linkModes" />
     </declare-styleable>
 
 </resources>

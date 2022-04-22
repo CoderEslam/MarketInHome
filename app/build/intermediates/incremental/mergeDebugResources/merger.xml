@@ -10513,7 +10513,7 @@
         "On the layout level, design your app layout to minimize opportunities for interference. "
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
-    </string></file><file path="C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.MarktInHome" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    </string><string name="history">history</string><string name="creator">Creator</string><string name="edit_profile">Edit Profile</string></file><file path="C:\Users\eslam\AndroidStudioProjects\Eslam\MarktInHome\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.MarktInHome" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/dot</item>
         <item name="colorPrimaryVariant">@color/dot</item>
